@@ -70,17 +70,17 @@ function growmodo_property_search_term() {
  * @since 1.0.0
  *
  * @param WP_Post[] $posts Posts rendered by the archive.
- * @return array{locations:string[],types:string[],beds:int,baths:int}
+ * @return array{locations:string[],types:string[],years:int[]}
  */
 function growmodo_property_facets( $posts ) {
 	$locations = array();
 	$types     = array();
-	$beds      = 0;
-	$baths     = 0;
+	$years     = array();
 
 	foreach ( $posts as $post ) {
 		$location = get_post_meta( $post->ID, 'growmodo_location', true );
 		$type     = get_post_meta( $post->ID, 'growmodo_type', true );
+		$year     = (int) get_post_meta( $post->ID, 'growmodo_year', true );
 
 		if ( '' !== $location ) {
 			$locations[] = $location;
@@ -90,30 +90,33 @@ function growmodo_property_facets( $posts ) {
 			$types[] = $type;
 		}
 
-		$beds  = max( $beds, (int) get_post_meta( $post->ID, 'growmodo_beds', true ) );
-		$baths = max( $baths, (int) get_post_meta( $post->ID, 'growmodo_baths', true ) );
+		if ( $year > 0 ) {
+			$years[] = $year;
+		}
 	}
 
 	$locations = array_unique( $locations );
 	$types     = array_unique( $types );
+	$years     = array_unique( $years );
 
 	sort( $locations );
 	sort( $types );
+	rsort( $years );
 
 	return array(
 		'locations' => $locations,
 		'types'     => $types,
-		'beds'      => $beds,
-		'baths'     => $baths,
+		'years'     => $years,
 	);
 }
 
 /**
  * Price bands offered by the pricing filter.
  *
- * Bounds are `low-high` with an open upper end, which is the format the
- * browser-side filter parses. Labels are built with growmodo_format_price() so
- * the currency is written in exactly one place.
+ * Bounds are `low-high`, parsed by the browser-side filter as half-open: low
+ * included, high excluded, so the number two adjacent bands share lands in
+ * exactly one of them. An empty high end means no upper limit. Labels are built
+ * with growmodo_format_price() so the currency is written in exactly one place.
  *
  * @since 1.0.0
  *
@@ -141,22 +144,35 @@ function growmodo_price_bands() {
 }
 
 /**
- * Build "1+ … n+" options for a whole-number minimum filter.
+ * Floor-area bands offered by the property-size filter.
+ *
+ * Bands rather than derived values: sizes are continuous, so one option per
+ * listing would be a menu of six meaningless numbers. Same `low-high` format as
+ * the price bands, with an open upper end.
  *
  * @since 1.0.0
  *
- * @param int $max Highest value present in the result set.
- * @return string[] Labels keyed by minimum value; empty when $max is 0.
+ * @return string[] Band labels, keyed by bounds in square feet.
  */
-function growmodo_minimum_options( $max ) {
-	$options = array();
-
-	for ( $i = 1; $i <= $max; $i++ ) {
-		/* translators: %d: minimum number of rooms. */
-		$options[ (string) $i ] = sprintf( __( '%d+', 'growmodo' ), $i );
-	}
-
-	return $options;
+function growmodo_size_bands() {
+	return array(
+		'0-1500'    => sprintf(
+			/* translators: %s: formatted floor area. */
+			__( 'Under %s', 'growmodo' ),
+			growmodo_format_size( 1500 )
+		),
+		'1500-3000' => sprintf(
+			/* translators: 1: lower floor area, 2: upper floor area. */
+			__( '%1$s to %2$s', 'growmodo' ),
+			growmodo_format_size( 1500 ),
+			growmodo_format_size( 3000 )
+		),
+		'3000-'     => sprintf(
+			/* translators: %s: formatted floor area. */
+			__( 'Over %s', 'growmodo' ),
+			growmodo_format_size( 3000 )
+		),
+	);
 }
 
 /**

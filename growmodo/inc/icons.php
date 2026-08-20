@@ -54,11 +54,27 @@ function growmodo_icon( $name, $css_class = '' ) {
 		 */
 		'star'           => '<path d="M12 3.2l2.7 5.9 6.2.66-4.6 4.22 1.22 6.1L12 17.05 6.48 20.08l1.22-6.1-4.6-4.22 6.2-.66L12 3.2Z" fill="currentColor" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>',
 
-		// Property specification tags.
-		'bed'            => '<path d="M2 17v-5h20v5M2 17h20M4 12V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4M8 12V9h8v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
-		'bath'           => '<path d="M4 11h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3ZM7 11V6a2 2 0 0 1 4 0M6 21l1-2M18 21l-1-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
-		'building'       => '<path d="M4 21V6l8-3v18M12 21h8V10l-8-3M7 9h2M7 13h2M7 17h2M15 12h2M15 16h2M2 21h20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
-		'pin'            => '<path d="M12 22s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/><circle cx="12" cy="11" r="2.5" stroke="currentColor" stroke-width="1.6" fill="none"/>',
+		/*
+		 * Property specification and filter glyphs. Solid, not outlined: the
+		 * design's whole icon set is filled, and an outline set beside it reads
+		 * as a different family rather than a different weight. Holes are cut
+		 * with fill-rule="evenodd" so each glyph stays a single path.
+		 */
+		'bed'            => '<path d="M3 7h9a2.5 2.5 0 0 1 2.5 2.5V12H3V7Z" fill="currentColor"/><path d="M1.5 12.5h21a1 1 0 0 1 1 1V17h-23v-3.5a1 1 0 0 1 1-1Z" fill="currentColor"/><path d="M1.5 18h2.3v2.2H1.5V18Zm18.7 0h2.3v2.2h-2.3V18Z" fill="currentColor"/>',
+		'bath'           => '<path d="M2.5 10.5h19v3.8a4.7 4.7 0 0 1-4.7 4.7H7.2a4.7 4.7 0 0 1-4.7-4.7v-3.8Z" fill="currentColor"/><path d="M8.2 9V6.4a2.9 2.9 0 0 0-5.7 0V9h2V6.4a.9.9 0 0 1 1.8 0V9h1.9Z" fill="currentColor"/><circle cx="10.7" cy="8.2" r="1.3" fill="currentColor"/><path d="M6 19.6 5.1 21.4m12.9-1.8.9 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>',
+		'building'       => '<path fill-rule="evenodd" d="M5.5 2.5h13a1 1 0 0 1 1 1V21h-15V3.5a1 1 0 0 1 1-1ZM8 6.4v2.4h2.4V6.4H8Zm5.6 0v2.4H16V6.4h-2.4ZM8 11v2.4h2.4V11H8Zm5.6 0v2.4H16V11h-2.4ZM10.4 16v5h3.2v-5h-3.2Z" fill="currentColor"/>',
+		// Asymmetric roof, a chimney and a lean-to on the right, as the design draws it.
+		'house'          => '<path fill-rule="evenodd" d="M9.9 2.9a1.2 1.2 0 0 1 1.5 0l7.3 6.2a1 1 0 0 1 .3.8V21H2V9.9a1 1 0 0 1 .4-.8l7.5-6.2ZM8.4 13.8h4.4V21H8.4v-7.2Z" fill="currentColor"/><path d="M13.4 3.6h2.1v2.6l-2.1-1.8V3.6Z" fill="currentColor"/><path d="M20.4 11.6H22V21h-1.6v-9.4Z" fill="currentColor"/>',
+		'banknote'       => '<path fill-rule="evenodd" d="M2.5 4.5h19A1.5 1.5 0 0 1 23 6v8.5a1.5 1.5 0 0 1-1.5 1.5h-19A1.5 1.5 0 0 1 1 14.5V6a1.5 1.5 0 0 1 1.5-1.5ZM12 7.1a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z" fill="currentColor"/><path d="M1.8 17.6h20.4v1.5a1 1 0 0 1-1.1 1L2.9 19a1 1 0 0 1-1.1-1v-.4Z" fill="currentColor"/>',
+
+		/*
+		 * Three faces, lightest on top: opacity, not three colours, so the whole
+		 * glyph still follows currentColor. Getting this the wrong way round
+		 * reads as a hole rather than a box.
+		 */
+		'cube'           => '<path d="M12 1.8 22 6.9 12 12 2 6.9 12 1.8Z" fill="currentColor"/><path d="M1.4 8.5 11.4 13.6v8.6L1.4 17.1V8.5Z" fill="currentColor" opacity=".7"/><path d="M22.6 8.5 12.6 13.6v8.6l10-5.1V8.5Z" fill="currentColor" opacity=".45"/>',
+		'calendar'       => '<path d="M7.2 1.8h2v3.4h-2V1.8Zm7.6 0h2v3.4h-2V1.8Z" fill="currentColor"/><path fill-rule="evenodd" d="M5.6 3.8h12.8A2.6 2.6 0 0 1 21 6.4v13A2.6 2.6 0 0 1 18.4 22H5.6A2.6 2.6 0 0 1 3 19.4v-13a2.6 2.6 0 0 1 2.6-2.6ZM3 8.6h18v1.8H3V8.6Z" fill="currentColor"/>',
+		'pin'            => '<path fill-rule="evenodd" d="M12 1.8a8 8 0 0 1 8 8c0 5.5-8 12.4-8 12.4S4 15.3 4 9.8a8 8 0 0 1 8-8Zm0 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" fill="currentColor"/>',
 
 		// Feature and service icons.
 		'home'           => '<path d="M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',

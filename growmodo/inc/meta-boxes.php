@@ -28,6 +28,8 @@ function growmodo_meta_fields() {
 			'growmodo_beds'     => array( __( 'Bedrooms', 'growmodo' ), 'number' ),
 			'growmodo_baths'    => array( __( 'Bathrooms', 'growmodo' ), 'number' ),
 			'growmodo_price'    => array( __( 'Price (USD)', 'growmodo' ), 'number' ),
+			'growmodo_size'     => array( __( 'Size (sq ft)', 'growmodo' ), 'number' ),
+			'growmodo_year'     => array( __( 'Year built', 'growmodo' ), 'number' ),
 			'growmodo_type'     => array( __( 'Property type', 'growmodo' ), 'select' ),
 			'growmodo_location' => array( __( 'Location', 'growmodo' ), 'text' ),
 		),

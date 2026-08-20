@@ -24,6 +24,24 @@ function growmodo_format_price( $amount ) {
 }
 
 /**
+ * Format a floor area for display.
+ *
+ * The unit lives here rather than in each label, so it is written once.
+ *
+ * @since 1.0.0
+ *
+ * @param int $sqft Floor area in square feet.
+ * @return string Formatted area, e.g. "1,500 sq ft".
+ */
+function growmodo_format_size( $sqft ) {
+	return sprintf(
+		/* translators: %s: floor area in square feet. */
+		__( '%s sq ft', 'growmodo' ),
+		number_format_i18n( absint( $sqft ) )
+	);
+}
+
+/**
  * Number of items a home carousel loads.
  *
  * The FAQ section and the FAQPage structured data both read this, so the markup

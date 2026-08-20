@@ -24,7 +24,7 @@ $growmodo_found  = (int) $wp_query->found_posts;
 $growmodo_count_text = __( 'Showing %1$s of %2$s properties', 'growmodo' );
 ?>
 
-<section class="page-hero">
+<section class="page-hero page-hero--finder">
 	<div class="container">
 		<h1 class="page-hero__title"><?php esc_html_e( 'Find Your Dream Property', 'growmodo' ); ?></h1>
 		<p class="lede">

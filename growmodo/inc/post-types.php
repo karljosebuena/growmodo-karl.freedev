@@ -100,6 +100,8 @@ function growmodo_register_post_meta() {
 			'growmodo_beds'     => array( 'integer', 'absint' ),
 			'growmodo_baths'    => array( 'integer', 'absint' ),
 			'growmodo_price'    => array( 'integer', 'absint' ),
+			'growmodo_size'     => array( 'integer', 'absint' ),
+			'growmodo_year'     => array( 'integer', 'absint' ),
 			'growmodo_type'     => array( 'string', 'sanitize_text_field' ),
 			'growmodo_location' => array( 'string', 'sanitize_text_field' ),
 		),

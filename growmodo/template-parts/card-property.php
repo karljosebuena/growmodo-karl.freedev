@@ -15,6 +15,8 @@ $growmodo_beds     = (int) get_post_meta( get_the_ID(), 'growmodo_beds', true );
 $growmodo_baths    = (int) get_post_meta( get_the_ID(), 'growmodo_baths', true );
 $growmodo_type     = get_post_meta( get_the_ID(), 'growmodo_type', true );
 $growmodo_price    = (int) get_post_meta( get_the_ID(), 'growmodo_price', true );
+$growmodo_size     = (int) get_post_meta( get_the_ID(), 'growmodo_size', true );
+$growmodo_year     = (int) get_post_meta( get_the_ID(), 'growmodo_year', true );
 $growmodo_location = get_post_meta( get_the_ID(), 'growmodo_location', true );
 ?>
 <?php
@@ -31,6 +33,8 @@ $growmodo_location = get_post_meta( get_the_ID(), 'growmodo_location', true );
 	data-beds="<?php echo esc_attr( $growmodo_beds ); ?>"
 	data-baths="<?php echo esc_attr( $growmodo_baths ); ?>"
 	data-price="<?php echo esc_attr( $growmodo_price ); ?>"
+	data-size="<?php echo esc_attr( $growmodo_size ); ?>"
+	data-year="<?php echo esc_attr( $growmodo_year ); ?>"
 >
 	<?php if ( has_post_thumbnail() ) : ?>
 		<a class="card__media" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">

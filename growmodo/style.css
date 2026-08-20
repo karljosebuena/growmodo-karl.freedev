@@ -1380,8 +1380,17 @@ button {
 /* ==========================================================================
    17. Page hero (interior pages)
    ========================================================================== */
+/*
+ * These heroes are mostly air in the design — 68px of padding at the mobile
+ * frame, 103px at the laptop one and 134px at the desktop one, against the 64px
+ * this used to have at every width. Measured by subtracting the rendered copy
+ * from the distance between the header's bottom border and the hero's, on the
+ * Contact and Services heroes: those two carry nothing extra, so they give the
+ * baseline the modifier below then adds to.
+ */
 .page-hero {
-	padding-block: var(--sp-8);
+	--hero-pad: clamp(4.25rem, 0.5125rem + 6.5625vw, 8.375rem);
+	padding-block: var(--hero-pad);
 	border-bottom: 1px solid var(--c-border);
 	/*
 	 * The design lights these heroes from the left. Sampled off the exports it
@@ -1392,8 +1401,31 @@ button {
 	background-image: radial-gradient(70% 120% at 0% 25%, rgba(255, 255, 255, 0.045), transparent 62%);
 }
 
+/*
+ * The search card straddles this hero's bottom border, so the design leaves
+ * more room under the copy than on the heroes without one: its border sits 60px
+ * lower than the Contact and Services heroes at 1920, and 30px lower at 1440.
+ */
+.page-hero--finder {
+	padding-bottom: calc(var(--hero-pad) + clamp(1.125rem, -3.75rem + 6.25vw, 3.75rem));
+}
+
+/*
+ * Interior heroes are a size down from the home hero, which is what --fs-h1 is
+ * scaled for: measured off the exports by text width, this H1 is 28px at the
+ * mobile frame, 38px at the laptop one and 48px at the desktop one, where the
+ * home hero's is 60px. As with --fs-h1, the ramp changes at 1440 and one clamp
+ * cannot hit all three points.
+ */
 .page-hero__title {
 	margin-bottom: var(--sp-4);
+	font-size: clamp(1.75rem, 1.5181rem + 0.9524vw, 2.375rem);
+}
+
+@media (min-width: 1440px) {
+	.page-hero__title {
+		font-size: clamp(2.375rem, 0.5rem + 2.0833vw, 3rem);
+	}
 }
 
 /* ==========================================================================
@@ -1827,9 +1859,10 @@ html:not(.has-js) .finder__count {
 	color: var(--c-muted);
 }
 
+/* 18px at the mobile frame, 20px at the laptop one, 24px at the desktop one. */
 .pill__icon svg {
-	width: 1.125rem;
-	height: 1.125rem;
+	width: clamp(1.125rem, 0.5rem + 0.8333vw, 1.5rem);
+	height: clamp(1.125rem, 0.5rem + 0.8333vw, 1.5rem);
 }
 
 .pill__select {

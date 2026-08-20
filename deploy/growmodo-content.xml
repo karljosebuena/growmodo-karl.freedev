@@ -17,13 +17,13 @@
  7. WordPress will then import each of the posts, pages, comments, categories, etc.
     contained in this file into your site.
 -->
-<!-- generator="WordPress/7.0.4" created="2026-08-20 09:21" -->
+<!-- generator="WordPress/7.0.4" created="2026-08-20 16:03" -->
 <rss version="2.0" xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/">
   <channel>
 <title>Estatein</title>
 <link>http://localhost:8080</link>
 <description/>
-<pubDate>Thu, 20 Aug 2026 09:21:49 +0000</pubDate>
+<pubDate>Thu, 20 Aug 2026 16:03:42 +0000</pubDate>
 <language>en-US</language>
 <wp:wxr_version>1.2</wp:wxr_version>
 <wp:base_site_url>http://localhost:8080</wp:base_site_url>
@@ -36,12 +36,6 @@
   <wp:author_first_name><![CDATA[]]></wp:author_first_name>
   <wp:author_last_name><![CDATA[]]></wp:author_last_name>
 </wp:author>
-<wp:category>
-  <wp:term_id>1</wp:term_id>
-  <wp:category_nicename>uncategorized</wp:category_nicename>
-  <wp:category_parent/>
-  <wp:cat_name><![CDATA[Uncategorized]]></wp:cat_name>
-</wp:category>
 <wp:term>
   <wp:term_id>3</wp:term_id>
   <wp:term_taxonomy>nav_menu</wp:term_taxonomy>
@@ -53,70 +47,8 @@
   <wp:term_taxonomy>nav_menu</wp:term_taxonomy>
   <wp:term_slug>primary</wp:term_slug>
   <wp:term_name><![CDATA[Primary]]></wp:term_name>
-</wp:term>
-<wp:term>
-  <wp:term_id>3</wp:term_id>
-  <wp:term_taxonomy>nav_menu</wp:term_taxonomy>
-  <wp:term_slug>footer</wp:term_slug>
-  <wp:term_name><![CDATA[Footer]]></wp:term_name>
-</wp:term>
-<wp:term>
-  <wp:term_id>2</wp:term_id>
-  <wp:term_taxonomy>nav_menu</wp:term_taxonomy>
-  <wp:term_slug>primary</wp:term_slug>
-  <wp:term_name><![CDATA[Primary]]></wp:term_name>
-</wp:term>
-<wp:term>
-  <wp:term_id>1</wp:term_id>
-  <wp:term_taxonomy>category</wp:term_taxonomy>
-  <wp:term_slug>uncategorized</wp:term_slug>
-  <wp:term_parent/>
-  <wp:term_name><![CDATA[Uncategorized]]></wp:term_name>
 </wp:term>
 <generator>https://wordpress.org/?v=7.0.4</generator>
-<item>
-  <title><![CDATA[Hello world!]]></title>
-  <link>http://localhost:8080/hello-world/</link>
-  <pubDate>Thu, 20 Aug 2026 08:03:29 +0000</pubDate>
-  <dc:creator>admin</dc:creator>
-  <guid isPermaLink="false">http://localhost:8080/?p=1</guid>
-  <description/>
-  <content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
-<!-- /wp:paragraph -->]]></content:encoded>
-  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-  <wp:post_id>1</wp:post_id>
-  <wp:post_date>2026-08-20 08:03:29</wp:post_date>
-  <wp:post_date_gmt>2026-08-20 08:03:29</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:03:29</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:03:29</wp:post_modified_gmt>
-  <wp:comment_status>open</wp:comment_status>
-  <wp:ping_status>open</wp:ping_status>
-  <wp:post_name>hello-world</wp:post_name>
-  <wp:status>publish</wp:status>
-  <wp:post_parent>0</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
-  <wp:post_type>post</wp:post_type>
-  <wp:post_password/>
-  <wp:is_sticky>0</wp:is_sticky>
-  <category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
-  <wp:comment>
-    <wp:comment_id>1</wp:comment_id>
-    <wp:comment_author><![CDATA[A WordPress Commenter]]></wp:comment_author>
-    <wp:comment_author_email>wapuu@wordpress.example</wp:comment_author_email>
-    <wp:comment_author_url>https://wordpress.org/</wp:comment_author_url>
-    <wp:comment_author_IP/>
-    <wp:comment_date>2026-08-20 08:03:29</wp:comment_date>
-    <wp:comment_date_gmt>2026-08-20 08:03:29</wp:comment_date_gmt>
-    <wp:comment_content><![CDATA[Hi, this is a comment.
-To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.
-Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp:comment_content>
-    <wp:comment_approved>1</wp:comment_approved>
-    <wp:comment_type>comment</wp:comment_type>
-    <wp:comment_parent>0</wp:comment_parent>
-    <wp:comment_user_id>0</wp:comment_user_id>
-  </wp:comment>
-</item>
 <item>
   <title><![CDATA[Sample Page]]></title>
   <link>http://localhost:8080/sample-page/</link>
@@ -602,19 +534,21 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
   <dc:creator/>
   <guid isPermaLink="false">http://localhost:8080/properties/seaside-serenity-villa/</guid>
   <description/>
-  <content:encoded><![CDATA[]]></content:encoded>
+  <content:encoded><![CDATA[Set on a quiet ridge above the coast, this four-bedroom villa pairs open-plan living with a full-width terrace and a heated pool. Floor-to-ceiling glazing runs the length of the main floor, so the sea is visible from the kitchen, the dining room and both principal bedrooms.
+
+The lower level holds a media room, a study and direct garage access. Landscaped grounds are on automated irrigation, and the property is a nine-minute drive from the village.]]></content:encoded>
   <excerpt:encoded><![CDATA[A stunning 4-bedroom, 3-bathroom villa in a peaceful suburban neighborhood.]]></excerpt:encoded>
   <wp:post_id>16</wp:post_id>
   <wp:post_date>2026-08-20 08:04:33</wp:post_date>
   <wp:post_date_gmt>2026-08-20 08:04:33</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:04:33</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:04:33</wp:post_modified_gmt>
+  <wp:post_modified>2026-08-20 12:44:51</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:44:51</wp:post_modified_gmt>
   <wp:comment_status>closed</wp:comment_status>
   <wp:ping_status>closed</wp:ping_status>
   <wp:post_name>seaside-serenity-villa</wp:post_name>
   <wp:status>publish</wp:status>
   <wp:post_parent>0</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
+  <wp:menu_order>1</wp:menu_order>
   <wp:post_type>property</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
@@ -642,6 +576,14 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
     <wp:meta_key>_thumbnail_id</wp:meta_key>
     <wp:meta_value><![CDATA[23]]></wp:meta_value>
   </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_size</wp:meta_key>
+    <wp:meta_value><![CDATA[4200]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_year</wp:meta_key>
+    <wp:meta_value><![CDATA[2019]]></wp:meta_value>
+  </wp:postmeta>
 </item>
 <item>
   <title><![CDATA[Metropolitan Haven]]></title>
@@ -650,19 +592,21 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
   <dc:creator/>
   <guid isPermaLink="false">http://localhost:8080/properties/metropolitan-haven/</guid>
   <description/>
-  <content:encoded><![CDATA[]]></content:encoded>
+  <content:encoded><![CDATA[A two-bedroom apartment on the twenty-second floor, fully furnished and ready to occupy. The living area opens onto a glazed balcony with an uninterrupted view across the river to the financial district.
+
+Building amenities include a residents gym, a roof terrace and twenty-four-hour concierge. Two underground parking bays are included, and the metro is a four-minute walk.]]></content:encoded>
   <excerpt:encoded><![CDATA[A chic and fully-furnished 2-bedroom apartment with panoramic city views.]]></excerpt:encoded>
   <wp:post_id>17</wp:post_id>
   <wp:post_date>2026-08-20 08:04:34</wp:post_date>
   <wp:post_date_gmt>2026-08-20 08:04:34</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:04:34</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:04:34</wp:post_modified_gmt>
+  <wp:post_modified>2026-08-20 12:44:51</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:44:51</wp:post_modified_gmt>
   <wp:comment_status>closed</wp:comment_status>
   <wp:ping_status>closed</wp:ping_status>
   <wp:post_name>metropolitan-haven</wp:post_name>
   <wp:status>publish</wp:status>
   <wp:post_parent>0</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
+  <wp:menu_order>2</wp:menu_order>
   <wp:post_type>property</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
@@ -690,27 +634,37 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
     <wp:meta_key>_thumbnail_id</wp:meta_key>
     <wp:meta_value><![CDATA[24]]></wp:meta_value>
   </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_size</wp:meta_key>
+    <wp:meta_value><![CDATA[1150]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_year</wp:meta_key>
+    <wp:meta_value><![CDATA[2021]]></wp:meta_value>
+  </wp:postmeta>
 </item>
 <item>
   <title><![CDATA[Rustic Retreat Cottage]]></title>
   <link>http://localhost:8080/properties/rustic-retreat-cottage/</link>
   <pubDate>Thu, 20 Aug 2026 08:04:35 +0000</pubDate>
-  <dc:creator/>
+  <dc:creator>admin</dc:creator>
   <guid isPermaLink="false">http://localhost:8080/properties/rustic-retreat-cottage/</guid>
   <description/>
-  <content:encoded><![CDATA[]]></content:encoded>
+  <content:encoded><![CDATA[A three-bedroom townhouse in a gated community, arranged over three floors with a south-facing garden. Original beams and a wood-burning stove sit alongside underfloor heating and a recently refitted kitchen.
+
+The top floor is a self-contained suite suitable for guests or a home office. Residents share access to woodland trails, and the ski lifts are twelve minutes away.]]></content:encoded>
   <excerpt:encoded><![CDATA[An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community.]]></excerpt:encoded>
   <wp:post_id>18</wp:post_id>
   <wp:post_date>2026-08-20 08:04:35</wp:post_date>
   <wp:post_date_gmt>2026-08-20 08:04:35</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:04:35</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:04:35</wp:post_modified_gmt>
+  <wp:post_modified>2026-08-20 12:44:52</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:44:52</wp:post_modified_gmt>
   <wp:comment_status>closed</wp:comment_status>
   <wp:ping_status>closed</wp:ping_status>
   <wp:post_name>rustic-retreat-cottage</wp:post_name>
   <wp:status>publish</wp:status>
   <wp:post_parent>0</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
+  <wp:menu_order>3</wp:menu_order>
   <wp:post_type>property</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
@@ -738,6 +692,18 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
     <wp:meta_key>_thumbnail_id</wp:meta_key>
     <wp:meta_value><![CDATA[25]]></wp:meta_value>
   </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_edit_last</wp:meta_key>
+    <wp:meta_value><![CDATA[1]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_size</wp:meta_key>
+    <wp:meta_value><![CDATA[1650]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_year</wp:meta_key>
+    <wp:meta_value><![CDATA[2008]]></wp:meta_value>
+  </wp:postmeta>
 </item>
 <item>
   <title><![CDATA[Exceptional Service!]]></title>
@@ -751,14 +717,14 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
   <wp:post_id>19</wp:post_id>
   <wp:post_date>2026-08-20 08:04:36</wp:post_date>
   <wp:post_date_gmt>2026-08-20 08:04:36</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:04:36</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:04:36</wp:post_modified_gmt>
+  <wp:post_modified>2026-08-20 12:44:52</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:44:52</wp:post_modified_gmt>
   <wp:comment_status>closed</wp:comment_status>
   <wp:ping_status>closed</wp:ping_status>
   <wp:post_name>exceptional-service</wp:post_name>
   <wp:status>publish</wp:status>
   <wp:post_parent>0</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
+  <wp:menu_order>1</wp:menu_order>
   <wp:post_type>testimonial</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
@@ -791,14 +757,14 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
   <wp:post_id>20</wp:post_id>
   <wp:post_date>2026-08-20 08:04:37</wp:post_date>
   <wp:post_date_gmt>2026-08-20 08:04:37</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:04:37</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:04:37</wp:post_modified_gmt>
+  <wp:post_modified>2026-08-20 12:44:52</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:44:52</wp:post_modified_gmt>
   <wp:comment_status>closed</wp:comment_status>
   <wp:ping_status>closed</wp:ping_status>
   <wp:post_name>efficient-and-reliable</wp:post_name>
   <wp:status>publish</wp:status>
   <wp:post_parent>0</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
+  <wp:menu_order>2</wp:menu_order>
   <wp:post_type>testimonial</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
@@ -826,19 +792,19 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
   <dc:creator/>
   <guid isPermaLink="false">http://localhost:8080/faq/how-do-i-search-for-properties-on-estatein/</guid>
   <description/>
-  <content:encoded><![CDATA[Learn how to use our user-friendly search tools to find properties that match your criteria.]]></content:encoded>
+  <content:encoded><![CDATA[Use the filters on the Properties page to narrow listings by type, minimum bedrooms and bathrooms, and maximum budget. Every filter combines, so you can be as broad or as specific as you like, and the URL updates as you go — which means you can bookmark a search or send it to someone else.]]></content:encoded>
   <excerpt:encoded><![CDATA[]]></excerpt:encoded>
   <wp:post_id>21</wp:post_id>
   <wp:post_date>2026-08-20 08:04:37</wp:post_date>
   <wp:post_date_gmt>2026-08-20 08:04:37</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:04:37</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:04:37</wp:post_modified_gmt>
+  <wp:post_modified>2026-08-20 13:37:25</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 13:37:25</wp:post_modified_gmt>
   <wp:comment_status>closed</wp:comment_status>
   <wp:ping_status>closed</wp:ping_status>
   <wp:post_name>how-do-i-search-for-properties-on-estatein</wp:post_name>
   <wp:status>publish</wp:status>
   <wp:post_parent>0</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
+  <wp:menu_order>1</wp:menu_order>
   <wp:post_type>faq</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
@@ -850,19 +816,19 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
   <dc:creator/>
   <guid isPermaLink="false">http://localhost:8080/faq/what-documents-do-i-need-to-sell-my-property/</guid>
   <description/>
-  <content:encoded><![CDATA[Find out about the necessary documentation for listing your property with us.]]></content:encoded>
+  <content:encoded><![CDATA[You will need proof of ownership, a form of photo identification, and any paperwork covering work done to the property such as building permits or warranties. If the property is leasehold or mortgaged we will also need those documents. Your agent will confirm the full list before anything is listed.]]></content:encoded>
   <excerpt:encoded><![CDATA[]]></excerpt:encoded>
   <wp:post_id>22</wp:post_id>
   <wp:post_date>2026-08-20 08:04:38</wp:post_date>
   <wp:post_date_gmt>2026-08-20 08:04:38</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:04:38</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:04:38</wp:post_modified_gmt>
+  <wp:post_modified>2026-08-20 13:37:25</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 13:37:25</wp:post_modified_gmt>
   <wp:comment_status>closed</wp:comment_status>
   <wp:ping_status>closed</wp:ping_status>
   <wp:post_name>what-documents-do-i-need-to-sell-my-property</wp:post_name>
   <wp:status>publish</wp:status>
   <wp:post_parent>0</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
+  <wp:menu_order>2</wp:menu_order>
   <wp:post_type>faq</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
@@ -1114,36 +1080,761 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
   </wp:postmeta>
 </item>
 <item>
-  <title><![CDATA[[contact] Karl Test]]></title>
-  <link>http://localhost:8080/?post_type=inquiry&amp;p=30</link>
-  <pubDate>Thu, 20 Aug 2026 09:13:31 +0000</pubDate>
+  <title><![CDATA[Insights]]></title>
+  <link>http://localhost:8080/insights/</link>
+  <pubDate>Thu, 20 Aug 2026 11:59:11 +0000</pubDate>
   <dc:creator/>
-  <guid isPermaLink="false">http://localhost:8080/?post_type=inquiry&amp;p=30</guid>
+  <guid isPermaLink="false">http://localhost:8080/insights/</guid>
   <description/>
-  <content:encoded><![CDATA[End-to-end form verification.]]></content:encoded>
+  <content:encoded><![CDATA[]]></content:encoded>
   <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-  <wp:post_id>30</wp:post_id>
-  <wp:post_date>2026-08-20 09:13:31</wp:post_date>
-  <wp:post_date_gmt>2026-08-20 09:13:31</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 09:13:31</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 09:13:31</wp:post_modified_gmt>
+  <wp:post_id>32</wp:post_id>
+  <wp:post_date>2026-08-20 11:59:11</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 11:59:11</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 11:59:11</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 11:59:11</wp:post_modified_gmt>
   <wp:comment_status>closed</wp:comment_status>
   <wp:ping_status>closed</wp:ping_status>
-  <wp:post_name>contact-karl-test</wp:post_name>
-  <wp:status>private</wp:status>
+  <wp:post_name>insights</wp:post_name>
+  <wp:status>publish</wp:status>
   <wp:post_parent>0</wp:post_parent>
   <wp:menu_order>0</wp:menu_order>
-  <wp:post_type>inquiry</wp:post_type>
+  <wp:post_type>page</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+</item>
+<item>
+  <title><![CDATA[Five Questions to Ask Before Buying]]></title>
+  <link>http://localhost:8080/five-questions-to-ask-before-buying/</link>
+  <pubDate>Thu, 20 Aug 2026 11:59:11 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/five-questions-to-ask-before-buying/</guid>
+  <description/>
+  <content:encoded><![CDATA[Buying a home is the largest transaction most people make. Before you sign, work through these five questions with your adviser.]]></content:encoded>
+  <excerpt:encoded><![CDATA[Buying a home is the largest transaction most people make. Work through these five questions first.]]></excerpt:encoded>
+  <wp:post_id>33</wp:post_id>
+  <wp:post_date>2026-08-20 11:59:11</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 11:59:11</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 11:59:11</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 11:59:11</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>open</wp:ping_status>
+  <wp:post_name>five-questions-to-ask-before-buying</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>post</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+  <wp:postmeta>
+    <wp:meta_key>_pingme</wp:meta_key>
+    <wp:meta_value><![CDATA[1]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_encloseme</wp:meta_key>
+    <wp:meta_value><![CDATA[1]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Understanding Property Valuations]]></title>
+  <link>http://localhost:8080/understanding-property-valuations/</link>
+  <pubDate>Thu, 20 Aug 2026 11:59:11 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/understanding-property-valuations/</guid>
+  <description/>
+  <content:encoded><![CDATA[A valuation is not the same as an asking price. Here is how professional valuations are calculated and what moves the number.]]></content:encoded>
+  <excerpt:encoded><![CDATA[A valuation is not the same as an asking price. Here is what actually moves the number.]]></excerpt:encoded>
+  <wp:post_id>34</wp:post_id>
+  <wp:post_date>2026-08-20 11:59:11</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 11:59:11</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 11:59:11</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 11:59:11</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>open</wp:ping_status>
+  <wp:post_name>understanding-property-valuations</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>post</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+  <wp:postmeta>
+    <wp:meta_key>_pingme</wp:meta_key>
+    <wp:meta_value><![CDATA[1]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_encloseme</wp:meta_key>
+    <wp:meta_value><![CDATA[1]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Trusted Advisors]]></title>
+  <link>http://localhost:8080/testimonial/trusted-advisors/</link>
+  <pubDate>Thu, 20 Aug 2026 12:44:52 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/testimonial/trusted-advisors/</guid>
+  <description/>
+  <content:encoded><![CDATA[The Estatein team guided us through the entire buying process. Their knowledge and commitment to our needs were impressive. Thank you for your support!]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>42</wp:post_id>
+  <wp:post_date>2026-08-20 12:44:52</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:44:52</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:44:52</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:44:52</wp:post_modified_gmt>
+  <wp:comment_status>closed</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>trusted-advisors</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>3</wp:menu_order>
+  <wp:post_type>testimonial</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
   <wp:postmeta>
-    <wp:meta_key>growmodo_email</wp:meta_key>
-    <wp:meta_value><![CDATA[karl@example.com]]></wp:meta_value>
+    <wp:meta_key>growmodo_rating</wp:meta_key>
+    <wp:meta_value><![CDATA[5]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>growmodo_phone</wp:meta_key>
-    <wp:meta_value><![CDATA[+63 900 000 0000]]></wp:meta_value>
+    <wp:meta_key>growmodo_client_name</wp:meta_key>
+    <wp:meta_value><![CDATA[John Mans]]></wp:meta_value>
   </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_client_location</wp:meta_key>
+    <wp:meta_value><![CDATA[USA, Nevada]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[43]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[John Mans]]></title>
+  <link>http://localhost:8080/?attachment_id=43</link>
+  <pubDate>Thu, 20 Aug 2026 12:44:53 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/avatar-3.webp</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>43</wp:post_id>
+  <wp:post_date>2026-08-20 12:44:53</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:44:53</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:44:53</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:44:53</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>john-mans</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>42</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/avatar-3.webp</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/avatar-3.webp]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:50;s:6:"height";i:50;s:4:"file";s:21:"2026/08/avatar-3.webp";s:8:"filesize";i:534;s:5:"sizes";a:0:{}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Skyline Penthouse]]></title>
+  <link>http://localhost:8080/properties/skyline-penthouse/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:12 +0000</pubDate>
+  <dc:creator>admin</dc:creator>
+  <guid isPermaLink="false">http://localhost:8080/properties/skyline-penthouse/</guid>
+  <description/>
+  <content:encoded><![CDATA[Occupying the top floor, this penthouse opens onto a wraparound terrace with views in three directions. A private lift opens directly into the entrance hall.]]></content:encoded>
+  <excerpt:encoded><![CDATA[A three-bedroom penthouse with a wraparound terrace and private lift access.]]></excerpt:encoded>
+  <wp:post_id>44</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:12</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:12</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 14:58:23</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 14:58:23</wp:post_modified_gmt>
+  <wp:comment_status>closed</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>skyline-penthouse</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>4</wp:menu_order>
+  <wp:post_type>property</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_beds</wp:meta_key>
+    <wp:meta_value><![CDATA[3]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_baths</wp:meta_key>
+    <wp:meta_value><![CDATA[3]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_price</wp:meta_key>
+    <wp:meta_value><![CDATA[1250000]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_type</wp:meta_key>
+    <wp:meta_value><![CDATA[Penthouse]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_location</wp:meta_key>
+    <wp:meta_value><![CDATA[Chicago, Illinois]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[45]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_edit_last</wp:meta_key>
+    <wp:meta_value><![CDATA[1]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_size</wp:meta_key>
+    <wp:meta_value><![CDATA[3100]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_year</wp:meta_key>
+    <wp:meta_value><![CDATA[2022]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Skyline Penthouse]]></title>
+  <link>http://localhost:8080/properties/skyline-penthouse/skyline-penthouse-2/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:13 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/property-2-1.webp</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>45</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:13</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:13</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:13</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:13</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>skyline-penthouse-2</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>44</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/property-2-1.webp</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/property-2-1.webp]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:434;s:6:"height";i:319;s:4:"file";s:25:"2026/08/property-2-1.webp";s:8:"filesize";i:20648;s:5:"sizes";a:3:{s:6:"medium";a:5:{s:4:"file";s:25:"property-2-1-300x221.webp";s:5:"width";i:300;s:6:"height";i:221;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:12290;}s:9:"thumbnail";a:5:{s:4:"file";s:25:"property-2-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5466;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:23:"property-2-1-88x88.webp";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2300;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Garden Court Townhouse]]></title>
+  <link>http://localhost:8080/properties/garden-court-townhouse/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:13 +0000</pubDate>
+  <dc:creator>admin</dc:creator>
+  <guid isPermaLink="false">http://localhost:8080/properties/garden-court-townhouse/</guid>
+  <description/>
+  <content:encoded><![CDATA[Arranged over three floors around a walled garden, with a self-contained lower level suitable for guests or a studio.]]></content:encoded>
+  <excerpt:encoded><![CDATA[A four-bedroom townhouse arranged around a walled garden.]]></excerpt:encoded>
+  <wp:post_id>46</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:13</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:13</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 14:58:35</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 14:58:35</wp:post_modified_gmt>
+  <wp:comment_status>closed</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>garden-court-townhouse</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>5</wp:menu_order>
+  <wp:post_type>property</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_beds</wp:meta_key>
+    <wp:meta_value><![CDATA[4]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_baths</wp:meta_key>
+    <wp:meta_value><![CDATA[3]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_price</wp:meta_key>
+    <wp:meta_value><![CDATA[690000]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_type</wp:meta_key>
+    <wp:meta_value><![CDATA[Townhouse]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_location</wp:meta_key>
+    <wp:meta_value><![CDATA[Portland, Oregon]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[47]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_edit_last</wp:meta_key>
+    <wp:meta_value><![CDATA[1]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_size</wp:meta_key>
+    <wp:meta_value><![CDATA[2400]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_year</wp:meta_key>
+    <wp:meta_value><![CDATA[2015]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Garden Court Townhouse]]></title>
+  <link>http://localhost:8080/properties/garden-court-townhouse/garden-court-townhouse-2/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:14 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/property-1-1.webp</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>47</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:14</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:14</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:14</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:14</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>garden-court-townhouse-2</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>46</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/property-1-1.webp</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/property-1-1.webp]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:434;s:6:"height";i:319;s:4:"file";s:25:"2026/08/property-1-1.webp";s:8:"filesize";i:24372;s:5:"sizes";a:3:{s:6:"medium";a:5:{s:4:"file";s:25:"property-1-1-300x221.webp";s:5:"width";i:300;s:6:"height";i:221;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:13826;}s:9:"thumbnail";a:5:{s:4:"file";s:25:"property-1-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5532;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:23:"property-1-1-88x88.webp";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2448;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Lakeside Bungalow]]></title>
+  <link>http://localhost:8080/properties/lakeside-bungalow/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:15 +0000</pubDate>
+  <dc:creator>admin</dc:creator>
+  <guid isPermaLink="false">http://localhost:8080/properties/lakeside-bungalow/</guid>
+  <description/>
+  <content:encoded><![CDATA[Single-storey living forty metres from the water, with a covered veranda running the full width of the lake elevation.]]></content:encoded>
+  <excerpt:encoded><![CDATA[A two-bedroom single-storey bungalow forty metres from the shoreline.]]></excerpt:encoded>
+  <wp:post_id>48</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:15</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:15</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 14:58:41</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 14:58:41</wp:post_modified_gmt>
+  <wp:comment_status>closed</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>lakeside-bungalow</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>6</wp:menu_order>
+  <wp:post_type>property</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_beds</wp:meta_key>
+    <wp:meta_value><![CDATA[2]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_baths</wp:meta_key>
+    <wp:meta_value><![CDATA[1]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_price</wp:meta_key>
+    <wp:meta_value><![CDATA[415000]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_type</wp:meta_key>
+    <wp:meta_value><![CDATA[Bungalow]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_location</wp:meta_key>
+    <wp:meta_value><![CDATA[Burlington, Vermont]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[49]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_edit_last</wp:meta_key>
+    <wp:meta_value><![CDATA[1]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_size</wp:meta_key>
+    <wp:meta_value><![CDATA[1250]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_year</wp:meta_key>
+    <wp:meta_value><![CDATA[1998]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Lakeside Bungalow]]></title>
+  <link>http://localhost:8080/properties/lakeside-bungalow/lakeside-bungalow-2/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:15 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/property-3-1.webp</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>49</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:15</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:15</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:15</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:15</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>lakeside-bungalow-2</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>48</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/property-3-1.webp</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/property-3-1.webp]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:434;s:6:"height";i:319;s:4:"file";s:25:"2026/08/property-3-1.webp";s:8:"filesize";i:21052;s:5:"sizes";a:3:{s:6:"medium";a:5:{s:4:"file";s:25:"property-3-1-300x221.webp";s:5:"width";i:300;s:6:"height";i:221;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:12344;}s:9:"thumbnail";a:5:{s:4:"file";s:25:"property-3-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:6224;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:23:"property-3-1-88x88.webp";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2808;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Straightforward and Fast]]></title>
+  <link>http://localhost:8080/testimonial/straightforward-and-fast/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:36 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/testimonial/straightforward-and-fast/</guid>
+  <description/>
+  <content:encoded><![CDATA[We had an offer accepted within a fortnight. Every question was answered the same day, which made a stressful process feel manageable.]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>50</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:36</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:36</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:36</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:36</wp:post_modified_gmt>
+  <wp:comment_status>closed</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>straightforward-and-fast</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>4</wp:menu_order>
+  <wp:post_type>testimonial</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_rating</wp:meta_key>
+    <wp:meta_value><![CDATA[5]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_client_name</wp:meta_key>
+    <wp:meta_value><![CDATA[Priya Raman]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_client_location</wp:meta_key>
+    <wp:meta_value><![CDATA[USA, Washington]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[51]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Priya Raman]]></title>
+  <link>http://localhost:8080/?attachment_id=51</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:37 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/avatar-2-1.webp</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>51</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:37</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:37</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:37</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:37</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>priya-raman</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>50</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/avatar-2-1.webp</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/avatar-2-1.webp]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:50;s:6:"height";i:50;s:4:"file";s:23:"2026/08/avatar-2-1.webp";s:8:"filesize";i:860;s:5:"sizes";a:0:{}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Genuinely Knowledgeable]]></title>
+  <link>http://localhost:8080/testimonial/genuinely-knowledgeable/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:37 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/testimonial/genuinely-knowledgeable/</guid>
+  <description/>
+  <content:encoded><![CDATA[They talked us out of the first place we loved and were right to. That honesty is why we came back for the second purchase.]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>52</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:37</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:37</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:37</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:37</wp:post_modified_gmt>
+  <wp:comment_status>closed</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>genuinely-knowledgeable</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>5</wp:menu_order>
+  <wp:post_type>testimonial</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_rating</wp:meta_key>
+    <wp:meta_value><![CDATA[5]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_client_name</wp:meta_key>
+    <wp:meta_value><![CDATA[Daniel Osei]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_client_location</wp:meta_key>
+    <wp:meta_value><![CDATA[USA, Georgia]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[53]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Daniel Osei]]></title>
+  <link>http://localhost:8080/?attachment_id=53</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:38 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/avatar-1-1.webp</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>53</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:38</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:38</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:38</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:38</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>daniel-osei</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>52</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/avatar-1-1.webp</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/avatar-1-1.webp]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:50;s:6:"height";i:50;s:4:"file";s:23:"2026/08/avatar-1-1.webp";s:8:"filesize";i:832;s:5:"sizes";a:0:{}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Worth Every Penny]]></title>
+  <link>http://localhost:8080/testimonial/worth-every-penny/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:38 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/testimonial/worth-every-penny/</guid>
+  <description/>
+  <content:encoded><![CDATA[The valuation came in higher than two other agents and it still sold above asking. Clear communication throughout.]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>54</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:38</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:38</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:38</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:38</wp:post_modified_gmt>
+  <wp:comment_status>closed</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>worth-every-penny</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>6</wp:menu_order>
+  <wp:post_type>testimonial</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_rating</wp:meta_key>
+    <wp:meta_value><![CDATA[5]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_client_name</wp:meta_key>
+    <wp:meta_value><![CDATA[Marta Nowak]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>growmodo_client_location</wp:meta_key>
+    <wp:meta_value><![CDATA[USA, Colorado]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[55]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[Marta Nowak]]></title>
+  <link>http://localhost:8080/?attachment_id=55</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:39 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/avatar-3-1.webp</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>55</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:39</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:39</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:39</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:39</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>marta-nowak</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>54</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/avatar-3-1.webp</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/avatar-3-1.webp]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:50;s:6:"height";i:50;s:4:"file";s:23:"2026/08/avatar-3-1.webp";s:8:"filesize";i:534;s:5:"sizes";a:0:{}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[How can I contact an Estatein agent?]]></title>
+  <link>http://localhost:8080/faq/how-can-i-contact-an-estatein-agent/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:39 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/faq/how-can-i-contact-an-estatein-agent/</guid>
+  <description/>
+  <content:encoded><![CDATA[Use the contact form, call the number listed on our Contact page, or send an enquiry from any property listing — enquiries from a listing reach the agent handling that property directly.]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>56</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:39</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:39</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:39</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:39</wp:post_modified_gmt>
+  <wp:comment_status>closed</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>how-can-i-contact-an-estatein-agent</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>3</wp:menu_order>
+  <wp:post_type>faq</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+</item>
+<item>
+  <title><![CDATA[Do you handle rentals as well as sales?]]></title>
+  <link>http://localhost:8080/faq/do-you-handle-rentals-as-well-as-sales/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:39 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/faq/do-you-handle-rentals-as-well-as-sales/</guid>
+  <description/>
+  <content:encoded><![CDATA[Yes. Our property management service covers tenant placement, maintenance coordination, and rent collection, and is available on any property in our portfolio.]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>57</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:39</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:39</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:39</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:39</wp:post_modified_gmt>
+  <wp:comment_status>closed</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>do-you-handle-rentals-as-well-as-sales</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>4</wp:menu_order>
+  <wp:post_type>faq</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+</item>
+<item>
+  <title><![CDATA[What fees should I budget for?]]></title>
+  <link>http://localhost:8080/faq/what-fees-should-i-budget-for/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:39 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/faq/what-fees-should-i-budget-for/</guid>
+  <description/>
+  <content:encoded><![CDATA[Costs vary by location and property type. Your agent will give you a written breakdown covering transfer tax, legal fees, inspection and insurance before you commit to anything.]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>58</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:39</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:39</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:39</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:39</wp:post_modified_gmt>
+  <wp:comment_status>closed</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>what-fees-should-i-budget-for</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>5</wp:menu_order>
+  <wp:post_type>faq</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+</item>
+<item>
+  <title><![CDATA[How long does a purchase usually take?]]></title>
+  <link>http://localhost:8080/faq/how-long-does-a-purchase-usually-take/</link>
+  <pubDate>Thu, 20 Aug 2026 12:45:39 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/faq/how-long-does-a-purchase-usually-take/</guid>
+  <description/>
+  <content:encoded><![CDATA[From accepted offer to completion is typically six to ten weeks, depending on searches and whether a chain is involved. We keep you updated at each stage.]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>59</wp:post_id>
+  <wp:post_date>2026-08-20 12:45:39</wp:post_date>
+  <wp:post_date_gmt>2026-08-20 12:45:39</wp:post_date_gmt>
+  <wp:post_modified>2026-08-20 12:45:39</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-20 12:45:39</wp:post_modified_gmt>
+  <wp:comment_status>closed</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>how-long-does-a-purchase-usually-take</wp:post_name>
+  <wp:status>publish</wp:status>
+  <wp:post_parent>0</wp:post_parent>
+  <wp:menu_order>6</wp:menu_order>
+  <wp:post_type>faq</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
 </item>
   </channel>
 </rss>

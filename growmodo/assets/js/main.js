@@ -195,11 +195,17 @@
 				return Number( have ) >= Number( want );
 			}
 
+			/*
+			 * Half-open: the lower bound is included, the upper is not. Bands
+			 * share their boundary number ("under 1,500" next to "1,500 to
+			 * 3,000"), so an inclusive upper bound would put a property of
+			 * exactly 1,500 in both of them.
+			 */
 			if ( 'range' === select.dataset.match ) {
 				const bounds = want.split( '-' );
 
 				return Number( have ) >= Number( bounds[ 0 ] ) &&
-					( '' === bounds[ 1 ] || Number( have ) <= Number( bounds[ 1 ] ) );
+					( '' === bounds[ 1 ] || Number( have ) < Number( bounds[ 1 ] ) );
 			}
 
 			return have === want;

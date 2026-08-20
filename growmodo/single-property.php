@@ -23,6 +23,8 @@ while ( have_posts() ) :
 	$growmodo_baths    = (int) get_post_meta( get_the_ID(), 'growmodo_baths', true );
 	$growmodo_type     = get_post_meta( get_the_ID(), 'growmodo_type', true );
 	$growmodo_price    = (int) get_post_meta( get_the_ID(), 'growmodo_price', true );
+	$growmodo_size     = (int) get_post_meta( get_the_ID(), 'growmodo_size', true );
+	$growmodo_year     = (int) get_post_meta( get_the_ID(), 'growmodo_year', true );
 	$growmodo_location = get_post_meta( get_the_ID(), 'growmodo_location', true );
 	?>
 
@@ -94,6 +96,19 @@ while ( have_posts() ) :
 								<div class="spec-list__row">
 									<span class="spec-list__key"><?php esc_html_e( 'Bathrooms', 'growmodo' ); ?></span>
 									<span><?php echo esc_html( number_format_i18n( $growmodo_baths ) ); ?></span>
+								</div>
+							<?php endif; ?>
+							<?php if ( $growmodo_size > 0 ) : ?>
+								<div class="spec-list__row">
+									<span class="spec-list__key"><?php esc_html_e( 'Size', 'growmodo' ); ?></span>
+									<span><?php echo esc_html( growmodo_format_size( $growmodo_size ) ); ?></span>
+								</div>
+							<?php endif; ?>
+							<?php if ( $growmodo_year > 0 ) : ?>
+								<div class="spec-list__row">
+									<span class="spec-list__key"><?php esc_html_e( 'Year built', 'growmodo' ); ?></span>
+									<?php // No number_format_i18n: a year is not a quantity and must not gain a thousands separator. ?>
+									<span><?php echo absint( $growmodo_year ); ?></span>
 								</div>
 							<?php endif; ?>
 							<?php if ( '' !== $growmodo_type ) : ?>
