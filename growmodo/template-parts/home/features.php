@@ -1,6 +1,10 @@
 <?php
 /**
- * Home feature cards — the four value propositions below the hero.
+ * The four value propositions below the hero, on the home and services pages.
+ *
+ * A full-bleed strip rather than a container-width row: the design runs it to
+ * within 10px of the viewport edge (20px at the desktop frame), which is why it
+ * uses its own wrapper instead of .container.
  *
  * @since 1.0.0
  *
@@ -33,8 +37,8 @@ $growmodo_features = array(
 );
 ?>
 <section class="section is-revealable" id="features" aria-label="<?php esc_attr_e( 'What we do', 'growmodo' ); ?>">
-	<div class="container">
-		<ul class="grid grid--2 grid--4">
+	<div class="feature-strip">
+		<ul class="feature-strip__list">
 			<?php foreach ( $growmodo_features as $growmodo_feature ) : ?>
 				<li>
 					<a class="feature" href="<?php echo esc_url( $growmodo_feature['url'] ); ?>">

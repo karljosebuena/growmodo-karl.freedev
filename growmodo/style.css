@@ -477,6 +477,13 @@ fieldset {
 /* ==========================================================================
    7. Card base
    ========================================================================== */
+/*
+ * Outlined, not filled: the design gives content cards the page's own colour
+ * behind a hairline border and a light halo, and reserves the lighter surface
+ * for panels — the feature strip, the service CTAs, the note banner, the filter
+ * frame. Measured on the Home, About, Properties, Services and Property Details
+ * exports; a card interior is #141414 on every one of them.
+ */
 .card {
 	display: flex;
 	flex-direction: column;
@@ -484,7 +491,7 @@ fieldset {
 	padding: var(--sp-5);
 	border: 1px solid var(--c-border);
 	border-radius: var(--radius-lg);
-	background: var(--c-surface);
+	background: var(--c-bg);
 	/*
 	 * The design lifts its boxes with a tight, *lighter* halo — measured at
 	 * roughly #191919 against the #141414 page, about 8px out — not a dark
@@ -905,6 +912,28 @@ fieldset {
 /* ==========================================================================
    11. Feature cards
    ========================================================================== */
+/*
+ * Full-bleed: 10px from the viewport edge at the mobile and laptop frames,
+ * widening to 20px at the desktop one. Two across on mobile, four from the
+ * laptop frame up.
+ */
+.feature-strip {
+	padding-inline: clamp(0.625rem, -1.25rem + 2.0833vw, 1.25rem);
+}
+
+.feature-strip__list {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.625rem;
+}
+
+@media (min-width: 1024px) {
+	.feature-strip__list {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: clamp(0.625rem, -1.25rem + 2.0833vw, 1.25rem);
+	}
+}
+
 .feature {
 	position: relative;
 	display: flex;
@@ -2752,28 +2781,117 @@ html:not(.has-js) .filters {
 /* ==========================================================================
    25. Services group (cards beside a highlighted CTA panel)
    ========================================================================== */
-.service-group {
+/*
+ * The design gives this section two arrangements, not one. The first two groups
+ * run three cards across, with the CTA taking the columns the fourth card
+ * leaves free on the second row. The third moves the heading and CTA into a
+ * left rail and sets the cards two-up beside them. Only where the CTA is
+ * rendered differs; both share the card grid.
+ */
+.service-grid {
 	display: grid;
 	gap: var(--sp-5);
 }
 
-.service-group__cta {
+.service {
+	gap: var(--sp-6);
+}
+
+.service__head {
 	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+	align-items: center;
 	gap: var(--sp-4);
-	padding: var(--sp-5);
-	border: 1px solid var(--c-border);
-	border-radius: var(--radius-lg);
-	background:
-		linear-gradient(160deg, rgba(112, 59, 247, 0.22), transparent 55%),
-		var(--c-surface);
+}
+
+/*
+ * Larger than the icon circles elsewhere, with a purple-tinted ring: measured
+ * at 82px across on the export, against the 48px the info boxes use.
+ */
+.service .info__icon {
+	width: 5.125rem;
+	height: 5.125rem;
+	border-color: rgba(112, 59, 247, 0.32);
+}
+
+.service .info__icon svg {
+	width: 1.75rem;
+	height: 1.75rem;
+}
+
+@media (min-width: 768px) {
+	.service-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.service-cta {
+		grid-column: 1 / -1;
+	}
 }
 
 @media (min-width: 1200px) {
-	.service-group {
-		grid-template-columns: minmax(0, 1fr) 22rem;
-		align-items: start;
+	.service-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	/* Whatever columns the last row of cards left free. */
+	.service-cta {
+		grid-column: 2 / -1;
+	}
+
+	.service-grid--pair {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+.service-cta__panel {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-5);
+	height: 100%;
+	padding: var(--sp-5);
+	border: 1px solid var(--c-border);
+	border-radius: var(--radius-lg);
+	background: var(--c-surface);
+}
+
+.service-cta__copy {
+	display: grid;
+	gap: var(--sp-3);
+}
+
+/* Copy left, button right — but only for the wide panel, not the rail's. */
+@media (min-width: 1024px) {
+	.service-cta .service-cta__panel {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--sp-7);
+	}
+
+	.service-cta__action {
+		flex: none;
+	}
+}
+
+.service-rail {
+	display: grid;
+	gap: var(--sp-7);
+	align-items: start;
+}
+
+.service-rail__aside {
+	display: grid;
+	gap: var(--sp-5);
+}
+
+.service-rail .section-head {
+	margin-bottom: 0;
+}
+
+@media (min-width: 1200px) {
+	.service-rail {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+		gap: var(--sp-8);
 	}
 }
 

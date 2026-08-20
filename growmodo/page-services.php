@@ -19,6 +19,7 @@ get_header();
 $growmodo_groups = array(
 	array(
 		'id'        => 'valuation',
+		'layout'    => 'wide',
 		'title'     => __( 'Unlock Property Value', 'growmodo' ),
 		'text'      => __( 'Selling your property should be a rewarding experience, and at Estatein, we make sure it is.', 'growmodo' ),
 		'cta_title' => __( 'Unlock the Value of Your Property Today', 'growmodo' ),
@@ -32,6 +33,7 @@ $growmodo_groups = array(
 	),
 	array(
 		'id'        => 'management',
+		'layout'    => 'wide',
 		'title'     => __( 'Effortless Property Management', 'growmodo' ),
 		'text'      => __( 'Owning a property should be a pleasure, not a hassle. Estatein\'s Property Management Service takes the stress out of property ownership.', 'growmodo' ),
 		'cta_title' => __( 'Experience Effortless Property Management', 'growmodo' ),
@@ -45,6 +47,7 @@ $growmodo_groups = array(
 	),
 	array(
 		'id'        => 'marketing',
+		'layout'    => 'rail',
 		'title'     => __( 'Smart Investments, Informed Decisions', 'growmodo' ),
 		'text'      => __( 'Building a real estate portfolio requires a strategic approach.', 'growmodo' ),
 		'cta_title' => __( 'Unlock Your Investment Potential', 'growmodo' ),
@@ -71,38 +74,56 @@ $growmodo_groups = array(
 <?php get_template_part( 'template-parts/home/features' ); ?>
 
 <?php foreach ( $growmodo_groups as $growmodo_group ) : ?>
+	<?php $growmodo_is_rail = 'rail' === $growmodo_group['layout']; ?>
 	<section class="section section--bordered" id="<?php echo esc_attr( $growmodo_group['id'] ); ?>">
-		<div class="container">
-			<?php
-			get_template_part(
-				'template-parts/section-head',
-				null,
-				array(
-					'title' => $growmodo_group['title'],
-					'text'  => $growmodo_group['text'],
-				)
-			);
-			?>
+		<div class="container <?php echo $growmodo_is_rail ? 'service-rail' : ''; ?>">
+			<div<?php echo $growmodo_is_rail ? ' class="service-rail__aside"' : ''; ?>>
+				<?php
+				get_template_part(
+					'template-parts/section-head',
+					null,
+					array(
+						'title' => $growmodo_group['title'],
+						'text'  => $growmodo_group['text'],
+					)
+				);
 
-			<div class="service-group">
-				<ul class="grid grid--2">
-					<?php foreach ( $growmodo_group['services'] as $growmodo_service ) : ?>
-						<li class="card" id="<?php echo esc_attr( $growmodo_service[3] ); ?>">
-							<span class="info__icon"><?php echo growmodo_icon( $growmodo_service[0] ); ?></span>
-							<h3 class="card__title"><?php echo esc_html( $growmodo_service[1] ); ?></h3>
-							<p class="card__text"><?php echo esc_html( $growmodo_service[2] ); ?></p>
-						</li>
-					<?php endforeach; ?>
-				</ul>
-
-				<aside class="service-group__cta">
-					<h3 class="card__title"><?php echo esc_html( $growmodo_group['cta_title'] ); ?></h3>
-					<p class="card__text"><?php echo esc_html( $growmodo_group['cta_text'] ); ?></p>
-					<a class="btn btn--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
-						<?php esc_html_e( 'Learn More', 'growmodo' ); ?>
-					</a>
-				</aside>
+				/*
+				 * In the rail layout the CTA sits under the heading rather than in
+				 * the card grid, which is the one thing that changes between the
+				 * design's two arrangements of this section.
+				 */
+				if ( $growmodo_is_rail ) {
+					get_template_part( 'template-parts/service-cta', null, array( 'group' => $growmodo_group ) );
+				}
+				?>
 			</div>
+
+			<ul class="service-grid <?php echo $growmodo_is_rail ? 'service-grid--pair' : ''; ?>">
+				<?php foreach ( $growmodo_group['services'] as $growmodo_service ) : ?>
+					<li class="card service" id="<?php echo esc_attr( $growmodo_service[3] ); ?>">
+						<h3 class="service__head">
+							<span class="info__icon"><?php echo growmodo_icon( $growmodo_service[0] ); ?></span>
+							<span class="card__title"><?php echo esc_html( $growmodo_service[1] ); ?></span>
+						</h3>
+						<p class="card__text"><?php echo esc_html( $growmodo_service[2] ); ?></p>
+					</li>
+				<?php endforeach; ?>
+
+				<?php
+				/*
+				 * The CTA is the last cell of the same grid, spanning the columns
+				 * the services left free — the design lays it out beside them, not
+				 * as a rail alongside. In the rail layout it moves out of the grid
+				 * entirely; see below.
+				 */
+				?>
+				<?php if ( 'rail' !== $growmodo_group['layout'] ) : ?>
+					<li class="service-cta">
+						<?php get_template_part( 'template-parts/service-cta', null, array( 'group' => $growmodo_group ) ); ?>
+					</li>
+				<?php endif; ?>
+			</ul>
 		</div>
 	</section>
 <?php endforeach; ?>
