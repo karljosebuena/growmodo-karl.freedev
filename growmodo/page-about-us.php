@@ -39,6 +39,7 @@ $growmodo_clients = array(
 	array(
 		'since'    => __( 'Since 2019', 'growmodo' ),
 		'name'     => __( 'ABC Corporation', 'growmodo' ),
+		'url'      => 'https://abccorporation.org/',
 		'domain'   => __( 'Commercial Real Estate', 'growmodo' ),
 		'category' => __( 'Luxury Home Development', 'growmodo' ),
 		'quote'    => __( 'Estatein\'s expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs.', 'growmodo' ),
@@ -46,6 +47,7 @@ $growmodo_clients = array(
 	array(
 		'since'    => __( 'Since 2018', 'growmodo' ),
 		'name'     => __( 'GreenTech Enterprises', 'growmodo' ),
+		'url'      => 'https://www.greentechenterprises.com/',
 		'domain'   => __( 'Commercial Real Estate', 'growmodo' ),
 		'category' => __( 'Retail Space', 'growmodo' ),
 		'quote'    => __( 'Estatein\'s ability to identify prime retail locations helped us expand our brand presence. They are a trusted partner in our growth.', 'growmodo' ),
@@ -53,6 +55,7 @@ $growmodo_clients = array(
 	array(
 		'since'    => __( 'Since 2020', 'growmodo' ),
 		'name'     => __( 'Harbour & Vine', 'growmodo' ),
+		'url'      => 'https://harborandvine.com/',
 		'domain'   => __( 'Hospitality', 'growmodo' ),
 		'category' => __( 'Boutique Hotels', 'growmodo' ),
 		'quote'    => __( 'They found us three sites in under a year, each one a better fit than the last. The market knowledge is genuinely deep.', 'growmodo' ),
@@ -60,6 +63,7 @@ $growmodo_clients = array(
 	array(
 		'since'    => __( 'Since 2021', 'growmodo' ),
 		'name'     => __( 'Northwind Logistics', 'growmodo' ),
+		'url'      => 'https://nwl.one/en/',
 		'domain'   => __( 'Industrial', 'growmodo' ),
 		'category' => __( 'Warehousing', 'growmodo' ),
 		'quote'    => __( 'Estatein understood our access and clearance requirements immediately, which saved us months of viewing unsuitable units.', 'growmodo' ),
@@ -67,6 +71,7 @@ $growmodo_clients = array(
 	array(
 		'since'    => __( 'Since 2022', 'growmodo' ),
 		'name'     => __( 'Meridian Health', 'growmodo' ),
+		'url'      => 'https://meridianhealth.com.ph/',
 		'domain'   => __( 'Healthcare', 'growmodo' ),
 		'category' => __( 'Clinical Premises', 'growmodo' ),
 		'quote'    => __( 'Fitting out a clinic has constraints most agents have never met. Ours had, and negotiated the lease terms around them.', 'growmodo' ),
@@ -74,6 +79,7 @@ $growmodo_clients = array(
 	array(
 		'since'    => __( 'Since 2023', 'growmodo' ),
 		'name'     => __( 'Atlas Studios', 'growmodo' ),
+		'url'      => 'https://atlasstudios.com/',
 		'domain'   => __( 'Creative', 'growmodo' ),
 		'category' => __( 'Studio Space', 'growmodo' ),
 		'quote'    => __( 'We needed height, power and quiet neighbours. They shortlisted four places that had all three and let us walk away from two.', 'growmodo' ),

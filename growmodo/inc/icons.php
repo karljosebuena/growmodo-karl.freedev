@@ -27,6 +27,7 @@ defined( 'ABSPATH' ) || exit;
  */
 function growmodo_icon( $name, $css_class = '' ) {
 	$icons = array(
+
 		/*
 		 * Brand mark, derived by scanning the export row by row rather than by
 		 * eye. It is the union of two circles of radius 24, centred at (0,24)
