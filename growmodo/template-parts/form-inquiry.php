@@ -7,12 +7,16 @@
  *
  * @package Growmodo
  *
- * @param array $args {
+ * @since 1.0.0
+ *
+ * @var array $args {
  *     @type string $id       Element id used for the anchor and field ids. Default 'contact-form'.
  *     @type string $type     Submission type: 'contact' or 'inquiry'. Default 'contact'.
  *     @type string $property Pre-selected property title, shown read-only. Optional.
  * }
  */
+
+defined( 'ABSPATH' ) || exit;
 
 $growmodo_id       = isset( $args['id'] ) ? sanitize_html_class( $args['id'] ) : 'contact-form';
 $growmodo_type     = isset( $args['type'] ) && 'inquiry' === $args['type'] ? 'inquiry' : 'contact';
@@ -100,6 +104,15 @@ $growmodo_status = isset( $_GET['growmodo_status'] ) ? sanitize_key( wp_unslash(
 					readonly
 				/>
 			</p>
+			<?php
+			/*
+			 * The readonly field above is for the visitor; this is what the
+			 * handler stores. Without it the lead records no listing, since a
+			 * readonly input the visitor can see is still not a submitted
+			 * value unless it is named.
+			 */
+			?>
+			<input type="hidden" name="growmodo_property_id" value="<?php echo absint( get_the_ID() ); ?>" />
 		<?php endif; ?>
 
 		<p class="form__field form__field--wide">

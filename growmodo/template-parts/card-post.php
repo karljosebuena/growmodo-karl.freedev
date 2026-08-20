@@ -2,8 +2,12 @@
 /**
  * Blog post card, used by the blog index, archives, and search results.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 ?>
 <article <?php post_class( 'card' ); ?>>
@@ -20,7 +24,7 @@
 	</p>
 
 	<h2 class="card__title">
-		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		<a href="<?php the_permalink(); ?>"><?php echo esc_html( get_the_title() ); ?></a>
 	</h2>
 
 	<p class="card__text">

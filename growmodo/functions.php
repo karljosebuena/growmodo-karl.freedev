@@ -5,9 +5,20 @@
  * All functionality lives in focused files under inc/ — this file only
  * wires them up.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
 
+defined( 'ABSPATH' ) || exit;
+
+/**
+ * Theme version, used to cache-bust enqueued assets.
+ *
+ * @since 1.0.0
+ *
+ * @var string
+ */
 define( 'GROWMODO_VERSION', '1.0.0' );
 
 require get_template_directory() . '/inc/setup.php';
@@ -20,3 +31,4 @@ require get_template_directory() . '/inc/meta-boxes.php';
 require get_template_directory() . '/inc/form-handler.php';
 require get_template_directory() . '/inc/schema.php';
 require get_template_directory() . '/inc/seo.php';
+require get_template_directory() . '/inc/admin-columns.php';

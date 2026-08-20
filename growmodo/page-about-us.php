@@ -4,16 +4,14 @@
  *
  * Applied automatically to the page with the slug `about-us`.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
 
-get_header();
+defined( 'ABSPATH' ) || exit;
 
-$growmodo_stats = array(
-	array( '200+', __( 'Happy Customers', 'growmodo' ) ),
-	array( '10k+', __( 'Properties For Clients', 'growmodo' ) ),
-	array( '16+', __( 'Years of Experience', 'growmodo' ) ),
-);
+get_header();
 
 $growmodo_values = array(
 	array( 'star', __( 'Trust', 'growmodo' ), __( 'Trust is the cornerstone of every successful real estate transaction.', 'growmodo' ) ),
@@ -61,14 +59,7 @@ $growmodo_team = array(
 				);
 				?>
 
-				<div class="hero__stats">
-					<?php foreach ( $growmodo_stats as $growmodo_stat ) : ?>
-						<div class="stat">
-							<div class="stat__value"><?php echo esc_html( $growmodo_stat[0] ); ?></div>
-							<div class="stat__label"><?php echo esc_html( $growmodo_stat[1] ); ?></div>
-						</div>
-					<?php endforeach; ?>
-				</div>
+				<?php growmodo_render_stats(); ?>
 			</div>
 
 			<img
@@ -83,7 +74,7 @@ $growmodo_team = array(
 	</div>
 </section>
 
-<section class="section section--bordered" id="works">
+<section class="section section--bordered" id="values">
 	<div class="container">
 		<div class="split split--reverse">
 			<?php
@@ -112,7 +103,7 @@ $growmodo_team = array(
 	</div>
 </section>
 
-<section class="section section--bordered" id="clients">
+<section class="section section--bordered" id="achievements">
 	<div class="container">
 		<?php
 		get_template_part(

@@ -4,8 +4,12 @@
  *
  * Expects the current post in the loop to be a `testimonial`.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 $growmodo_rating   = min( 5, max( 0, (int) get_post_meta( get_the_ID(), 'growmodo_rating', true ) ) );
 $growmodo_name     = get_post_meta( get_the_ID(), 'growmodo_client_name', true );
@@ -29,7 +33,7 @@ $growmodo_location = get_post_meta( get_the_ID(), 'growmodo_client_location', tr
 		</div>
 	<?php endif; ?>
 
-	<h3 class="card__title"><?php the_title(); ?></h3>
+	<h3 class="card__title"><?php echo esc_html( get_the_title() ); ?></h3>
 
 	<div class="card__text"><?php the_content(); ?></div>
 

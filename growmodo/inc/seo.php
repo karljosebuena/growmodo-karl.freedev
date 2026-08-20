@@ -6,11 +6,17 @@
  * canonical link (`rel_canonical`), so this only adds what core leaves out.
  * Structured data lives separately in inc/schema.php.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Build a plain-text description for the current request.
+ *
+ * @since 1.0.0
  *
  * @return string Trimmed description, or an empty string when none applies.
  */
@@ -54,13 +60,21 @@ function growmodo_meta_description() {
 /**
  * Print the meta description, Open Graph, and Twitter card tags.
  *
+ * @since 1.0.0
+ *
  * @return void
  */
 function growmodo_print_meta_tags() {
 	$description = trim( growmodo_meta_description() );
 	$title       = wp_get_document_title();
-	$url         = home_url( add_query_arg( array(), $GLOBALS['wp']->request ) );
 	$image       = '';
+
+	// Prefer the canonical URL core already computed for singular views.
+	$url = is_singular() ? wp_get_canonical_url() : home_url( add_query_arg( array() ) );
+
+	if ( ! $url ) {
+		$url = home_url( '/' );
+	}
 
 	if ( is_singular() && has_post_thumbnail() ) {
 		$image = get_the_post_thumbnail_url( get_post(), 'large' );

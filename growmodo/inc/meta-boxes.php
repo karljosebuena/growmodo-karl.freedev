@@ -6,13 +6,19 @@
  * ships inside the theme, and saving enforces nonce + capability +
  * sanitization explicitly.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Field definitions per post type: meta key => array( label, input type ).
  *
  * Single source of truth for both rendering and saving.
+ *
+ * @since 1.0.0
  *
  * @return array[]
  */
@@ -36,6 +42,8 @@ function growmodo_meta_fields() {
 /**
  * Register the Details meta box on both post types.
  *
+ * @since 1.0.0
+ *
  * @return void
  */
 function growmodo_add_meta_boxes() {
@@ -54,13 +62,16 @@ add_action( 'add_meta_boxes', 'growmodo_add_meta_boxes' );
 /**
  * Render the fields for the current post type's meta box.
  *
+ * @since 1.0.0
+ *
  * @param WP_Post $post Post being edited.
  * @return void
  */
 function growmodo_render_meta_box( $post ) {
 	$fields = growmodo_meta_fields()[ $post->post_type ];
 
-	wp_nonce_field( 'growmodo_save_meta', 'growmodo_meta_nonce' );
+	// Object-specific action so a nonce cannot be replayed against another post.
+	wp_nonce_field( 'growmodo_save_meta_' . $post->ID, 'growmodo_meta_nonce' );
 
 	foreach ( $fields as $key => $field ) {
 		$value = get_post_meta( $post->ID, $key, true );
@@ -101,6 +112,8 @@ function growmodo_render_meta_box( $post ) {
 /**
  * Persist meta box values: nonce + capability + explicit sanitization.
  *
+ * @since 1.0.0
+ *
  * @param int $post_id Post ID being saved.
  * @return void
  */
@@ -120,7 +133,7 @@ function growmodo_save_meta( $post_id ) {
 		? sanitize_key( wp_unslash( $_POST['growmodo_meta_nonce'] ) )
 		: '';
 
-	if ( ! wp_verify_nonce( $nonce, 'growmodo_save_meta' ) || ! current_user_can( 'edit_post', $post_id ) ) {
+	if ( ! wp_verify_nonce( $nonce, 'growmodo_save_meta_' . $post_id ) || ! current_user_can( 'edit_post', $post_id ) ) {
 		return;
 	}
 

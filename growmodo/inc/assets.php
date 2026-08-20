@@ -2,8 +2,12 @@
 /**
  * Front-end asset enqueues.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Enqueue the Urbanist webfont, the theme stylesheet, and the main script.
@@ -11,6 +15,8 @@
  * Serves the minified builds unless SCRIPT_DEBUG is on, mirroring how core
  * ships its own assets. Regenerate them with `php tools/build-assets.php`
  * after editing style.css or main.js.
+ *
+ * @since 1.0.0
  *
  * @return void
  */
@@ -59,6 +65,8 @@ add_action( 'wp_enqueue_scripts', 'growmodo_enqueue_assets' );
  * enqueued: the bar renders visible by default (and therefore still works with
  * JavaScript disabled), and this hides it for visitors who already dismissed it
  * without the bar flashing on screen first.
+ *
+ * @since 1.0.0
  *
  * @return void
  */

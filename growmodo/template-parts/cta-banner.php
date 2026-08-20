@@ -2,8 +2,12 @@
 /**
  * Pre-footer call-to-action banner, shared by every page.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 ?>
 <section class="cta">

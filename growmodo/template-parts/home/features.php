@@ -2,8 +2,12 @@
 /**
  * Home feature cards — the four value propositions below the hero.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 $growmodo_features = array(
 	array(

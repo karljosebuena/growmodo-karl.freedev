@@ -2,11 +2,17 @@
 /**
  * Theme supports and navigation menus.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Register theme supports and menu locations.
+ *
+ * @since 1.0.0
  *
  * @return void
  */
@@ -38,6 +44,8 @@ add_action( 'after_setup_theme', 'growmodo_setup' );
  *
  * Used by the blog templates (index, single post, archive, search); the
  * marketing pages are full-width by design and do not call get_sidebar().
+ *
+ * @since 1.0.0
  *
  * @return void
  */

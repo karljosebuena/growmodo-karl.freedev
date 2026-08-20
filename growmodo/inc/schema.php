@@ -9,11 +9,17 @@
  * - SingleFamilyResidence + Offer on a property
  * - FAQPage wherever FAQ entries are published
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Print the JSON-LD block for the current request.
+ *
+ * @since 1.0.0
  *
  * @return void
  */
@@ -42,15 +48,23 @@ function growmodo_print_schema() {
 		'@graph'   => $graph,
 	);
 
+	/*
+	 * JSON_HEX_TAG escapes < and >, and slash escaping is left ON, so a title
+	 * or excerpt containing "</script>" cannot break out of this element.
+	 * JSON_UNESCAPED_SLASHES would defeat both and is deliberately not used —
+	 * inside a <script> block, escaping the delimiters *is* the output escaping.
+	 */
 	printf(
 		'<script type="application/ld+json">%s</script>' . "\n",
-		wp_json_encode( $payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE )
+		wp_json_encode( $payload, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG )
 	);
 }
 add_action( 'wp_head', 'growmodo_print_schema' );
 
 /**
  * Build the RealEstateAgent node for the site itself.
+ *
+ * @since 1.0.0
  *
  * @return array
  */
@@ -66,6 +80,8 @@ function growmodo_schema_organization() {
 
 /**
  * Build the residence node for a single property, including its offer.
+ *
+ * @since 1.0.0
  *
  * @param WP_Post $post Property post.
  * @return array
@@ -119,13 +135,15 @@ function growmodo_schema_property( $post ) {
 /**
  * Build the FAQPage node from published FAQ entries.
  *
+ * @since 1.0.0
+ *
  * @return array Empty array when no FAQs exist.
  */
 function growmodo_schema_faq() {
 	$faqs = get_posts(
 		array(
 			'post_type'      => 'faq',
-			'posts_per_page' => 10,
+			'posts_per_page' => growmodo_faq_count(),
 			'orderby'        => 'date',
 			'order'          => 'ASC',
 		)

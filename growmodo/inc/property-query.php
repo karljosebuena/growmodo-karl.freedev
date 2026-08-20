@@ -6,11 +6,17 @@
  * box renders it as a select, the archive filter renders it as a dropdown,
  * and both validate submitted values against it.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Selectable property types.
+ *
+ * @since 1.0.0
  *
  * @return string[] Type labels, keyed by stored value.
  */
@@ -31,6 +37,8 @@ function growmodo_property_types() {
  * Every value is validated, not merely sanitized: types must exist in the
  * allowlist and numbers are clamped to a sane range.
  *
+ * @since 1.0.0
+ *
  * @return array{type:string,beds:int,baths:int,max_price:int}
  */
 function growmodo_get_filters() {
@@ -48,6 +56,8 @@ function growmodo_get_filters() {
 
 /**
  * Apply the archive filters to the main property archive query.
+ *
+ * @since 1.0.0
  *
  * @param WP_Query $query Query being prepared.
  * @return void
@@ -92,10 +102,6 @@ function growmodo_filter_property_archive( $query ) {
 			'type'    => 'NUMERIC',
 			'compare' => '<=',
 		);
-	}
-
-	if ( count( $meta_query ) > 1 ) {
-		$meta_query['relation'] = 'AND';
 	}
 
 	if ( ! empty( $meta_query ) ) {

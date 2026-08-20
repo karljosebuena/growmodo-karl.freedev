@@ -4,8 +4,12 @@
  *
  * Expects the current post in the loop to be a `property`.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 $growmodo_beds  = (int) get_post_meta( get_the_ID(), 'growmodo_beds', true );
 $growmodo_baths = (int) get_post_meta( get_the_ID(), 'growmodo_baths', true );
@@ -20,7 +24,7 @@ $growmodo_price = (int) get_post_meta( get_the_ID(), 'growmodo_price', true );
 	<?php endif; ?>
 
 	<h3 class="card__title">
-		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		<a href="<?php the_permalink(); ?>"><?php echo esc_html( get_the_title() ); ?></a>
 	</h3>
 
 	<?php if ( has_excerpt() ) : ?>

@@ -6,14 +6,18 @@
  * card as <details>/<summary> makes that affordance real — it expands the
  * answer, works without JavaScript, and is keyboard accessible by default.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 ?>
 <article <?php post_class( 'card faq' ); ?>>
 	<details class="faq__disclosure">
 		<summary class="faq__question">
-			<h3 class="card__title"><?php the_title(); ?></h3>
+			<h3 class="card__title"><?php echo esc_html( get_the_title() ); ?></h3>
 			<span class="faq__marker" aria-hidden="true"></span>
 		</summary>
 		<div class="card__text entry-content"><?php the_content(); ?></div>

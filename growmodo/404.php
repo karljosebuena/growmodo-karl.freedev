@@ -2,8 +2,12 @@
 /**
  * 404 template: keeps a dead end on-brand and offers a way onward.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 get_header();
 ?>

@@ -4,8 +4,12 @@
  *
  * The property archive has its own template, archive-property.php.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 get_header();
 ?>
@@ -25,36 +29,16 @@ get_header();
 
 <section class="section">
 	<div class="container">
-		<div class="with-sidebar">
-			<div>
-				<?php if ( have_posts() ) : ?>
-					<div class="grid grid--2">
-						<?php
-						while ( have_posts() ) :
-							the_post();
-							get_template_part( 'template-parts/card-post' );
-						endwhile;
-						?>
-					</div>
-
-					<?php
-					the_posts_pagination(
-						array(
-							'class'              => 'pagination',
-							'mid_size'           => 1,
-							'prev_text'          => esc_html__( 'Previous', 'growmodo' ),
-							'next_text'          => esc_html__( 'Next', 'growmodo' ),
-							'screen_reader_text' => esc_html__( 'Archive pagination', 'growmodo' ),
-						)
-					);
-					?>
-				<?php else : ?>
-					<p class="notice"><?php esc_html_e( 'Nothing found in this archive.', 'growmodo' ); ?></p>
-				<?php endif; ?>
-			</div>
-
-			<?php get_sidebar(); ?>
-		</div>
+		<?php
+		get_template_part(
+			'template-parts/loop-posts',
+			null,
+			array(
+				'empty'       => __( 'Nothing found in this archive.', 'growmodo' ),
+				'pager_label' => __( 'Archive pagination', 'growmodo' ),
+			)
+		);
+		?>
 	</div>
 </section>
 

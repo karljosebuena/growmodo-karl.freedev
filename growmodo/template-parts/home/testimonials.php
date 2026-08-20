@@ -2,8 +2,12 @@
 /**
  * Home "What Our Clients Say" section.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 $growmodo_testimonials = new WP_Query(
 	array(

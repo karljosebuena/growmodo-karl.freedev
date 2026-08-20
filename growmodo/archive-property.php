@@ -5,8 +5,12 @@
  * The filter bar submits by GET to this same archive; the query is modified in
  * inc/property-query.php so pagination and the theme's URLs stay canonical.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 get_header();
 
@@ -27,7 +31,7 @@ $growmodo_action  = get_post_type_archive_link( 'property' );
 	<div class="container">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Filter properties', 'growmodo' ); ?></h2>
 
-		<form class="filters" action="<?php echo esc_url( $growmodo_action ); ?>" method="get" role="search">
+		<form class="filters" id="filters" action="<?php echo esc_url( $growmodo_action ); ?>" method="get" role="search">
 			<div class="filters__row">
 				<p class="form__field">
 					<label class="form__label" for="filter-type"><?php esc_html_e( 'Property Type', 'growmodo' ); ?></label>
@@ -109,17 +113,7 @@ $growmodo_action  = get_post_type_archive_link( 'property' );
 				?>
 			</div>
 
-			<?php
-			the_posts_pagination(
-				array(
-					'class'              => 'pagination',
-					'mid_size'           => 1,
-					'prev_text'          => esc_html__( 'Previous', 'growmodo' ),
-					'next_text'          => esc_html__( 'Next', 'growmodo' ),
-					'screen_reader_text' => esc_html__( 'Property pagination', 'growmodo' ),
-				)
-			);
-			?>
+			<?php growmodo_pagination( __( 'Property pagination', 'growmodo' ) ); ?>
 		<?php else : ?>
 			<p class="notice">
 				<?php esc_html_e( 'No properties match those filters yet. Try widening your search.', 'growmodo' ); ?>

@@ -9,11 +9,17 @@
  * echo directly. `growmodo_icon()` is registered with phpcs as an
  * auto-escaping function in phpcs.xml.dist.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Return the inline SVG markup for an icon.
+ *
+ * @since 1.0.0
  *
  * @param string $name  Icon name from the library below.
  * @param string $css_class Optional CSS class for the <svg> element.

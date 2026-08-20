@@ -8,11 +8,17 @@
  * - faq          Question (title) + answer (content); admin-only UI.
  * - inquiry      Private storage for front-end form submissions.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Register the theme's post types.
+ *
+ * @since 1.0.0
  *
  * @return void
  */
@@ -84,6 +90,8 @@ add_action( 'init', 'growmodo_register_post_types' );
 /**
  * Register post meta with types and sanitizers.
  *
+ * @since 1.0.0
+ *
  * @return void
  */
 function growmodo_register_post_meta() {
@@ -101,8 +109,9 @@ function growmodo_register_post_meta() {
 			'growmodo_client_location' => array( 'string', 'sanitize_text_field' ),
 		),
 		'inquiry'     => array(
-			'growmodo_email' => array( 'string', 'sanitize_email' ),
-			'growmodo_phone' => array( 'string', 'sanitize_text_field' ),
+			'growmodo_email'       => array( 'string', 'sanitize_email' ),
+			'growmodo_phone'       => array( 'string', 'sanitize_text_field' ),
+			'growmodo_property_id' => array( 'integer', 'absint' ),
 		),
 	);
 

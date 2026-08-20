@@ -2,8 +2,12 @@
 /**
  * Site header: announcement bar, brand, primary navigation, contact CTA.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 ?>
 <!DOCTYPE html>

@@ -4,8 +4,12 @@
  *
  * Runs the standard WordPress Loop with the blog sidebar beside it.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 get_header();
 ?>
@@ -14,8 +18,10 @@ get_header();
 	<div class="container">
 		<h1 class="page-hero__title">
 			<?php
-			if ( is_home() && ! is_front_page() ) {
-				echo esc_html( get_the_title( (int) get_option( 'page_for_posts' ) ) );
+			$growmodo_posts_page = (int) get_option( 'page_for_posts' );
+
+			if ( is_home() && ! is_front_page() && $growmodo_posts_page ) {
+				echo esc_html( get_the_title( $growmodo_posts_page ) );
 			} else {
 				esc_html_e( 'Latest Insights', 'growmodo' );
 			}
@@ -29,36 +35,16 @@ get_header();
 
 <section class="section">
 	<div class="container">
-		<div class="with-sidebar">
-			<div>
-				<?php if ( have_posts() ) : ?>
-					<div class="grid grid--2">
-						<?php
-						while ( have_posts() ) :
-							the_post();
-							get_template_part( 'template-parts/card-post' );
-						endwhile;
-						?>
-					</div>
-
-					<?php
-					the_posts_pagination(
-						array(
-							'class'              => 'pagination',
-							'mid_size'           => 1,
-							'prev_text'          => esc_html__( 'Previous', 'growmodo' ),
-							'next_text'          => esc_html__( 'Next', 'growmodo' ),
-							'screen_reader_text' => esc_html__( 'Post pagination', 'growmodo' ),
-						)
-					);
-					?>
-				<?php else : ?>
-					<p class="notice"><?php esc_html_e( 'No posts published yet.', 'growmodo' ); ?></p>
-				<?php endif; ?>
-			</div>
-
-			<?php get_sidebar(); ?>
-		</div>
+		<?php
+		get_template_part(
+			'template-parts/loop-posts',
+			null,
+			array(
+				'empty'       => __( 'No posts published yet.', 'growmodo' ),
+				'pager_label' => __( 'Post pagination', 'growmodo' ),
+			)
+		);
+		?>
 	</div>
 </section>
 

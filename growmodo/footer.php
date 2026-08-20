@@ -6,8 +6,12 @@
  * than as five menu locations: they are structural to the design, not
  * content an editor is expected to re-order (see docs/roadmap.md triage).
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 $growmodo_footer_columns = array(
 	__( 'Home', 'growmodo' )       => array(
@@ -19,10 +23,11 @@ $growmodo_footer_columns = array(
 	),
 	__( 'About Us', 'growmodo' )   => array(
 		__( 'Our Story', 'growmodo' )    => home_url( '/about-us/#story' ),
-		__( 'Our Works', 'growmodo' )    => home_url( '/about-us/#works' ),
+		__( 'Our Values', 'growmodo' )   => home_url( '/about-us/#values' ),
 		__( 'How It Works', 'growmodo' ) => home_url( '/about-us/#process' ),
 		__( 'Our Team', 'growmodo' )     => home_url( '/about-us/#team' ),
-		__( 'Our Clients', 'growmodo' )  => home_url( '/about-us/#clients' ),
+		// "Our Clients" in the design has no About section; testimonials are it.
+		__( 'Our Clients', 'growmodo' )  => home_url( '/#testimonials' ),
 
 		/*
 		 * The Figma has no blog screen, so the header nav is left exactly as
@@ -31,14 +36,14 @@ $growmodo_footer_columns = array(
 		__( 'Insights', 'growmodo' )     => get_permalink( (int) get_option( 'page_for_posts' ) ),
 	),
 	__( 'Properties', 'growmodo' ) => array(
-		__( 'Portfolio', 'growmodo' )  => get_post_type_archive_link( 'property' ),
-		__( 'Categories', 'growmodo' ) => get_post_type_archive_link( 'property' ),
+		__( 'Portfolio', 'growmodo' )       => get_post_type_archive_link( 'property' ),
+		__( 'Search & Filter', 'growmodo' ) => get_post_type_archive_link( 'property' ) . '#filters',
 	),
 	__( 'Services', 'growmodo' )   => array(
-		__( 'Valuation Mastery', 'growmodo' )    => home_url( '/services/#valuation' ),
-		__( 'Strategic Marketing', 'growmodo' )  => home_url( '/services/#marketing' ),
-		__( 'Negotiation Wizardry', 'growmodo' ) => home_url( '/services/#negotiation' ),
-		__( 'Closing Success', 'growmodo' )      => home_url( '/services/#closing' ),
+		__( 'Valuation Mastery', 'growmodo' )    => home_url( '/services/#valuation-mastery' ),
+		__( 'Strategic Marketing', 'growmodo' )  => home_url( '/services/#strategic-marketing' ),
+		__( 'Negotiation Wizardry', 'growmodo' ) => home_url( '/services/#negotiation-wizardry' ),
+		__( 'Closing Success', 'growmodo' )      => home_url( '/services/#closing-success' ),
 		__( 'Property Management', 'growmodo' )  => home_url( '/services/#management' ),
 	),
 	__( 'Contact Us', 'growmodo' ) => array(
@@ -119,7 +124,9 @@ $growmodo_socials = array(
 					printf(
 						/* translators: %1$s: current year, %2$s: site name. */
 						esc_html__( '@%1$s %2$s. All Rights Reserved.', 'growmodo' ),
-						esc_html( gmdate( 'Y' ) ),
+						// wp_date() honours the site timezone; gmdate() would show
+						// the wrong year around New Year for anyone west of UTC.
+						esc_html( wp_date( 'Y' ) ),
 						esc_html( get_bloginfo( 'name' ) )
 					);
 					?>

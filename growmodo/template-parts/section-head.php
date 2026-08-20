@@ -4,7 +4,9 @@
  *
  * @package Growmodo
  *
- * @param array $args {
+ * @since 1.0.0
+ *
+ * @var array $args {
  *     @type string $title       Heading text. Required.
  *     @type string $text        Supporting copy. Optional.
  *     @type string $action_url  Button URL. Optional.
@@ -12,6 +14,8 @@
  *     @type string $level       Heading tag, 'h1' or 'h2'. Default 'h2'.
  * }
  */
+
+defined( 'ABSPATH' ) || exit;
 
 $growmodo_level      = isset( $args['level'] ) && 'h1' === $args['level'] ? 'h1' : 'h2';
 $growmodo_has_action = ! empty( $args['action_url'] ) && ! empty( $args['action_text'] );

@@ -4,8 +4,12 @@
  *
  * Applied automatically to the page with the slug `contact`.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 get_header();
 

@@ -1,0 +1,253 @@
+- generic [active] [ref=f123e1]:
+  - link "Skip to content" [ref=f123e2] [cursor=pointer]:
+    - /url: "#main"
+  - region "Announcement" [ref=f123e3]:
+    - generic [ref=f123e4]:
+      - generic [ref=f123e7]: Discover Your Dream Property with Estatein
+      - link "Learn More" [ref=f123e8] [cursor=pointer]:
+        - /url: http://localhost:8080/properties/
+    - button "Dismiss announcement" [ref=f123e9] [cursor=pointer]
+  - banner [ref=f123e13]:
+    - generic [ref=f123e14]:
+      - link "Estatein" [ref=f123e15] [cursor=pointer]:
+        - /url: http://localhost:8080/
+      - navigation "Primary navigation" [ref=f123e19]:
+        - list [ref=f123e20]:
+          - listitem [ref=f123e21]:
+            - link "Home" [ref=f123e22] [cursor=pointer]:
+              - /url: http://localhost:8080/
+          - listitem [ref=f123e23]:
+            - link "About Us" [ref=f123e24] [cursor=pointer]:
+              - /url: http://localhost:8080/about-us/
+          - listitem [ref=f123e25]:
+            - link "Properties" [ref=f123e26] [cursor=pointer]:
+              - /url: /properties/
+          - listitem [ref=f123e27]:
+            - link "Services" [ref=f123e28] [cursor=pointer]:
+              - /url: http://localhost:8080/services/
+      - link "Contact Us" [ref=f123e29] [cursor=pointer]:
+        - /url: http://localhost:8080/contact/
+  - main [ref=f123e30]:
+    - generic [ref=f123e33]:
+      - generic [ref=f123e34]:
+        - generic [ref=f123e44]:
+          - heading "Our Journey" [level=1] [ref=f123e45]
+          - paragraph [ref=f123e46]: Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary. Over the years, we've expanded our reach, forged valuable partnerships, and gained the trust of countless clients.
+        - generic [ref=f123e47]:
+          - generic [ref=f123e48]:
+            - generic [ref=f123e49]: 200+
+            - generic [ref=f123e50]: Happy Customers
+          - generic [ref=f123e51]:
+            - generic [ref=f123e52]: 10k+
+            - generic [ref=f123e53]: Properties For Clients
+          - generic [ref=f123e54]:
+            - generic [ref=f123e55]: 16+
+            - generic [ref=f123e56]: Years of Experience
+      - img "An adviser holding a scale model of a modern house" [ref=f123e57]
+    - generic [ref=f123e60]:
+      - generic [ref=f123e70]:
+        - heading "Our Values" [level=2] [ref=f123e71]
+        - paragraph [ref=f123e72]: Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary.
+      - list [ref=f123e73]:
+        - listitem [ref=f123e74]:
+          - heading "Trust" [level=3] [ref=f123e79]
+          - paragraph [ref=f123e80]: Trust is the cornerstone of every successful real estate transaction.
+        - listitem [ref=f123e81]:
+          - heading "Excellence" [level=3] [ref=f123e87]
+          - paragraph [ref=f123e88]: We set the bar high for ourselves. From the properties we list to the services we provide.
+        - listitem [ref=f123e89]:
+          - heading "Client-Centric" [level=3] [ref=f123e94]
+          - paragraph [ref=f123e95]: Your dreams and needs are at the center of our universe. We listen, we understand.
+        - listitem [ref=f123e96]:
+          - heading "Our Commitment" [level=3] [ref=f123e103]
+          - paragraph [ref=f123e104]: We are dedicated to providing you with the highest level of service, professionalism, and support.
+    - generic [ref=f123e106]:
+      - generic [ref=f123e116]:
+        - heading "Our Achievements" [level=2] [ref=f123e117]
+        - paragraph [ref=f123e118]: Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary.
+      - list [ref=f123e119]:
+        - listitem [ref=f123e120]:
+          - heading "3+ Years of Excellence" [level=3] [ref=f123e121]
+          - paragraph [ref=f123e122]: With over 3 years in the industry, we've amassed a wealth of knowledge and experience, becoming a go-to resource for all things real estate.
+        - listitem [ref=f123e123]:
+          - heading "Happy Clients" [level=3] [ref=f123e124]
+          - paragraph [ref=f123e125]: Our greatest achievement is the satisfaction of our clients. Their success stories fuel our passion for what we do.
+        - listitem [ref=f123e126]:
+          - heading "Industry Recognition" [level=3] [ref=f123e127]
+          - paragraph [ref=f123e128]: We've earned the respect of our peers and industry leaders, with accolades and awards that reflect our commitment to excellence.
+    - generic [ref=f123e130]:
+      - generic [ref=f123e140]:
+        - heading "Navigating the Estatein Experience" [level=2] [ref=f123e141]
+        - paragraph [ref=f123e142]: At Estatein, we've designed a straightforward process to help you find and purchase your dream property with ease. Here's a step-by-step guide to how it all works.
+      - list [ref=f123e143]:
+        - listitem [ref=f123e144]:
+          - paragraph [ref=f123e145]: Step 01
+          - generic [ref=f123e146]:
+            - heading "Discover a World of Possibilities" [level=3] [ref=f123e147]
+            - paragraph [ref=f123e148]: Your journey begins with exploring our carefully curated property listings. Use our intuitive search tools to filter properties based on your preferences, including location, type, size, and budget.
+        - listitem [ref=f123e149]:
+          - paragraph [ref=f123e150]: Step 02
+          - generic [ref=f123e151]:
+            - heading "Narrowing Down Your Choices" [level=3] [ref=f123e152]
+            - paragraph [ref=f123e153]: Once you've found properties that catch your eye, save them to your account or make a shortlist. This allows you to compare and revisit your favourites as you make your decision.
+        - listitem [ref=f123e154]:
+          - paragraph [ref=f123e155]: Step 03
+          - generic [ref=f123e156]:
+            - heading "Personalized Guidance" [level=3] [ref=f123e157]
+            - paragraph [ref=f123e158]: Have questions about a property or need more information? Our dedicated team of real estate experts is just a call or message away.
+        - listitem [ref=f123e159]:
+          - paragraph [ref=f123e160]: Step 04
+          - generic [ref=f123e161]:
+            - heading "See It for Yourself" [level=3] [ref=f123e162]
+            - paragraph [ref=f123e163]: Arrange viewings of the properties you're interested in. We'll coordinate with the property owners and accompany you to ensure you get a firsthand look at your potential new home.
+        - listitem [ref=f123e164]:
+          - paragraph [ref=f123e165]: Step 05
+          - generic [ref=f123e166]:
+            - heading "Making Informed Decisions" [level=3] [ref=f123e167]
+            - paragraph [ref=f123e168]: Before making an offer, our team will assist you with due diligence, including property inspections, legal checks, and market analysis. We want you to be fully informed and confident in your choice.
+        - listitem [ref=f123e169]:
+          - paragraph [ref=f123e170]: Step 06
+          - generic [ref=f123e171]:
+            - heading "Getting the Best Deal" [level=3] [ref=f123e172]
+            - paragraph [ref=f123e173]: We'll help you negotiate the best terms and prepare your offer. Our goal is to secure the property at the right price and on favourable terms.
+    - generic [ref=f123e175]:
+      - generic [ref=f123e185]:
+        - heading "Meet the Estatein Team" [level=2] [ref=f123e186]
+        - paragraph [ref=f123e187]: At Estatein, our success is driven by the dedication and expertise of our team. Get to know the people behind our mission to make your real estate dreams a reality.
+      - list [ref=f123e188]:
+        - listitem [ref=f123e189]:
+          - heading "Max Mitchell" [level=3] [ref=f123e191]
+          - paragraph [ref=f123e192]: Founder
+          - link "Say Hello" [ref=f123e193] [cursor=pointer]:
+            - /url: http://localhost:8080/contact/
+        - listitem [ref=f123e196]:
+          - heading "Sarah Johnson" [level=3] [ref=f123e198]
+          - paragraph [ref=f123e199]: Chief Real Estate Officer
+          - link "Say Hello" [ref=f123e200] [cursor=pointer]:
+            - /url: http://localhost:8080/contact/
+        - listitem [ref=f123e203]:
+          - heading "David Brown" [level=3] [ref=f123e205]
+          - paragraph [ref=f123e206]: Head of Property Management
+          - link "Say Hello" [ref=f123e207] [cursor=pointer]:
+            - /url: http://localhost:8080/contact/
+        - listitem [ref=f123e210]:
+          - heading "Michael Turner" [level=3] [ref=f123e212]
+          - paragraph [ref=f123e213]: Legal Counsel
+          - link "Say Hello" [ref=f123e214] [cursor=pointer]:
+            - /url: http://localhost:8080/contact/
+    - generic [ref=f123e218]:
+      - generic [ref=f123e219]:
+        - heading "Start Your Real Estate Journey Today" [level=2] [ref=f123e220]
+        - paragraph [ref=f123e221]: Your dream property is just a click away. Whether you're looking for a new home, a strategic investment, or expert real estate advice, Estatein is here to assist you every step of the way. Take the first step towards your real estate goals and explore our available properties or get in touch with our team for personalized assistance.
+      - link "Explore Properties" [ref=f123e223] [cursor=pointer]:
+        - /url: http://localhost:8080/properties/
+  - contentinfo [ref=f123e224]:
+    - generic [ref=f123e225]:
+      - generic [ref=f123e226]:
+        - link "Estatein" [ref=f123e227] [cursor=pointer]:
+          - /url: http://localhost:8080/
+        - generic [ref=f123e231]:
+          - paragraph [ref=f123e232]:
+            - text: Website
+            - textbox [ref=f123e233]
+          - generic [ref=f123e234]: Your email address
+          - generic [ref=f123e235]:
+            - textbox "Your email address" [ref=f123e239]:
+              - /placeholder: Enter Your Email
+            - button "Subscribe" [ref=f123e240] [cursor=pointer]
+      - generic [ref=f123e244]:
+        - navigation "Home" [ref=f123e245]:
+          - heading "Home" [level=2] [ref=f123e246]
+          - list [ref=f123e247]:
+            - listitem [ref=f123e248]:
+              - link "Hero Section" [ref=f123e249] [cursor=pointer]:
+                - /url: http://localhost:8080/#main
+            - listitem [ref=f123e250]:
+              - link "Features" [ref=f123e251] [cursor=pointer]:
+                - /url: http://localhost:8080/#features
+            - listitem [ref=f123e252]:
+              - link "Properties" [ref=f123e253] [cursor=pointer]:
+                - /url: http://localhost:8080/#properties
+            - listitem [ref=f123e254]:
+              - link "Testimonials" [ref=f123e255] [cursor=pointer]:
+                - /url: http://localhost:8080/#testimonials
+            - listitem [ref=f123e256]:
+              - link "FAQ's" [ref=f123e257] [cursor=pointer]:
+                - /url: http://localhost:8080/#faq
+        - navigation "About Us" [ref=f123e258]:
+          - heading "About Us" [level=2] [ref=f123e259]
+          - list [ref=f123e260]:
+            - listitem [ref=f123e261]:
+              - link "Our Story" [ref=f123e262] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#story
+            - listitem [ref=f123e263]:
+              - link "Our Values" [ref=f123e264] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#values
+            - listitem [ref=f123e265]:
+              - link "How It Works" [ref=f123e266] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#process
+            - listitem [ref=f123e267]:
+              - link "Our Team" [ref=f123e268] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#team
+            - listitem [ref=f123e269]:
+              - link "Our Clients" [ref=f123e270] [cursor=pointer]:
+                - /url: http://localhost:8080/#testimonials
+            - listitem [ref=f123e271]:
+              - link "Insights" [ref=f123e272] [cursor=pointer]:
+                - /url: http://localhost:8080/insights/
+        - navigation "Properties" [ref=f123e273]:
+          - heading "Properties" [level=2] [ref=f123e274]
+          - list [ref=f123e275]:
+            - listitem [ref=f123e276]:
+              - link "Portfolio" [ref=f123e277] [cursor=pointer]:
+                - /url: http://localhost:8080/properties/
+            - listitem [ref=f123e278]:
+              - link "Search & Filter" [ref=f123e279] [cursor=pointer]:
+                - /url: http://localhost:8080/properties/#filters
+        - navigation "Services" [ref=f123e280]:
+          - heading "Services" [level=2] [ref=f123e281]
+          - list [ref=f123e282]:
+            - listitem [ref=f123e283]:
+              - link "Valuation Mastery" [ref=f123e284] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#valuation-mastery
+            - listitem [ref=f123e285]:
+              - link "Strategic Marketing" [ref=f123e286] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#strategic-marketing
+            - listitem [ref=f123e287]:
+              - link "Negotiation Wizardry" [ref=f123e288] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#negotiation-wizardry
+            - listitem [ref=f123e289]:
+              - link "Closing Success" [ref=f123e290] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#closing-success
+            - listitem [ref=f123e291]:
+              - link "Property Management" [ref=f123e292] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#management
+        - navigation "Contact Us" [ref=f123e293]:
+          - heading "Contact Us" [level=2] [ref=f123e294]
+          - list [ref=f123e295]:
+            - listitem [ref=f123e296]:
+              - link "Contact Form" [ref=f123e297] [cursor=pointer]:
+                - /url: http://localhost:8080/contact/#contact-form
+            - listitem [ref=f123e298]:
+              - link "Our Offices" [ref=f123e299] [cursor=pointer]:
+                - /url: http://localhost:8080/contact/#offices
+    - generic [ref=f123e301]:
+      - generic [ref=f123e302]:
+        - paragraph [ref=f123e303]: "@2026 Estatein. All Rights Reserved."
+        - list [ref=f123e304]:
+          - listitem [ref=f123e305]:
+            - link "Terms & Conditions" [ref=f123e306] [cursor=pointer]:
+              - /url: http://localhost:8080/terms-conditions/
+      - list [ref=f123e307]:
+        - listitem [ref=f123e308]:
+          - link "Facebook" [ref=f123e309] [cursor=pointer]:
+            - /url: https://facebook.com/
+        - listitem [ref=f123e313]:
+          - link "Linkedin" [ref=f123e314] [cursor=pointer]:
+            - /url: https://linkedin.com/
+        - listitem [ref=f123e318]:
+          - link "Twitter" [ref=f123e319] [cursor=pointer]:
+            - /url: https://x.com/
+        - listitem [ref=f123e323]:
+          - link "Youtube" [ref=f123e324] [cursor=pointer]:
+            - /url: https://youtube.com/

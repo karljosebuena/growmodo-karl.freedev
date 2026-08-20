@@ -2,14 +2,13 @@
 /**
  * Home hero: headline, dual CTAs, trust stats, imagery with rotating seal.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
 
-$growmodo_stats = array(
-	array( '200+', __( 'Happy Customers', 'growmodo' ) ),
-	array( '10k+', __( 'Properties For Clients', 'growmodo' ) ),
-	array( '16+', __( 'Years of Experience', 'growmodo' ) ),
-);
+defined( 'ABSPATH' ) || exit;
+
 ?>
 <section class="hero">
 	<div class="hero__content">
@@ -28,14 +27,7 @@ $growmodo_stats = array(
 			</a>
 		</div>
 
-		<div class="hero__stats">
-			<?php foreach ( $growmodo_stats as $growmodo_stat ) : ?>
-				<div class="stat">
-					<div class="stat__value"><?php echo esc_html( $growmodo_stat[0] ); ?></div>
-					<div class="stat__label"><?php echo esc_html( $growmodo_stat[1] ); ?></div>
-				</div>
-			<?php endforeach; ?>
-		</div>
+		<?php growmodo_render_stats(); ?>
 	</div>
 
 	<div class="hero__media">

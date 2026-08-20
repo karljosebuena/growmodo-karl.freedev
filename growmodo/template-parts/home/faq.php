@@ -2,13 +2,17 @@
 /**
  * Home "Frequently Asked Questions" section.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 $growmodo_faqs = new WP_Query(
 	array(
 		'post_type'      => 'faq',
-		'posts_per_page' => 3,
+		'posts_per_page' => growmodo_faq_count(),
 		'orderby'        => 'date',
 		'order'          => 'ASC',
 	)

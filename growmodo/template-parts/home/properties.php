@@ -2,14 +2,17 @@
 /**
  * Home "Featured Properties" section — the newest three property listings.
  *
+ * @since 1.0.0
+ *
  * @package Growmodo
  */
+
+defined( 'ABSPATH' ) || exit;
 
 $growmodo_properties = new WP_Query(
 	array(
 		'post_type'      => 'property',
 		'posts_per_page' => 3,
-		'no_found_rows'  => false,
 	)
 );
 

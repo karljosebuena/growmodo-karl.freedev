@@ -1,0 +1,205 @@
+- generic [active] [ref=f34e1]:
+  - link "Skip to content" [ref=f34e2] [cursor=pointer]:
+    - /url: "#main"
+  - region "Announcement" [ref=f34e3]:
+    - generic [ref=f34e4]:
+      - generic [ref=f34e7]: Discover Your Dream Property with Estatein
+      - link "Learn More" [ref=f34e8] [cursor=pointer]:
+        - /url: http://localhost:8080/properties/
+    - button "Dismiss announcement" [ref=f34e9] [cursor=pointer]
+  - banner [ref=f34e13]:
+    - generic [ref=f34e14]:
+      - link "Estatein" [ref=f34e15] [cursor=pointer]:
+        - /url: http://localhost:8080/
+      - navigation "Primary navigation" [ref=f34e19]:
+        - list [ref=f34e20]:
+          - listitem [ref=f34e21]:
+            - link "Home" [ref=f34e22] [cursor=pointer]:
+              - /url: http://localhost:8080/
+          - listitem [ref=f34e23]:
+            - link "About Us" [ref=f34e24] [cursor=pointer]:
+              - /url: http://localhost:8080/about-us/
+          - listitem [ref=f34e25]:
+            - link "Properties" [ref=f34e26] [cursor=pointer]:
+              - /url: /properties/
+          - listitem [ref=f34e27]:
+            - link "Services" [ref=f34e28] [cursor=pointer]:
+              - /url: http://localhost:8080/services/
+      - link "Contact Us" [ref=f34e29] [cursor=pointer]:
+        - /url: http://localhost:8080/contact/
+  - main [ref=f34e30]:
+    - article [ref=f34e31]:
+      - generic [ref=f34e33]:
+        - heading "Rustic Retreat Cottage" [level=1] [ref=f34e34]
+        - list [ref=f34e35]:
+          - listitem [ref=f34e36]: Aspen, Colorado
+          - listitem [ref=f34e40]: $375,000
+      - generic [ref=f34e44]:
+        - heading "Description" [level=2] [ref=f34e46]
+        - complementary "Property details" [ref=f34e47]:
+          - heading "At a glance" [level=2] [ref=f34e48]
+          - generic [ref=f34e49]:
+            - generic [ref=f34e50]:
+              - generic [ref=f34e51]: Bedrooms
+              - generic [ref=f34e52]: "3"
+            - generic [ref=f34e53]:
+              - generic [ref=f34e54]: Bathrooms
+              - generic [ref=f34e55]: "2"
+            - generic [ref=f34e56]:
+              - generic [ref=f34e57]: Type
+              - generic [ref=f34e58]: Cottage
+            - generic [ref=f34e59]:
+              - generic [ref=f34e60]: Location
+              - generic [ref=f34e61]: Aspen, Colorado
+            - generic [ref=f34e62]:
+              - generic [ref=f34e63]: Price
+              - generic [ref=f34e64]: $375,000
+          - link "Enquire About This Property" [ref=f34e65] [cursor=pointer]:
+            - /url: "#property-inquiry"
+      - generic [ref=f34e67]:
+        - generic [ref=f34e77]:
+          - heading "Inquire About Rustic Retreat Cottage" [level=2] [ref=f34e78]
+          - paragraph [ref=f34e79]: Interested in this property? Fill out the form below and our team will reach out with full details, including scheduling a viewing and answering any questions you may have.
+        - generic [ref=f34e80]:
+          - status [ref=f34e81]: Thank you — your message has been received. Our team will be in touch shortly.
+          - paragraph [ref=f34e82]:
+            - text: Website
+            - textbox [ref=f34e83]
+          - generic [ref=f34e84]:
+            - paragraph [ref=f34e85]:
+              - generic [ref=f34e86]: Full name
+              - textbox "Full name" [ref=f34e87]:
+                - /placeholder: Enter your name
+            - paragraph [ref=f34e88]:
+              - generic [ref=f34e89]: Email address *
+              - textbox "Email address" [ref=f34e90]:
+                - /placeholder: Enter your email
+            - paragraph [ref=f34e91]:
+              - generic [ref=f34e92]: Phone
+              - textbox "Phone" [ref=f34e93]:
+                - /placeholder: Enter your phone number
+            - paragraph [ref=f34e94]:
+              - generic [ref=f34e95]: Selected property
+              - textbox "Selected property" [ref=f34e96]: Rustic Retreat Cottage
+            - paragraph [ref=f34e97]:
+              - generic [ref=f34e98]: Message
+              - textbox "Message" [ref=f34e99]:
+                - /placeholder: Enter your message here…
+                - text: I would like to know more about Rustic Retreat Cottage.
+          - button "Send Your Message" [ref=f34e100] [cursor=pointer]
+    - generic [ref=f34e102]:
+      - generic [ref=f34e103]:
+        - heading "Start Your Real Estate Journey Today" [level=2] [ref=f34e104]
+        - paragraph [ref=f34e105]: Your dream property is just a click away. Whether you're looking for a new home, a strategic investment, or expert real estate advice, Estatein is here to assist you every step of the way. Take the first step towards your real estate goals and explore our available properties or get in touch with our team for personalized assistance.
+      - link "Explore Properties" [ref=f34e107] [cursor=pointer]:
+        - /url: http://localhost:8080/properties/
+  - contentinfo [ref=f34e108]:
+    - generic [ref=f34e109]:
+      - generic [ref=f34e110]:
+        - link "Estatein" [ref=f34e111] [cursor=pointer]:
+          - /url: http://localhost:8080/
+        - generic [ref=f34e115]:
+          - paragraph [ref=f34e116]:
+            - text: Website
+            - textbox [ref=f34e117]
+          - generic [ref=f34e118]: Your email address
+          - generic [ref=f34e119]:
+            - textbox "Your email address" [ref=f34e123]:
+              - /placeholder: Enter Your Email
+            - button "Subscribe" [ref=f34e124] [cursor=pointer]
+      - generic [ref=f34e128]:
+        - navigation "Home" [ref=f34e129]:
+          - heading "Home" [level=2] [ref=f34e130]
+          - list [ref=f34e131]:
+            - listitem [ref=f34e132]:
+              - link "Hero Section" [ref=f34e133] [cursor=pointer]:
+                - /url: http://localhost:8080/#main
+            - listitem [ref=f34e134]:
+              - link "Features" [ref=f34e135] [cursor=pointer]:
+                - /url: http://localhost:8080/#features
+            - listitem [ref=f34e136]:
+              - link "Properties" [ref=f34e137] [cursor=pointer]:
+                - /url: http://localhost:8080/#properties
+            - listitem [ref=f34e138]:
+              - link "Testimonials" [ref=f34e139] [cursor=pointer]:
+                - /url: http://localhost:8080/#testimonials
+            - listitem [ref=f34e140]:
+              - link "FAQ's" [ref=f34e141] [cursor=pointer]:
+                - /url: http://localhost:8080/#faq
+        - navigation "About Us" [ref=f34e142]:
+          - heading "About Us" [level=2] [ref=f34e143]
+          - list [ref=f34e144]:
+            - listitem [ref=f34e145]:
+              - link "Our Story" [ref=f34e146] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#story
+            - listitem [ref=f34e147]:
+              - link "Our Works" [ref=f34e148] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#works
+            - listitem [ref=f34e149]:
+              - link "How It Works" [ref=f34e150] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#process
+            - listitem [ref=f34e151]:
+              - link "Our Team" [ref=f34e152] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#team
+            - listitem [ref=f34e153]:
+              - link "Our Clients" [ref=f34e154] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#clients
+            - listitem [ref=f34e155]:
+              - link "Insights" [ref=f34e156] [cursor=pointer]:
+                - /url: http://localhost:8080/insights/
+        - navigation "Properties" [ref=f34e157]:
+          - heading "Properties" [level=2] [ref=f34e158]
+          - list [ref=f34e159]:
+            - listitem [ref=f34e160]:
+              - link "Portfolio" [ref=f34e161] [cursor=pointer]:
+                - /url: http://localhost:8080/properties/
+            - listitem [ref=f34e162]:
+              - link "Categories" [ref=f34e163] [cursor=pointer]:
+                - /url: http://localhost:8080/properties/
+        - navigation "Services" [ref=f34e164]:
+          - heading "Services" [level=2] [ref=f34e165]
+          - list [ref=f34e166]:
+            - listitem [ref=f34e167]:
+              - link "Valuation Mastery" [ref=f34e168] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#valuation
+            - listitem [ref=f34e169]:
+              - link "Strategic Marketing" [ref=f34e170] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#marketing
+            - listitem [ref=f34e171]:
+              - link "Negotiation Wizardry" [ref=f34e172] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#negotiation
+            - listitem [ref=f34e173]:
+              - link "Closing Success" [ref=f34e174] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#closing
+            - listitem [ref=f34e175]:
+              - link "Property Management" [ref=f34e176] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#management
+        - navigation "Contact Us" [ref=f34e177]:
+          - heading "Contact Us" [level=2] [ref=f34e178]
+          - list [ref=f34e179]:
+            - listitem [ref=f34e180]:
+              - link "Contact Form" [ref=f34e181] [cursor=pointer]:
+                - /url: http://localhost:8080/contact/#contact-form
+            - listitem [ref=f34e182]:
+              - link "Our Offices" [ref=f34e183] [cursor=pointer]:
+                - /url: http://localhost:8080/contact/#offices
+    - generic [ref=f34e185]:
+      - generic [ref=f34e186]:
+        - paragraph [ref=f34e187]: "@2026 Estatein. All Rights Reserved."
+        - list [ref=f34e188]:
+          - listitem [ref=f34e189]:
+            - link "Terms & Conditions" [ref=f34e190] [cursor=pointer]:
+              - /url: http://localhost:8080/terms-conditions/
+      - list [ref=f34e191]:
+        - listitem [ref=f34e192]:
+          - link "Facebook" [ref=f34e193] [cursor=pointer]:
+            - /url: https://facebook.com/
+        - listitem [ref=f34e197]:
+          - link "Linkedin" [ref=f34e198] [cursor=pointer]:
+            - /url: https://linkedin.com/
+        - listitem [ref=f34e202]:
+          - link "Twitter" [ref=f34e203] [cursor=pointer]:
+            - /url: https://x.com/
+        - listitem [ref=f34e207]:
+          - link "Youtube" [ref=f34e208] [cursor=pointer]:
+            - /url: https://youtube.com/
