@@ -7,8 +7,12 @@ bottom, it takes about 15 minutes.
 
 You need, from the repo root:
 
-- `growmodo-theme.zip` — the theme, ready to upload (237KB)
-- `deploy/growmodo-content.xml` — the demo content export
+- `growmodo-theme.zip` — build it from the repo root with `zip -r growmodo-theme.zip growmodo`
+  (380KB). The `growmodo/` folder has to be *inside* the zip, not zipped from within, or
+  WordPress installs the theme under the zip's name instead of its own. It is not committed,
+  since a zip in Git is a binary that changes on every build
+- `deploy/growmodo-content.xml` — the demo content export: 6 properties, 6 testimonials,
+  6 FAQs, 2 posts, 6 pages, the two menus, 8 images
 
 ## 1. Host and WordPress
 
@@ -29,7 +33,8 @@ the `growmodo/` folder into `/htdocs/wp-content/themes/`.
 1. **Settings → Permalinks** → select **Post name** → Save.
    *Required — the `/properties/` archive 404s on the default permalink structure.*
 2. **Settings → Reading** → Your homepage displays → **A static page** → set **Homepage** to
-   the page named *Home* (it appears after the import; come back to this step if needed).
+   *Home* and **Posts page** to *Insights* (both appear after the import; come back to this
+   step if needed).
 
 ## 4. Content
 
@@ -49,8 +54,8 @@ Two options.
 2. wp-admin → **Tools → Import → WordPress** → install the importer if prompted → upload
    `deploy/growmodo-content-live.xml`.
 3. Assign posts to your admin user and **tick "Download and import file attachments"**.
-4. Spot-check: Properties should list 3 listings with images and prices; Testimonials should
-   have avatars.
+4. Spot-check: Properties should list 6 listings with images and prices; Testimonials should
+   have avatars; the villa should have two extra gallery images.
 
 ### Option B — enter it by hand
 
@@ -59,18 +64,26 @@ Create these, matching the fields exactly:
 **Properties** (Properties → Add New; fill the *Details* box in the sidebar, set a featured
 image from `growmodo/assets/img/property-N.webp`, and write a one-line excerpt):
 
-| Title | Beds | Baths | Price | Type | Location |
-| --- | --- | --- | --- | --- | --- |
-| Seaside Serenity Villa | 4 | 3 | 550000 | Villa | Malibu, California |
-| Metropolitan Haven | 2 | 2 | 425000 | Apartment | New York City |
-| Rustic Retreat Cottage | 3 | 2 | 375000 | Cottage | Aspen, Colorado |
+| Title | Beds | Baths | Price | Type | Location | Size | Year |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Seaside Serenity Villa | 4 | 3 | 550000 | Villa | Malibu, California | 4200 | 2019 |
+| Metropolitan Haven | 2 | 2 | 425000 | Apartment | New York City | 1150 | 2021 |
+| Rustic Retreat Cottage | 3 | 2 | 375000 | Cottage | Aspen, Colorado | 1650 | 2008 |
+| Skyline Penthouse | 3 | 3 | 1250000 | Penthouse | Chicago, Illinois | 3100 | 2022 |
+| Garden Court Townhouse | 4 | 3 | 690000 | Townhouse | Portland, Oregon | 2400 | 2015 |
+| Lakeside Bungalow | 2 | 1 | 415000 | Bungalow | Burlington, Vermont | 1250 | 1998 |
+
+Key features go one per line in the *Key features* textarea. Uploading more images to a
+listing gives it a gallery carousel — `villa-living.webp` and `villa-pool.webp` are the two
+spare interiors.
 
 **Testimonials** — rating 5, a client name and location, avatar from `avatar-N.webp`.
 
 **FAQs** — question as the title, answer as the content.
 
-**Pages** — `Home`, `About Us`, `Services`, `Contact`, `Terms & Conditions`.
-The slugs matter: `contact`, `about-us`, and `services` select their templates by slug.
+**Pages** — `Home`, `About Us`, `Services`, `Contact`, `Insights`, `Terms & Conditions`.
+The slugs matter: `contact`, `about-us`, and `services` select their templates by slug, and
+`terms-conditions` is what the enquiry forms' consent line links to.
 
 ## 5. Menus
 
@@ -85,14 +98,18 @@ The slugs matter: `contact`, `about-us`, and `services` select their templates b
 
 Click through in a normal browser window, not the editor preview:
 
-- [ ] `/` — hero image loads, properties/testimonials/FAQ sections populated
-- [ ] `/properties/` — filter by type and by max price; results change; **Reset** clears
-- [ ] a single property — spec panel correct, enquiry form present
+- [ ] `/` — hero image loads, properties/testimonials/FAQ sections populated, carousel arrows
+      page through the cards
+- [ ] `/properties/` — search for `cottage` (the URL should carry `?q=cottage` and be
+      shareable); then filter by type, price, size and build year — results narrow on change,
+      with no submit or reset button by design
+- [ ] a single property — gallery thumbnails switch the main image, specs correct, pricing
+      tables present, enquiry form prefilled with the listing
 - [ ] `/contact/` — submit the form; expect the success notice, then confirm the submission
       appears under **Inquiries** in wp-admin
-- [ ] `/about-us/` and `/services/`
+- [ ] `/about-us/`, `/services/`, `/insights/` and one blog post
 - [ ] a bad URL like `/nope/` — styled 404
-- [ ] on a phone: hamburger menu opens, closes, and navigates
+- [ ] on a phone: hamburger menu opens, closes, and navigates; footer socials sit in one row
 - [ ] dismiss the announcement bar, reload — it stays dismissed
 
 ## 7. Final

@@ -9,6 +9,12 @@
 > with nothing built. Decisions from that session are logged in the
 > [Decision log](#decision-log-2026-08-20-grill-session) below; the timeline is now a
 > single-day wall-clock schedule.
+>
+> **Status Thu 2026-08-21.** The build is complete: seven page types, six review and
+> design-fidelity passes, `phpcs` clean, no plugin dependencies. **The 2026-08-20 EOD
+> deadline passed with the site undeployed** — the two remaining items (public GitHub repo,
+> InfinityFree deploy) are both blocked on decisions only Karl can make, and both are
+> pass/fail deliverables. Everything else below is done.
 
 ---
 
@@ -25,13 +31,15 @@
 
 | Page | Status | Notes |
 | --- | --- | --- |
-| Shared: header / footer / CTA banner | Done (local) | Announcement bar, mobile nav, newsletter, socials |
-| Home | Done (local) | Hero, features, properties, testimonials, FAQ |
-| Properties (archive) | Done (local) | Filters genuinely work (type/beds/baths/max price) |
+| Shared: header / footer / CTA banner | Done (local) | Announcement bar, mobile nav, newsletter, socials; footer labels and mobile social row match the design |
+| Home | Done (local) | Hero, feature strip, properties, testimonials, FAQ — card sections are pageable carousels |
+| Properties (archive) | Done (local) | Server-side **search** + browser-side **filters** (location / type / price / size / build year), no submit or reset buttons |
+| Property single | Done (local) | Gallery carousel with thumbnails, description + key features, pricing breakdown, FAQ, short enquiry form |
 | Contact | Done (local) | Info cards, working form, office locations |
-| Property single | Done (local) | ✅ Design confirmed to exist; pricing tables omitted |
-| About Us | Done (local) | Journey, values, achievements, 6-step process, team |
-| Services | Done (local) | Three service groups, data-driven from one array |
+| About Us | Done (local) | Journey, values, achievements, 6-step process, team, valued clients |
+| Services | Done (local) | Three service groups, data-driven from one array; two layouts (grid + rail) |
+| Insights (blog) | Done (local) | `archive.php` / `single.php` / `search.php` + sidebar — the brief names the WP Loop for blog content |
+| 404 + search results | Done (local) | Styled, share the shell |
 
 **Figma inventory confirmed:** 6 pages × 3 breakpoints — Home, About Us, Services,
 Properties, **Property Details**, Contact. Breakpoints are **1920 / 1440 / 390** (laptop, not
@@ -56,8 +64,10 @@ Done at final deploy is deleted from the live site, whatever the ambition was.
 2. **Header, Main Content, Footer are the named priority.** They reach 100% before anything
    else gets time.
 3. **Live public URL required.** Local setups are rejected. Deploy early, keep it deployable.
-4. **Hard deadline: today, Wed 2026-08-20, end of day.** The 3-day window closes tonight.
-   Submit before midnight, whatever state the omit gate leaves standing.
+4. **Hard deadline was Wed 2026-08-20, end of day — it passed undeployed.** The build met the
+   omit gate; the submission did not go in, because a site with no public URL is not a
+   submission. Deploying is therefore the only work that still counts: nothing else raises
+   the score while deliverable 1 is missing.
 
 ---
 
@@ -79,9 +89,14 @@ platforms have no PHP/MySQL; headless would fail the "custom WordPress theme" re
 1. Karl drives the live wp-admin: theme zip uploads, activation, settings (permalinks
    `Post name`, static front page, menus). Claude hands over a zip + checklist per round.
 2. Claude verifies each deploy on the **public URL** with browser tools — no credentials.
-3. **Content is entered exactly once, on live.** Local Docker gets 2–3 throwaway test posts
-   to verify loops and meta boxes; real content (Figma text + exported images) goes straight
-   into live wp-admin. No WXR migration (live can't sideload media from `localhost` anyway).
+3. **Content ships as a WXR export** — *this reverses the original "enter it once, on live"
+   decision.* Demo content grew past what anyone should retype (6 properties with meta and
+   images, 6 testimonials, 6 FAQs, 2 posts, 6 pages, 6 menu items), so it is exported from
+   Docker and imported live. `deploy/prepare-content.sh <live-url>` rewrites the export's
+   attachment URLs to point at the theme's own `assets/img/`, which is how the live importer
+   sideloads media it cannot fetch from `localhost`. Every one of the export's 8 attachments
+   is verified to exist in the theme, so the import is self-contained. Hand entry remains
+   documented as Option B in `deploy/DEPLOY.md`.
 4. No plugins required by the build: **ACF is cut** (core meta boxes instead), forms are
    hand-rolled. Zero plugin-install risk on the flaky host.
 
@@ -128,17 +143,19 @@ lag and Figma exports gate everything.
 
 ### Track A — Karl (parallel, starts NOW)
 
-- [ ] Launch Docker.app (Claude's compose stack needs the daemon)
-- [ ] InfinityFree signup → new site on free subdomain → enable SSL → Softaculous WordPress
-      install → hand Claude the public URL
-- [ ] Duplicate the Estatein Figma community file to drafts
-- [ ] Export **full-page screenshots of every page at desktop width** (tablet/mobile too if
-      quick) → `docs/figma/`
-- [ ] Export assets: logo, icons, hero/section images (WebP where possible) → theme assets
-- [ ] Confirm from the Figma: does a **property single** page design exist? Correct the page
-      status table
-- [ ] Later, once CPTs are deployed: enter real content on live (properties, testimonials,
-      FAQs, page text)
+- [x] Launch Docker.app (Claude's compose stack needs the daemon)
+- [ ] **InfinityFree signup → new site on free subdomain → enable SSL → Softaculous WordPress
+      install → hand Claude the public URL** — outstanding, and the whole submission waits on it
+- [x] Duplicate the Estatein Figma community file to drafts
+- [x] Export **full-page screenshots of every page at desktop width** → `docs/figma/`, all
+      three frames
+- [x] ~~Export assets~~ — the community file exports no usable assets, so the photography was
+      cropped out of the page renders and converted to WebP instead, and the icons were drawn
+      as an inline SVG library
+- [x] Confirm from the Figma: a **property single** design does exist; page status table
+      corrected
+- [x] ~~Enter real content on live~~ — superseded by decision 17: content ships as a WXR
+      export and is imported, not retyped
 
 ### Track B — Claude (build)
 
@@ -176,7 +193,8 @@ lag and Figma exports gate everything.
 
 #### Phase D · Remaining pages — ✅ done
 
-- [x] **Properties archive**: hero, **working** filter bar, grid, pagination
+- [x] **Properties archive**: hero, search, **working** filter row, results as a pageable
+      carousel (the design's own pattern — see decision 14 for why there is no pagination)
 - [x] **Contact**: hero, contact info cards, hand-rolled form → `inquiry` CPT, offices
 - [x] Property single (`single-property.php`) — spec panel + prefilled enquiry form
 - [x] About Us: journey/stats, values panel, achievements, 6-step process, team
@@ -185,7 +203,12 @@ lag and Figma exports gate everything.
 #### Phase E · Creativity
 
 - [x] JSON-LD structured data (RealEstateAgent / SingleFamilyResidence + Offer / FAQPage)
-- [x] Working property filters (server-side via `pre_get_posts`, allowlist-validated)
+- [x] Property search server-side via `pre_get_posts` (shareable URL, works with JS off) and
+      filtering in the browser over the rendered cards — one predicate per feature, no
+      `meta_query` duplicating the same logic. Filters are CSS-hidden unless `<html>` has
+      `has-js`, so no control is offered that cannot work
+- [x] Computed pricing breakdown on the property page — every figure derived from the listing
+      price at filterable rates, proven against the Figma's own worked example
 - [x] Announcement banner dismissal persisted in `localStorage`, no flash, no-JS safe
 - [x] Scroll-reveal + card microinteractions, reduced-motion safe
 
@@ -201,36 +224,69 @@ lag and Figma exports gate everything.
 - [x] Brief re-read line by line — closed four explicitly-named gaps (sidebar, WP Loop
       for blog posts, meta tags, CSS/JS minification)
 
-#### Deploy — **blocking deliverable, not yet done**
+#### Design-fidelity rounds — ✅ done (screenshot review, 2026-08-20/21)
 
-- [ ] `growmodo-theme.zip` (237KB, built) → live wp-admin upload + activate
-- [ ] Live settings: permalinks `Post name`, static front page, menus assigned
-- [ ] Content entered on live (properties w/ meta + images, testimonials, FAQs, pages)
+Nine rounds of side-by-side review against the Figma exports, each measured on the PNG with
+pixel scans rather than judged by eye. What each round changed:
+
+- [x] **Properties archive** — search section added as its own feature, filter icons, hero
+      gradient, reset button dropped; filtering moved to the browser
+- [x] **Filters** — icon family unified; Property Size and Build Year replaced the
+      Bedrooms/Bathrooms substitution, and are now stored as real post meta
+- [x] **Archive + home** — curated listing order shared by both, full enquiry field set, the
+      invented "Showing 6 of 6" line removed from view (kept as a screen-reader status)
+- [x] **Property detail** — gallery carousel, aligned description/key features, a two-column
+      enquiry variant, the pricing tables, and the FAQ section
+- [x] **Gallery pager** — the design's centred pill-with-dashes, not a count row
+- [x] **Footer** — the design's own link labels, every one resolving to a section that
+      exists; social row rearranged on mobile
+- [x] **Services** — full-bleed feature strip, outlined cards, the design's two group layouts
+- [x] **Services icons** — one distinct glyph per card, matched to its copy
+- [x] **Feature strip + rails** — two concentric rings, corrected padding/label/arrow
+      geometry, equal grid rows so a CTA panel matches the card beside it
+
+#### Phase F · Verification — ✅ done locally
+
+- [x] Responsive: every shipped page swept for horizontal overflow at ten widths from 320 to
+      1920; content column matches the Figma frames (358 / 1282 / 1596px)
+- [x] SEO: title-tag, meta descriptions, OG/Twitter tags, exactly one `h1` per template, alt
+      text, semantic landmarks, JSON-LD
+- [x] Performance (Home, logged out, local warm cache, admin bar off): 13 requests, ~172KB
+      transferred (HTML 14KB, CSS 7KB gzipped from 36KB, JS 2KB, images 148KB), LCP 72ms,
+      DCL 48ms, **CLS 0 with zero shift entries recorded**
+- [x] Accessibility: axe-core plus keyboard-only walkthrough and computed-contrast checks
+- [x] `phpcs` — zero errors, zero warnings across 50 files
+- [x] Console: no errors on any page (a 404 URL logs its own status; that is the browser, not
+      the theme)
+
+#### Phase G · Omit gate — ✅ done, nothing cut
+
+Every section was measured against the Definition of Done and all of them pass, so nothing
+was removed. The two deliberate content-driven omissions are the Contact page's
+"Explore Estatein's World" photo mosaic (needs six photographs the community file does not
+export) and the Contact office filter tabs (two offices do not justify a filter); both are
+named in the write-up. The DoD's "verified on the live site" box stays unticked
+until deploy.
+
+#### Deploy — **blocking deliverable, still not done**
+
+- [ ] Zip the theme (`zip -r growmodo-theme.zip growmodo` from the repo root — 380KB, built
+      and waiting) → live wp-admin upload + activate
+- [ ] Live settings: permalinks `Post name`, static front page (*Home*), posts page
+      (*Insights*), site title *Estatein*, menus assigned
+- [ ] `./deploy/prepare-content.sh <live-url>` → import `deploy/growmodo-content-live.xml`
+      with "Download and import file attachments" ticked
 - [ ] Verify every page on the public URL; then the DoD's live-site box can be ticked
-
-#### Phase F · Verification — checkpoint 22:15
-
-- [ ] Responsive: every shipped page at 3 breakpoints + one in-between width
-- [ ] SEO: title-tag, meta descriptions, one `h1` per page, alt text, semantic landmarks
-- [ ] Performance: image sizes/WebP, lazy loading, no unused CSS/JS, scripts in footer
-- [ ] Accessibility: keyboard-only walkthrough, focus visible, contrast spot-check
-- [ ] `phpcs` — zero errors
-
-#### Phase G · Omit gate (hard) + final deploy — checkpoint 22:45
-
-- [ ] Every section vs the Definition of Done — anything failing is **removed** from
-      templates, nav, and live content (mark ~~Omitted~~ above, note in
-      the write-up as a scoped decision)
-- [ ] Final zip → live; Karl re-deploys; content/menus verified
 - [ ] Cross-browser: Chrome, Firefox, Safari; real phone if possible
-- [ ] All links, forms, hover states, mobile menu verified live
 
-#### Phase H · Docs + submit — before midnight
+#### Phase H · Docs + submit — **blocked on the repo decision**
 
-- [ ] the write-up → final 1–2 pages: **decisions-focused** (architecture, triage,
-      security approach, plugins/tools used) — per the write-up decision, no
-      duration/tooling-process narrative
-- [ ] Repo README: what it is, live URL, theme install instructions
+- [x] The 1–2 page write-up, decisions-focused per the write-up
+      decision, kept current as decisions landed rather than reconstructed at the end
+- [x] Repo README: what it is, install instructions, content model, structure
+- [ ] Push the public GitHub repo — **held: `gh` is authenticated as `karl-bv`, a work
+      account. Confirm which account owns the public trial repo before publishing**
+- [ ] Fill the live URL into `README.md`
 - [ ] Merge `develop` → `main`, final push
 - [ ] Final live-URL click-through from an incognito window
 - [ ] Submit repo link + live URL + write-up on the task page
@@ -267,3 +323,19 @@ lag and Figma exports gate everything.
 | 11 | Deploys | Karl drives wp-admin; Claude verifies the public URL |
 | 12 | Creativity shortlist | JSON-LD → working filters → scroll-reveal → banner persistence (gated on full DoD) |
 | 13 | Write-up | Decisions-focused; no duration/AI-process narrative |
+
+## Decisions taken after the plan (2026-08-20/21)
+
+Each of these changed or reversed something above; they are recorded here so the plan and the
+build cannot disagree silently.
+
+| # | Decision | Choice and why |
+| --- | --- | --- |
+| 14 | Search vs filtering | **Two mechanisms, not one.** Search is the only server round-trip (`pre_get_posts` on a `q` param, shareable, no-JS safe); filters narrow the rendered cards in the browser. Reverses the Phase-E plan of server-side filtering — that version duplicated the same predicate in a `meta_query` |
+| 15 | Filter set | The design's own: location, type, price, **Property Size**, **Build Year**. My Bedrooms/Bathrooms substitution was wrong and was overruled; size and year are now stored meta, not derived |
+| 16 | No submit or reset buttons | Every pill's first option *is* its cleared state, and filtering fires on change. A reset button is a second way to do one thing |
+| 17 | Content delivery | WXR export + `prepare-content.sh`, replacing decision 9's hand entry (see Deployment reality check) |
+| 18 | Pricing breakdown | **Built, reversing an earlier cut.** I had refused it as fabricated content; the Figma's figures all derive from the listing price at fixed rates, which its worked example proves, so the section is computed from `growmodo_pricing_rates()` and labelled an estimate |
+| 19 | Property gallery | Native attached media (featured image first), not an ID list in meta. A listing with one image renders no carousel |
+| 20 | Blog | An `Insights` page plus `archive.php` / `single.php` / `search.php` and a sidebar — the brief names the WP Loop for blog content even though the Figma has no blog screen |
+| 21 | Editable content triage | Home, Properties, property detail and the blog are content-driven; About Us, Services and Contact keep their copy in templates. Named as the first thing to revisit in the write-up rather than left for a reviewer to find |

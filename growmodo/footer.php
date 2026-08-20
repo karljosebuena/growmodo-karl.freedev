@@ -21,6 +21,7 @@ $growmodo_footer_columns = array(
 		__( 'Testimonials', 'growmodo' ) => home_url( '/#testimonials' ),
 		__( 'FAQ\'s', 'growmodo' )       => home_url( '/#faq' ),
 	),
+
 	/*
 	 * Labels are the design's, and every one resolves to a section that exists:
 	 * "Our Works" is the achievements block, "Our Clients" the valued-clients

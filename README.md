@@ -17,25 +17,29 @@ listings, testimonials, FAQs, and working enquiry forms.
 1. Zip the `growmodo/` directory (or download it from this repo).
 2. In wp-admin: **Appearance → Themes → Add New → Upload Theme**, choose the zip, activate.
 3. **Settings → Permalinks** → select **Post name** (required for the property archive).
-4. **Settings → Reading** → set a static front page.
+4. **Settings → Reading** → set a static front page, and a posts page for the blog.
 5. **Appearance → Menus** → create a menu with Home, About Us, Properties, Services and
    assign it to **Primary Menu**; optionally a second menu for **Footer Menu**.
 
 Pages are picked up by slug: `contact`, `about-us`, `services`. The properties archive lives
-at `/properties/`.
+at `/properties/`. Demo content — properties with meta and images, testimonials, FAQs, posts,
+pages and menus — can be imported from `deploy/growmodo-content.xml`; see
+[`deploy/DEPLOY.md`](deploy/DEPLOY.md).
 
 ## Content model
 
 | Post type | Fields | Notes |
 | --- | --- | --- |
-| `property` | bedrooms, bathrooms, price, type, location + featured image, excerpt | Public, archive at `/properties/` |
+| `property` | bedrooms, bathrooms, price, type, location, floor area, build year, key features (one per line) + featured image, excerpt | Public, archive at `/properties/`. Extra images uploaded to the listing become its gallery |
 | `testimonial` | rating, client name, client location + featured image | Admin-only, shown in page sections |
 | `faq` | title + content | Admin-only, rendered as disclosures |
-| `inquiry` | email, phone | Private; created by form submissions, not by hand |
+| `inquiry` | email, phone, selected property, and the submitted enquiry fields | Private; created by form submissions, not by hand |
 
-Property type options are defined once in `growmodo_property_types()`
-(`growmodo/inc/property-query.php`) and shared by the editor select, the archive filter, and
-validation.
+Every option list is declared once and reused: `growmodo_property_types()`
+(`growmodo/inc/property-query.php`) fills the editor select, the archive filter and the
+enquiry form's Property Type, and validates all three on save. Price and size bands, room
+counts, contact methods and enquiry types follow the same pattern — the function that draws
+the control is the allowlist that guards the write.
 
 ## Local development
 
@@ -69,25 +73,35 @@ growmodo/
 ├── style.css                  design tokens + all component styles
 ├── inc/
 │   ├── setup.php              theme supports, menus, image sizes
-│   ├── assets.php             enqueues (deferred script, footer)
+│   ├── assets.php             enqueues (deferred script, footer, .min when available)
 │   ├── icons.php              inline SVG icon library
-│   ├── helpers.php            price formatting, card/section rendering
+│   ├── helpers.php            formatting, property images, card/section rendering
 │   ├── post-types.php         the four CPTs and their registered meta
 │   ├── meta-boxes.php         editor screens — nonce, capability, sanitise
-│   ├── property-query.php     type allowlist + archive filtering
-│   ├── form-handler.php       admin-post handler for enquiry forms
+│   ├── admin-columns.php      list-table columns for properties and enquiries
+│   ├── property-query.php     option lists, archive search, facets, bands
+│   ├── pricing.php            pricing breakdown derived from the listing price
+│   ├── form-handler.php       admin-post handler for every form
+│   ├── seo.php                title, description, OG/Twitter tags
 │   └── schema.php             JSON-LD structured data
 ├── template-parts/
 │   ├── home/                  hero, features, properties, testimonials, faq
-│   ├── card-*.php             property, testimonial, faq cards
-│   ├── form-inquiry.php       shared enquiry form
+│   ├── card-*.php             property, testimonial, faq, post, client, image cards
+│   ├── carousel.php           scroll-snap track + pager, shared by every card section
+│   ├── property-search.php    server-side search form
+│   ├── property-filters.php   browser-side filter row
+│   ├── property-pricing.php   pricing tables
+│   ├── faq-section.php        FAQ loop, shared by Home and property pages
+│   ├── form-inquiry.php       enquiry form — three field sets, chosen by type
+│   ├── service-cta.php        services group CTA panel
 │   ├── section-head.php       heading + lede + optional action
 │   ├── announcement-bar.php   dismissible top bar
 │   └── cta-banner.php         shared pre-footer CTA
 ├── front-page.php             Home
-├── archive-property.php       listings + working filters
-├── single-property.php        property detail + enquiry form
+├── archive-property.php       search + filters + results
+├── single-property.php        gallery, specs, pricing, FAQ, enquiry form
 ├── page-{contact,about-us,services}.php
+├── archive.php  single.php  search.php  searchform.php  sidebar.php   blog
 ├── page.php  index.php  404.php
 └── assets/{js,img}
 ```

@@ -111,7 +111,11 @@ function growmodo_consent_text() {
 }
 
 /**
- * Permalink for a page by slug, or an empty string when it does not exist.
+ * Permalink for a published page by slug, or an empty string.
+ *
+ * `get_page_by_path()` matches drafts and pending pages too, and linking one of
+ * those sends a visitor to a 404 — so the status is checked here rather than
+ * trusting the lookup.
  *
  * @since 1.0.0
  *
@@ -121,7 +125,11 @@ function growmodo_consent_text() {
 function growmodo_page_url( $slug ) {
 	$page = get_page_by_path( $slug );
 
-	return $page instanceof WP_Post ? (string) get_permalink( $page ) : '';
+	if ( ! $page instanceof WP_Post || 'publish' !== $page->post_status ) {
+		return '';
+	}
+
+	return (string) get_permalink( $page );
 }
 
 /**
