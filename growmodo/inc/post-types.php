@@ -111,9 +111,19 @@ function growmodo_register_post_meta() {
 			'growmodo_client_location' => array( 'string', 'sanitize_text_field' ),
 		),
 		'inquiry'     => array(
-			'growmodo_email'       => array( 'string', 'sanitize_email' ),
-			'growmodo_phone'       => array( 'string', 'sanitize_text_field' ),
-			'growmodo_property_id' => array( 'integer', 'absint' ),
+			'growmodo_email'          => array( 'string', 'sanitize_email' ),
+			'growmodo_phone'          => array( 'string', 'sanitize_text_field' ),
+			'growmodo_first_name'     => array( 'string', 'sanitize_text_field' ),
+			'growmodo_last_name'      => array( 'string', 'sanitize_text_field' ),
+			'growmodo_pref_location'  => array( 'string', 'sanitize_text_field' ),
+			'growmodo_pref_type'      => array( 'string', 'sanitize_text_field' ),
+			'growmodo_pref_beds'      => array( 'integer', 'absint' ),
+			'growmodo_pref_baths'     => array( 'integer', 'absint' ),
+			'growmodo_budget'         => array( 'string', 'sanitize_text_field' ),
+			'growmodo_contact_method' => array( 'string', 'sanitize_text_field' ),
+			'growmodo_inquiry_type'   => array( 'string', 'sanitize_text_field' ),
+			'growmodo_referrer'       => array( 'string', 'sanitize_text_field' ),
+			'growmodo_property_id'    => array( 'integer', 'absint' ),
 		),
 	);
 

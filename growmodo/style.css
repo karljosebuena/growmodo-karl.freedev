@@ -96,6 +96,13 @@ Tags: real-estate, dark, one-column, custom-menu
 
 html {
 	-webkit-text-size-adjust: 100%;
+	/*
+	 * The theme is dark-only, and this is what tells the browser so. Without it
+	 * native controls keep their light defaults: an unchecked radio renders as a
+	 * solid white disc, which on this background reads as *selected* — so a
+	 * two-option group looked like both were chosen.
+	 */
+	color-scheme: dark;
 }
 
 /*
@@ -1431,33 +1438,135 @@ button {
 /* ==========================================================================
    18. Forms
    ========================================================================== */
+/*
+ * Outlined, not filled — and the fields inside are the lighter surface. That is
+ * the way round the design has it: the panel is the page colour behind a
+ * hairline, which is what makes the fields read as sunk into it. It was
+ * inverted, and the whole block looked like one flat slab.
+ *
+ * Padding is measured off the three frames: 21px, 51px, 100px.
+ */
 .form {
 	display: grid;
-	gap: var(--sp-5);
-	padding: var(--sp-5);
+	gap: clamp(1.5rem, -1.375rem + 3.75vw, 3.125rem);
+	padding: clamp(1.3125rem, -6rem + 10.2083vw, 6.25rem);
 	border: 1px solid var(--c-border);
 	border-radius: var(--radius-lg);
-	background: var(--c-surface);
+	background: var(--c-bg);
 }
 
+/*
+ * A 50px gutter as the design has, and the column count set per form: the
+ * property enquiry runs four across, the contact form three.
+ */
 .form__grid {
 	display: grid;
-	gap: var(--sp-4);
+	gap: clamp(1.5rem, -1.375rem + 3.75vw, 3.125rem);
 }
 
-@media (min-width: 768px) {
+.form__field--wide {
+	grid-column: 1 / -1;
+}
+
+@media (min-width: 640px) {
 	.form__grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
+}
 
-	.form__field--wide {
-		grid-column: 1 / -1;
+@media (min-width: 1024px) {
+	.form__grid--3 {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.form__grid--4 {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
+	.form__field--half {
+		grid-column: span 2;
 	}
 }
 
 .form__field {
 	display: grid;
+	gap: var(--sp-4);
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* The two contact-method boxes share one field's width. */
+.form__choices {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: var(--sp-2);
+}
+
+.form__choice {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	min-height: 3.875rem;
+	padding-inline: var(--sp-4);
+	border: 1px solid var(--c-border-input);
+	border-radius: var(--radius);
+	background: var(--c-surface);
+	font-size: var(--fs-sm);
+	cursor: pointer;
+}
+
+.form__choice:has(:checked) {
+	border-color: var(--c-accent);
+}
+
+.form__choice svg {
+	width: 1.125rem;
+	height: 1.125rem;
+	color: var(--c-muted);
+}
+
+.form__choice-label {
+	flex: 1;
+	min-width: 0;
+}
+
+/* Native radio, tinted — a hand-built one would only lose keyboard behaviour. */
+.form__choice input {
+	flex: none;
+	width: 1.125rem;
+	height: 1.125rem;
+	margin: 0;
+	accent-color: var(--c-accent);
+}
+
+.form__foot {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--sp-4);
+}
+
+.form__consent {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	color: var(--c-muted);
+	font-size: var(--fs-sm);
+}
+
+.form__consent input {
+	width: 1.125rem;
+	height: 1.125rem;
+	margin: 0;
+	flex: none;
+	accent-color: var(--c-accent);
+}
+
+.form__consent a {
+	color: var(--c-text);
+	text-decoration: underline;
 }
 
 .form__label {
@@ -1468,7 +1577,8 @@ button {
 .form__input,
 .form__textarea {
 	width: 100%;
-	padding: 0.75rem 1rem;
+	/* 68px tall at the desktop frame, as measured off the export. */
+	padding: 1.125rem 1.25rem;
 	/*
 	 * Deliberately lighter than the decorative --c-border: a form control's
 	 * boundary is information (WCAG 1.4.11) and #262626 measures only 1.2:1
@@ -1476,7 +1586,7 @@ button {
 	 */
 	border: 1px solid var(--c-border-input);
 	border-radius: var(--radius);
-	background: var(--c-bg);
+	background: var(--c-surface);
 	color: var(--c-text);
 	font: inherit;
 	font-size: var(--fs-sm);
@@ -1521,15 +1631,15 @@ select.form__input {
 	color: var(--c-accent-hover);
 }
 
-/* Right-aligned and label-width, as in the design; full width on mobile. */
+/* Opposite the consent checkbox, as in the design; full width on mobile. */
 .form__submit {
-	justify-self: end;
 	min-width: 11rem;
+	min-height: 3.875rem;
 }
 
 @media (max-width: 479px) {
 	.form__submit {
-		justify-self: stretch;
+		flex: 1 1 100%;
 	}
 }
 
@@ -1701,24 +1811,31 @@ select.form__input {
 	padding-block: var(--sp-7) var(--sp-6);
 }
 
+/*
+ * position: relative so the visually-hidden result count inside has a
+ * containing block. .screen-reader-text is absolutely positioned, and without
+ * one it resolves against the document — which, next to a horizontal scroller,
+ * put it past the right edge and gave the page a sideways scrollbar.
+ */
 .finder__inner {
+	position: relative;
 	display: grid;
 	gap: var(--sp-5);
 }
 
+/* Only rendered when the result cap truncates a search, so it is not JS-gated. */
 .finder__count {
 	color: var(--c-muted);
 	font-size: var(--fs-sm);
 }
 
 /*
- * The filters and their count only mean anything once the script that applies
- * them is running, so they are hidden until <html> says it is. Gated in CSS on
- * a class set before paint rather than revealed by main.js, which would shift
- * the page after layout.
+ * The filters only mean anything once the script that applies them is running,
+ * so they are hidden until <html> says it is. Gated in CSS on a class set
+ * before paint rather than revealed by main.js, which would shift the page
+ * after layout.
  */
-html:not(.has-js) .filters,
-html:not(.has-js) .finder__count {
+html:not(.has-js) .filters {
 	display: none;
 }
 

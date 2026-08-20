@@ -65,13 +65,15 @@ $growmodo_count_text = __( 'Showing %1$s of %2$s properties', 'growmodo' );
 
 			/*
 			 * Hiding cards is a content change with no focus change, so the new
-			 * count has to be announced (WCAG 4.1.3). The script rewrites this
-			 * from data-template, which is why the phrasing has to read
-			 * correctly for any number rather than relying on _n().
+			 * count has to be announced (WCAG 4.1.3). The design shows no such
+			 * line, so it is announced without being drawn: screen-reader-only,
+			 * not removed. The script rewrites it from data-template, which is
+			 * why the phrasing has to read correctly for any number rather than
+			 * relying on _n().
 			 */
 			?>
 			<p
-				class="finder__count"
+				class="screen-reader-text"
 				role="status"
 				data-filter-count
 				data-template="<?php echo esc_attr( $growmodo_count_text ); ?>"

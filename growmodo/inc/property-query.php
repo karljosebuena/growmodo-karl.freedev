@@ -44,6 +44,73 @@ function growmodo_property_types() {
 }
 
 /**
+ * The order property listings are shown in, everywhere.
+ *
+ * The editor's Order field first, publication date second — a curated sequence
+ * rather than whatever happened to be published last. It lives in one function
+ * because the home carousel and the archive have to agree; when they did not,
+ * the same six listings appeared in opposite orders on the two pages.
+ *
+ * @since 1.0.0
+ *
+ * @return array<string,string> WP_Query `orderby` clauses.
+ */
+function growmodo_property_order() {
+	return array(
+		'menu_order' => 'ASC',
+		'date'       => 'ASC',
+	);
+}
+
+/**
+ * Distinct locations across the published properties.
+ *
+ * Used by the enquiry form's Preferred Location select, so it can only offer
+ * places we actually have listings in. Memoised per request: the form appears
+ * on three templates and none of them should pay for this twice.
+ *
+ * @since 1.0.0
+ *
+ * @return string[] Location labels, keyed by themselves.
+ */
+function growmodo_property_locations() {
+	static $locations = null;
+
+	if ( null !== $locations ) {
+		return $locations;
+	}
+
+	$locations = array();
+
+	/*
+	 * Full post objects rather than `fields => ids`: WP_Query primes the meta
+	 * cache for them in one query, where ids would cost one query per listing.
+	 */
+	$query = new WP_Query(
+		array(
+			'post_type'              => 'property',
+			'post_status'            => 'publish',
+			'posts_per_page'         => 100,
+			'no_found_rows'          => true,
+			'update_post_term_cache' => false,
+			'orderby'                => growmodo_property_order(),
+		)
+	);
+
+	foreach ( $query->posts as $post ) {
+		$location = get_post_meta( $post->ID, 'growmodo_location', true );
+
+		if ( '' !== $location ) {
+			$locations[ $location ] = $location;
+		}
+	}
+
+	ksort( $locations );
+
+	return $locations;
+}
+
+/**
  * Read the property search term from the query string.
  *
  * The parameter is `q`, not `s`: `s` would make WordPress treat the request as
@@ -201,5 +268,8 @@ function growmodo_property_archive_query( $query ) {
 	 * template reports it when a search matches more than this.
 	 */
 	$query->set( 'posts_per_page', 24 );
+
+	// The same curated order the home carousel uses, search or no search.
+	$query->set( 'orderby', growmodo_property_order() );
 }
 add_action( 'pre_get_posts', 'growmodo_property_archive_query' );
