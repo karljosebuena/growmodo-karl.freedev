@@ -18,7 +18,7 @@ if ( ! $growmodo_faqs->have_posts() ) {
 	return;
 }
 ?>
-<section class="section section--bordered" id="faq">
+<section class="section section--bordered is-revealable" id="faq">
 	<div class="container">
 		<?php
 		get_template_part(

@@ -16,7 +16,7 @@ if ( ! $growmodo_testimonials->have_posts() ) {
 	return;
 }
 ?>
-<section class="section section--bordered" id="testimonials">
+<section class="section section--bordered is-revealable" id="testimonials">
 	<div class="container">
 		<?php
 		get_template_part(

@@ -25,6 +25,8 @@ $growmodo_action  = get_post_type_archive_link( 'property' );
 
 <section class="section">
 	<div class="container">
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Filter properties', 'growmodo' ); ?></h2>
+
 		<form class="filters" action="<?php echo esc_url( $growmodo_action ); ?>" method="get" role="search">
 			<div class="filters__row">
 				<p class="form__field">
@@ -86,6 +88,8 @@ $growmodo_action  = get_post_type_archive_link( 'property' );
 		</form>
 
 		<?php if ( have_posts() ) : ?>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Matching properties', 'growmodo' ); ?></h2>
+
 			<p class="lede filters__summary" role="status">
 				<?php
 				printf(

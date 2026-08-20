@@ -230,6 +230,22 @@ button {
 	}
 }
 
+/*
+ * Scroll reveal. The hidden state applies only when main.js has added
+ * .has-reveal to <html>, so content is never hidden from a visitor without
+ * JavaScript. Transform and opacity only — no layout shift.
+ */
+.has-reveal .is-revealable {
+	opacity: 0;
+	transform: translateY(1.25rem);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.has-reveal .is-revealable.is-revealed {
+	opacity: 1;
+	transform: none;
+}
+
 /* ==========================================================================
    5. Buttons
    ========================================================================== */

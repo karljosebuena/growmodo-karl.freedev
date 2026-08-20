@@ -28,7 +28,7 @@ $growmodo_features = array(
 	),
 );
 ?>
-<section class="section" id="features" aria-label="<?php esc_attr_e( 'What we do', 'growmodo' ); ?>">
+<section class="section is-revealable" id="features" aria-label="<?php esc_attr_e( 'What we do', 'growmodo' ); ?>">
 	<div class="container">
 		<ul class="grid grid--2 grid--4">
 			<?php foreach ( $growmodo_features as $growmodo_feature ) : ?>

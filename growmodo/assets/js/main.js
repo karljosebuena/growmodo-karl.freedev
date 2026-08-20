@@ -34,6 +34,37 @@
 	}
 
 	/**
+	 * Reveal sections as they scroll into view.
+	 *
+	 * Opt-in per element via the `is-revealable` class, which CSS only acts on
+	 * once this script adds `has-reveal` to <html> — so with JavaScript off,
+	 * or with reduced motion requested, everything is simply visible.
+	 * Animates opacity and transform only, so it cannot cause layout shift.
+	 */
+	const reveals = document.querySelectorAll( '.is-revealable' );
+	const wantsMotion = ! window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
+
+	if ( reveals.length && wantsMotion && 'IntersectionObserver' in window ) {
+		document.documentElement.classList.add( 'has-reveal' );
+
+		const observer = new IntersectionObserver(
+			function ( entries ) {
+				entries.forEach( function ( entry ) {
+					if ( entry.isIntersecting ) {
+						entry.target.classList.add( 'is-revealed' );
+						observer.unobserve( entry.target );
+					}
+				} );
+			},
+			{ rootMargin: '0px 0px -10% 0px' }
+		);
+
+		reveals.forEach( function ( el ) {
+			observer.observe( el );
+		} );
+	}
+
+	/**
 	 * Announcement bar dismissal.
 	 *
 	 * The bar ships visible and a snippet in <head> hides it for visitors who

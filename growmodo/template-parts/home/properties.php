@@ -19,7 +19,7 @@ if ( ! $growmodo_properties->have_posts() ) {
 
 $growmodo_archive = get_post_type_archive_link( 'property' );
 ?>
-<section class="section section--bordered" id="properties">
+<section class="section section--bordered is-revealable" id="properties">
 	<div class="container">
 		<?php
 		get_template_part(
