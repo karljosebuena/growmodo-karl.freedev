@@ -15,17 +15,17 @@ defined( 'ABSPATH' ) || exit;
 
 $growmodo_features = array(
 	array(
-		'icon'  => 'home',
+		'icon'  => 'house',
 		'title' => __( 'Find Your Dream Home', 'growmodo' ),
 		'url'   => get_post_type_archive_link( 'property' ),
 	),
 	array(
-		'icon'  => 'value',
+		'icon'  => 'banknote',
 		'title' => __( 'Unlock Property Value', 'growmodo' ),
 		'url'   => home_url( '/services/#valuation' ),
 	),
 	array(
-		'icon'  => 'manage',
+		'icon'  => 'building',
 		'title' => __( 'Effortless Property Management', 'growmodo' ),
 		'url'   => home_url( '/services/#management' ),
 	),

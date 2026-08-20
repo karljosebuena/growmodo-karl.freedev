@@ -92,10 +92,6 @@ function growmodo_icon( $name, $css_class = '' ) {
 		'flame'          => '<path d="M13 1.2c4.4 3.6 6.9 6.7 6.9 10.5a7.9 7.9 0 0 1-15.8 0c0-2 .8-3.7 2.2-5.2.1 2.1 1.2 3.3 2.8 3.3 2 0 3.3-1.7 3.3-4.3 0-1.7-.4-3.2-.8-4.3Z" fill="currentColor"/><path d="M12 13.4c1.9 1.4 2.9 2.6 2.9 4a2.9 2.9 0 0 1-5.8 0c0-1.4 1-2.6 2.9-4Z" fill="currentColor" opacity=".45"/>',
 		'bulb'           => '<path d="M12 2.2a7.2 7.2 0 0 0-4.2 13v1.6a1 1 0 0 0 1 1h6.4a1 1 0 0 0 1-1v-1.6A7.2 7.2 0 0 0 12 2.2Z" fill="currentColor"/><path d="M9.4 19.4h5.2v.6a1.8 1.8 0 0 1-1.8 1.8h-1.6a1.8 1.8 0 0 1-1.8-1.8v-.6Z" fill="currentColor"/>',
 
-		// Feature and section icons.
-		'home'           =>'<path d="M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
-		'value'          => '<rect x="2.5" y="6" width="19" height="12" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M6 10v4M18 10v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
-		'manage'         => '<path d="M4 21V8l7-4 7 4v13M4 21h16M9 21v-5h6v5M8 11h1M12 11h1M8 14h1M12 14h1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
 		// Filled centre, like the rest of the set; the design draws it as a sunburst.
 		'insight'        => '<circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 1.8v2.6M12 19.6v2.6M1.8 12h2.6M19.6 12h2.6M4.8 4.8l1.9 1.9M17.3 17.3l1.9 1.9M19.2 4.8l-1.9 1.9M6.7 17.3l-1.9 1.9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>',
 
