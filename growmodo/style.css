@@ -832,7 +832,13 @@ button {
 	background: var(--c-bg);
 	color: var(--c-text);
 	font-size: var(--fs-xs);
-	white-space: nowrap;
+	/*
+	 * No nowrap: short spec tags ("4-Bedroom") stay on one line anyway, while
+	 * long values such as an email address must be able to break rather than
+	 * push the page wider than the viewport.
+	 */
+	max-width: 100%;
+	overflow-wrap: anywhere;
 }
 
 .tag svg {
