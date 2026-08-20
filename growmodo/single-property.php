@@ -57,10 +57,27 @@ while ( have_posts() ) :
 
 				<div class="property-single__layout">
 					<div>
-						<h2><?php esc_html_e( 'Description', 'growmodo' ); ?></h2>
-						<div class="property-single__body entry-content">
-							<?php the_content(); ?>
-						</div>
+						<?php
+						// Fall back to the excerpt so the heading is never orphaned.
+						$growmodo_body = trim( get_the_content() );
+
+						if ( '' === $growmodo_body ) {
+							$growmodo_body = trim( get_the_excerpt() );
+						}
+
+						if ( '' !== $growmodo_body ) :
+							?>
+							<h2><?php esc_html_e( 'Description', 'growmodo' ); ?></h2>
+							<div class="property-single__body entry-content">
+								<?php
+								if ( '' !== trim( get_the_content() ) ) {
+									the_content();
+								} else {
+									echo '<p>' . esc_html( $growmodo_body ) . '</p>';
+								}
+								?>
+							</div>
+						<?php endif; ?>
 					</div>
 
 					<aside class="property-single__aside" aria-label="<?php esc_attr_e( 'Property details', 'growmodo' ); ?>">

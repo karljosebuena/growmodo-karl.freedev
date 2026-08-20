@@ -128,7 +128,7 @@ $growmodo_status = isset( $_GET['growmodo_status'] ) ? sanitize_key( wp_unslash(
 		</p>
 	</div>
 
-	<button class="btn btn--primary btn--block" type="submit">
+	<button class="btn btn--primary form__submit" type="submit">
 		<?php esc_html_e( 'Send Your Message', 'growmodo' ); ?>
 	</button>
 </form>

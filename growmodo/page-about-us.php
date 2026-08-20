@@ -184,10 +184,29 @@ $growmodo_team = array(
 							<?php /* Decorative: the name follows as text, so alt would repeat it. */ ?>
 							alt=""
 							width="318"
-							height="288"
+							height="214"
 							loading="lazy"
 							decoding="async"
 						/>
+						<?php
+						/*
+						 * The design overlays a social badge on the portrait. It is
+						 * markup rather than part of the image so it stays crisp and
+						 * can carry an accessible name.
+						 */
+						?>
+						<a class="member__social" href="https://x.com/" rel="noopener noreferrer" target="_blank">
+							<span class="screen-reader-text">
+								<?php
+								printf(
+									/* translators: %s: team member name. */
+									esc_html__( '%s on X', 'growmodo' ),
+									esc_html( $growmodo_member[1] )
+								);
+								?>
+							</span>
+							<?php echo growmodo_icon( 'twitter' ); ?>
+						</a>
 					</div>
 					<h3 class="member__name"><?php echo esc_html( $growmodo_member[1] ); ?></h3>
 					<p class="member__role"><?php echo esc_html( $growmodo_member[2] ); ?></p>

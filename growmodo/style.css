@@ -41,9 +41,15 @@ Tags: real-estate, dark, one-column, custom-menu
 	--fs-base: 1rem;
 	--fs-md: 1.125rem;
 	--fs-lg: 1.25rem;
-	--fs-stat: clamp(1.75rem, 3vw, 2.25rem);
-	--fs-h2: clamp(1.75rem, 3.2vw, 2.625rem);
-	--fs-h1: clamp(2rem, 4.4vw, 3.5rem);
+	/*
+	 * Fitted to the three Figma frames, not guessed: H1 is 32px @390, 48px
+	 * @1440, 60px @1920 (H2: 26 / 39 / 48). The design ramps faster above 1440
+	 * than below it, so one linear clamp cannot hit all three — these cover
+	 * 390–1440 and a media query below takes over past 1440.
+	 */
+	--fs-stat: clamp(1.75rem, 1.4rem + 0.9vw, 2.25rem);
+	--fs-h2: clamp(1.625rem, 1.323rem + 1.238vw, 2.4375rem);
+	--fs-h1: clamp(2rem, 1.629rem + 1.524vw, 3rem);
 
 	/* Spacing and shape */
 	--sp-1: 0.25rem;
@@ -64,6 +70,18 @@ Tags: real-estate, dark, one-column, custom-menu
 	--container: 1596px;
 	--gutter: clamp(1rem, 4vw, 2.5rem);
 	--section-y: clamp(3rem, 6vw, 6rem);
+}
+
+/*
+ * Above the laptop frame the design steps up faster: H1 48→60px and
+ * H2 39→48px between 1440 and 1920.
+ */
+@media (min-width: 1440px) {
+	:root {
+		--fs-h2: clamp(2.4375rem, 0.75rem + 1.875vw, 3rem);
+		--fs-h1: clamp(3rem, 0.75rem + 2.5vw, 3.75rem);
+		--fs-stat: clamp(2.25rem, 1.5rem + 0.8vw, 2.5rem);
+	}
 }
 
 /* ==========================================================================
@@ -396,6 +414,8 @@ button {
 
 .card__title {
 	font-size: var(--fs-lg);
+	/* Long service names must break rather than push the card wider. */
+	overflow-wrap: break-word;
 }
 
 .card__text {
@@ -458,6 +478,15 @@ button {
 	padding-block: var(--sp-2);
 	padding-inline: 3rem;
 	text-align: center;
+}
+
+/* Keep the bar to one line at mobile widths, as the design does. */
+@media (max-width: 479px) {
+	.announcement__inner {
+		gap: var(--sp-1);
+		padding-inline: 2.5rem;
+		font-size: 0.75rem;
+	}
 }
 
 .announcement__link {
@@ -652,8 +681,11 @@ button {
 	margin-bottom: var(--sp-7);
 }
 
-.hero__actions .btn {
-	flex: 1 1 12rem;
+/* Buttons size to their labels, as in the design; full width only on mobile. */
+@media (max-width: 479px) {
+	.hero__actions .btn {
+		flex: 1 1 100%;
+	}
 }
 
 .hero__stats {
@@ -716,9 +748,9 @@ button {
 	height: 100%;
 	animation: spin 22s linear infinite;
 	fill: var(--c-text);
-	font-size: 9px;
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
+	/* Title case with modest tracking, matching the design. */
+	font-size: 9.5px;
+	letter-spacing: 0.06em;
 }
 
 .hero__seal-arrow {
@@ -743,6 +775,8 @@ button {
 		flex-direction: column;
 		justify-content: center;
 		padding-block: var(--sp-9);
+		/* Right gutter keeps the headline clear of the overlapping seal. */
+		padding-right: 6rem;
 		margin-left: auto;
 		width: 100%;
 		max-width: calc(var(--container) / 2);
@@ -756,8 +790,12 @@ button {
 		grid-column: auto;
 	}
 
+	/*
+	 * Sits beside the headline, straddling the column edge — kept in the upper
+	 * third so it never overlaps the call-to-action buttons below.
+	 */
 	.hero__seal {
-		top: 50%;
+		top: 22%;
 		left: 0;
 		width: 8.5rem;
 		height: 8.5rem;
@@ -1315,6 +1353,18 @@ select.form__input {
 	color: var(--c-accent-hover);
 }
 
+/* Right-aligned and label-width, as in the design; full width on mobile. */
+.form__submit {
+	justify-self: end;
+	min-width: 11rem;
+}
+
+@media (max-width: 479px) {
+	.form__submit {
+		justify-self: stretch;
+	}
+}
+
 /* Honeypot: must stay reachable to bots but invisible and unfocusable. */
 .form__honeypot {
 	position: absolute;
@@ -1385,6 +1435,15 @@ select.form__input {
 	margin-bottom: var(--sp-6);
 	border: 1px solid var(--c-border);
 	border-radius: var(--radius-lg);
+	/* Bound the height so a small source image cannot be upscaled to absurdity. */
+	max-height: 32rem;
+}
+
+.property-single__media img {
+	width: 100%;
+	height: 100%;
+	max-height: 32rem;
+	object-fit: cover;
 }
 
 .property-single__layout {
@@ -1619,6 +1678,48 @@ select.form__input {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
+}
+
+/* Social badge straddling the bottom edge of the portrait, as in the design. */
+.member__social {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	display: grid;
+	place-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	transform: translate(-50%, 50%);
+	border-radius: var(--radius);
+	background: var(--c-accent);
+	color: var(--c-text);
+	transition: background-color 0.18s ease;
+}
+
+.member__social:hover {
+	background: var(--c-accent-hover);
+}
+
+.member__social svg {
+	width: 1rem;
+	height: 1rem;
+}
+
+/* The badge overhangs, so the media box must not clip it. */
+.member__media {
+	overflow: visible;
+}
+
+.member__media img {
+	border-radius: var(--radius);
+}
+
+.member {
+	padding-bottom: var(--sp-5);
+}
+
+.member__name {
+	margin-top: var(--sp-4);
 }
 
 .member__name {

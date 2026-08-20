@@ -91,9 +91,18 @@ $growmodo_action  = get_post_type_archive_link( 'property' );
 			</div>
 		</form>
 
-		<?php if ( have_posts() ) : ?>
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Matching properties', 'growmodo' ); ?></h2>
+		<?php
+		get_template_part(
+			'template-parts/section-head',
+			null,
+			array(
+				'title' => __( 'Discover a World of Possibilities', 'growmodo' ),
+				'text'  => __( 'Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home.', 'growmodo' ),
+			)
+		);
+		?>
 
+		<?php if ( have_posts() ) : ?>
 			<p class="lede filters__summary" role="status">
 				<?php
 				printf(
@@ -119,6 +128,30 @@ $growmodo_action  = get_post_type_archive_link( 'property' );
 				<?php esc_html_e( 'No properties match those filters yet. Try widening your search.', 'growmodo' ); ?>
 			</p>
 		<?php endif; ?>
+	</div>
+</section>
+
+<section class="section section--bordered" id="enquire">
+	<div class="container">
+		<?php
+		get_template_part(
+			'template-parts/section-head',
+			null,
+			array(
+				'title' => __( 'Let\'s Make it Happen', 'growmodo' ),
+				'text'  => __( 'Ready to take the first step toward your dream property? Fill out the form below and our team of experts will get back to you with tailored recommendations.', 'growmodo' ),
+			)
+		);
+
+		get_template_part(
+			'template-parts/form-inquiry',
+			null,
+			array(
+				'id'   => 'archive-inquiry',
+				'type' => 'inquiry',
+			)
+		);
+		?>
 	</div>
 </section>
 

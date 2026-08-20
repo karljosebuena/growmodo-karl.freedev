@@ -43,7 +43,8 @@ defined( 'ABSPATH' ) || exit;
 		<div class="hero__seal">
 			<svg class="hero__seal-text" viewBox="0 0 140 140" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
 				<defs>
-					<path id="growmodo-seal-path" d="M70,70 m-54,0 a54,54 0 1,1 108,0 a54,54 0 1,1 -108,0" />
+					<?php /* Radius 47 keeps the ring text inside the 140-unit viewBox. */ ?>
+					<path id="growmodo-seal-path" d="M70,70 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0" />
 				</defs>
 				<text>
 					<textPath href="#growmodo-seal-path" startOffset="4%">
