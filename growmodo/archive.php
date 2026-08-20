@@ -1,8 +1,8 @@
 <?php
 /**
- * Blog index — also the fallback for any template not otherwise defined.
+ * Generic archive (category, tag, date, author).
  *
- * Runs the standard WordPress Loop with the blog sidebar beside it.
+ * The property archive has its own template, archive-property.php.
  *
  * @package Growmodo
  */
@@ -12,18 +12,14 @@ get_header();
 
 <section class="page-hero">
 	<div class="container">
-		<h1 class="page-hero__title">
-			<?php
-			if ( is_home() && ! is_front_page() ) {
-				echo esc_html( get_the_title( (int) get_option( 'page_for_posts' ) ) );
-			} else {
-				esc_html_e( 'Latest Insights', 'growmodo' );
-			}
+		<h1 class="page-hero__title"><?php the_archive_title(); ?></h1>
+		<?php
+		$growmodo_description = get_the_archive_description();
+
+		if ( '' !== $growmodo_description ) :
 			?>
-		</h1>
-		<p class="lede">
-			<?php esc_html_e( 'Market analysis, buying guides, and news from the Estatein team.', 'growmodo' ); ?>
-		</p>
+			<div class="lede"><?php echo wp_kses_post( $growmodo_description ); ?></div>
+		<?php endif; ?>
 	</div>
 </section>
 
@@ -48,12 +44,12 @@ get_header();
 							'mid_size'           => 1,
 							'prev_text'          => esc_html__( 'Previous', 'growmodo' ),
 							'next_text'          => esc_html__( 'Next', 'growmodo' ),
-							'screen_reader_text' => esc_html__( 'Post pagination', 'growmodo' ),
+							'screen_reader_text' => esc_html__( 'Archive pagination', 'growmodo' ),
 						)
 					);
 					?>
 				<?php else : ?>
-					<p class="notice"><?php esc_html_e( 'No posts published yet.', 'growmodo' ); ?></p>
+					<p class="notice"><?php esc_html_e( 'Nothing found in this archive.', 'growmodo' ); ?></p>
 				<?php endif; ?>
 			</div>
 

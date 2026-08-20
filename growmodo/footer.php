@@ -23,6 +23,12 @@ $growmodo_footer_columns = array(
 		__( 'How It Works', 'growmodo' ) => home_url( '/about-us/#process' ),
 		__( 'Our Team', 'growmodo' )     => home_url( '/about-us/#team' ),
 		__( 'Our Clients', 'growmodo' )  => home_url( '/about-us/#clients' ),
+
+		/*
+		 * The Figma has no blog screen, so the header nav is left exactly as
+		 * designed and the posts page is reachable from here instead.
+		 */
+		__( 'Insights', 'growmodo' )     => get_permalink( (int) get_option( 'page_for_posts' ) ),
 	),
 	__( 'Properties', 'growmodo' ) => array(
 		__( 'Portfolio', 'growmodo' )  => get_post_type_archive_link( 'property' ),

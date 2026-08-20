@@ -1,0 +1,218 @@
+- generic [active] [ref=f54e1]:
+  - link "Skip to content" [ref=f54e2] [cursor=pointer]:
+    - /url: "#main"
+  - region "Announcement" [ref=f54e3]:
+    - generic [ref=f54e4]:
+      - generic [ref=f54e7]: Discover Your Dream Property with Estatein
+      - link "Learn More" [ref=f54e8] [cursor=pointer]:
+        - /url: http://localhost:8080/properties/
+    - button "Dismiss announcement" [ref=f54e9] [cursor=pointer]
+  - banner [ref=f54e13]:
+    - generic [ref=f54e14]:
+      - link "Estatein" [ref=f54e15] [cursor=pointer]:
+        - /url: http://localhost:8080/
+      - navigation "Primary navigation" [ref=f54e19]:
+        - list [ref=f54e20]:
+          - listitem [ref=f54e21]:
+            - link "Home" [ref=f54e22] [cursor=pointer]:
+              - /url: http://localhost:8080/
+          - listitem [ref=f54e23]:
+            - link "About Us" [ref=f54e24] [cursor=pointer]:
+              - /url: http://localhost:8080/about-us/
+          - listitem [ref=f54e25]:
+            - link "Properties" [ref=f54e26] [cursor=pointer]:
+              - /url: /properties/
+          - listitem [ref=f54e27]:
+            - link "Services" [ref=f54e28] [cursor=pointer]:
+              - /url: http://localhost:8080/services/
+      - link "Contact Us" [ref=f54e29] [cursor=pointer]:
+        - /url: http://localhost:8080/contact/
+  - main [ref=f54e30]:
+    - generic [ref=f54e32]:
+      - heading "Get in Touch with Estatein" [level=1] [ref=f54e33]
+      - paragraph [ref=f54e34]: Welcome to Estatein's Contact Us page. We're here to assist you with any enquiries, requests, or feedback you may have.
+    - list [ref=f54e37]:
+      - listitem [ref=f54e38]:
+        - link "Email info@estatein.com" [ref=f54e39] [cursor=pointer]:
+          - /url: mailto:info@estatein.com
+          - generic [ref=f54e44]: Email
+          - generic [ref=f54e45]: info@estatein.com
+      - listitem [ref=f54e46]:
+        - link "Phone +1 (123) 456-7890" [ref=f54e47] [cursor=pointer]:
+          - /url: tel:+11234567890
+          - generic [ref=f54e51]: Phone
+          - generic [ref=f54e52]: +1 (123) 456-7890
+      - listitem [ref=f54e53]:
+        - link "Main Headquarters 123 Estatein Plaza, City Center, Metropolis" [ref=f54e54] [cursor=pointer]:
+          - /url: "#offices"
+          - generic [ref=f54e59]: Main Headquarters
+          - generic [ref=f54e60]: 123 Estatein Plaza, City Center, Metropolis
+      - listitem [ref=f54e61]:
+        - link "Regional Office 456 Urban Avenue, Downtown District, Metropolis" [ref=f54e62] [cursor=pointer]:
+          - /url: "#offices"
+          - generic [ref=f54e66]: Regional Office
+          - generic [ref=f54e67]: 456 Urban Avenue, Downtown District, Metropolis
+    - generic [ref=f54e69]:
+      - generic [ref=f54e79]:
+        - heading "Let's Connect" [level=2] [ref=f54e80]
+        - paragraph [ref=f54e81]: We're excited to connect with you and learn more about your real estate goals. Use the form below to get in touch with Estatein.
+      - generic [ref=f54e82]:
+        - paragraph [ref=f54e83]:
+          - text: Website
+          - textbox [ref=f54e84]
+        - generic [ref=f54e85]:
+          - paragraph [ref=f54e86]:
+            - generic [ref=f54e87]: Full name
+            - textbox "Full name" [ref=f54e88]:
+              - /placeholder: Enter your name
+          - paragraph [ref=f54e89]:
+            - generic [ref=f54e90]: Email address *
+            - textbox "Email address" [ref=f54e91]:
+              - /placeholder: Enter your email
+          - paragraph [ref=f54e92]:
+            - generic [ref=f54e93]: Phone
+            - textbox "Phone" [ref=f54e94]:
+              - /placeholder: Enter your phone number
+          - paragraph [ref=f54e95]:
+            - generic [ref=f54e96]: Message
+            - textbox "Message" [ref=f54e97]:
+              - /placeholder: Enter your message here…
+        - button "Send Your Message" [ref=f54e98] [cursor=pointer]
+    - generic [ref=f54e100]:
+      - generic [ref=f54e110]:
+        - heading "Discover Our Office Locations" [level=2] [ref=f54e111]
+        - paragraph [ref=f54e112]: Estatein is here to serve you across multiple locations. Whether you're looking to meet our team in person or reach out remotely, we have an office near you.
+      - generic [ref=f54e113]:
+        - article [ref=f54e114]:
+          - paragraph [ref=f54e115]: Main Headquarters
+          - heading "123 Estatein Plaza, City Center, Metropolis" [level=3] [ref=f54e116]
+          - paragraph [ref=f54e117]: Our main headquarters serve as the heart of Estatein. Located in the bustling city center, this is where our core team of experts operates, driving the excellence and innovation that define us.
+          - list [ref=f54e118]:
+            - listitem [ref=f54e119]: info@estatein.com
+            - listitem [ref=f54e123]: +1 (123) 456-7890
+            - listitem [ref=f54e126]: Metropolis
+          - link "Get in Touch" [ref=f54e130] [cursor=pointer]:
+            - /url: "#contact-form"
+        - article [ref=f54e131]:
+          - paragraph [ref=f54e132]: Regional Offices
+          - heading "456 Urban Avenue, Downtown District, Metropolis" [level=3] [ref=f54e133]
+          - paragraph [ref=f54e134]: Estatein's presence extends to multiple regions, each with its own dynamic real estate landscape. Discover our regional offices, staffed by local experts who understand the nuances of their respective markets.
+          - list [ref=f54e135]:
+            - listitem [ref=f54e136]: info@estatein.com
+            - listitem [ref=f54e140]: +1 (123) 628-7890
+            - listitem [ref=f54e143]: Metropolis
+          - link "Get in Touch" [ref=f54e147] [cursor=pointer]:
+            - /url: "#contact-form"
+    - generic [ref=f54e149]:
+      - generic [ref=f54e150]:
+        - heading "Start Your Real Estate Journey Today" [level=2] [ref=f54e151]
+        - paragraph [ref=f54e152]: Your dream property is just a click away. Whether you're looking for a new home, a strategic investment, or expert real estate advice, Estatein is here to assist you every step of the way. Take the first step towards your real estate goals and explore our available properties or get in touch with our team for personalized assistance.
+      - link "Explore Properties" [ref=f54e154] [cursor=pointer]:
+        - /url: http://localhost:8080/properties/
+  - contentinfo [ref=f54e155]:
+    - generic [ref=f54e156]:
+      - generic [ref=f54e157]:
+        - link "Estatein" [ref=f54e158] [cursor=pointer]:
+          - /url: http://localhost:8080/
+        - generic [ref=f54e162]:
+          - paragraph [ref=f54e163]:
+            - text: Website
+            - textbox [ref=f54e164]
+          - generic [ref=f54e165]: Your email address
+          - generic [ref=f54e166]:
+            - textbox "Your email address" [ref=f54e170]:
+              - /placeholder: Enter Your Email
+            - button "Subscribe" [ref=f54e171] [cursor=pointer]
+      - generic [ref=f54e175]:
+        - navigation "Home" [ref=f54e176]:
+          - heading "Home" [level=2] [ref=f54e177]
+          - list [ref=f54e178]:
+            - listitem [ref=f54e179]:
+              - link "Hero Section" [ref=f54e180] [cursor=pointer]:
+                - /url: http://localhost:8080/#main
+            - listitem [ref=f54e181]:
+              - link "Features" [ref=f54e182] [cursor=pointer]:
+                - /url: http://localhost:8080/#features
+            - listitem [ref=f54e183]:
+              - link "Properties" [ref=f54e184] [cursor=pointer]:
+                - /url: http://localhost:8080/#properties
+            - listitem [ref=f54e185]:
+              - link "Testimonials" [ref=f54e186] [cursor=pointer]:
+                - /url: http://localhost:8080/#testimonials
+            - listitem [ref=f54e187]:
+              - link "FAQ's" [ref=f54e188] [cursor=pointer]:
+                - /url: http://localhost:8080/#faq
+        - navigation "About Us" [ref=f54e189]:
+          - heading "About Us" [level=2] [ref=f54e190]
+          - list [ref=f54e191]:
+            - listitem [ref=f54e192]:
+              - link "Our Story" [ref=f54e193] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#story
+            - listitem [ref=f54e194]:
+              - link "Our Works" [ref=f54e195] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#works
+            - listitem [ref=f54e196]:
+              - link "How It Works" [ref=f54e197] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#process
+            - listitem [ref=f54e198]:
+              - link "Our Team" [ref=f54e199] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#team
+            - listitem [ref=f54e200]:
+              - link "Our Clients" [ref=f54e201] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#clients
+        - navigation "Properties" [ref=f54e202]:
+          - heading "Properties" [level=2] [ref=f54e203]
+          - list [ref=f54e204]:
+            - listitem [ref=f54e205]:
+              - link "Portfolio" [ref=f54e206] [cursor=pointer]:
+                - /url: http://localhost:8080/properties/
+            - listitem [ref=f54e207]:
+              - link "Categories" [ref=f54e208] [cursor=pointer]:
+                - /url: http://localhost:8080/properties/
+        - navigation "Services" [ref=f54e209]:
+          - heading "Services" [level=2] [ref=f54e210]
+          - list [ref=f54e211]:
+            - listitem [ref=f54e212]:
+              - link "Valuation Mastery" [ref=f54e213] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#valuation
+            - listitem [ref=f54e214]:
+              - link "Strategic Marketing" [ref=f54e215] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#marketing
+            - listitem [ref=f54e216]:
+              - link "Negotiation Wizardry" [ref=f54e217] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#negotiation
+            - listitem [ref=f54e218]:
+              - link "Closing Success" [ref=f54e219] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#closing
+            - listitem [ref=f54e220]:
+              - link "Property Management" [ref=f54e221] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#management
+        - navigation "Contact Us" [ref=f54e222]:
+          - heading "Contact Us" [level=2] [ref=f54e223]
+          - list [ref=f54e224]:
+            - listitem [ref=f54e225]:
+              - link "Contact Form" [ref=f54e226] [cursor=pointer]:
+                - /url: http://localhost:8080/contact/#contact-form
+            - listitem [ref=f54e227]:
+              - link "Our Offices" [ref=f54e228] [cursor=pointer]:
+                - /url: http://localhost:8080/contact/#offices
+    - generic [ref=f54e230]:
+      - generic [ref=f54e231]:
+        - paragraph [ref=f54e232]: "@2026 Estatein. All Rights Reserved."
+        - list [ref=f54e233]:
+          - listitem [ref=f54e234]:
+            - link "Terms & Conditions" [ref=f54e235] [cursor=pointer]:
+              - /url: http://localhost:8080/terms-conditions/
+      - list [ref=f54e236]:
+        - listitem [ref=f54e237]:
+          - link "Facebook" [ref=f54e238] [cursor=pointer]:
+            - /url: https://facebook.com/
+        - listitem [ref=f54e242]:
+          - link "Linkedin" [ref=f54e243] [cursor=pointer]:
+            - /url: https://linkedin.com/
+        - listitem [ref=f54e247]:
+          - link "Twitter" [ref=f54e248] [cursor=pointer]:
+            - /url: https://x.com/
+        - listitem [ref=f54e252]:
+          - link "Youtube" [ref=f54e253] [cursor=pointer]:
+            - /url: https://youtube.com/

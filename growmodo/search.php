@@ -1,8 +1,6 @@
 <?php
 /**
- * Blog index — also the fallback for any template not otherwise defined.
- *
- * Runs the standard WordPress Loop with the blog sidebar beside it.
+ * Search results.
  *
  * @package Growmodo
  */
@@ -14,16 +12,14 @@ get_header();
 	<div class="container">
 		<h1 class="page-hero__title">
 			<?php
-			if ( is_home() && ! is_front_page() ) {
-				echo esc_html( get_the_title( (int) get_option( 'page_for_posts' ) ) );
-			} else {
-				esc_html_e( 'Latest Insights', 'growmodo' );
-			}
+			printf(
+				/* translators: %s: search query. */
+				esc_html__( 'Search results for %s', 'growmodo' ),
+				esc_html( get_search_query() )
+			);
 			?>
 		</h1>
-		<p class="lede">
-			<?php esc_html_e( 'Market analysis, buying guides, and news from the Estatein team.', 'growmodo' ); ?>
-		</p>
+		<?php get_search_form(); ?>
 	</div>
 </section>
 
@@ -48,12 +44,14 @@ get_header();
 							'mid_size'           => 1,
 							'prev_text'          => esc_html__( 'Previous', 'growmodo' ),
 							'next_text'          => esc_html__( 'Next', 'growmodo' ),
-							'screen_reader_text' => esc_html__( 'Post pagination', 'growmodo' ),
+							'screen_reader_text' => esc_html__( 'Search pagination', 'growmodo' ),
 						)
 					);
 					?>
 				<?php else : ?>
-					<p class="notice"><?php esc_html_e( 'No posts published yet.', 'growmodo' ); ?></p>
+					<p class="notice">
+						<?php esc_html_e( 'Nothing matched that search. Try a different term, or browse our properties.', 'growmodo' ); ?>
+					</p>
 				<?php endif; ?>
 			</div>
 

@@ -1661,7 +1661,73 @@ select.form__input {
 }
 
 /* ==========================================================================
-   26. Editor content (post/page body)
+   26. Blog layout: content beside the sidebar widget area
+   ========================================================================== */
+.with-sidebar {
+	display: grid;
+	gap: var(--sp-6);
+	align-items: start;
+}
+
+@media (min-width: 1024px) {
+	/* Collapses to one column automatically when sidebar.php returns early. */
+	.with-sidebar:has(.sidebar) {
+		grid-template-columns: minmax(0, 1fr) 20rem;
+		gap: var(--sp-7);
+	}
+}
+
+.sidebar {
+	display: grid;
+	gap: var(--sp-5);
+}
+
+.widget {
+	gap: var(--sp-3);
+}
+
+.widget__title {
+	font-size: var(--fs-base);
+}
+
+.widget ul {
+	display: grid;
+	gap: var(--sp-3);
+	font-size: var(--fs-sm);
+}
+
+.widget a {
+	color: var(--c-text);
+}
+
+.widget a:hover {
+	color: var(--c-muted);
+	text-decoration: underline;
+}
+
+.search-form__field {
+	display: flex;
+	gap: var(--sp-3);
+	max-width: 32rem;
+}
+
+.post-nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: var(--sp-4);
+	margin-top: var(--sp-7);
+	padding-top: var(--sp-5);
+	border-top: 1px solid var(--c-border);
+	font-size: var(--fs-sm);
+}
+
+.post-nav a {
+	text-decoration: underline;
+}
+
+/* ==========================================================================
+   27. Editor content (post/page body)
    ========================================================================== */
 .entry-content > * + * {
 	margin-top: var(--sp-4);

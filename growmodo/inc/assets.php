@@ -8,9 +8,23 @@
 /**
  * Enqueue the Urbanist webfont, the theme stylesheet, and the main script.
  *
+ * Serves the minified builds unless SCRIPT_DEBUG is on, mirroring how core
+ * ships its own assets. Regenerate them with `php tools/build-assets.php`
+ * after editing style.css or main.js.
+ *
  * @return void
  */
 function growmodo_enqueue_assets() {
+	$min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+	$dir = get_template_directory();
+	$uri = get_template_directory_uri();
+
+	// Fall back to the source files if a minified build is missing.
+	$style_rel  = ( '' !== $min && file_exists( $dir . '/style.min.css' ) ) ? '/style.min.css' : '/style.css';
+	$script_rel = ( '' !== $min && file_exists( $dir . '/assets/js/main.min.js' ) )
+		? '/assets/js/main.min.js'
+		: '/assets/js/main.js';
+
 	wp_enqueue_style(
 		'growmodo-fonts',
 		'https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap',
@@ -20,14 +34,14 @@ function growmodo_enqueue_assets() {
 
 	wp_enqueue_style(
 		'growmodo-style',
-		get_stylesheet_uri(),
+		$uri . $style_rel,
 		array( 'growmodo-fonts' ),
 		GROWMODO_VERSION
 	);
 
 	wp_enqueue_script(
 		'growmodo-main',
-		get_template_directory_uri() . '/assets/js/main.js',
+		$uri . $script_rel,
 		array(),
 		GROWMODO_VERSION,
 		array(

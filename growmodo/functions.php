@@ -19,3 +19,4 @@ require get_template_directory() . '/inc/property-query.php';
 require get_template_directory() . '/inc/meta-boxes.php';
 require get_template_directory() . '/inc/form-handler.php';
 require get_template_directory() . '/inc/schema.php';
+require get_template_directory() . '/inc/seo.php';
