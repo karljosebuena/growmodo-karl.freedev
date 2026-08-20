@@ -25,5 +25,10 @@ function growmodo_setup() {
 			'footer'  => __( 'Footer Menu', 'growmodo' ),
 		)
 	);
+
+	// Card thumbnails and testimonial avatars are the only sizes the design
+	// needs; both are cropped so grids never shift.
+	add_image_size( 'growmodo-card', 640, 480, true );
+	add_image_size( 'growmodo-avatar', 88, 88, true );
 }
 add_action( 'after_setup_theme', 'growmodo_setup' );

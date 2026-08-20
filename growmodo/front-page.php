@@ -1,14 +1,19 @@
 <?php
 /**
- * Front page: Estatein home sections, top to bottom.
+ * Front page: the Estatein home sections in design order.
  *
- * Sections are added as template parts (template-parts/home/) only once they
- * reach Definition of Done — an absent section is an omitted section
- * (docs/roadmap.md, ground rules).
+ * Each section part returns early when it has no content, so an empty
+ * install degrades to the hero and features rather than empty headings.
  *
  * @package Growmodo
  */
 
 get_header();
+
+get_template_part( 'template-parts/home/hero' );
+get_template_part( 'template-parts/home/features' );
+get_template_part( 'template-parts/home/properties' );
+get_template_part( 'template-parts/home/testimonials' );
+get_template_part( 'template-parts/home/faq' );
 
 get_footer();

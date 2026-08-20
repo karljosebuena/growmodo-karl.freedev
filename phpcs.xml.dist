@@ -20,6 +20,18 @@
 		</properties>
 	</rule>
 
+	<!--
+	growmodo_icon() returns theme-authored SVG markup built from a fixed
+	library — no user input reaches it, so its return value is pre-escaped.
+	-->
+	<rule ref="WordPress.Security.EscapeOutput">
+		<properties>
+			<property name="customAutoEscapedFunctions" type="array">
+				<element value="growmodo_icon"/>
+			</property>
+		</properties>
+	</rule>
+
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
 			<property name="prefixes" type="array">

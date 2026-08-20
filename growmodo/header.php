@@ -1,7 +1,6 @@
 <?php
 /**
- * Site header: skip link, brand, primary nav with accessible mobile toggle,
- * contact CTA.
+ * Site header: announcement bar, brand, primary navigation, contact CTA.
  *
  * @package Growmodo
  */
@@ -19,30 +18,38 @@
 
 <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'growmodo' ); ?></a>
 
+<?php get_template_part( 'template-parts/announcement-bar' ); ?>
+
 <header class="site-header">
 	<div class="container site-header__inner">
-		<a class="site-header__brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+		<a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<?php echo growmodo_icon( 'logo', 'brand__mark' ); ?>
+			<span><?php echo esc_html( get_bloginfo( 'name' ) ); ?></span>
 		</a>
 
-		<nav class="site-nav" aria-label="<?php esc_attr_e( 'Primary', 'growmodo' ); ?>">
-			<button class="site-nav__toggle" aria-expanded="false" aria-controls="primary-menu">
-				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'growmodo' ); ?></span>
-				<span class="site-nav__toggle-bar" aria-hidden="true"></span>
+		<nav class="nav" aria-label="<?php esc_attr_e( 'Primary navigation', 'growmodo' ); ?>">
+			<button class="nav__toggle" aria-expanded="false" aria-controls="primary-menu">
+				<span class="screen-reader-text"><?php esc_html_e( 'Toggle menu', 'growmodo' ); ?></span>
+				<?php
+				echo growmodo_icon( 'menu', 'nav__toggle-open' );
+				echo growmodo_icon( 'close', 'nav__toggle-close' );
+				?>
 			</button>
 			<?php
 			wp_nav_menu(
 				array(
 					'theme_location' => 'primary',
 					'menu_id'        => 'primary-menu',
+					'menu_class'     => 'nav__list',
 					'container'      => false,
+					'depth'          => 1,
 					'fallback_cb'    => false,
 				)
 			);
 			?>
 		</nav>
 
-		<a class="btn btn--primary site-header__cta" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
+		<a class="btn site-header__cta" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 			<?php esc_html_e( 'Contact Us', 'growmodo' ); ?>
 		</a>
 	</div>
