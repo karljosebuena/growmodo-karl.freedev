@@ -22,7 +22,7 @@ function growmodo_meta_fields() {
 			'growmodo_beds'     => array( __( 'Bedrooms', 'growmodo' ), 'number' ),
 			'growmodo_baths'    => array( __( 'Bathrooms', 'growmodo' ), 'number' ),
 			'growmodo_price'    => array( __( 'Price (USD)', 'growmodo' ), 'number' ),
-			'growmodo_type'     => array( __( 'Property type', 'growmodo' ), 'text' ),
+			'growmodo_type'     => array( __( 'Property type', 'growmodo' ), 'select' ),
 			'growmodo_location' => array( __( 'Location', 'growmodo' ), 'text' ),
 		),
 		'testimonial' => array(
@@ -63,13 +63,38 @@ function growmodo_render_meta_box( $post ) {
 	wp_nonce_field( 'growmodo_save_meta', 'growmodo_meta_nonce' );
 
 	foreach ( $fields as $key => $field ) {
+		$value = get_post_meta( $post->ID, $key, true );
+
 		printf(
-			'<p><label for="%1$s"><strong>%2$s</strong></label><br /><input type="%3$s" id="%1$s" name="%1$s" value="%4$s" class="widefat" /></p>',
+			'<p><label for="%1$s"><strong>%2$s</strong></label><br />',
 			esc_attr( $key ),
-			esc_html( $field[0] ),
-			esc_attr( $field[1] ),
-			esc_attr( get_post_meta( $post->ID, $key, true ) )
+			esc_html( $field[0] )
 		);
+
+		if ( 'select' === $field[1] ) {
+			printf( '<select id="%1$s" name="%1$s" class="widefat">', esc_attr( $key ) );
+			printf( '<option value="">%s</option>', esc_html__( '— Select —', 'growmodo' ) );
+
+			foreach ( growmodo_property_types() as $option => $label ) {
+				printf(
+					'<option value="%1$s"%2$s>%3$s</option>',
+					esc_attr( $option ),
+					selected( $option, $value, false ),
+					esc_html( $label )
+				);
+			}
+
+			echo '</select>';
+		} else {
+			printf(
+				'<input type="%1$s" id="%2$s" name="%2$s" value="%3$s" class="widefat" />',
+				esc_attr( $field[1] ),
+				esc_attr( $key ),
+				esc_attr( $value )
+			);
+		}
+
+		echo '</p>';
 	}
 }
 
@@ -104,9 +129,16 @@ function growmodo_save_meta( $post_id ) {
 			continue;
 		}
 
-		$value = 'number' === $field[1]
-			? absint( wp_unslash( $_POST[ $key ] ) )
-			: sanitize_text_field( wp_unslash( $_POST[ $key ] ) );
+		if ( 'number' === $field[1] ) {
+			$value = absint( wp_unslash( $_POST[ $key ] ) );
+		} else {
+			$value = sanitize_text_field( wp_unslash( $_POST[ $key ] ) );
+
+			// A select may only store a value from its own allowlist.
+			if ( 'select' === $field[1] && ! array_key_exists( $value, growmodo_property_types() ) ) {
+				$value = '';
+			}
+		}
 
 		update_post_meta( $post_id, $key, $value );
 	}

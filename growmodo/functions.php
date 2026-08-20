@@ -15,5 +15,7 @@ require get_template_directory() . '/inc/assets.php';
 require get_template_directory() . '/inc/icons.php';
 require get_template_directory() . '/inc/helpers.php';
 require get_template_directory() . '/inc/post-types.php';
+require get_template_directory() . '/inc/property-query.php';
 require get_template_directory() . '/inc/meta-boxes.php';
 require get_template_directory() . '/inc/form-handler.php';
+require get_template_directory() . '/inc/schema.php';

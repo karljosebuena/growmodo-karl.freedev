@@ -1257,6 +1257,21 @@ button {
 	resize: vertical;
 }
 
+/* Selects keep native keyboard behaviour; only the arrow is restyled. */
+select.form__input {
+	appearance: none;
+	padding-right: 2.5rem;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999999' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 0.875rem center;
+	background-size: 1rem;
+	cursor: pointer;
+}
+
+.form__required {
+	color: var(--c-accent-hover);
+}
+
 /* Honeypot: must stay reachable to bots but invisible and unfocusable. */
 .form__honeypot {
 	position: absolute;
@@ -1443,7 +1458,167 @@ button {
 }
 
 /* ==========================================================================
-   22. Editor content (post/page body)
+   22. Split layout (About: text beside media / panel)
+   ========================================================================== */
+.split {
+	display: grid;
+	gap: var(--sp-7);
+	align-items: center;
+}
+
+.split__media {
+	width: 100%;
+	border: 1px solid var(--c-border);
+	border-radius: var(--radius-lg);
+	object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+	.split {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--sp-8);
+	}
+
+	/* Heading column keeps its own section-head spacing rhythm. */
+	.split--reverse .section-head {
+		margin-bottom: 0;
+	}
+}
+
+/* Values panel: one bordered box subdivided into four cells. */
+.value-panel {
+	display: grid;
+	border: 1px solid var(--c-border);
+	border-radius: var(--radius-lg);
+	background: var(--c-surface);
+	overflow: hidden;
+}
+
+.value-panel__item {
+	display: grid;
+	gap: var(--sp-3);
+	padding: var(--sp-5);
+	border-top: 1px solid var(--c-border);
+}
+
+.value-panel__item:first-child {
+	border-top: 0;
+}
+
+.value-panel__head {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+}
+
+@media (min-width: 768px) {
+	.value-panel {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.value-panel__item:nth-child(2) {
+		border-top: 0;
+	}
+
+	.value-panel__item:nth-child(even) {
+		border-left: 1px solid var(--c-border);
+	}
+}
+
+/* ==========================================================================
+   23. Process steps
+   ========================================================================== */
+.steps {
+	counter-reset: step;
+}
+
+.step {
+	display: grid;
+	gap: 0;
+}
+
+.step__number {
+	padding: var(--sp-3) var(--sp-5);
+	border: 1px solid var(--c-border);
+	border-bottom: 0;
+	border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+	color: var(--c-muted);
+	font-size: var(--fs-sm);
+}
+
+.step__body {
+	display: grid;
+	gap: var(--sp-3);
+	padding: var(--sp-5);
+	border: 1px solid var(--c-border);
+	border-radius: 0 var(--radius-lg) var(--radius-lg) var(--radius-lg);
+	background:
+		linear-gradient(135deg, rgba(112, 59, 247, 0.18), transparent 45%),
+		var(--c-surface);
+}
+
+/* ==========================================================================
+   24. Team member card
+   ========================================================================== */
+.member {
+	align-items: center;
+	text-align: center;
+}
+
+.member__media {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	border-radius: var(--radius);
+}
+
+.member__media img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+.member__name {
+	font-size: var(--fs-base);
+	font-weight: 600;
+}
+
+.member__role {
+	margin-top: calc(var(--sp-2) * -1);
+	color: var(--c-muted);
+	font-size: var(--fs-xs);
+}
+
+/* ==========================================================================
+   25. Services group (cards beside a highlighted CTA panel)
+   ========================================================================== */
+.service-group {
+	display: grid;
+	gap: var(--sp-5);
+}
+
+.service-group__cta {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--sp-4);
+	padding: var(--sp-5);
+	border: 1px solid var(--c-border);
+	border-radius: var(--radius-lg);
+	background:
+		linear-gradient(160deg, rgba(112, 59, 247, 0.22), transparent 55%),
+		var(--c-surface);
+}
+
+@media (min-width: 1200px) {
+	.service-group {
+		grid-template-columns: minmax(0, 1fr) 22rem;
+		align-items: start;
+	}
+}
+
+/* ==========================================================================
+   26. Editor content (post/page body)
    ========================================================================== */
 .entry-content > * + * {
 	margin-top: var(--sp-4);

@@ -1,0 +1,107 @@
+<?php
+/**
+ * Services page: hero, the four capabilities, then three service groups.
+ *
+ * Every group shares one shape — heading, service cards, side CTA — so the
+ * content lives in a single array and renders through one loop.
+ *
+ * Applied automatically to the page with the slug `services`.
+ *
+ * @package Growmodo
+ */
+
+get_header();
+
+$growmodo_groups = array(
+	array(
+		'id'        => 'valuation',
+		'title'     => __( 'Unlock Property Value', 'growmodo' ),
+		'text'      => __( 'Selling your property should be a rewarding experience, and at Estatein, we make sure it is.', 'growmodo' ),
+		'cta_title' => __( 'Unlock the Value of Your Property Today', 'growmodo' ),
+		'cta_text'  => __( 'Ready to unlock the true value of your property? Explore our Property Selling Service categories and let us help you achieve the best deal possible for your valuable asset.', 'growmodo' ),
+		'services'  => array(
+			array( 'value', __( 'Valuation Mastery', 'growmodo' ), __( 'Discover the true worth of your property with our expert valuation services.', 'growmodo' ) ),
+			array( 'insight', __( 'Strategic Marketing', 'growmodo' ), __( 'Selling a property requires more than just a listing; it demands a strategic marketing approach.', 'growmodo' ) ),
+			array( 'home', __( 'Negotiation Wizardry', 'growmodo' ), __( 'Negotiating the best deal is an art, and our negotiation experts are masters of it.', 'growmodo' ) ),
+			array( 'manage', __( 'Closing Success', 'growmodo' ), __( 'A successful sale is not complete until the closing. We guide you through the intricate closing process.', 'growmodo' ) ),
+		),
+	),
+	array(
+		'id'        => 'management',
+		'title'     => __( 'Effortless Property Management', 'growmodo' ),
+		'text'      => __( 'Owning a property should be a pleasure, not a hassle. Estatein\'s Property Management Service takes the stress out of property ownership.', 'growmodo' ),
+		'cta_title' => __( 'Experience Effortless Property Management', 'growmodo' ),
+		'cta_text'  => __( 'Ready to experience hassle-free property management? Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.', 'growmodo' ),
+		'services'  => array(
+			array( 'home', __( 'Tenant Harmony', 'growmodo' ), __( 'Our Tenant Management services ensure that your tenants have a smooth and reducing vacancies.', 'growmodo' ) ),
+			array( 'manage', __( 'Maintenance Ease', 'growmodo' ), __( 'Say goodbye to property maintenance headaches. We handle all aspects of property upkeep.', 'growmodo' ) ),
+			array( 'value', __( 'Financial Peace of Mind', 'growmodo' ), __( 'Managing property finances can be complex. Our financial experts take care of rent collection.', 'growmodo' ) ),
+			array( 'insight', __( 'Legal Guardian', 'growmodo' ), __( 'Stay compliant with property laws and regulations effortlessly.', 'growmodo' ) ),
+		),
+	),
+	array(
+		'id'        => 'marketing',
+		'title'     => __( 'Smart Investments, Informed Decisions', 'growmodo' ),
+		'text'      => __( 'Building a real estate portfolio requires a strategic approach.', 'growmodo' ),
+		'cta_title' => __( 'Unlock Your Investment Potential', 'growmodo' ),
+		'cta_text'  => __( 'Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.', 'growmodo' ),
+		'services'  => array(
+			array( 'insight', __( 'Market Insight', 'growmodo' ), __( 'Stay ahead of market trends with our expert Market Analysis. We provide in-depth insights into real estate market conditions.', 'growmodo' ) ),
+			array( 'value', __( 'ROI Assessment', 'growmodo' ), __( 'Make investment decisions with confidence. Our ROI Assessment services evaluate the potential returns on your investments.', 'growmodo' ) ),
+			array( 'manage', __( 'Customized Strategies', 'growmodo' ), __( 'Every investor is unique, and so are their goals. We develop customized Investment Strategies tailored to your specific needs.', 'growmodo' ) ),
+			array( 'home', __( 'Diversification Mastery', 'growmodo' ), __( 'Diversify your real estate portfolio effectively. Our experts guide you in spreading your investments across various property types and locations.', 'growmodo' ) ),
+		),
+	),
+);
+?>
+
+<section class="page-hero">
+	<div class="container">
+		<h1 class="page-hero__title"><?php esc_html_e( 'Elevate Your Real Estate Experience', 'growmodo' ); ?></h1>
+		<p class="lede">
+			<?php esc_html_e( 'Welcome to Estatein, where your real estate aspirations meet expert guidance. Explore our comprehensive range of services, each designed to cater to your unique needs and dreams.', 'growmodo' ); ?>
+		</p>
+	</div>
+</section>
+
+<?php get_template_part( 'template-parts/home/features' ); ?>
+
+<?php foreach ( $growmodo_groups as $growmodo_group ) : ?>
+	<section class="section section--bordered" id="<?php echo esc_attr( $growmodo_group['id'] ); ?>">
+		<div class="container">
+			<?php
+			get_template_part(
+				'template-parts/section-head',
+				null,
+				array(
+					'title' => $growmodo_group['title'],
+					'text'  => $growmodo_group['text'],
+				)
+			);
+			?>
+
+			<div class="service-group">
+				<ul class="grid grid--2">
+					<?php foreach ( $growmodo_group['services'] as $growmodo_service ) : ?>
+						<li class="card">
+							<span class="info__icon"><?php echo growmodo_icon( $growmodo_service[0] ); ?></span>
+							<h3 class="card__title"><?php echo esc_html( $growmodo_service[1] ); ?></h3>
+							<p class="card__text"><?php echo esc_html( $growmodo_service[2] ); ?></p>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+
+				<aside class="service-group__cta">
+					<h3 class="card__title"><?php echo esc_html( $growmodo_group['cta_title'] ); ?></h3>
+					<p class="card__text"><?php echo esc_html( $growmodo_group['cta_text'] ); ?></p>
+					<a class="btn btn--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
+						<?php esc_html_e( 'Learn More', 'growmodo' ); ?>
+					</a>
+				</aside>
+			</div>
+		</div>
+	</section>
+<?php endforeach; ?>
+
+<?php
+get_footer();
