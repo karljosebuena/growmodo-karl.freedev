@@ -77,20 +77,27 @@ function growmodo_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'growmodo_enqueue_assets' );
 
 /**
- * Print the announcement-bar visibility snippet.
+ * Print the pre-paint state snippet.
  *
- * This has to run before first paint, so it is inlined in <head> rather than
- * enqueued: the bar renders visible by default (and therefore still works with
- * JavaScript disabled), and this hides it for visitors who already dismissed it
- * without the bar flashing on screen first.
+ * Both classes have to be on <html> before the first paint, so this is inlined
+ * in <head> rather than enqueued:
+ *
+ * - `has-js` marks that scripting is running, so CSS can hide controls that
+ *   only work with JavaScript. Doing that from main.js instead would reveal
+ *   them after layout and shift the page.
+ * - `has-announcement-dismissed` hides a bar the visitor already closed. The
+ *   bar renders visible by default — so it still works with JavaScript off —
+ *   and this stops it flashing on screen before being hidden.
  *
  * @since 1.0.0
  *
  * @return void
  */
-function growmodo_print_announcement_state() {
+function growmodo_print_prepaint_state() {
 	?>
 	<script>
+		document.documentElement.classList.add( 'has-js' );
+
 		try {
 			if ( window.localStorage.getItem( 'growmodo-announcement-dismissed' ) === '1' ) {
 				document.documentElement.classList.add( 'has-announcement-dismissed' );
@@ -99,4 +106,4 @@ function growmodo_print_announcement_state() {
 	</script>
 	<?php
 }
-add_action( 'wp_head', 'growmodo_print_announcement_state', 1 );
+add_action( 'wp_head', 'growmodo_print_prepaint_state', 1 );

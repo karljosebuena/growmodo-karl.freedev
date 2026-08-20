@@ -1679,6 +1679,17 @@ select.form__input {
 	font-size: var(--fs-sm);
 }
 
+/*
+ * The filters and their count only mean anything once the script that applies
+ * them is running, so they are hidden until <html> says it is. Gated in CSS on
+ * a class set before paint rather than revealed by main.js, which would shift
+ * the page after layout.
+ */
+html:not(.has-js) .filters,
+html:not(.has-js) .finder__count {
+	display: none;
+}
+
 @media (min-width: 1024px) {
 	.finder {
 		/* 81px at the laptop frame, 103px at the desktop one. */

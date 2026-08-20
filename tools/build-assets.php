@@ -67,12 +67,15 @@ function growmodo_minify_css(string $css): string
         $out .= $char;
     }
 
-    // Drop spaces that are never significant, and the last semicolon in a block.
+    /*
+     * Drop spaces that are never significant, and the last semicolon in a
+     * block. Note what is *not* here: nothing touches the space before a `(`.
+     * Media-query keywords keep theirs from the collapse above, and a pass that
+     * re-inserted it after `and`/`not`/`or` would also hit the `:not(` in a
+     * selector and silently break every rule using it.
+     */
     $out = preg_replace('/\s*([{}:;,>])\s*/', '$1', $out);
     $out = str_replace(';}', '}', $out);
-
-    // `and(` / `not(` in media queries need their space back.
-    $out = preg_replace('/\b(and|not|or)\(/', '$1 (', $out);
 
     return trim($out);
 }
