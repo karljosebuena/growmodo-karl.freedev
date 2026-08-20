@@ -1,9 +1,10 @@
 <?php
 /**
- * Property archive: hero, working filter bar, results grid, pagination.
+ * Property archive: hero, search, browser-side filters, results carousel.
  *
- * The filter bar submits by GET to this same archive; the query is modified in
- * inc/property-query.php so pagination and the theme's URLs stay canonical.
+ * The search box reloads the page with a new query; the filter row below it
+ * only narrows what is already rendered. See inc/property-query.php for why
+ * they are split that way, and why the whole result set loads at once.
  *
  * @since 1.0.0
  *
@@ -14,83 +15,97 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-$growmodo_filters = growmodo_get_filters();
-$growmodo_action  = get_post_type_archive_link( 'property' );
+$growmodo_term   = growmodo_property_search_term();
+$growmodo_facets = growmodo_property_facets( $wp_query->posts );
+$growmodo_loaded = (int) $wp_query->post_count;
+$growmodo_found  = (int) $wp_query->found_posts;
+
+/* translators: 1: number of properties shown, 2: number loaded. */
+$growmodo_count_text = __( 'Showing %1$s of %2$s properties', 'growmodo' );
 ?>
 
 <section class="page-hero">
 	<div class="container">
 		<h1 class="page-hero__title"><?php esc_html_e( 'Find Your Dream Property', 'growmodo' ); ?></h1>
 		<p class="lede">
-			<?php esc_html_e( 'Welcome to Estatein, where your dream property awaits. Browse our curated selection of homes and investments, each offering a unique story and a chance to redefine your life.', 'growmodo' ); ?>
+			<?php esc_html_e( 'Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey starts here.', 'growmodo' ); ?>
 		</p>
+	</div>
+</section>
+
+<section class="finder">
+	<div class="container finder__inner">
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Search and filter properties', 'growmodo' ); ?></h2>
+
+		<?php
+		get_template_part(
+			'template-parts/property-search',
+			null,
+			array( 'term' => $growmodo_term )
+		);
+		?>
+
+		<?php
+		/*
+		 * Everything below needs results to act on. The pills prune themselves
+		 * when a facet is empty, but the price bands are fixed and would
+		 * otherwise survive a fruitless search as a control over nothing.
+		 */
+		?>
+		<?php if ( $growmodo_loaded > 0 ) : ?>
+			<?php
+			get_template_part(
+				'template-parts/property-filters',
+				null,
+				array(
+					'facets' => $growmodo_facets,
+					'target' => '#property-results',
+				)
+			);
+
+			/*
+			 * Hiding cards is a content change with no focus change, so the new
+			 * count has to be announced (WCAG 4.1.3). The script rewrites this
+			 * from data-template, which is why the phrasing has to read
+			 * correctly for any number rather than relying on _n().
+			 */
+			?>
+			<p
+				class="finder__count"
+				role="status"
+				data-filter-count
+				data-template="<?php echo esc_attr( $growmodo_count_text ); ?>"
+			>
+				<?php
+				printf(
+					esc_html( $growmodo_count_text ),
+					esc_html( number_format_i18n( $growmodo_loaded ) ),
+					esc_html( number_format_i18n( $growmodo_loaded ) )
+				);
+				?>
+			</p>
+
+			<p class="notice" data-filter-empty hidden>
+				<?php esc_html_e( 'No properties match those filters. Widen one of them to see more.', 'growmodo' ); ?>
+			</p>
+
+			<?php if ( $growmodo_loaded < $growmodo_found ) : ?>
+				<p class="finder__count">
+					<?php
+					printf(
+						/* translators: %s: total number of matching properties. */
+						esc_html__( 'Your search matched %s properties in total — narrow it to reach the rest.', 'growmodo' ),
+						esc_html( number_format_i18n( $growmodo_found ) )
+					);
+					?>
+				</p>
+			<?php endif; ?>
+		<?php endif; ?>
 	</div>
 </section>
 
 <section class="section">
 	<div class="container">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Filter properties', 'growmodo' ); ?></h2>
-
-		<form class="filters" id="filters" action="<?php echo esc_url( $growmodo_action ); ?>" method="get" role="search">
-			<div class="filters__row">
-				<p class="form__field">
-					<label class="form__label" for="filter-type"><?php esc_html_e( 'Property Type', 'growmodo' ); ?></label>
-					<select class="form__input" id="filter-type" name="ptype">
-						<option value=""><?php esc_html_e( 'Any type', 'growmodo' ); ?></option>
-						<?php foreach ( growmodo_property_types() as $growmodo_value => $growmodo_label ) : ?>
-							<option value="<?php echo esc_attr( $growmodo_value ); ?>" <?php selected( $growmodo_value, $growmodo_filters['type'] ); ?>>
-								<?php echo esc_html( $growmodo_label ); ?>
-							</option>
-						<?php endforeach; ?>
-					</select>
-				</p>
-
-				<p class="form__field">
-					<label class="form__label" for="filter-beds"><?php esc_html_e( 'Bedrooms (min)', 'growmodo' ); ?></label>
-					<select class="form__input" id="filter-beds" name="beds">
-						<option value="0"><?php esc_html_e( 'Any', 'growmodo' ); ?></option>
-						<?php for ( $growmodo_i = 1; $growmodo_i <= 5; $growmodo_i++ ) : ?>
-							<option value="<?php echo esc_attr( $growmodo_i ); ?>" <?php selected( $growmodo_i, $growmodo_filters['beds'] ); ?>>
-								<?php echo esc_html( sprintf( '%d+', $growmodo_i ) ); ?>
-							</option>
-						<?php endfor; ?>
-					</select>
-				</p>
-
-				<p class="form__field">
-					<label class="form__label" for="filter-baths"><?php esc_html_e( 'Bathrooms (min)', 'growmodo' ); ?></label>
-					<select class="form__input" id="filter-baths" name="baths">
-						<option value="0"><?php esc_html_e( 'Any', 'growmodo' ); ?></option>
-						<?php for ( $growmodo_i = 1; $growmodo_i <= 5; $growmodo_i++ ) : ?>
-							<option value="<?php echo esc_attr( $growmodo_i ); ?>" <?php selected( $growmodo_i, $growmodo_filters['baths'] ); ?>>
-								<?php echo esc_html( sprintf( '%d+', $growmodo_i ) ); ?>
-							</option>
-						<?php endfor; ?>
-					</select>
-				</p>
-
-				<p class="form__field">
-					<label class="form__label" for="filter-price"><?php esc_html_e( 'Max price (USD)', 'growmodo' ); ?></label>
-					<input
-						class="form__input"
-						type="number"
-						id="filter-price"
-						name="maxprice"
-						min="0"
-						step="10000"
-						inputmode="numeric"
-						placeholder="<?php esc_attr_e( 'No maximum', 'growmodo' ); ?>"
-						value="<?php echo $growmodo_filters['max_price'] > 0 ? esc_attr( $growmodo_filters['max_price'] ) : ''; ?>"
-					/>
-				</p>
-			</div>
-
-			<div class="filters__actions">
-				<button class="btn btn--primary" type="submit"><?php esc_html_e( 'Search Properties', 'growmodo' ); ?></button>
-				<a class="btn" href="<?php echo esc_url( $growmodo_action ); ?>"><?php esc_html_e( 'Reset', 'growmodo' ); ?></a>
-			</div>
-		</form>
-
 		<?php
 		get_template_part(
 			'template-parts/section-head',
@@ -100,34 +115,36 @@ $growmodo_action  = get_post_type_archive_link( 'property' );
 				'text'  => __( 'Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home.', 'growmodo' ),
 			)
 		);
-		?>
 
-		<?php if ( have_posts() ) : ?>
-			<p class="lede filters__summary" role="status">
+		if ( $growmodo_loaded > 0 ) {
+			get_template_part(
+				'template-parts/carousel',
+				null,
+				array(
+					'query'    => $wp_query,
+					'card'     => 'card-property',
+					'label'    => __( 'Properties', 'growmodo' ),
+					'track_id' => 'property-results',
+				)
+			);
+		} elseif ( '' !== $growmodo_term ) {
+			?>
+			<p class="notice">
 				<?php
 				printf(
-					/* translators: %s: number of matching properties. */
-					esc_html( _n( '%s property matches your search.', '%s properties match your search.', (int) $wp_query->found_posts, 'growmodo' ) ),
-					esc_html( number_format_i18n( $wp_query->found_posts ) )
+					/* translators: %s: search term. */
+					esc_html__( 'Nothing matched “%s”. Try a shorter or different search.', 'growmodo' ),
+					esc_html( $growmodo_term )
 				);
 				?>
 			</p>
-
-			<div class="grid grid--3">
-				<?php
-				while ( have_posts() ) :
-					the_post();
-					get_template_part( 'template-parts/card-property' );
-				endwhile;
-				?>
-			</div>
-
-			<?php growmodo_pagination( __( 'Property pagination', 'growmodo' ) ); ?>
-		<?php else : ?>
-			<p class="notice">
-				<?php esc_html_e( 'No properties match those filters yet. Try widening your search.', 'growmodo' ); ?>
-			</p>
-		<?php endif; ?>
+			<?php
+		} else {
+			?>
+			<p class="notice"><?php esc_html_e( 'No properties are listed yet.', 'growmodo' ); ?></p>
+			<?php
+		}
+		?>
 	</div>
 </section>
 

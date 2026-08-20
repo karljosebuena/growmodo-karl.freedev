@@ -1,10 +1,18 @@
 <?php
 /**
- * Property taxonomy of values and archive filtering.
+ * Property archive: the search query, and the option lists the filters offer.
  *
- * The property-type list lives here as the single source of truth: the meta
- * box renders it as a select, the archive filter renders it as a dropdown,
- * and both validate submitted values against it.
+ * Search and filtering are two different things here, deliberately:
+ *
+ * - **Search** asks the server a question. It changes which properties exist on
+ *   the page, so it owns the URL, costs a page load, and lives in this file.
+ * - **Filters** are a view over whatever search returned. They are applied to
+ *   the rendered cards in the browser (see assets/js/main.js), which is why
+ *   there is no `meta_query` below: one predicate, one implementation.
+ *
+ * Filtering in the browser can only ever see what is on the page, so the
+ * archive loads its whole result set in one request instead of paginating it,
+ * and the template says so out loud if the cap below ever truncates.
  *
  * @since 1.0.0
  *
@@ -15,6 +23,10 @@ defined( 'ABSPATH' ) || exit;
 
 /**
  * Selectable property types.
+ *
+ * This is the authoring allowlist: the editor renders it as a select and
+ * validates against it. The archive filter deliberately does *not* read it —
+ * see growmodo_property_facets() for why.
  *
  * @since 1.0.0
  *
@@ -32,82 +44,146 @@ function growmodo_property_types() {
 }
 
 /**
- * Read and validate the archive filter values from the query string.
+ * Read the property search term from the query string.
  *
- * Every value is validated, not merely sanitized: types must exist in the
- * allowlist and numbers are clamped to a sane range.
+ * The parameter is `q`, not `s`: `s` would make WordPress treat the request as
+ * a site-wide search and hand it to search.php, losing this archive entirely.
  *
  * @since 1.0.0
  *
- * @return array{type:string,beds:int,baths:int,max_price:int}
+ * @return string Sanitized search term, or an empty string.
  */
-function growmodo_get_filters() {
-	// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Read-only archive filtering, no state change.
-	$type = isset( $_GET['ptype'] ) ? sanitize_text_field( wp_unslash( $_GET['ptype'] ) ) : '';
+function growmodo_property_search_term() {
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only search, no state change.
+	$term = isset( $_GET['q'] ) ? sanitize_text_field( wp_unslash( $_GET['q'] ) ) : '';
 
-	return array(
-		'type'      => array_key_exists( $type, growmodo_property_types() ) ? $type : '',
-		'beds'      => isset( $_GET['beds'] ) ? min( 10, absint( wp_unslash( $_GET['beds'] ) ) ) : 0,
-		'baths'     => isset( $_GET['baths'] ) ? min( 10, absint( wp_unslash( $_GET['baths'] ) ) ) : 0,
-		'max_price' => isset( $_GET['maxprice'] ) ? absint( wp_unslash( $_GET['maxprice'] ) ) : 0,
-	);
-	// phpcs:enable WordPress.Security.NonceVerification.Recommended
+	return trim( $term );
 }
 
 /**
- * Apply the archive filters to the main property archive query.
+ * Collect the filter option lists from the properties actually on the page.
+ *
+ * Derived from the result set rather than from a fixed list, so every option
+ * offered is guaranteed to match at least one visible card. A filter that can
+ * only ever return nothing is worse than no filter.
+ *
+ * @since 1.0.0
+ *
+ * @param WP_Post[] $posts Posts rendered by the archive.
+ * @return array{locations:string[],types:string[],beds:int,baths:int}
+ */
+function growmodo_property_facets( $posts ) {
+	$locations = array();
+	$types     = array();
+	$beds      = 0;
+	$baths     = 0;
+
+	foreach ( $posts as $post ) {
+		$location = get_post_meta( $post->ID, 'growmodo_location', true );
+		$type     = get_post_meta( $post->ID, 'growmodo_type', true );
+
+		if ( '' !== $location ) {
+			$locations[] = $location;
+		}
+
+		if ( '' !== $type ) {
+			$types[] = $type;
+		}
+
+		$beds  = max( $beds, (int) get_post_meta( $post->ID, 'growmodo_beds', true ) );
+		$baths = max( $baths, (int) get_post_meta( $post->ID, 'growmodo_baths', true ) );
+	}
+
+	$locations = array_unique( $locations );
+	$types     = array_unique( $types );
+
+	sort( $locations );
+	sort( $types );
+
+	return array(
+		'locations' => $locations,
+		'types'     => $types,
+		'beds'      => $beds,
+		'baths'     => $baths,
+	);
+}
+
+/**
+ * Price bands offered by the pricing filter.
+ *
+ * Bounds are `low-high` with an open upper end, which is the format the
+ * browser-side filter parses. Labels are built with growmodo_format_price() so
+ * the currency is written in exactly one place.
+ *
+ * @since 1.0.0
+ *
+ * @return string[] Band labels, keyed by bounds.
+ */
+function growmodo_price_bands() {
+	return array(
+		'0-500000'       => sprintf(
+			/* translators: %s: formatted price. */
+			__( 'Under %s', 'growmodo' ),
+			growmodo_format_price( 500000 )
+		),
+		'500000-1000000' => sprintf(
+			/* translators: 1: lower price, 2: upper price. */
+			__( '%1$s to %2$s', 'growmodo' ),
+			growmodo_format_price( 500000 ),
+			growmodo_format_price( 1000000 )
+		),
+		'1000000-'       => sprintf(
+			/* translators: %s: formatted price. */
+			__( 'Over %s', 'growmodo' ),
+			growmodo_format_price( 1000000 )
+		),
+	);
+}
+
+/**
+ * Build "1+ … n+" options for a whole-number minimum filter.
+ *
+ * @since 1.0.0
+ *
+ * @param int $max Highest value present in the result set.
+ * @return string[] Labels keyed by minimum value; empty when $max is 0.
+ */
+function growmodo_minimum_options( $max ) {
+	$options = array();
+
+	for ( $i = 1; $i <= $max; $i++ ) {
+		/* translators: %d: minimum number of rooms. */
+		$options[ (string) $i ] = sprintf( __( '%d+', 'growmodo' ), $i );
+	}
+
+	return $options;
+}
+
+/**
+ * Apply the search term to the main property archive query.
  *
  * @since 1.0.0
  *
  * @param WP_Query $query Query being prepared.
  * @return void
  */
-function growmodo_filter_property_archive( $query ) {
+function growmodo_property_archive_query( $query ) {
 	if ( is_admin() || ! $query->is_main_query() || ! $query->is_post_type_archive( 'property' ) ) {
 		return;
 	}
 
-	$filters    = growmodo_get_filters();
-	$meta_query = array();
+	$term = growmodo_property_search_term();
 
-	if ( '' !== $filters['type'] ) {
-		$meta_query[] = array(
-			'key'   => 'growmodo_type',
-			'value' => $filters['type'],
-		);
+	if ( '' !== $term ) {
+		$query->set( 's', $term );
 	}
 
-	if ( $filters['beds'] > 0 ) {
-		$meta_query[] = array(
-			'key'     => 'growmodo_beds',
-			'value'   => $filters['beds'],
-			'type'    => 'NUMERIC',
-			'compare' => '>=',
-		);
-	}
-
-	if ( $filters['baths'] > 0 ) {
-		$meta_query[] = array(
-			'key'     => 'growmodo_baths',
-			'value'   => $filters['baths'],
-			'type'    => 'NUMERIC',
-			'compare' => '>=',
-		);
-	}
-
-	if ( $filters['max_price'] > 0 ) {
-		$meta_query[] = array(
-			'key'     => 'growmodo_price',
-			'value'   => $filters['max_price'],
-			'type'    => 'NUMERIC',
-			'compare' => '<=',
-		);
-	}
-
-	if ( ! empty( $meta_query ) ) {
-		$query->set( 'meta_query', $meta_query );
-	}
-
-	$query->set( 'posts_per_page', 6 );
+	/*
+	 * The whole result set, not a page of it: the filters below the search box
+	 * work on rendered cards, so anything left on a second page would be
+	 * invisible to them. The cap is a ceiling on that, not a page size — the
+	 * template reports it when a search matches more than this.
+	 */
+	$query->set( 'posts_per_page', 24 );
 }
-add_action( 'pre_get_posts', 'growmodo_filter_property_archive' );
+add_action( 'pre_get_posts', 'growmodo_property_archive_query' );

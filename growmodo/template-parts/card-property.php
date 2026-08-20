@@ -11,12 +11,27 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$growmodo_beds  = (int) get_post_meta( get_the_ID(), 'growmodo_beds', true );
-$growmodo_baths = (int) get_post_meta( get_the_ID(), 'growmodo_baths', true );
-$growmodo_type  = get_post_meta( get_the_ID(), 'growmodo_type', true );
-$growmodo_price = (int) get_post_meta( get_the_ID(), 'growmodo_price', true );
+$growmodo_beds     = (int) get_post_meta( get_the_ID(), 'growmodo_beds', true );
+$growmodo_baths    = (int) get_post_meta( get_the_ID(), 'growmodo_baths', true );
+$growmodo_type     = get_post_meta( get_the_ID(), 'growmodo_type', true );
+$growmodo_price    = (int) get_post_meta( get_the_ID(), 'growmodo_price', true );
+$growmodo_location = get_post_meta( get_the_ID(), 'growmodo_location', true );
 ?>
-<article <?php post_class( 'card property' ); ?>>
+<?php
+/*
+ * The data attributes are what the archive's filters read. They ship on every
+ * property card rather than only on the archive: a handful of bytes, against a
+ * conditional that would make the card's output depend on where it is used.
+ */
+?>
+<article
+	<?php post_class( 'card property' ); ?>
+	data-location="<?php echo esc_attr( $growmodo_location ); ?>"
+	data-type="<?php echo esc_attr( $growmodo_type ); ?>"
+	data-beds="<?php echo esc_attr( $growmodo_beds ); ?>"
+	data-baths="<?php echo esc_attr( $growmodo_baths ); ?>"
+	data-price="<?php echo esc_attr( $growmodo_price ); ?>"
+>
 	<?php if ( has_post_thumbnail() ) : ?>
 		<a class="card__media" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
 			<?php the_post_thumbnail( 'growmodo-card', array( 'loading' => 'lazy' ) ); ?>

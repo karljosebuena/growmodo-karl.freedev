@@ -147,7 +147,102 @@
 		} );
 
 		window.addEventListener( 'resize', sync );
+
+		// Filtering hides cards, which changes how many pages there are.
+		track.addEventListener( 'growmodo:relayout', sync );
+
 		sync();
+	} );
+
+	/**
+	 * Property filters.
+	 *
+	 * A filter is a view over the results already on the page, so this hides
+	 * cards instead of asking the server for a different set — the search box
+	 * beside it is the control that does that. Nothing is submitted, so every
+	 * change applies at once and there is no button to press.
+	 *
+	 * The markup owns the field list: each select names the card attribute it
+	 * reads and how to compare it, so adding a filter is a template change.
+	 */
+	document.querySelectorAll( '[data-filter-target]' ).forEach( function ( group ) {
+		const results = document.querySelector( group.dataset.filterTarget );
+
+		if ( ! results ) {
+			return;
+		}
+
+		const selects = Array.from( group.querySelectorAll( '[data-filter]' ) );
+		const cards = Array.from( results.children );
+		const scope = group.parentElement;
+		const count = scope.querySelector( '[data-filter-count]' );
+		const empty = scope.querySelector( '[data-filter-empty]' );
+
+		/**
+		 * Does one card satisfy one select? An unset select matches everything,
+		 * which is what makes its first option double as the cleared state.
+		 */
+		const matches = function ( card, select ) {
+			const want = select.value;
+
+			if ( '' === want ) {
+				return true;
+			}
+
+			const have = card.dataset[ select.dataset.filter ];
+
+			if ( 'min' === select.dataset.match ) {
+				return Number( have ) >= Number( want );
+			}
+
+			if ( 'range' === select.dataset.match ) {
+				const bounds = want.split( '-' );
+
+				return Number( have ) >= Number( bounds[ 0 ] ) &&
+					( '' === bounds[ 1 ] || Number( have ) <= Number( bounds[ 1 ] ) );
+			}
+
+			return have === want;
+		};
+
+		const apply = function () {
+			let shown = 0;
+
+			cards.forEach( function ( card ) {
+				const keep = selects.every( function ( select ) {
+					return matches( card, select );
+				} );
+
+				card.hidden = ! keep;
+
+				if ( keep ) {
+					shown += 1;
+				}
+			} );
+
+			if ( count ) {
+				count.textContent = count.dataset.template
+					.replace( '%1$s', String( shown ) )
+					.replace( '%2$s', String( cards.length ) );
+			}
+
+			if ( empty ) {
+				empty.hidden = 0 !== shown;
+			}
+
+			/*
+			 * Back to the first page: the old scroll position means nothing
+			 * now. Instant, not smooth — the track's CSS animates assignments
+			 * to scrollLeft, and the counter below would then read the position
+			 * the carousel is still travelling away from.
+			 */
+			results.scrollTo( { left: 0, behavior: 'instant' } );
+			results.dispatchEvent( new CustomEvent( 'growmodo:relayout' ) );
+		};
+
+		selects.forEach( function ( select ) {
+			select.addEventListener( 'change', apply );
+		} );
 	} );
 
 	/**

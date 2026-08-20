@@ -22,7 +22,7 @@ get_header();
 </section>
 
 <section class="section">
-	<div class="container filters__actions">
+	<div class="container btn-row">
 		<a class="btn btn--primary" href="<?php echo esc_url( get_post_type_archive_link( 'property' ) ); ?>">
 			<?php esc_html_e( 'Browse Properties', 'growmodo' ); ?>
 		</a>

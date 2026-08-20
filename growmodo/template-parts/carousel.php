@@ -20,6 +20,9 @@
  *     @type string   $card     Card slug under template-parts/, e.g. 'card-property'.
  *     @type string   $label    Accessible name for the carousel region.
  *     @type int      $per_view Cards visible at the widest breakpoint: 2 or 3. Default 3.
+ *     @type string   $track_id Optional id for the track, so other behaviour —
+ *                              the property filters, for one — can address the
+ *                              cards without reaching in through a class name.
  * }
  */
 
@@ -31,9 +34,15 @@ if ( empty( $args['card'] ) || ( empty( $args['query'] ) && empty( $args['items'
 
 $growmodo_label    = isset( $args['label'] ) ? $args['label'] : __( 'Items', 'growmodo' );
 $growmodo_per_view = isset( $args['per_view'] ) && 2 === (int) $args['per_view'] ? 2 : 3;
+$growmodo_track_id = isset( $args['track_id'] ) ? $args['track_id'] : '';
 ?>
 <div class="carousel" data-carousel aria-roledescription="carousel" aria-label="<?php echo esc_attr( $growmodo_label ); ?>">
-	<div class="carousel__track <?php echo 2 === $growmodo_per_view ? 'carousel__track--two' : ''; ?>" data-carousel-track tabindex="0">
+	<div
+		class="carousel__track <?php echo 2 === $growmodo_per_view ? 'carousel__track--two' : ''; ?>"
+		<?php echo '' === $growmodo_track_id ? '' : 'id="' . esc_attr( $growmodo_track_id ) . '"'; ?>
+		data-carousel-track
+		tabindex="0"
+	>
 		<?php
 		if ( ! empty( $args['query'] ) ) {
 			growmodo_render_cards( $args['query'], $args['card'] );

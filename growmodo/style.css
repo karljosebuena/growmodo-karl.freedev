@@ -68,7 +68,8 @@ Tags: real-estate, dark, one-column, custom-menu
 
 	/* Layout */
 	--container: 1596px;
-	--gutter: clamp(1rem, 4vw, 2.5rem);
+	/* Fitted to the frames' own gutters: 16px @390, 80px @1440, 162px @1920. */
+	--gutter: clamp(1rem, -0.4625rem + 6vw, 10.125rem);
 	--section-y: clamp(3rem, 6vw, 6rem);
 }
 
@@ -193,9 +194,17 @@ button {
 /* ==========================================================================
    3. Layout primitives
    ========================================================================== */
+/*
+ * --container is the *content* width, so the gutter is added to the cap rather
+ * than eaten out of it. Measured off the three frames, the design's content
+ * column is 358px @390, 1280px @1440 and 1596px @1920 — a percentage gutter
+ * that stops growing at 162px, not a fixed inset. Capping max-width at
+ * --container alone gave 1360px @1440 (80px too wide) and 1516px @1920 (80px
+ * too narrow) at the same time.
+ */
 .container {
 	width: 100%;
-	max-width: var(--container);
+	max-width: calc(var(--container) + 2 * var(--gutter));
 	margin-inline: auto;
 	padding-inline: var(--gutter);
 }
@@ -831,7 +840,12 @@ button {
 		padding-right: 6rem;
 		margin-left: auto;
 		width: 100%;
-		max-width: calc(var(--container) / 2);
+		/*
+		 * Half the content column *plus* its gutter: the padding is what pushes
+		 * the headline to the same left edge as every .container on the site,
+		 * so the gutter has to be inside this width, not outside it.
+		 */
+		max-width: calc(var(--container) / 2 + var(--gutter));
 	}
 
 	.hero__stats {
@@ -1369,6 +1383,13 @@ button {
 .page-hero {
 	padding-block: var(--sp-8);
 	border-bottom: 1px solid var(--c-border);
+	/*
+	 * The design lights these heroes from the left. Sampled off the exports it
+	 * is #1f1f1f at x=0 falling to the page's own #141414 by roughly 840px —
+	 * a ~4.5% white wash rather than a colour, and the same on the Properties,
+	 * Contact and Services heroes that share the treatment.
+	 */
+	background-image: radial-gradient(70% 120% at 0% 25%, rgba(255, 255, 255, 0.045), transparent 62%);
 }
 
 .page-hero__title {
@@ -1629,29 +1650,222 @@ select.form__input {
 }
 
 /* ==========================================================================
-   21. Archive filter bar and pagination
+   21. Property finder: search card, filter pills, and pagination
    ========================================================================== */
-.filters {
-	display: grid;
-	gap: var(--sp-4);
-	margin-bottom: var(--sp-7);
-	padding: var(--sp-5);
-	border: 1px solid var(--c-border);
-	border-radius: var(--radius-lg);
-	background: var(--c-surface);
+
+/*
+ * --search-card-h is declared here rather than on the card because the negative
+ * margin below needs half of it: in the design the search card is centred on
+ * the hero's bottom border, straddling it.
+ */
+/*
+ * Heights are measured, not chosen: the search card is 68px at the mobile
+ * frame, 81px at the laptop frame and 103px at the desktop one. It lives in a
+ * custom property because the negative margin below needs half of it — in the
+ * design the card is centred on the hero's bottom border, straddling it.
+ */
+.finder {
+	--search-card-h: 4.25rem;
+	padding-block: var(--sp-7) var(--sp-6);
 }
 
-@media (min-width: 768px) {
-	.filters__row {
-		display: grid;
-		grid-template-columns: repeat(4, minmax(0, 1fr));
-		gap: var(--sp-4);
-		align-items: end;
+.finder__inner {
+	display: grid;
+	gap: var(--sp-5);
+}
+
+.finder__count {
+	color: var(--c-muted);
+	font-size: var(--fs-sm);
+}
+
+@media (min-width: 1024px) {
+	.finder {
+		/* 81px at the laptop frame, 103px at the desktop one. */
+		--search-card-h: clamp(5.0625rem, 0.9375rem + 4.5833vw, 6.4375rem);
+		margin-top: calc(var(--search-card-h) / -2);
+		padding-block: 0 var(--sp-8);
+	}
+
+	.finder__inner {
+		gap: 0.625rem;
 	}
 }
 
-.filters__actions {
+.search-card {
 	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	width: 100%;
+	min-height: var(--search-card-h);
+	/* 10px at the mobile frame, 15px at the laptop one, 20px at the desktop one. */
+	padding: clamp(0.625rem, 1.0417vw, 1.25rem);
+	border: 1px solid var(--c-border);
+	border-radius: var(--radius-lg);
+	background: var(--c-bg);
+	/* Same lighter halo as .card — the design lifts panels, never drops shadow. */
+	box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.02);
+}
+
+.search-card:focus-within {
+	border-color: var(--c-accent);
+}
+
+.search-card__input {
+	flex: 1;
+	min-width: 0;
+	padding-inline: var(--sp-3);
+	border: 0;
+	background: transparent;
+	color: var(--c-text);
+	font: inherit;
+	font-size: var(--fs-md);
+}
+
+.search-card__input::placeholder {
+	color: var(--c-muted);
+}
+
+.search-card__input:focus:not(:focus-visible) {
+	outline: none;
+}
+
+.search-card__submit {
+	flex: none;
+	align-self: stretch;
+	min-width: 3.75rem;
+}
+
+/* Icon-only until there is room for the label; aria-label carries the name. */
+.search-card__submit-text {
+	display: none;
+}
+
+/*
+ * Narrower than the content column and centred, as in the design: 86% of it at
+ * the laptop frame, capped at the 1300px the desktop frame shows.
+ */
+@media (min-width: 1024px) {
+	.search-card {
+		max-width: min(86%, 81.25rem);
+		margin-inline: auto;
+	}
+
+	/* 148px at the laptop frame, 182px at the desktop one. */
+	.search-card__submit {
+		min-width: clamp(9.25rem, 2.875rem + 7.0833vw, 11.375rem);
+	}
+
+	.search-card__submit-text {
+		display: inline;
+	}
+}
+
+/*
+ * The filter row is a frame, not a bordered box: the design fills it with the
+ * surface colour and lets the pills inside carry the only borders.
+ */
+.filters {
+	display: grid;
+	gap: 1.25rem;
+	margin: 0;
+	padding: 1.25rem;
+	border: 0;
+	border-radius: 1rem;
+	background: var(--c-surface);
+}
+
+@media (min-width: 640px) {
+	.filters {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+/* Five across, and the frame thins to the 10px the laptop and desktop frames show. */
+@media (min-width: 1200px) {
+	.filters {
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		padding: 0.625rem;
+	}
+}
+
+/*
+ * The pill is 52px through the mobile and laptop frames and only grows to 72px
+ * by the desktop one, so every dimension here floors at its 52px value and
+ * ramps between 1440px and 1920px. Cheaper than a media query per property, and
+ * it cannot fire on the wrong side of 1440 the way a stepped breakpoint does.
+ */
+.pill {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	min-height: clamp(3.25rem, -0.5rem + 4.1667vw, 4.5rem);
+	padding-inline: clamp(1rem, 0.25rem + 0.8333vw, 1.25rem);
+	border: 1px solid var(--c-border);
+	border-radius: var(--radius);
+	background: var(--c-bg);
+}
+
+.pill__icon {
+	display: flex;
+	align-items: center;
+	height: clamp(1.375rem, 0.25rem + 1.25vw, 1.75rem);
+	padding-right: var(--sp-3);
+	border-right: 1px solid var(--c-border);
+	color: var(--c-muted);
+}
+
+.pill__icon svg {
+	width: 1.125rem;
+	height: 1.125rem;
+}
+
+.pill__select {
+	flex: 1;
+	min-width: 0;
+	padding: 0.5rem 3rem 0.5rem 0;
+	appearance: none;
+	border: 0;
+	background: transparent;
+	color: var(--c-text);
+	font: inherit;
+	font-size: var(--fs-sm);
+	cursor: pointer;
+}
+
+.pill__select:focus:not(:focus-visible) {
+	outline: none;
+}
+
+/*
+ * A real icon rather than a background data URI, so the arrow takes its colour
+ * from the same tokens as everything else. pointer-events are off so a click on
+ * the arrow still lands on the select underneath and opens it.
+ */
+.pill__chevron {
+	position: absolute;
+	top: 50%;
+	right: clamp(1rem, 0.25rem + 0.8333vw, 1.25rem);
+	display: grid;
+	place-items: center;
+	width: 2rem;
+	height: 2rem;
+	transform: translateY(-50%);
+	border-radius: var(--radius-sm);
+	background: var(--c-surface);
+	color: var(--c-muted);
+	pointer-events: none;
+}
+
+.pill__chevron svg {
+	width: 1rem;
+	height: 1rem;
+}
+
+.btn-row {
+	display: flex;
+	flex-wrap: wrap;
 	gap: var(--sp-3);
 }
 
