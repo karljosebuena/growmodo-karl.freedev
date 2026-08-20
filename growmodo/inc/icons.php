@@ -27,8 +27,14 @@ defined( 'ABSPATH' ) || exit;
  */
 function growmodo_icon( $name, $css_class = '' ) {
 	$icons = array(
-		// Brand mark: the Estatein tulip.
-		'logo'           => '<path d="M0 2a2 2 0 0 1 2-2h20.6L24 20 25.4 0H46a2 2 0 0 1 2 2v22a24 24 0 0 1-48 0V2Z" fill="currentColor"/>',
+		/*
+		 * Brand mark. Traced from the export rather than eyeballed: the shape is
+		 * a full circle whose upper-left quadrant is squared off, so the left
+		 * edge is straight and the top-left corner sharp while the right side
+		 * stays circular — with a narrow slit dropped in from the top. It is
+		 * deliberately asymmetric; a symmetric two-petal reading is wrong.
+		 */
+		'logo'           => '<path d="M0 0h23l1 22 1-22a24 24 0 1 1-25 24Z" fill="currentColor"/>',
 
 		'sparkle'        => '<path d="M12 1c.6 6.1 3.9 9.4 10 10-6.1.6-9.4 3.9-10 10-.6-6.1-3.9-9.4-10-10 6.1-.6 9.4-3.9 10-10Z" fill="currentColor"/>',
 		'arrow-up-right' => '<path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
