@@ -76,11 +76,28 @@ function growmodo_icon( $name, $css_class = '' ) {
 		'calendar'       => '<path d="M7.2 1.8h2v3.4h-2V1.8Zm7.6 0h2v3.4h-2V1.8Z" fill="currentColor"/><path fill-rule="evenodd" d="M5.6 3.8h12.8A2.6 2.6 0 0 1 21 6.4v13A2.6 2.6 0 0 1 18.4 22H5.6A2.6 2.6 0 0 1 3 19.4v-13a2.6 2.6 0 0 1 2.6-2.6ZM3 8.6h18v1.8H3V8.6Z" fill="currentColor"/>',
 		'pin'            => '<path fill-rule="evenodd" d="M12 1.8a8 8 0 0 1 8 8c0 5.5-8 12.4-8 12.4S4 15.3 4 9.8a8 8 0 0 1 8-8Zm0 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" fill="currentColor"/>',
 
-		// Feature and service icons.
-		'home'           => '<path d="M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
+		/*
+		 * Service icons, one per card. The set exists because the four generic
+		 * glyphs below were being recycled across twelve service cards, which
+		 * put a house on "Negotiation Wizardry" and a building on "Closing
+		 * Success" — these are the glyphs the design actually draws.
+		 */
+		'chart-bars'     => '<rect x="3" y="12.5" width="4.6" height="8.5" rx="1.6" fill="currentColor"/><rect x="9.7" y="7.5" width="4.6" height="13.5" rx="1.6" fill="currentColor"/><rect x="16.4" y="3" width="4.6" height="18" rx="1.6" fill="currentColor"/>',
+		'chart-pie'      => '<path d="M12 2A10 10 0 1 0 22 12H12V2Z" fill="currentColor"/><path d="M14 2.6A9.4 9.4 0 0 1 22.4 11H14V2.6Z" fill="currentColor"/>',
+		'coins'          => '<ellipse cx="12" cy="5.6" rx="8.4" ry="2.6" fill="currentColor"/><ellipse cx="12" cy="12" rx="8.4" ry="2.6" fill="currentColor"/><ellipse cx="12" cy="18.4" rx="8.4" ry="2.6" fill="currentColor"/>',
+		'megaphone'      => '<path d="M2.6 9.4v5.2a1.8 1.8 0 0 0 1.8 1.8h1.9l8.5 5.2V2.4L6.3 7.6H4.4a1.8 1.8 0 0 0-1.8 1.8Z" fill="currentColor"/><path d="M18.4 7.4a7.6 7.6 0 0 1 0 9.2" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" fill="none"/>',
+		'grid-plus'      => '<rect x="2.8" y="2.8" width="8" height="8" rx="2.4" fill="currentColor"/><rect x="13.2" y="2.8" width="8" height="8" rx="2.4" fill="currentColor"/><rect x="2.8" y="13.2" width="8" height="8" rx="2.4" fill="currentColor"/><path d="M18.45 13.8v2.95h2.95v2.5h-2.95v2.95h-2.5v-2.95H13v-2.5h2.95V13.8h2.5Z" fill="currentColor"/>',
+		'swatches'       => '<rect x="2.2" y="2.6" width="8.6" height="18.8" rx="3" fill="currentColor"/><rect x="13.2" y="2.6" width="8.6" height="18.8" rx="3" fill="currentColor" opacity=".55"/><circle cx="17.5" cy="17.2" r="1.7" fill="currentColor"/>',
+		'sparkles'       => '<path d="M9.6 2.2c.5 4.6 2.9 7 7.5 7.5-4.6.5-7 2.9-7.5 7.5-.5-4.6-2.9-7-7.5-7.5 4.6-.5 7-2.9 7.5-7.5Z" fill="currentColor"/><path d="M18.4 13.2c.22 1.9 1.28 2.96 3.2 3.2-1.92.24-2.98 1.3-3.2 3.2-.22-1.9-1.28-2.96-3.2-3.2 1.92-.24 2.98-1.3 3.2-3.2Z" fill="currentColor"/><path d="M18.9 2.4c.13 1.1.76 1.73 1.86 1.86-1.1.13-1.73.76-1.86 1.86-.13-1.1-.76-1.73-1.86-1.86 1.1-.13 1.73-.76 1.86-1.86Z" fill="currentColor"/>',
+		'flame'          => '<path d="M13 1.2c4.4 3.6 6.9 6.7 6.9 10.5a7.9 7.9 0 0 1-15.8 0c0-2 .8-3.7 2.2-5.2.1 2.1 1.2 3.3 2.8 3.3 2 0 3.3-1.7 3.3-4.3 0-1.7-.4-3.2-.8-4.3Z" fill="currentColor"/><path d="M12 13.4c1.9 1.4 2.9 2.6 2.9 4a2.9 2.9 0 0 1-5.8 0c0-1.4 1-2.6 2.9-4Z" fill="currentColor" opacity=".45"/>',
+		'bulb'           => '<path d="M12 2.2a7.2 7.2 0 0 0-4.2 13v1.6a1 1 0 0 0 1 1h6.4a1 1 0 0 0 1-1v-1.6A7.2 7.2 0 0 0 12 2.2Z" fill="currentColor"/><path d="M9.4 19.4h5.2v.6a1.8 1.8 0 0 1-1.8 1.8h-1.6a1.8 1.8 0 0 1-1.8-1.8v-.6Z" fill="currentColor"/>',
+
+		// Feature and section icons.
+		'home'           =>'<path d="M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
 		'value'          => '<rect x="2.5" y="6" width="19" height="12" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M6 10v4M18 10v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
 		'manage'         => '<path d="M4 21V8l7-4 7 4v13M4 21h16M9 21v-5h6v5M8 11h1M12 11h1M8 14h1M12 14h1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
-		'insight'        => '<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
+		// Filled centre, like the rest of the set; the design draws it as a sunburst.
+		'insight'        => '<circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 1.8v2.6M12 19.6v2.6M1.8 12h2.6M19.6 12h2.6M4.8 4.8l1.9 1.9M17.3 17.3l1.9 1.9M19.2 4.8l-1.9 1.9M6.7 17.3l-1.9 1.9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>',
 
 		// About-page value icons.
 		'graduation'     => '<path d="M12 4 2.5 8.5 12 13l9.5-4.5L12 4Z" fill="currentColor"/><path d="M6 11.2v4.3c0 1.9 2.7 3.2 6 3.2s6-1.3 6-3.2v-4.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none"/>',

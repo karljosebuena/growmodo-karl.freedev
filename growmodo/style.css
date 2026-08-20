@@ -32,6 +32,8 @@ Tags: real-estate, dark, one-column, custom-menu
 	--c-muted: #999999;
 	--c-accent: #703bf7;
 	--c-accent-hover: #8254f8;
+	/* The ring around a service icon: measured, and not a tint of the accent. */
+	--c-accent-ring: #4a3d68;
 	--c-star: #ffe500;
 
 	/* Typography */
@@ -2805,17 +2807,18 @@ html:not(.has-js) .filters {
 
 /*
  * Larger than the icon circles elsewhere, with a purple-tinted ring: measured
- * at 82px across on the export, against the 48px the info boxes use.
+ * at 76px across on the export, against the 48px the info boxes use.
  */
 .service .info__icon {
-	width: 5.125rem;
-	height: 5.125rem;
-	border-color: rgba(112, 59, 247, 0.32);
+	width: 4.75rem;
+	height: 4.75rem;
+	border-color: var(--c-accent-ring);
 }
 
+/* The design's glyphs fill ~60% of the circle, not the third they were at. */
 .service .info__icon svg {
-	width: 1.75rem;
-	height: 1.75rem;
+	width: 2.75rem;
+	height: 2.75rem;
 }
 
 @media (min-width: 768px) {

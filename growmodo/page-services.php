@@ -25,10 +25,10 @@ $growmodo_groups = array(
 		'cta_title' => __( 'Unlock the Value of Your Property Today', 'growmodo' ),
 		'cta_text'  => __( 'Ready to unlock the true value of your property? Explore our Property Selling Service categories and let us help you achieve the best deal possible for your valuable asset.', 'growmodo' ),
 		'services'  => array(
-			array( 'value', __( 'Valuation Mastery', 'growmodo' ), __( 'Discover the true worth of your property with our expert valuation services.', 'growmodo' ), 'valuation-mastery' ),
-			array( 'insight', __( 'Strategic Marketing', 'growmodo' ), __( 'Selling a property requires more than just a listing; it demands a strategic marketing approach.', 'growmodo' ), 'strategic-marketing' ),
-			array( 'home', __( 'Negotiation Wizardry', 'growmodo' ), __( 'Negotiating the best deal is an art, and our negotiation experts are masters of it.', 'growmodo' ), 'negotiation-wizardry' ),
-			array( 'manage', __( 'Closing Success', 'growmodo' ), __( 'A successful sale is not complete until the closing. We guide you through the intricate closing process.', 'growmodo' ), 'closing-success' ),
+			array( 'chart-bars', __( 'Valuation Mastery', 'growmodo' ), __( 'Discover the true worth of your property with our expert valuation services.', 'growmodo' ), 'valuation-mastery' ),
+			array( 'chart-pie', __( 'Strategic Marketing', 'growmodo' ), __( 'Selling a property requires more than just a listing; it demands a strategic marketing approach.', 'growmodo' ), 'strategic-marketing' ),
+			array( 'coins', __( 'Negotiation Wizardry', 'growmodo' ), __( 'Negotiating the best deal is an art, and our negotiation experts are masters of it.', 'growmodo' ), 'negotiation-wizardry' ),
+			array( 'megaphone', __( 'Closing Success', 'growmodo' ), __( 'A successful sale is not complete until the closing. We guide you through the intricate closing process.', 'growmodo' ), 'closing-success' ),
 		),
 	),
 	array(
@@ -39,9 +39,9 @@ $growmodo_groups = array(
 		'cta_title' => __( 'Experience Effortless Property Management', 'growmodo' ),
 		'cta_text'  => __( 'Ready to experience hassle-free property management? Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.', 'growmodo' ),
 		'services'  => array(
-			array( 'home', __( 'Tenant Harmony', 'growmodo' ), __( 'Our Tenant Management services ensure that your tenants have a smooth and reducing vacancies.', 'growmodo' ), 'tenant-harmony' ),
-			array( 'manage', __( 'Maintenance Ease', 'growmodo' ), __( 'Say goodbye to property maintenance headaches. We handle all aspects of property upkeep.', 'growmodo' ), 'maintenance-ease' ),
-			array( 'value', __( 'Financial Peace of Mind', 'growmodo' ), __( 'Managing property finances can be complex. Our financial experts take care of rent collection.', 'growmodo' ), 'financial-peace' ),
+			array( 'grid-plus', __( 'Tenant Harmony', 'growmodo' ), __( 'Our Tenant Management services ensure that your tenants have a smooth and reducing vacancies.', 'growmodo' ), 'tenant-harmony' ),
+			array( 'swatches', __( 'Maintenance Ease', 'growmodo' ), __( 'Say goodbye to property maintenance headaches. We handle all aspects of property upkeep.', 'growmodo' ), 'maintenance-ease' ),
+			array( 'sparkles', __( 'Financial Peace of Mind', 'growmodo' ), __( 'Managing property finances can be complex. Our financial experts take care of rent collection.', 'growmodo' ), 'financial-peace' ),
 			array( 'insight', __( 'Legal Guardian', 'growmodo' ), __( 'Stay compliant with property laws and regulations effortlessly.', 'growmodo' ), 'legal-guardian' ),
 		),
 	),
@@ -53,10 +53,10 @@ $growmodo_groups = array(
 		'cta_title' => __( 'Unlock Your Investment Potential', 'growmodo' ),
 		'cta_text'  => __( 'Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.', 'growmodo' ),
 		'services'  => array(
-			array( 'insight', __( 'Market Insight', 'growmodo' ), __( 'Stay ahead of market trends with our expert Market Analysis. We provide in-depth insights into real estate market conditions.', 'growmodo' ), 'market-insight' ),
-			array( 'value', __( 'ROI Assessment', 'growmodo' ), __( 'Make investment decisions with confidence. Our ROI Assessment services evaluate the potential returns on your investments.', 'growmodo' ), 'roi-assessment' ),
-			array( 'manage', __( 'Customized Strategies', 'growmodo' ), __( 'Every investor is unique, and so are their goals. We develop customized Investment Strategies tailored to your specific needs.', 'growmodo' ), 'customized-strategies' ),
-			array( 'home', __( 'Diversification Mastery', 'growmodo' ), __( 'Diversify your real estate portfolio effectively. Our experts guide you in spreading your investments across various property types and locations.', 'growmodo' ), 'diversification-mastery' ),
+			array( 'chart-bars', __( 'Market Insight', 'growmodo' ), __( 'Stay ahead of market trends with our expert Market Analysis. We provide in-depth insights into real estate market conditions.', 'growmodo' ), 'market-insight' ),
+			array( 'flame', __( 'ROI Assessment', 'growmodo' ), __( 'Make investment decisions with confidence. Our ROI Assessment services evaluate the potential returns on your investments.', 'growmodo' ), 'roi-assessment' ),
+			array( 'bulb', __( 'Customized Strategies', 'growmodo' ), __( 'Every investor is unique, and so are their goals. We develop customized Investment Strategies tailored to your specific needs.', 'growmodo' ), 'customized-strategies' ),
+			array( 'insight', __( 'Diversification Mastery', 'growmodo' ), __( 'Diversify your real estate portfolio effectively. Our experts guide you in spreading your investments across various property types and locations.', 'growmodo' ), 'diversification-mastery' ),
 		),
 	),
 );
