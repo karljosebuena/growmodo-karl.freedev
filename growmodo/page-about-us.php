@@ -50,6 +50,34 @@ $growmodo_clients = array(
 		'category' => __( 'Retail Space', 'growmodo' ),
 		'quote'    => __( 'Estatein\'s ability to identify prime retail locations helped us expand our brand presence. They are a trusted partner in our growth.', 'growmodo' ),
 	),
+	array(
+		'since'    => __( 'Since 2020', 'growmodo' ),
+		'name'     => __( 'Harbour & Vine', 'growmodo' ),
+		'domain'   => __( 'Hospitality', 'growmodo' ),
+		'category' => __( 'Boutique Hotels', 'growmodo' ),
+		'quote'    => __( 'They found us three sites in under a year, each one a better fit than the last. The market knowledge is genuinely deep.', 'growmodo' ),
+	),
+	array(
+		'since'    => __( 'Since 2021', 'growmodo' ),
+		'name'     => __( 'Northwind Logistics', 'growmodo' ),
+		'domain'   => __( 'Industrial', 'growmodo' ),
+		'category' => __( 'Warehousing', 'growmodo' ),
+		'quote'    => __( 'Estatein understood our access and clearance requirements immediately, which saved us months of viewing unsuitable units.', 'growmodo' ),
+	),
+	array(
+		'since'    => __( 'Since 2022', 'growmodo' ),
+		'name'     => __( 'Meridian Health', 'growmodo' ),
+		'domain'   => __( 'Healthcare', 'growmodo' ),
+		'category' => __( 'Clinical Premises', 'growmodo' ),
+		'quote'    => __( 'Fitting out a clinic has constraints most agents have never met. Ours had, and negotiated the lease terms around them.', 'growmodo' ),
+	),
+	array(
+		'since'    => __( 'Since 2023', 'growmodo' ),
+		'name'     => __( 'Atlas Studios', 'growmodo' ),
+		'domain'   => __( 'Creative', 'growmodo' ),
+		'category' => __( 'Studio Space', 'growmodo' ),
+		'quote'    => __( 'We needed height, power and quiet neighbours. They shortlisted four places that had all three and let us walk away from two.', 'growmodo' ),
+	),
 );
 
 $growmodo_team = array(
@@ -252,45 +280,18 @@ $growmodo_team = array(
 		);
 		?>
 
-		<ul class="grid grid--2">
-			<?php foreach ( $growmodo_clients as $growmodo_client ) : ?>
-				<li class="card client">
-					<div class="client__head">
-						<div>
-							<p class="client__since"><?php echo esc_html( $growmodo_client['since'] ); ?></p>
-							<h3 class="client__name"><?php echo esc_html( $growmodo_client['name'] ); ?></h3>
-						</div>
-						<a class="btn" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
-							<?php esc_html_e( 'Visit Website', 'growmodo' ); ?>
-						</a>
-					</div>
-
-					<div class="client__meta">
-						<div>
-							<p class="client__meta-label">
-								<?php echo growmodo_icon( 'building' ); ?>
-								<?php esc_html_e( 'Domain', 'growmodo' ); ?>
-							</p>
-							<p class="client__meta-value"><?php echo esc_html( $growmodo_client['domain'] ); ?></p>
-						</div>
-						<div>
-							<p class="client__meta-label">
-								<?php echo growmodo_icon( 'insight' ); ?>
-								<?php esc_html_e( 'Category', 'growmodo' ); ?>
-							</p>
-							<p class="client__meta-value"><?php echo esc_html( $growmodo_client['category'] ); ?></p>
-						</div>
-					</div>
-
-					<div class="client__quote">
-						<p class="client__quote-label">
-							<?php esc_html_e( 'What They Said', 'growmodo' ); ?> <span aria-hidden="true">&#129303;</span>
-						</p>
-						<p class="card__text"><?php echo esc_html( $growmodo_client['quote'] ); ?></p>
-					</div>
-				</li>
-			<?php endforeach; ?>
-		</ul>
+		<?php
+		get_template_part(
+			'template-parts/carousel',
+			null,
+			array(
+				'items'    => $growmodo_clients,
+				'card'     => 'card-client',
+				'label'    => __( 'Our valued clients', 'growmodo' ),
+				'per_view' => 2,
+			)
+		);
+		?>
 	</div>
 </section>
 
