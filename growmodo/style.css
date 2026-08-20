@@ -324,9 +324,19 @@ button {
 	background: var(--c-surface);
 }
 
-.icon-btn.is-inert {
-	opacity: 0.4;
-	pointer-events: none;
+.icon-btn:disabled {
+	opacity: 0.35;
+	cursor: default;
+}
+
+.icon-btn:disabled:hover {
+	border-color: var(--c-border);
+	background: var(--c-bg);
+}
+
+/* Only one page of cards — the counter and arrows would be noise. */
+.has-single-page .section-foot {
+	display: none;
 }
 
 .icon-btn svg {
@@ -910,15 +920,23 @@ button {
 /* ==========================================================================
    13. Testimonial card
    ========================================================================== */
+/*
+ * Each star sits in its own dark disc, as in the design — that contrast is
+ * what makes the rating read at a glance rather than disappearing into the card.
+ */
 .stars {
 	display: flex;
 	gap: var(--sp-2);
 }
 
 .stars svg {
-	width: 1rem;
-	height: 1rem;
+	width: 1.75rem;
+	height: 1.75rem;
+	padding: 0.4rem;
+	border-radius: var(--radius-pill);
+	background: var(--c-bg);
 	color: var(--c-star);
+	box-sizing: border-box;
 }
 
 .testimonial__author {
@@ -998,6 +1016,63 @@ button {
 
 .faq__disclosure[open] .faq__marker::after {
 	opacity: 0;
+}
+
+/* ==========================================================================
+   13c. Card carousel
+   Scroll-snap track: a plain scrollable row without JavaScript, paged by
+   main.js when it loads. Card widths are set here, so the page count follows
+   from the layout rather than being hard-coded.
+   ========================================================================== */
+/*
+ * Flexbox rather than grid: a grid scroll container with scroll-snap leaks its
+ * implicit columns into the document's scrollable area in Chromium, which turns
+ * the whole page into a horizontal scroller. Flex items with a fixed basis
+ * contain the overflow reliably.
+ */
+.carousel__track {
+	display: flex;
+	gap: var(--sp-5);
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+}
+
+.carousel__track::-webkit-scrollbar {
+	display: none;
+}
+
+.carousel__track > * {
+	flex: 0 0 100%;
+	min-width: 0;
+	scroll-snap-align: start;
+	/*
+	 * Establishes a containing block for absolutely positioned descendants.
+	 * Without it, a .screen-reader-text span inside an off-screen slide is
+	 * positioned against the document instead of its card, and its static
+	 * position lands past the viewport — which makes the whole page scroll
+	 * sideways even though the track itself clips correctly.
+	 */
+	position: relative;
+}
+
+@media (min-width: 768px) {
+	.carousel__track > * {
+		flex-basis: calc((100% - var(--sp-5)) / 2);
+	}
+}
+
+@media (min-width: 1200px) {
+	.carousel__track > * {
+		flex-basis: calc((100% - (2 * var(--sp-5))) / 3);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.carousel__track {
+		scroll-behavior: auto;
+	}
 }
 
 /* ==========================================================================

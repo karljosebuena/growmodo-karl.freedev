@@ -12,7 +12,11 @@ defined( 'ABSPATH' ) || exit;
 $growmodo_testimonials = new WP_Query(
 	array(
 		'post_type'      => 'testimonial',
-		'posts_per_page' => 3,
+		'posts_per_page' => growmodo_carousel_count(),
+		'orderby'        => array(
+			'menu_order' => 'ASC',
+			'date'       => 'ASC',
+		),
 	)
 );
 
@@ -31,10 +35,16 @@ if ( ! $growmodo_testimonials->have_posts() ) {
 				'text'  => __( 'Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.', 'growmodo' ),
 			)
 		);
-		?>
 
-		<div class="grid grid--3">
-			<?php growmodo_render_cards( $growmodo_testimonials, 'card-testimonial' ); ?>
-		</div>
+		get_template_part(
+			'template-parts/carousel',
+			null,
+			array(
+				'query' => $growmodo_testimonials,
+				'card'  => 'card-testimonial',
+				'label' => __( 'Client testimonials', 'growmodo' ),
+			)
+		);
+		?>
 	</div>
 </section>

@@ -12,9 +12,11 @@ defined( 'ABSPATH' ) || exit;
 $growmodo_faqs = new WP_Query(
 	array(
 		'post_type'      => 'faq',
-		'posts_per_page' => growmodo_faq_count(),
-		'orderby'        => 'date',
-		'order'          => 'ASC',
+		'posts_per_page' => growmodo_carousel_count(),
+		'orderby'        => array(
+			'menu_order' => 'ASC',
+			'date'       => 'ASC',
+		),
 	)
 );
 
@@ -33,10 +35,16 @@ if ( ! $growmodo_faqs->have_posts() ) {
 				'text'  => __( 'Find answers to common questions about Estatein\'s services, property listings, and the real estate process. We\'re here to provide clarity and assist you every step of the way.', 'growmodo' ),
 			)
 		);
-		?>
 
-		<div class="grid grid--3">
-			<?php growmodo_render_cards( $growmodo_faqs, 'card-faq' ); ?>
-		</div>
+		get_template_part(
+			'template-parts/carousel',
+			null,
+			array(
+				'query' => $growmodo_faqs,
+				'card'  => 'card-faq',
+				'label' => __( 'Frequently asked questions', 'growmodo' ),
+			)
+		);
+		?>
 	</div>
 </section>

@@ -143,7 +143,7 @@ function growmodo_schema_faq() {
 	$faqs = get_posts(
 		array(
 			'post_type'      => 'faq',
-			'posts_per_page' => growmodo_faq_count(),
+			'posts_per_page' => growmodo_carousel_count(),
 			'orderby'        => 'date',
 			'order'          => 'ASC',
 		)

@@ -36,7 +36,7 @@ function growmodo_register_post_types() {
 			'has_archive' => true,
 			'menu_icon'   => 'dashicons-admin-multisite',
 			'rewrite'     => array( 'slug' => 'properties' ),
-			'supports'    => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+			'supports'    => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes' ),
 		)
 	);
 
@@ -50,7 +50,7 @@ function growmodo_register_post_types() {
 			'public'    => false,
 			'show_ui'   => true,
 			'menu_icon' => 'dashicons-format-quote',
-			'supports'  => array( 'title', 'editor', 'thumbnail' ),
+			'supports'  => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
 		)
 	);
 
@@ -64,7 +64,7 @@ function growmodo_register_post_types() {
 			'public'    => false,
 			'show_ui'   => true,
 			'menu_icon' => 'dashicons-editor-help',
-			'supports'  => array( 'title', 'editor' ),
+			'supports'  => array( 'title', 'editor', 'page-attributes' ),
 		)
 	);
 

@@ -34,6 +34,87 @@
 	}
 
 	/**
+	 * Card carousels.
+	 *
+	 * The track is already a usable scrollable row from CSS alone; this adds
+	 * paging buttons, a live page counter, and disabled states at the ends.
+	 * Page size is derived from the rendered card width, so it follows the
+	 * responsive layout instead of being duplicated here.
+	 */
+	document.querySelectorAll( '[data-carousel]' ).forEach( function ( carousel ) {
+		const track = carousel.querySelector( '[data-carousel-track]' );
+		const prev = carousel.querySelector( '[data-carousel-prev]' );
+		const next = carousel.querySelector( '[data-carousel-next]' );
+		const current = carousel.querySelector( '[data-carousel-current]' );
+		const total = carousel.querySelector( '[data-carousel-total]' );
+
+		if ( ! track || ! prev || ! next ) {
+			return;
+		}
+
+		const pad = function ( n ) {
+			return String( n ).padStart( 2, '0' );
+		};
+
+		const pageCount = function () {
+			// Round to absorb sub-pixel track widths.
+			return Math.max( 1, Math.round( track.scrollWidth / track.clientWidth ) );
+		};
+
+		const pageIndex = function () {
+			return Math.round( track.scrollLeft / track.clientWidth );
+		};
+
+		const sync = function () {
+			const pages = pageCount();
+			const page = Math.min( pageIndex(), pages - 1 );
+
+			if ( current ) {
+				current.textContent = pad( page + 1 );
+			}
+
+			if ( total ) {
+				// translators-free: rendered as "01 of 03".
+				total.textContent = ' of ' + pad( pages );
+			}
+
+			// Hide the pager entirely when everything already fits.
+			carousel.classList.toggle( 'has-single-page', pages < 2 );
+
+			prev.disabled = page <= 0;
+			next.disabled = page >= pages - 1;
+		};
+
+		const scrollByPage = function ( direction ) {
+			track.scrollBy( { left: direction * track.clientWidth, behavior: 'smooth' } );
+		};
+
+		prev.addEventListener( 'click', function () {
+			scrollByPage( -1 );
+		} );
+
+		next.addEventListener( 'click', function () {
+			scrollByPage( 1 );
+		} );
+
+		let ticking = false;
+		track.addEventListener( 'scroll', function () {
+			if ( ticking ) {
+				return;
+			}
+
+			ticking = true;
+			window.requestAnimationFrame( function () {
+				sync();
+				ticking = false;
+			} );
+		} );
+
+		window.addEventListener( 'resize', sync );
+		sync();
+	} );
+
+	/**
 	 * Reveal sections as they scroll into view.
 	 *
 	 * Opt-in per element via the `is-revealable` class, which CSS only acts on

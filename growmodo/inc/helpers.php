@@ -24,18 +24,18 @@ function growmodo_format_price( $amount ) {
 }
 
 /**
- * Number of FAQ entries the front page shows.
+ * Number of items a home carousel loads.
  *
- * Shared by the rendered section and the FAQPage structured data, so the
- * markup can never advertise answers that are not on the page — which
- * Google's structured-data policy treats as invalid.
+ * The FAQ section and the FAQPage structured data both read this, so the markup
+ * can never advertise answers that are not on the page — which Google's
+ * structured-data policy treats as invalid.
  *
  * @since 1.0.0
  *
  * @return int
  */
-function growmodo_faq_count() {
-	return 3;
+function growmodo_carousel_count() {
+	return 9;
 }
 
 /**
@@ -106,43 +106,3 @@ function growmodo_render_cards( $query, $card ) {
 	wp_reset_postdata();
 }
 
-/**
- * Render the "01 of 12" counter and pager arrows below a card section.
- *
- * The arrows link to the relevant archive rather than paginating in place —
- * the front page shows a fixed, curated set.
- *
- * @since 1.0.0
- *
- * @param int    $shown Number of posts rendered in the section.
- * @param int    $total Total posts available.
- * @param string $url   Destination for the forward arrow.
- * @return void
- */
-function growmodo_render_section_foot( $shown, $total, $url ) {
-	if ( $total <= $shown ) {
-		return;
-	}
-	?>
-	<div class="section-foot">
-		<p class="section-foot__count">
-			<strong><?php echo esc_html( str_pad( (string) $shown, 2, '0', STR_PAD_LEFT ) ); ?></strong>
-			<?php
-			printf(
-				/* translators: %s: total number of items. */
-				esc_html__( 'of %s', 'growmodo' ),
-				esc_html( number_format_i18n( $total ) )
-			);
-			?>
-		</p>
-		<div class="section-foot__pager">
-			<?php /* Decorative: the section shows a fixed first page, so back is inert. */ ?>
-			<span class="icon-btn is-inert" aria-hidden="true"><?php echo growmodo_icon( 'arrow-left' ); ?></span>
-			<a class="icon-btn" href="<?php echo esc_url( $url ); ?>">
-				<span class="screen-reader-text"><?php esc_html_e( 'See more', 'growmodo' ); ?></span>
-				<?php echo growmodo_icon( 'arrow-right' ); ?>
-			</a>
-		</div>
-	</div>
-	<?php
-}

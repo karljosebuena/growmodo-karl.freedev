@@ -1,6 +1,9 @@
 <?php
 /**
- * Home "Featured Properties" section — the newest three property listings.
+ * Home "Featured Properties" section.
+ *
+ * Ordered by the editor's Order field, then oldest first — a curated sequence
+ * rather than whatever happened to be published last.
  *
  * @since 1.0.0
  *
@@ -12,7 +15,11 @@ defined( 'ABSPATH' ) || exit;
 $growmodo_properties = new WP_Query(
 	array(
 		'post_type'      => 'property',
-		'posts_per_page' => 3,
+		'posts_per_page' => growmodo_carousel_count(),
+		'orderby'        => array(
+			'menu_order' => 'ASC',
+			'date'       => 'ASC',
+		),
 	)
 );
 
@@ -35,17 +42,15 @@ $growmodo_archive = get_post_type_archive_link( 'property' );
 				'action_text' => __( 'View All Properties', 'growmodo' ),
 			)
 		);
-		?>
 
-		<div class="grid grid--3">
-			<?php growmodo_render_cards( $growmodo_properties, 'card-property' ); ?>
-		</div>
-
-		<?php
-		growmodo_render_section_foot(
-			$growmodo_properties->post_count,
-			$growmodo_properties->found_posts,
-			$growmodo_archive
+		get_template_part(
+			'template-parts/carousel',
+			null,
+			array(
+				'query' => $growmodo_properties,
+				'card'  => 'card-property',
+				'label' => __( 'Featured properties', 'growmodo' ),
+			)
 		);
 		?>
 	</div>
