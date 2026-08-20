@@ -187,7 +187,19 @@ lag and Figma exports gate everything.
 - [x] JSON-LD structured data (RealEstateAgent / SingleFamilyResidence + Offer / FAQPage)
 - [x] Working property filters (server-side via `pre_get_posts`, allowlist-validated)
 - [x] Announcement banner dismissal persisted in `localStorage`, no flash, no-JS safe
-- [ ] Scroll-reveal + card microinteractions — optional, only if the deploy is clean
+- [x] Scroll-reveal + card microinteractions, reduced-motion safe
+
+#### Review passes — ✅ done
+
+- [x] Accessibility audit (axe-core + manual keyboard/contrast): 6 findings, 6 fixed
+- [x] Standards audit against CLAUDE.md / PATTERNS.md / docs/best-practices: found a
+      critical JSON-LD XSS, unescaped titles, a shipped deprecation notice, four dead
+      footer links, and doctrine duplication — all fixed
+- [x] Figma fidelity audit against the exports: typography refitted to all three frames,
+      hero seal/button geometry, team badges, property image sizing corrected; remaining
+      gaps listed in the write-up
+- [x] Brief re-read line by line — closed four explicitly-named gaps (sidebar, WP Loop
+      for blog posts, meta tags, CSS/JS minification)
 
 #### Deploy — **blocking deliverable, not yet done**
 
