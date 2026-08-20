@@ -190,7 +190,8 @@ $growmodo_team = array(
 					<div class="member__media">
 						<img
 							src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/' . $growmodo_member[0] . '.webp' ); ?>"
-							alt="<?php echo esc_attr( $growmodo_member[1] ); ?>"
+							<?php /* Decorative: the name follows as text, so alt would repeat it. */ ?>
+							alt=""
 							width="318"
 							height="288"
 							loading="lazy"

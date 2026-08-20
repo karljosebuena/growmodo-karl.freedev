@@ -63,7 +63,8 @@ function growmodo_render_section_foot( $shown, $total, $url ) {
 			?>
 		</p>
 		<div class="section-foot__pager">
-			<span class="icon-btn" aria-disabled="true"><?php echo growmodo_icon( 'arrow-left' ); ?></span>
+			<?php /* Decorative: the section shows a fixed first page, so back is inert. */ ?>
+			<span class="icon-btn is-inert" aria-hidden="true"><?php echo growmodo_icon( 'arrow-left' ); ?></span>
 			<a class="icon-btn" href="<?php echo esc_url( $url ); ?>">
 				<span class="screen-reader-text"><?php esc_html_e( 'See more', 'growmodo' ); ?></span>
 				<?php echo growmodo_icon( 'arrow-right' ); ?>

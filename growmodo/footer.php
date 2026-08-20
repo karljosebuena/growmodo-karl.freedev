@@ -48,9 +48,9 @@ $growmodo_socials = array(
 	'youtube'  => 'https://youtube.com/',
 );
 ?>
-</main>
 
 <?php get_template_part( 'template-parts/cta-banner' ); ?>
+</main>
 
 <footer class="site-footer">
 	<div class="container site-footer__top">

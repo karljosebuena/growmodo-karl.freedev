@@ -10,7 +10,7 @@
  */
 
 ?>
-<div class="announcement" id="announcement">
+<div class="announcement" id="announcement" role="region" aria-label="<?php esc_attr_e( 'Announcement', 'growmodo' ); ?>">
 	<div class="container announcement__inner">
 		<?php echo growmodo_icon( 'sparkle', 'announcement__sparkle' ); ?>
 		<span><?php esc_html_e( 'Discover Your Dream Property with Estatein', 'growmodo' ); ?></span>
