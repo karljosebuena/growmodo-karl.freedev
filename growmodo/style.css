@@ -426,6 +426,11 @@ button {
 	font-size: var(--fs-xs);
 }
 
+/* Set by the head snippet in inc/assets.php for returning visitors. */
+.has-announcement-dismissed .announcement {
+	display: none;
+}
+
 .announcement__inner {
 	display: flex;
 	align-items: center;

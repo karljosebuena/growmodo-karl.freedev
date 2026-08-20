@@ -34,40 +34,23 @@
 	}
 
 	/**
-	 * Announcement bar.
+	 * Announcement bar dismissal.
 	 *
-	 * Server-rendered hidden, then revealed unless previously dismissed —
-	 * this way a returning visitor never sees it flash before it is removed.
+	 * The bar ships visible and a snippet in <head> hides it for visitors who
+	 * dismissed it previously, so this only has to handle the click.
 	 */
-	const STORAGE_KEY = 'growmodo-announcement-dismissed';
 	const announcement = document.getElementById( 'announcement' );
+	const dismiss = announcement && announcement.querySelector( '[data-dismiss="announcement"]' );
 
-	if ( announcement ) {
-		let dismissed = false;
+	if ( dismiss ) {
+		dismiss.addEventListener( 'click', function () {
+			document.documentElement.classList.add( 'has-announcement-dismissed' );
 
-		try {
-			dismissed = window.localStorage.getItem( STORAGE_KEY ) === '1';
-		} catch ( error ) {
-			// Private browsing can block storage; showing the bar is the safe default.
-			dismissed = false;
-		}
-
-		if ( ! dismissed ) {
-			announcement.hidden = false;
-		}
-
-		const dismiss = announcement.querySelector( '[data-dismiss="announcement"]' );
-
-		if ( dismiss ) {
-			dismiss.addEventListener( 'click', function () {
-				announcement.hidden = true;
-
-				try {
-					window.localStorage.setItem( STORAGE_KEY, '1' );
-				} catch ( error ) {
-					// Dismissal simply will not persist — no user-facing failure.
-				}
-			} );
-		}
+			try {
+				window.localStorage.setItem( 'growmodo-announcement-dismissed', '1' );
+			} catch ( error ) {
+				// Private browsing can block storage; dismissal just will not persist.
+			}
+		} );
 	}
 }() );

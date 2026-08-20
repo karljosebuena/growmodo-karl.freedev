@@ -37,3 +37,26 @@ function growmodo_enqueue_assets() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'growmodo_enqueue_assets' );
+
+/**
+ * Print the announcement-bar visibility snippet.
+ *
+ * This has to run before first paint, so it is inlined in <head> rather than
+ * enqueued: the bar renders visible by default (and therefore still works with
+ * JavaScript disabled), and this hides it for visitors who already dismissed it
+ * without the bar flashing on screen first.
+ *
+ * @return void
+ */
+function growmodo_print_announcement_state() {
+	?>
+	<script>
+		try {
+			if ( window.localStorage.getItem( 'growmodo-announcement-dismissed' ) === '1' ) {
+				document.documentElement.classList.add( 'has-announcement-dismissed' );
+			}
+		} catch ( e ) {}
+	</script>
+	<?php
+}
+add_action( 'wp_head', 'growmodo_print_announcement_state', 1 );

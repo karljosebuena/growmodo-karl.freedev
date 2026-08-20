@@ -2,14 +2,15 @@
 /**
  * Dismissible announcement bar.
  *
- * Rendered server-side and hidden by main.js when the visitor has already
- * dismissed it, so no layout shift occurs for first-time visitors.
+ * Rendered visible so it still works without JavaScript. A blocking snippet in
+ * inc/assets.php adds a class to <html> before first paint when the visitor has
+ * already dismissed it, which hides the bar with no flash of content.
  *
  * @package Growmodo
  */
 
 ?>
-<div class="announcement" id="announcement" hidden>
+<div class="announcement" id="announcement">
 	<div class="container announcement__inner">
 		<?php echo growmodo_icon( 'sparkle', 'announcement__sparkle' ); ?>
 		<span><?php esc_html_e( 'Discover Your Dream Property with Estatein', 'growmodo' ); ?></span>
