@@ -1447,6 +1447,72 @@ fieldset {
 	height: 1rem;
 }
 
+/*
+ * Below the tablet breakpoint the design rearranges the legal bar: the socials
+ * come first as larger circles, then the copyright, then the legal links, all
+ * centred. column-reverse gets that from the desktop DOM order without
+ * duplicating markup — the two groups are independent, so reading them in
+ * either order says the same thing.
+ */
+@media (max-width: 767px) {
+	.site-footer__bottom-inner {
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: var(--sp-5);
+		padding-block: var(--sp-6);
+		text-align: center;
+	}
+
+	.site-footer__legal {
+		flex-direction: column;
+		align-items: center;
+		gap: var(--sp-3);
+	}
+
+	.socials a {
+		width: 3.75rem;
+		height: 3.75rem;
+	}
+
+	.socials svg {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	/*
+	 * A rule under each block and one down the middle, as the design draws it.
+	 * The centre line is a pseudo-element rather than a column border because
+	 * the last block sits alone on the left, and a border there would stop the
+	 * line short of the bottom.
+	 */
+	.site-footer__cols {
+		position: relative;
+		gap: 0;
+	}
+
+	.site-footer__cols::before {
+		content: "";
+		position: absolute;
+		inset-block: 0;
+		left: 50%;
+		width: 1px;
+		background: var(--c-border);
+	}
+
+	.footer-col {
+		padding-block: var(--sp-5);
+		border-bottom: 1px solid var(--c-border);
+	}
+
+	.footer-col:nth-child(odd) {
+		padding-right: var(--sp-5);
+	}
+
+	.footer-col:nth-child(even) {
+		padding-left: var(--sp-5);
+	}
+}
+
 /* ==========================================================================
    17. Page hero (interior pages)
    ========================================================================== */

@@ -21,23 +21,23 @@ $growmodo_footer_columns = array(
 		__( 'Testimonials', 'growmodo' ) => home_url( '/#testimonials' ),
 		__( 'FAQ\'s', 'growmodo' )       => home_url( '/#faq' ),
 	),
+	/*
+	 * Labels are the design's, and every one resolves to a section that exists:
+	 * "Our Works" is the achievements block, "Our Clients" the valued-clients
+	 * carousel. A link to an anchor that is not on the page is worse than a
+	 * label that reads slightly differently, so where the two conflicted the
+	 * destination decided which section — never the other way round.
+	 */
 	__( 'About Us', 'growmodo' )   => array(
 		__( 'Our Story', 'growmodo' )    => home_url( '/about-us/#story' ),
-		__( 'Our Values', 'growmodo' )   => home_url( '/about-us/#values' ),
+		__( 'Our Works', 'growmodo' )    => home_url( '/about-us/#achievements' ),
 		__( 'How It Works', 'growmodo' ) => home_url( '/about-us/#process' ),
 		__( 'Our Team', 'growmodo' )     => home_url( '/about-us/#team' ),
-		// "Our Clients" in the design has no About section; testimonials are it.
-		__( 'Our Clients', 'growmodo' )  => home_url( '/#testimonials' ),
-
-		/*
-		 * The Figma has no blog screen, so the header nav is left exactly as
-		 * designed and the posts page is reachable from here instead.
-		 */
-		__( 'Insights', 'growmodo' )     => get_permalink( (int) get_option( 'page_for_posts' ) ),
+		__( 'Our Clients', 'growmodo' )  => home_url( '/about-us/#clients' ),
 	),
 	__( 'Properties', 'growmodo' ) => array(
-		__( 'Portfolio', 'growmodo' )       => get_post_type_archive_link( 'property' ),
-		__( 'Search & Filter', 'growmodo' ) => get_post_type_archive_link( 'property' ) . '#filters',
+		__( 'Portfolio', 'growmodo' )  => get_post_type_archive_link( 'property' ),
+		__( 'Categories', 'growmodo' ) => get_post_type_archive_link( 'property' ) . '#finder',
 	),
 	__( 'Services', 'growmodo' )   => array(
 		__( 'Valuation Mastery', 'growmodo' )    => home_url( '/services/#valuation-mastery' ),

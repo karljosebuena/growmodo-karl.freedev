@@ -33,7 +33,7 @@ $growmodo_count_text = __( 'Showing %1$s of %2$s properties', 'growmodo' );
 	</div>
 </section>
 
-<section class="finder">
+<section class="finder" id="finder">
 	<div class="container finder__inner">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Search and filter properties', 'growmodo' ); ?></h2>
 
