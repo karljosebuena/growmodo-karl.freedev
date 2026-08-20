@@ -27,6 +27,9 @@
  *                              strip above the track. Another control on the
  *                              same track, so it lives inside the carousel
  *                              where the script already looks.
+ *     @type string   $pager    'count' for the "01 of 03" row the card sections
+ *                              use, or 'dots' for the centred pill of dashes the
+ *                              design gives the property gallery. Default 'count'.
  * }
  */
 
@@ -40,6 +43,7 @@ $growmodo_label    = isset( $args['label'] ) ? $args['label'] : __( 'Items', 'gr
 $growmodo_per_view = isset( $args['per_view'] ) && 2 === (int) $args['per_view'] ? 2 : 3;
 $growmodo_track_id = isset( $args['track_id'] ) ? $args['track_id'] : '';
 $growmodo_thumbs   = isset( $args['thumbs'] ) ? (array) $args['thumbs'] : array();
+$growmodo_pager    = isset( $args['pager'] ) && 'dots' === $args['pager'] ? 'dots' : 'count';
 ?>
 <div class="carousel" data-carousel aria-roledescription="carousel" aria-label="<?php echo esc_attr( $growmodo_label ); ?>">
 	<?php if ( count( $growmodo_thumbs ) > 1 ) : ?>
@@ -99,6 +103,35 @@ $growmodo_thumbs   = isset( $args['thumbs'] ) ? (array) $args['thumbs'] : array(
 		?>
 	</div>
 
+	<?php if ( 'dots' === $growmodo_pager ) : ?>
+		<div class="carousel__pager">
+			<button class="icon-btn" type="button" data-carousel-prev>
+				<span class="screen-reader-text"><?php esc_html_e( 'Previous', 'growmodo' ); ?></span>
+				<?php echo growmodo_icon( 'arrow-left' ); ?>
+			</button>
+
+			<?php
+			/*
+			 * The dashes are filled in by the script, one per page, and marked
+			 * aria-hidden: they are 6px tall, so making them buttons would ship
+			 * a control far under the 24px minimum target size, and the
+			 * thumbnail strip above already offers direct navigation. The count
+			 * beside them carries the same information to a screen reader.
+			 */
+			?>
+			<span class="carousel__dots" data-carousel-dots aria-hidden="true"></span>
+
+			<p class="screen-reader-text" data-carousel-count aria-live="polite">
+				<strong data-carousel-current>01</strong>
+				<span data-carousel-total></span>
+			</p>
+
+			<button class="icon-btn" type="button" data-carousel-next>
+				<span class="screen-reader-text"><?php esc_html_e( 'Next', 'growmodo' ); ?></span>
+				<?php echo growmodo_icon( 'arrow-right' ); ?>
+			</button>
+		</div>
+	<?php else : ?>
 	<div class="section-foot">
 		<p class="section-foot__count" data-carousel-count aria-live="polite">
 			<strong data-carousel-current>01</strong>
@@ -116,4 +149,5 @@ $growmodo_thumbs   = isset( $args['thumbs'] ) ? (array) $args['thumbs'] : array(
 			</button>
 		</div>
 	</div>
+	<?php endif; ?>
 </div>

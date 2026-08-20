@@ -112,6 +112,27 @@
 			return track.children[ index ] || null;
 		};
 
+		/*
+		 * Optional dash indicators — one per page, built here rather than in the
+		 * template because the page count depends on how many cards fit, which
+		 * only the browser knows.
+		 */
+		const dots = carousel.querySelector( '[data-carousel-dots]' );
+
+		const renderDots = function ( pages, page ) {
+			while ( dots.children.length > pages ) {
+				dots.lastElementChild.remove();
+			}
+
+			while ( dots.children.length < pages ) {
+				dots.appendChild( document.createElement( 'span' ) );
+			}
+
+			Array.from( dots.children ).forEach( function ( dot, index ) {
+				dot.className = index === page ? 'carousel__dot is-current' : 'carousel__dot';
+			} );
+		};
+
 		const sync = function () {
 			const pages = pageCount();
 			const page = Math.min( pageIndex(), pages - 1 );
@@ -123,6 +144,10 @@
 			if ( total ) {
 				// translators-free: rendered as "01 of 03".
 				total.textContent = ' of ' + pad( pages );
+			}
+
+			if ( dots ) {
+				renderDots( pages, page );
 			}
 
 			// Hide the pager entirely when everything already fits.

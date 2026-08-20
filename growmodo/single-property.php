@@ -73,6 +73,7 @@ while ( have_posts() ) :
 								'card'     => 'card-image',
 								'label'    => __( 'Property images', 'growmodo' ),
 								'per_view' => 2,
+								'pager'    => 'dots',
 							)
 						);
 						?>
