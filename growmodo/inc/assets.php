@@ -10,6 +10,24 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Version string for a theme asset, used to bust caches.
+ *
+ * The file's modification time rather than the theme version: editing a
+ * stylesheet without bumping a constant would otherwise leave returning
+ * visitors — and the live site after a redeploy — on a stale cached copy.
+ *
+ * @since 1.0.0
+ *
+ * @param string $path Absolute path to the asset.
+ * @return string Modification time, or the theme version if unreadable.
+ */
+function growmodo_asset_version( $path ) {
+	$mtime = is_readable( $path ) ? filemtime( $path ) : false;
+
+	return false === $mtime ? GROWMODO_VERSION : (string) $mtime;
+}
+
+/**
  * Enqueue the Urbanist webfont, the theme stylesheet, and the main script.
  *
  * Serves the minified builds unless SCRIPT_DEBUG is on, mirroring how core
@@ -42,14 +60,14 @@ function growmodo_enqueue_assets() {
 		'growmodo-style',
 		$uri . $style_rel,
 		array( 'growmodo-fonts' ),
-		GROWMODO_VERSION
+		growmodo_asset_version( $dir . $style_rel )
 	);
 
 	wp_enqueue_script(
 		'growmodo-main',
 		$uri . $script_rel,
 		array(),
-		GROWMODO_VERSION,
+		growmodo_asset_version( $dir . $script_rel ),
 		array(
 			'in_footer' => true,
 			'strategy'  => 'defer',

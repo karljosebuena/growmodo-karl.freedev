@@ -36,7 +36,13 @@ function growmodo_icon( $name, $css_class = '' ) {
 		'arrow-right'    => '<path d="M5 12h14m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
 		'close'          => '<path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>',
 		'menu'           => '<path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>',
-		'star'           => '<path d="M12 2l2.9 6.3 6.6.7-4.9 4.5 1.3 6.5L12 16.8 6.1 20l1.3-6.5L2.5 9l6.6-.7L12 2Z" fill="currentColor"/>',
+
+		/*
+		 * Stroked as well as filled, with round joins: that thickens the arms
+		 * and rounds the points into the chunky star the design uses, without a
+		 * second path to maintain.
+		 */
+		'star'           => '<path d="M12 3.2l2.7 5.9 6.2.66-4.6 4.22 1.22 6.1L12 17.05 6.48 20.08l1.22-6.1-4.6-4.22 6.2-.66L12 3.2Z" fill="currentColor" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>',
 
 		// Property specification tags.
 		'bed'            => '<path d="M2 17v-5h20v5M2 17h20M4 12V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4M8 12V9h8v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',

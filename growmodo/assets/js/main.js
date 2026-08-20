@@ -34,6 +34,42 @@
 	}
 
 	/**
+	 * FAQ "Read More" controls.
+	 *
+	 * The answer ships complete and unclamped. Clamping and the button are both
+	 * applied here, so a visitor without JavaScript reads the whole answer and
+	 * never sees a control that cannot work.
+	 */
+	document.querySelectorAll( '[data-faq-more]' ).forEach( function ( button ) {
+		const answer = document.getElementById( button.getAttribute( 'aria-controls' ) );
+
+		if ( ! answer ) {
+			return;
+		}
+
+		answer.classList.add( 'is-clamped' );
+
+		// Nothing is being hidden by the clamp, so the control would be a no-op.
+		if ( answer.scrollHeight <= answer.clientHeight + 1 ) {
+			answer.classList.remove( 'is-clamped' );
+
+			return;
+		}
+
+		button.hidden = false;
+
+		button.addEventListener( 'click', function () {
+			const expanded = 'true' === button.getAttribute( 'aria-expanded' );
+
+			button.setAttribute( 'aria-expanded', String( ! expanded ) );
+			answer.classList.toggle( 'is-clamped', expanded );
+			button.textContent = expanded
+				? button.dataset.labelMore
+				: button.dataset.labelLess;
+		} );
+	} );
+
+	/**
 	 * Card carousels.
 	 *
 	 * The track is already a usable scrollable row from CSS alone; this adds
