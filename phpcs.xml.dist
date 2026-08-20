@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ruleset name="Growmodo">
+	<description>WordPress Coding Standards for the Estatein theme.</description>
+
+	<file>growmodo</file>
+
+	<arg value="sp"/>
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+
+	<rule ref="WordPress"/>
+
+	<config name="minimum_wp_version" value="6.4"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="growmodo"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="growmodo"/>
+				<element value="GROWMODO"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>

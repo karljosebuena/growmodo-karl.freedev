@@ -1,0 +1,361 @@
+/*
+Theme Name: Growmodo Estatein
+Theme URI: https://github.com/karljosebuena/estatein-wp-theme
+Author: Karl Jose Buena
+Description: Custom WordPress theme implementing the Estatein real-estate design (Figma community template by Produce UI, CC BY 4.0). Dark theme, responsive at three breakpoints, no build tooling — one stylesheet with design tokens as CSS custom properties.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: growmodo
+Tags: real-estate, dark, one-column, custom-menu
+*/
+
+/* --------------------------------------------------------------------------
+ * Design tokens — Estatein defaults; refined against the Figma exports.
+ * Breakpoints (mirrored in media queries, which cannot read custom props):
+ * tablet ≥ 768px, laptop ≥ 1200px.
+ * ------------------------------------------------------------------------ */
+:root {
+	/* Palette */
+	--color-white: #ffffff;
+	--color-grey-08: #141414;
+	--color-grey-10: #1a1a1a;
+	--color-grey-15: #262626;
+	--color-grey-20: #333333;
+	--color-grey-30: #4d4d4d;
+	--color-grey-50: #808080;
+	--color-grey-60: #999999;
+	--color-purple-60: #703bf7;
+	--color-purple-65: #8254f8;
+	--color-purple-70: #946cfa;
+	--color-purple-75: #a685fa;
+	--color-purple-90: #dbcefd;
+
+	/* Semantic */
+	--color-bg: var(--color-grey-08);
+	--color-surface: var(--color-grey-10);
+	--color-border: var(--color-grey-15);
+	--color-text: var(--color-white);
+	--color-text-muted: var(--color-grey-60);
+	--color-accent: var(--color-purple-60);
+
+	/* Type */
+	--font-sans: "Urbanist", system-ui, -apple-system, "Segoe UI", sans-serif;
+	--text-xs: 0.875rem;
+	--text-sm: 1rem;
+	--text-md: 1.125rem;
+	--text-lg: clamp(1.25rem, 1.5vw, 1.5rem);
+	--text-xl: clamp(1.75rem, 2.4vw, 2.375rem);
+	--text-2xl: clamp(2.25rem, 3.6vw, 3.75rem);
+
+	/* Space and shape */
+	--space-1: 0.5rem;
+	--space-2: 0.75rem;
+	--space-3: 1rem;
+	--space-4: 1.5rem;
+	--space-5: 2rem;
+	--space-6: 2.5rem;
+	--space-7: 3.75rem;
+	--space-8: 5rem;
+	--radius-sm: 8px;
+	--radius-md: 10px;
+	--radius-lg: 12px;
+	--container-max: 1596px;
+	--container-pad: clamp(1rem, 4vw, 5rem);
+}
+
+/* --------------------------------------------------------------------------
+ * Base
+ * ------------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--color-bg);
+	color: var(--color-text);
+	font-family: var(--font-sans);
+	font-size: var(--text-sm);
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0 0 var(--space-3);
+	line-height: 1.2;
+	font-weight: 600;
+}
+
+h1 {
+	font-size: var(--text-2xl);
+}
+
+h2 {
+	font-size: var(--text-xl);
+}
+
+h3 {
+	font-size: var(--text-lg);
+}
+
+p {
+	margin: 0 0 var(--space-3);
+}
+
+a {
+	color: inherit;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-purple-75);
+	outline-offset: 2px;
+}
+
+.container {
+	max-width: var(--container-max);
+	margin-inline: auto;
+	padding-inline: var(--container-pad);
+}
+
+/* --------------------------------------------------------------------------
+ * Accessibility helpers
+ * ------------------------------------------------------------------------ */
+.screen-reader-text {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	border: 0;
+	white-space: nowrap;
+}
+
+.skip-link {
+	position: absolute;
+	top: -100%;
+	left: var(--space-3);
+	z-index: 100;
+	padding: var(--space-2) var(--space-3);
+	background: var(--color-accent);
+	color: var(--color-white);
+	border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+	top: var(--space-3);
+	width: auto;
+	height: auto;
+	margin: 0;
+	clip-path: none;
+	white-space: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* --------------------------------------------------------------------------
+ * Buttons
+ * ------------------------------------------------------------------------ */
+.btn {
+	display: inline-block;
+	padding: 0.875rem 1.5rem;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	background: var(--color-grey-10);
+	color: var(--color-text);
+	font: inherit;
+	font-weight: 500;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover {
+	border-color: var(--color-grey-30);
+}
+
+.btn--primary {
+	background: var(--color-accent);
+	border-color: var(--color-accent);
+}
+
+.btn--primary:hover {
+	background: var(--color-purple-65);
+	border-color: var(--color-purple-65);
+}
+
+/* --------------------------------------------------------------------------
+ * Header
+ * ------------------------------------------------------------------------ */
+.site-header {
+	background: var(--color-grey-10);
+	border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-4);
+	min-height: 5rem;
+}
+
+.site-header__brand {
+	font-size: var(--text-md);
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.site-nav ul {
+	display: flex;
+	gap: var(--space-4);
+}
+
+.site-nav a {
+	text-decoration: none;
+	color: var(--color-text);
+}
+
+.site-nav a:hover {
+	color: var(--color-purple-75);
+}
+
+.site-nav__toggle {
+	display: none;
+	padding: var(--space-2);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background: transparent;
+	cursor: pointer;
+}
+
+.site-nav__toggle-bar,
+.site-nav__toggle-bar::before,
+.site-nav__toggle-bar::after {
+	display: block;
+	width: 1.25rem;
+	height: 2px;
+	background: var(--color-text);
+}
+
+.site-nav__toggle-bar {
+	position: relative;
+}
+
+.site-nav__toggle-bar::before,
+.site-nav__toggle-bar::after {
+	content: "";
+	position: absolute;
+	left: 0;
+}
+
+.site-nav__toggle-bar::before {
+	top: -6px;
+}
+
+.site-nav__toggle-bar::after {
+	top: 6px;
+}
+
+@media (max-width: 767px) {
+	.site-nav__toggle {
+		display: block;
+	}
+
+	.site-nav ul {
+		display: none;
+	}
+
+	.site-nav.is-open ul {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		left: 0;
+		right: 0;
+		z-index: 50;
+		padding: var(--space-4) var(--container-pad);
+		background: var(--color-grey-10);
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.site-header {
+		position: relative;
+	}
+
+	.site-header__cta {
+		display: none;
+	}
+}
+
+/* --------------------------------------------------------------------------
+ * Footer
+ * ------------------------------------------------------------------------ */
+.site-footer {
+	margin-top: var(--space-8);
+	background: var(--color-grey-10);
+	border-top: 1px solid var(--color-border);
+}
+
+.site-footer__inner {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: var(--space-5);
+	padding-block: var(--space-6);
+}
+
+.site-footer__nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-4);
+}
+
+.site-footer__nav a {
+	color: var(--color-text-muted);
+	text-decoration: none;
+}
+
+.site-footer__nav a:hover {
+	color: var(--color-text);
+}
+
+.site-footer__legal {
+	padding-block: var(--space-3);
+	border-top: 1px solid var(--color-border);
+	color: var(--color-text-muted);
+	font-size: var(--text-xs);
+}
+
+.site-footer__legal p {
+	margin: 0;
+}
