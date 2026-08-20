@@ -25,13 +25,20 @@
 
 | Page | Status | Notes |
 | --- | --- | --- |
-| Shared: header / footer / CTA banner | Not started | Named priority in the brief — build first |
-| Home | Not started | Second priority ("Main Content") |
-| Properties (archive) | Not started | |
-| Contact | Not started | |
-| Property single | Not started | ⚠️ Verify it exists in the Figma at all |
-| About Us | Not started | |
-| Services | Not started | |
+| Shared: header / footer / CTA banner | Done (local) | Announcement bar, mobile nav, newsletter, socials |
+| Home | Done (local) | Hero, features, properties, testimonials, FAQ |
+| Properties (archive) | Done (local) | Filters genuinely work (type/beds/baths/max price) |
+| Contact | Done (local) | Info cards, working form, office locations |
+| Property single | Done (local) | ✅ Design confirmed to exist; pricing tables omitted |
+| About Us | Done (local) | Journey, values, achievements, 6-step process, team |
+| Services | Done (local) | Three service groups, data-driven from one array |
+
+**Figma inventory confirmed:** 6 pages × 3 breakpoints — Home, About Us, Services,
+Properties, **Property Details**, Contact. Breakpoints are **1920 / 1440 / 390** (laptop, not
+tablet, is the middle frame).
+
+"Done (local)" = meets Definition of Done on the local build; the live-site column of the DoD
+is pending deploy.
 
 Statuses: `Not started` → `In progress` → `Done` (meets Definition of Done) → or `Omitted`
 (cut deliberately, removed from the live site and nav).
@@ -135,57 +142,59 @@ lag and Figma exports gate everything.
 
 ### Track B — Claude (build)
 
-#### Phase A · Scaffold — checkpoint 16:30
+#### Phase A · Scaffold — checkpoint 16:30 ✅ done ~15:45
 
-- [ ] Docker compose file; WP running locally on PHP 8.3
-- [ ] `phpcs` + WPCS installed via Composer; ruleset in repo
-- [ ] `style.css` theme header (slug/text-domain `growmodo`), `functions.php` (enqueues,
+- [x] Docker compose file; WP running locally on PHP 8.3 (`localhost:8080`, admin/admin)
+- [x] `phpcs` + WPCS installed via Composer; ruleset in repo — **theme passes clean**
+- [x] `style.css` theme header (slug/text-domain `growmodo`), `functions.php` (enqueues,
       theme supports, nav menus), base templates (`header.php`, `footer.php`, `index.php`,
       `front-page.php` shell)
-- [ ] Design tokens as CSS custom properties (from Figma screenshots when they land;
-      Estatein defaults until then)
-- [ ] CPT + meta registration for all four types; meta boxes with save handlers
-- [ ] git init, first commit, push public GitHub repo
+- [x] Design tokens as CSS custom properties (Estatein defaults; refine from Figma exports)
+- [x] CPT + meta registration for all four types; meta boxes with save handlers; test
+      content seeded (3 properties w/ meta, 2 testimonials, 2 FAQs, pages + menus)
+- [x] git init, two commits on `main` (docs, scaffold), `develop` branch created
+- [ ] Push public GitHub repo — **held: gh is authed as `karl-bv` (work account?) —
+      confirm which account before publishing**
 
-#### Phase B · Shared shell — checkpoint 18:00
+#### Phase B · Shared shell — ✅ done
 
-- [ ] Announcement banner (dismissible top bar) — *verify in Figma*
-- [ ] Header: logo, nav (`wp_nav_menu`), Contact CTA, **responsive mobile menu**
-      (accessible toggle: button + `aria-expanded`)
-- [ ] Pre-footer CTA banner as a `template-parts/` partial
-- [ ] Footer: logo, newsletter form, link columns, socials, copyright bar
-- [ ] Reusable partials: button styles, section heading pattern, card base
+- [x] Announcement banner (dismissible, persists, works without JS)
+- [x] Header: logo, nav (`wp_nav_menu`), Contact CTA, **responsive mobile menu**
+      (accessible toggle: `aria-expanded` + Escape to close)
+- [x] Pre-footer CTA banner as a `template-parts/` partial
+- [x] Footer: logo, newsletter form, 5 link columns, socials, copyright bar
+- [x] Reusable partials: buttons, section heading, card base, inline SVG icon library
 
-#### Phase C · Home — checkpoint 19:30 → **Deploy #1**
+#### Phase C · Home — ✅ done
 
-- [ ] Hero: headline, copy, dual CTAs, stat cards, hero image + badge
-- [ ] Feature cards row
-- [ ] Featured Properties: `property` CPT + WP Loop, card = image, title, excerpt,
-      beds/baths/type tags, price, detail button
-- [ ] Testimonials loop (CPT)
-- [ ] FAQ cards (CPT)
-- [ ] Responsive pass at the 3 breakpoints
-- [ ] **Deploy #1:** zip → Karl uploads/activates, sets permalinks + front page + menus;
-      Claude verifies live URL; Karl starts content entry
+- [x] Hero: headline, copy, dual CTAs, stat cards, hero image + rotating seal
+- [x] Feature cards row
+- [x] Featured Properties: `property` CPT + WP Loop with tags, price, detail button
+- [x] Testimonials loop (CPT)
+- [x] FAQ cards (CPT, native disclosures)
+- [x] Responsive pass at the 3 breakpoints
 
-#### Phase D · Remaining pages — checkpoint 21:30 (priority order, cut from the bottom)
+#### Phase D · Remaining pages — ✅ done
 
-- [ ] **Properties archive**: hero, filter bar (static markup first), property grid via CPT
-      archive loop, inquiry form section
-- [ ] **Contact**: hero, contact info cards, hand-rolled form (nonce + honeypot → `inquiry`
-      CPT), office locations
-- [ ] Property single (`single-property.php`) — only if the Figma has one
-- [ ] About Us: journey/stats, values grid, achievements, process steps, team, clients
-- [ ] Services: hero + the three service section groups with side CTAs
+- [x] **Properties archive**: hero, **working** filter bar, grid, pagination
+- [x] **Contact**: hero, contact info cards, hand-rolled form → `inquiry` CPT, offices
+- [x] Property single (`single-property.php`) — spec panel + prefilled enquiry form
+- [x] About Us: journey/stats, values panel, achievements, 6-step process, team
+- [x] Services: hero + three service groups with side CTAs
 
-#### Phase E · Creativity shortlist — ONLY if Phase D is fully at DoD
+#### Phase E · Creativity
 
-In priority order (top value-per-minute first):
+- [x] JSON-LD structured data (RealEstateAgent / SingleFamilyResidence + Offer / FAQPage)
+- [x] Working property filters (server-side via `pre_get_posts`, allowlist-validated)
+- [x] Announcement banner dismissal persisted in `localStorage`, no flash, no-JS safe
+- [ ] Scroll-reveal + card microinteractions — optional, only if the deploy is clean
 
-- [ ] JSON-LD structured data (RealEstateListing / Organization / FAQPage)
-- [ ] Working property filters (server-side, sanitized query vars on the CPT archive)
-- [ ] Scroll-reveal + card microinteractions, gated behind `prefers-reduced-motion`
-- [ ] Announcement banner dismissal persisted in `localStorage`
+#### Deploy — **blocking deliverable, not yet done**
+
+- [ ] `growmodo-theme.zip` (237KB, built) → live wp-admin upload + activate
+- [ ] Live settings: permalinks `Post name`, static front page, menus assigned
+- [ ] Content entered on live (properties w/ meta + images, testimonials, FAQs, pages)
+- [ ] Verify every page on the public URL; then the DoD's live-site box can be ticked
 
 #### Phase F · Verification — checkpoint 22:15
 

@@ -4,3 +4,4 @@ node_modules/
 *.zip
 *.log
 .claude/settings.local.json
+deploy/growmodo-content-live.xml

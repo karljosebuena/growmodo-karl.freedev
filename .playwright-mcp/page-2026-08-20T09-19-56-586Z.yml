@@ -1,0 +1,272 @@
+- generic [active] [ref=f11e1]:
+  - link "Skip to content" [ref=f11e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f11e3]:
+    - generic [ref=f11e4]:
+      - link "Estatein" [ref=f11e5] [cursor=pointer]:
+        - /url: http://localhost:8080/
+      - navigation "Primary navigation" [ref=f11e9]:
+        - list [ref=f11e10]:
+          - listitem [ref=f11e11]:
+            - link "Home" [ref=f11e12] [cursor=pointer]:
+              - /url: http://localhost:8080/
+          - listitem [ref=f11e13]:
+            - link "About Us" [ref=f11e14] [cursor=pointer]:
+              - /url: http://localhost:8080/about-us/
+          - listitem [ref=f11e15]:
+            - link "Properties" [ref=f11e16] [cursor=pointer]:
+              - /url: /properties/
+          - listitem [ref=f11e17]:
+            - link "Services" [ref=f11e18] [cursor=pointer]:
+              - /url: http://localhost:8080/services/
+      - link "Contact Us" [ref=f11e19] [cursor=pointer]:
+        - /url: http://localhost:8080/contact/
+  - main [ref=f11e20]:
+    - generic [ref=f11e21]:
+      - generic [ref=f11e22]:
+        - heading "Discover Your Dream Property with Estatein" [level=1] [ref=f11e23]
+        - paragraph [ref=f11e24]: Your journey to finding the perfect property begins here. Explore our listings to find the home that matches your dreams.
+        - generic [ref=f11e25]:
+          - link "Learn More" [ref=f11e26] [cursor=pointer]:
+            - /url: http://localhost:8080/about-us/
+          - link "Browse Properties" [ref=f11e27] [cursor=pointer]:
+            - /url: http://localhost:8080/properties/
+        - generic [ref=f11e28]:
+          - generic [ref=f11e29]:
+            - generic [ref=f11e30]: 200+
+            - generic [ref=f11e31]: Happy Customers
+          - generic [ref=f11e32]:
+            - generic [ref=f11e33]: 10k+
+            - generic [ref=f11e34]: Properties For Clients
+          - generic [ref=f11e35]:
+            - generic [ref=f11e36]: 16+
+            - generic [ref=f11e37]: Years of Experience
+      - generic [ref=f11e38]:
+        - img "Modern glass high-rise apartment towers at dusk" [ref=f11e39]
+        - img [ref=f11e41]:
+          - generic [ref=f11e42]: Discover Your Dream Property
+    - region "What we do" [ref=f11e45]:
+      - list [ref=f11e47]:
+        - listitem [ref=f11e48]:
+          - link "Find Your Dream Home" [ref=f11e49] [cursor=pointer]:
+            - /url: http://localhost:8080/properties/
+        - listitem [ref=f11e56]:
+          - link "Unlock Property Value" [ref=f11e57] [cursor=pointer]:
+            - /url: http://localhost:8080/services/#valuation
+        - listitem [ref=f11e66]:
+          - link "Effortless Property Management" [ref=f11e67] [cursor=pointer]:
+            - /url: http://localhost:8080/services/#management
+        - listitem [ref=f11e74]:
+          - link "Smart Investments, Informed Decisions" [ref=f11e75] [cursor=pointer]:
+            - /url: http://localhost:8080/services/#marketing
+    - generic [ref=f11e84]:
+      - generic [ref=f11e93]:
+        - generic [ref=f11e94]:
+          - heading "Featured Properties" [level=2] [ref=f11e95]
+          - paragraph [ref=f11e96]: Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.
+        - link "View All Properties" [ref=f11e98] [cursor=pointer]:
+          - /url: http://localhost:8080/properties/
+      - generic [ref=f11e99]:
+        - article [ref=f11e100]:
+          - link [ref=f11e101] [cursor=pointer]:
+            - /url: http://localhost:8080/properties/rustic-retreat-cottage/
+          - heading [level=3] [ref=f11e102]:
+            - link "Rustic Retreat Cottage" [ref=f11e103] [cursor=pointer]:
+              - /url: http://localhost:8080/properties/rustic-retreat-cottage/
+          - paragraph [ref=f11e104]:
+            - text: An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community.
+            - link "Read More" [ref=f11e105] [cursor=pointer]:
+              - /url: http://localhost:8080/properties/rustic-retreat-cottage/
+          - list [ref=f11e106]:
+            - listitem [ref=f11e107]: 3-Bedroom
+            - listitem [ref=f11e110]: 2-Bathroom
+            - listitem [ref=f11e113]: Cottage
+          - generic [ref=f11e116]:
+            - generic [ref=f11e117]:
+              - generic [ref=f11e118]: Price
+              - generic [ref=f11e119]: $375,000
+            - link "View Property Details" [ref=f11e120] [cursor=pointer]:
+              - /url: http://localhost:8080/properties/rustic-retreat-cottage/
+        - article [ref=f11e121]:
+          - link [ref=f11e122] [cursor=pointer]:
+            - /url: http://localhost:8080/properties/metropolitan-haven/
+          - heading [level=3] [ref=f11e123]:
+            - link "Metropolitan Haven" [ref=f11e124] [cursor=pointer]:
+              - /url: http://localhost:8080/properties/metropolitan-haven/
+          - paragraph [ref=f11e125]:
+            - text: A chic and fully-furnished 2-bedroom apartment with panoramic city views.
+            - link "Read More" [ref=f11e126] [cursor=pointer]:
+              - /url: http://localhost:8080/properties/metropolitan-haven/
+          - list [ref=f11e127]:
+            - listitem [ref=f11e128]: 2-Bedroom
+            - listitem [ref=f11e131]: 2-Bathroom
+            - listitem [ref=f11e134]: Apartment
+          - generic [ref=f11e137]:
+            - generic [ref=f11e138]:
+              - generic [ref=f11e139]: Price
+              - generic [ref=f11e140]: $425,000
+            - link "View Property Details" [ref=f11e141] [cursor=pointer]:
+              - /url: http://localhost:8080/properties/metropolitan-haven/
+        - article [ref=f11e142]:
+          - link [ref=f11e143] [cursor=pointer]:
+            - /url: http://localhost:8080/properties/seaside-serenity-villa/
+          - heading [level=3] [ref=f11e144]:
+            - link "Seaside Serenity Villa" [ref=f11e145] [cursor=pointer]:
+              - /url: http://localhost:8080/properties/seaside-serenity-villa/
+          - paragraph [ref=f11e146]:
+            - text: A stunning 4-bedroom, 3-bathroom villa in a peaceful suburban neighborhood.
+            - link "Read More" [ref=f11e147] [cursor=pointer]:
+              - /url: http://localhost:8080/properties/seaside-serenity-villa/
+          - list [ref=f11e148]:
+            - listitem [ref=f11e149]: 4-Bedroom
+            - listitem [ref=f11e152]: 3-Bathroom
+            - listitem [ref=f11e155]: Villa
+          - generic [ref=f11e158]:
+            - generic [ref=f11e159]:
+              - generic [ref=f11e160]: Price
+              - generic [ref=f11e161]: $550,000
+            - link "View Property Details" [ref=f11e162] [cursor=pointer]:
+              - /url: http://localhost:8080/properties/seaside-serenity-villa/
+    - generic [ref=f11e164]:
+      - generic [ref=f11e174]:
+        - heading "What Our Clients Say" [level=2] [ref=f11e175]
+        - paragraph [ref=f11e176]: Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.
+      - generic [ref=f11e177]:
+        - article [ref=f11e178]:
+          - generic [ref=f11e179]: Rated 5 out of 5
+          - heading "Efficient and Reliable" [level=3] [ref=f11e191]
+          - paragraph [ref=f11e193]: Estatein provided us with top-notch service. They helped us sell our property quickly and at a great price.
+          - generic [ref=f11e195]:
+            - generic [ref=f11e196]: Emelie Thomson
+            - generic [ref=f11e197]: USA, Florida
+        - article [ref=f11e198]:
+          - generic [ref=f11e199]: Rated 5 out of 5
+          - heading "Exceptional Service!" [level=3] [ref=f11e211]
+          - paragraph [ref=f11e213]: Our experience with Estatein was outstanding. Their team went above and beyond to help us find the perfect home.
+          - generic [ref=f11e215]:
+            - generic [ref=f11e216]: Wade Warren
+            - generic [ref=f11e217]: USA, California
+    - generic [ref=f11e219]:
+      - generic [ref=f11e229]:
+        - heading "Frequently Asked Questions" [level=2] [ref=f11e230]
+        - paragraph [ref=f11e231]: Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.
+      - generic [ref=f11e232]:
+        - article [ref=f11e233]:
+          - group [ref=f11e234]:
+            - heading "How do I search for properties on Estatein?" [level=3] [ref=f11e236] [cursor=pointer]
+        - article [ref=f11e238]:
+          - group [ref=f11e239]:
+            - heading "What documents do I need to sell my property?" [level=3] [ref=f11e241] [cursor=pointer]
+  - generic [ref=f11e244]:
+    - generic [ref=f11e245]:
+      - heading "Start Your Real Estate Journey Today" [level=2] [ref=f11e246]
+      - paragraph [ref=f11e247]: Your dream property is just a click away. Whether you're looking for a new home, a strategic investment, or expert real estate advice, Estatein is here to assist you every step of the way. Take the first step towards your real estate goals and explore our available properties or get in touch with our team for personalized assistance.
+    - link "Explore Properties" [ref=f11e249] [cursor=pointer]:
+      - /url: http://localhost:8080/properties/
+  - contentinfo [ref=f11e250]:
+    - generic [ref=f11e251]:
+      - generic [ref=f11e252]:
+        - link "Estatein" [ref=f11e253] [cursor=pointer]:
+          - /url: http://localhost:8080/
+        - generic [ref=f11e257]:
+          - paragraph [ref=f11e258]:
+            - text: Website
+            - textbox [ref=f11e259]
+          - generic [ref=f11e260]: Your email address
+          - generic [ref=f11e261]:
+            - textbox "Your email address" [ref=f11e265]:
+              - /placeholder: Enter Your Email
+            - button "Subscribe" [ref=f11e266] [cursor=pointer]
+      - generic [ref=f11e270]:
+        - navigation "Home" [ref=f11e271]:
+          - heading "Home" [level=2] [ref=f11e272]
+          - list [ref=f11e273]:
+            - listitem [ref=f11e274]:
+              - link "Hero Section" [ref=f11e275] [cursor=pointer]:
+                - /url: http://localhost:8080/#main
+            - listitem [ref=f11e276]:
+              - link "Features" [ref=f11e277] [cursor=pointer]:
+                - /url: http://localhost:8080/#features
+            - listitem [ref=f11e278]:
+              - link "Properties" [ref=f11e279] [cursor=pointer]:
+                - /url: http://localhost:8080/#properties
+            - listitem [ref=f11e280]:
+              - link "Testimonials" [ref=f11e281] [cursor=pointer]:
+                - /url: http://localhost:8080/#testimonials
+            - listitem [ref=f11e282]:
+              - link "FAQ's" [ref=f11e283] [cursor=pointer]:
+                - /url: http://localhost:8080/#faq
+        - navigation "About Us" [ref=f11e284]:
+          - heading "About Us" [level=2] [ref=f11e285]
+          - list [ref=f11e286]:
+            - listitem [ref=f11e287]:
+              - link "Our Story" [ref=f11e288] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#story
+            - listitem [ref=f11e289]:
+              - link "Our Works" [ref=f11e290] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#works
+            - listitem [ref=f11e291]:
+              - link "How It Works" [ref=f11e292] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#process
+            - listitem [ref=f11e293]:
+              - link "Our Team" [ref=f11e294] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#team
+            - listitem [ref=f11e295]:
+              - link "Our Clients" [ref=f11e296] [cursor=pointer]:
+                - /url: http://localhost:8080/about-us/#clients
+        - navigation "Properties" [ref=f11e297]:
+          - heading "Properties" [level=2] [ref=f11e298]
+          - list [ref=f11e299]:
+            - listitem [ref=f11e300]:
+              - link "Portfolio" [ref=f11e301] [cursor=pointer]:
+                - /url: http://localhost:8080/properties/
+            - listitem [ref=f11e302]:
+              - link "Categories" [ref=f11e303] [cursor=pointer]:
+                - /url: http://localhost:8080/properties/
+        - navigation "Services" [ref=f11e304]:
+          - heading "Services" [level=2] [ref=f11e305]
+          - list [ref=f11e306]:
+            - listitem [ref=f11e307]:
+              - link "Valuation Mastery" [ref=f11e308] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#valuation
+            - listitem [ref=f11e309]:
+              - link "Strategic Marketing" [ref=f11e310] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#marketing
+            - listitem [ref=f11e311]:
+              - link "Negotiation Wizardry" [ref=f11e312] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#negotiation
+            - listitem [ref=f11e313]:
+              - link "Closing Success" [ref=f11e314] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#closing
+            - listitem [ref=f11e315]:
+              - link "Property Management" [ref=f11e316] [cursor=pointer]:
+                - /url: http://localhost:8080/services/#management
+        - navigation "Contact Us" [ref=f11e317]:
+          - heading "Contact Us" [level=2] [ref=f11e318]
+          - list [ref=f11e319]:
+            - listitem [ref=f11e320]:
+              - link "Contact Form" [ref=f11e321] [cursor=pointer]:
+                - /url: http://localhost:8080/contact/#contact-form
+            - listitem [ref=f11e322]:
+              - link "Our Offices" [ref=f11e323] [cursor=pointer]:
+                - /url: http://localhost:8080/contact/#offices
+    - generic [ref=f11e325]:
+      - generic [ref=f11e326]:
+        - paragraph [ref=f11e327]: "@2026 Estatein. All Rights Reserved."
+        - list [ref=f11e328]:
+          - listitem [ref=f11e329]:
+            - link "Terms & Conditions" [ref=f11e330] [cursor=pointer]:
+              - /url: http://localhost:8080/terms-conditions/
+      - list [ref=f11e331]:
+        - listitem [ref=f11e332]:
+          - link "Facebook" [ref=f11e333] [cursor=pointer]:
+            - /url: https://facebook.com/
+        - listitem [ref=f11e337]:
+          - link "Linkedin" [ref=f11e338] [cursor=pointer]:
+            - /url: https://linkedin.com/
+        - listitem [ref=f11e342]:
+          - link "Twitter" [ref=f11e343] [cursor=pointer]:
+            - /url: https://x.com/
+        - listitem [ref=f11e347]:
+          - link "Youtube" [ref=f11e348] [cursor=pointer]:
+            - /url: https://youtube.com/
