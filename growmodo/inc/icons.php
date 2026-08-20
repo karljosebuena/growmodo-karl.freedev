@@ -30,7 +30,7 @@ function growmodo_icon( $name, $css_class = '' ) {
 		// Brand mark: the Estatein tulip.
 		'logo'           => '<path d="M0 2a2 2 0 0 1 2-2h20.6L24 20 25.4 0H46a2 2 0 0 1 2 2v22a24 24 0 0 1-48 0V2Z" fill="currentColor"/>',
 
-		'sparkle'        => '<path d="M12 2l2.2 6.4L21 11l-6.8 2.6L12 20l-2.2-6.4L3 11l6.8-2.6L12 2Z" fill="currentColor"/>',
+		'sparkle'        => '<path d="M12 1c.6 6.1 3.9 9.4 10 10-6.1.6-9.4 3.9-10 10-.6-6.1-3.9-9.4-10-10 6.1-.6 9.4-3.9 10-10Z" fill="currentColor"/>',
 		'arrow-up-right' => '<path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
 		'arrow-left'     => '<path d="M19 12H5m0 0 6-6m-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
 		'arrow-right'    => '<path d="M5 12h14m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
@@ -55,6 +55,10 @@ function growmodo_icon( $name, $css_class = '' ) {
 		'value'          => '<rect x="2.5" y="6" width="19" height="12" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M6 10v4M18 10v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
 		'manage'         => '<path d="M4 21V8l7-4 7 4v13M4 21h16M9 21v-5h6v5M8 11h1M12 11h1M8 14h1M12 14h1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
 		'insight'        => '<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
+
+		// About-page value icons.
+		'graduation'     => '<path d="M12 4 2.5 8.5 12 13l9.5-4.5L12 4Z" fill="currentColor"/><path d="M6 11.2v4.3c0 1.9 2.7 3.2 6 3.2s6-1.3 6-3.2v-4.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none"/>',
+		'people'         => '<circle cx="9" cy="8.5" r="3" fill="currentColor"/><circle cx="16.5" cy="9.5" r="2.2" fill="currentColor"/><path d="M3 19c0-3.1 2.7-5.2 6-5.2s6 2.1 6 5.2H3Z" fill="currentColor"/><path d="M16.2 14c2.6.1 4.8 1.9 4.8 4.4v.6h-4.3" fill="currentColor"/>',
 
 		// Contact and social.
 		'mail'           => '<rect x="2.5" y="5" width="19" height="14" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>',

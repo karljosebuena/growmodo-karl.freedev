@@ -15,9 +15,9 @@ get_header();
 
 $growmodo_values = array(
 	array( 'star', __( 'Trust', 'growmodo' ), __( 'Trust is the cornerstone of every successful real estate transaction.', 'growmodo' ) ),
-	array( 'insight', __( 'Excellence', 'growmodo' ), __( 'We set the bar high for ourselves. From the properties we list to the services we provide.', 'growmodo' ) ),
-	array( 'home', __( 'Client-Centric', 'growmodo' ), __( 'Your dreams and needs are at the center of our universe. We listen, we understand.', 'growmodo' ) ),
-	array( 'value', __( 'Our Commitment', 'growmodo' ), __( 'We are dedicated to providing you with the highest level of service, professionalism, and support.', 'growmodo' ) ),
+	array( 'graduation', __( 'Excellence', 'growmodo' ), __( 'We set the bar high for ourselves. From the properties we list to the services we provide.', 'growmodo' ) ),
+	array( 'people', __( 'Client-Centric', 'growmodo' ), __( 'Your dreams and needs are at the center of our universe. We listen, we understand.', 'growmodo' ) ),
+	array( 'star', __( 'Our Commitment', 'growmodo' ), __( 'We are dedicated to providing you with the highest level of service, professionalism, and support.', 'growmodo' ) ),
 );
 
 $growmodo_achievements = array(
@@ -33,6 +33,23 @@ $growmodo_steps = array(
 	array( __( 'See It for Yourself', 'growmodo' ), __( 'Arrange viewings of the properties you\'re interested in. We\'ll coordinate with the property owners and accompany you to ensure you get a firsthand look at your potential new home.', 'growmodo' ) ),
 	array( __( 'Making Informed Decisions', 'growmodo' ), __( 'Before making an offer, our team will assist you with due diligence, including property inspections, legal checks, and market analysis. We want you to be fully informed and confident in your choice.', 'growmodo' ) ),
 	array( __( 'Getting the Best Deal', 'growmodo' ), __( 'We\'ll help you negotiate the best terms and prepare your offer. Our goal is to secure the property at the right price and on favourable terms.', 'growmodo' ) ),
+);
+
+$growmodo_clients = array(
+	array(
+		'since'    => __( 'Since 2019', 'growmodo' ),
+		'name'     => __( 'ABC Corporation', 'growmodo' ),
+		'domain'   => __( 'Commercial Real Estate', 'growmodo' ),
+		'category' => __( 'Luxury Home Development', 'growmodo' ),
+		'quote'    => __( 'Estatein\'s expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs.', 'growmodo' ),
+	),
+	array(
+		'since'    => __( 'Since 2018', 'growmodo' ),
+		'name'     => __( 'GreenTech Enterprises', 'growmodo' ),
+		'domain'   => __( 'Commercial Real Estate', 'growmodo' ),
+		'category' => __( 'Retail Space', 'growmodo' ),
+		'quote'    => __( 'Estatein\'s ability to identify prime retail locations helped us expand our brand presence. They are a trusted partner in our growth.', 'growmodo' ),
+	),
 );
 
 $growmodo_team = array(
@@ -88,7 +105,8 @@ $growmodo_team = array(
 			);
 			?>
 
-			<ul class="value-panel">
+			<div class="value-panel-frame">
+				<ul class="value-panel">
 				<?php foreach ( $growmodo_values as $growmodo_value ) : ?>
 					<li class="value-panel__item">
 						<div class="value-panel__head">
@@ -97,8 +115,9 @@ $growmodo_team = array(
 						</div>
 						<p class="card__text"><?php echo esc_html( $growmodo_value[2] ); ?></p>
 					</li>
-				<?php endforeach; ?>
-			</ul>
+					<?php endforeach; ?>
+				</ul>
+			</div>
 		</div>
 	</div>
 </section>
@@ -210,10 +229,65 @@ $growmodo_team = array(
 					</div>
 					<h3 class="member__name"><?php echo esc_html( $growmodo_member[1] ); ?></h3>
 					<p class="member__role"><?php echo esc_html( $growmodo_member[2] ); ?></p>
-					<a class="btn btn--block" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
-						<?php esc_html_e( 'Say Hello', 'growmodo' ); ?>
-						<?php echo growmodo_icon( 'send' ); ?>
+					<a class="member__hello" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
+						<span><?php esc_html_e( 'Say Hello', 'growmodo' ); ?> <span aria-hidden="true">&#128075;</span></span>
+						<span class="member__hello-icon"><?php echo growmodo_icon( 'send' ); ?></span>
 					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
+</section>
+
+<section class="section section--bordered" id="clients">
+	<div class="container">
+		<?php
+		get_template_part(
+			'template-parts/section-head',
+			null,
+			array(
+				'title' => __( 'Our Valued Clients', 'growmodo' ),
+				'text'  => __( 'At Estatein, we have had the privilege of working with a diverse range of clients across various industries. Here are some of the clients we\'ve had the pleasure of serving.', 'growmodo' ),
+			)
+		);
+		?>
+
+		<ul class="grid grid--2">
+			<?php foreach ( $growmodo_clients as $growmodo_client ) : ?>
+				<li class="card client">
+					<div class="client__head">
+						<div>
+							<p class="client__since"><?php echo esc_html( $growmodo_client['since'] ); ?></p>
+							<h3 class="client__name"><?php echo esc_html( $growmodo_client['name'] ); ?></h3>
+						</div>
+						<a class="btn" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
+							<?php esc_html_e( 'Visit Website', 'growmodo' ); ?>
+						</a>
+					</div>
+
+					<div class="client__meta">
+						<div>
+							<p class="client__meta-label">
+								<?php echo growmodo_icon( 'building' ); ?>
+								<?php esc_html_e( 'Domain', 'growmodo' ); ?>
+							</p>
+							<p class="client__meta-value"><?php echo esc_html( $growmodo_client['domain'] ); ?></p>
+						</div>
+						<div>
+							<p class="client__meta-label">
+								<?php echo growmodo_icon( 'insight' ); ?>
+								<?php esc_html_e( 'Category', 'growmodo' ); ?>
+							</p>
+							<p class="client__meta-value"><?php echo esc_html( $growmodo_client['category'] ); ?></p>
+						</div>
+					</div>
+
+					<div class="client__quote">
+						<p class="client__quote-label">
+							<?php esc_html_e( 'What They Said', 'growmodo' ); ?> <span aria-hidden="true">&#129303;</span>
+						</p>
+						<p class="card__text"><?php echo esc_html( $growmodo_client['quote'] ); ?></p>
+					</div>
 				</li>
 			<?php endforeach; ?>
 		</ul>
