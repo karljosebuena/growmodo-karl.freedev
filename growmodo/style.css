@@ -443,8 +443,13 @@ button {
 	border: 1px solid var(--c-border);
 	border-radius: var(--radius-lg);
 	background: var(--c-surface);
-	/* Lifts the card off the page the way the design's boxes do. */
-	box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+	/*
+	 * The design lifts its boxes with a tight, *lighter* halo — measured at
+	 * roughly #191919 against the #141414 page, about 8px out — not a dark
+	 * blur. A drop shadow reads as muddy on a near-black background; this
+	 * reads as a crisp edge.
+	 */
+	box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.014);
 }
 
 .card__media {
@@ -1715,19 +1720,22 @@ select.form__input {
  * is what reads as a shadowed box. The outer frame is the padding plus the
  * ring; the inner panel carries the cell dividers.
  */
+/*
+ * Measured off the export: the outer frame is the *lighter* surface and the
+ * inner panel is the page colour behind a hairline border — the reverse of the
+ * obvious guess, and the reason it reads as an inset rather than a raised box.
+ */
 .value-panel-frame {
 	padding: var(--sp-3);
-	border: 1px solid var(--c-border);
 	border-radius: 1rem;
-	background: var(--c-bg);
+	background: var(--c-surface);
 }
 
 .value-panel {
 	display: grid;
 	border: 1px solid var(--c-border);
 	border-radius: var(--radius-lg);
-	background: var(--c-surface);
-	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+	background: var(--c-bg);
 	overflow: hidden;
 }
 
