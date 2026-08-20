@@ -101,6 +101,17 @@
 			return Math.round( track.scrollLeft / track.clientWidth );
 		};
 
+		/*
+		 * Optional jump-to controls — the property gallery's thumbnail strip.
+		 * They address slides, not pages, since a page holds two of them at the
+		 * widest breakpoint.
+		 */
+		const thumbs = Array.from( carousel.querySelectorAll( '[data-carousel-goto]' ) );
+
+		const slideAt = function ( index ) {
+			return track.children[ index ] || null;
+		};
+
 		const sync = function () {
 			const pages = pageCount();
 			const page = Math.min( pageIndex(), pages - 1 );
@@ -119,7 +130,31 @@
 
 			prev.disabled = page <= 0;
 			next.disabled = page >= pages - 1;
+
+			/*
+			 * Mark the thumbnails whose slides are in view, by midpoint rather
+			 * than by both edges: slide widths are fractional, so an edge test
+			 * loses the last slide to a sub-pixel rounding error.
+			 */
+			thumbs.forEach( function ( thumb ) {
+				const slide = slideAt( Number( thumb.dataset.carouselGoto ) );
+				const middle = slide ? slide.offsetLeft + slide.offsetWidth / 2 - track.scrollLeft : -1;
+				const shown = middle >= 0 && middle <= track.clientWidth;
+
+				thumb.classList.toggle( 'is-current', shown );
+				thumb.setAttribute( 'aria-current', shown ? 'true' : 'false' );
+			} );
 		};
+
+		thumbs.forEach( function ( thumb ) {
+			thumb.addEventListener( 'click', function () {
+				const slide = slideAt( Number( thumb.dataset.carouselGoto ) );
+
+				if ( slide ) {
+					track.scrollTo( { left: slide.offsetLeft, behavior: 'smooth' } );
+				}
+			} );
+		} );
 
 		const scrollByPage = function ( direction ) {
 			track.scrollBy( { left: direction * track.clientWidth, behavior: 'smooth' } );

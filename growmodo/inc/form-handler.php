@@ -205,7 +205,7 @@ function growmodo_handle_form() {
 		? sanitize_email( wp_unslash( $_POST['growmodo_email'] ) )
 		: '';
 
-	if ( ! in_array( $type, array( 'contact', 'inquiry', 'newsletter' ), true ) || ! is_email( $email ) ) {
+	if ( ! in_array( $type, array( 'contact', 'inquiry', 'property', 'newsletter' ), true ) || ! is_email( $email ) ) {
 		growmodo_form_redirect( 'error' );
 	}
 
@@ -295,7 +295,7 @@ function growmodo_handle_form() {
 		 * @since 1.0.0
 		 *
 		 * @param int    $post_id     ID of the created `inquiry` post.
-		 * @param string $type        Form type: 'contact', 'inquiry', or 'newsletter'.
+		 * @param string $type        Form type: 'contact', 'inquiry', 'property', or 'newsletter'.
 		 * @param array  $meta        Sanitized meta stored with the enquiry.
 		 * @param int    $property_id Related property ID, or 0 when not applicable.
 		 */

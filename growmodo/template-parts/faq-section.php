@@ -1,6 +1,9 @@
 <?php
 /**
- * Home "Frequently Asked Questions" section.
+ * "Frequently Asked Questions" carousel.
+ *
+ * Shared by the home page and property pages — the design shows the same
+ * section on both, so it is one template part rather than two copies.
  *
  * @since 1.0.0
  *
@@ -13,10 +16,7 @@ $growmodo_faqs = new WP_Query(
 	array(
 		'post_type'      => 'faq',
 		'posts_per_page' => growmodo_carousel_count(),
-		'orderby'        => array(
-			'menu_order' => 'ASC',
-			'date'       => 'ASC',
-		),
+		'orderby'        => growmodo_curated_order(),
 	)
 );
 

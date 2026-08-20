@@ -42,6 +42,63 @@ function growmodo_format_size( $sqft ) {
 }
 
 /**
+ * Every image belonging to a property, featured one first.
+ *
+ * WordPress's own model — images attached to the post — rather than a list of
+ * IDs in a meta field: an editor adds gallery images by uploading them to the
+ * listing, with no extra UI to learn and nothing to keep in sync.
+ *
+ * @since 1.0.0
+ *
+ * @param int $post_id Property ID.
+ * @return int[] Attachment IDs, in display order.
+ */
+function growmodo_property_images( $post_id ) {
+	$featured = (int) get_post_thumbnail_id( $post_id );
+
+	$attached = get_posts(
+		array(
+			'post_type'      => 'attachment',
+			'post_mime_type' => 'image',
+			'post_parent'    => $post_id,
+			'post_status'    => 'inherit',
+			'posts_per_page' => 12,
+			'orderby'        => array(
+				'menu_order' => 'ASC',
+				'date'       => 'ASC',
+			),
+			'fields'         => 'ids',
+			'no_found_rows'  => true,
+		)
+	);
+
+	$images = $featured > 0 ? array( $featured ) : array();
+
+	return array_values( array_unique( array_merge( $images, $attached ) ) );
+}
+
+/**
+ * Split a newline-separated meta value into trimmed lines.
+ *
+ * Used for the key-features list, which is authored as one item per line —
+ * simpler for an editor than a repeater, and it needs no extra UI.
+ *
+ * @since 1.0.0
+ *
+ * @param string $value Raw meta value.
+ * @return string[] Non-empty lines.
+ */
+function growmodo_lines( $value ) {
+	if ( ! is_string( $value ) || '' === trim( $value ) ) {
+		return array();
+	}
+
+	$lines = array_map( 'trim', preg_split( '/\R/', $value ) );
+
+	return array_values( array_filter( $lines, 'strlen' ) );
+}
+
+/**
  * Number of items a home carousel loads.
  *
  * The FAQ section and the FAQPage structured data both read this, so the markup

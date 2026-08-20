@@ -16,7 +16,9 @@
  *
  * @var array $args {
  *     @type string $id       Element id used for the anchor and field ids. Default 'contact-form'.
- *     @type string $type     Submission type: 'contact' or 'inquiry'. Default 'contact'.
+ *     @type string $type     Which form this is, and what the submission is
+ *                            recorded as: 'contact', 'inquiry' or 'property'.
+ *                            Default 'contact'.
  *     @type string $property Pre-selected property title, shown read-only. Optional.
  * }
  */
@@ -24,7 +26,9 @@
 defined( 'ABSPATH' ) || exit;
 
 $growmodo_id       = isset( $args['id'] ) ? sanitize_html_class( $args['id'] ) : 'contact-form';
-$growmodo_type     = isset( $args['type'] ) && 'inquiry' === $args['type'] ? 'inquiry' : 'contact';
+$growmodo_type     = isset( $args['type'] ) && in_array( $args['type'], array( 'inquiry', 'property' ), true )
+	? $args['type']
+	: 'contact';
 $growmodo_property = isset( $args['property'] ) ? $args['property'] : '';
 
 // Set by growmodo_form_redirect() after a submission.
@@ -64,11 +68,19 @@ $growmodo_texts = array(
 );
 
 /*
- * The design has two forms, not one. "Let's Make it Happen" beside the listings
- * asks what the visitor is looking for, in four columns; "Let's Connect" on the
- * contact page asks why they are writing, in three. Same markup, different
- * field set — so the type decides which, rather than one form serving both
- * badly by asking a general enquirer for a bedroom count.
+ * The design has three forms, not one, and they differ only in which questions
+ * they ask:
+ *
+ * - 'inquiry'  "Let's Make it Happen" beside the listings — what are you
+ *              looking for, in four columns.
+ * - 'contact'  "Let's Connect" on the contact page — why are you writing, in
+ *              three columns.
+ * - 'property' "Inquire About <listing>" on a property page — just who you are
+ *              and which listing, in two columns.
+ *
+ * Same markup throughout; the type picks the field set. One form serving all
+ * three would ask a visitor enquiring about a specific villa what their
+ * preferred number of bedrooms is.
  *
  * Preferred Location offers the places we actually have listings in, and Budget
  * reuses the archive's price bands, so neither can drift from the catalogue or
@@ -76,7 +88,16 @@ $growmodo_texts = array(
  */
 $growmodo_is_inquiry = 'inquiry' === $growmodo_type;
 
-$growmodo_selects = $growmodo_is_inquiry
+$growmodo_columns = array(
+	'inquiry'  => 'form__grid--4',
+	'contact'  => 'form__grid--3',
+	'property' => 'form__grid--2',
+);
+
+if ( 'property' === $growmodo_type ) {
+	$growmodo_selects = array();
+} else {
+	$growmodo_selects = $growmodo_is_inquiry
 	? array(
 		array(
 			'name'        => 'growmodo_pref_location',
@@ -124,6 +145,7 @@ $growmodo_selects = $growmodo_is_inquiry
 			'options'     => growmodo_referrer_options(),
 		),
 	);
+}
 
 $growmodo_method_icons = array(
 	'phone' => 'phone',
@@ -150,7 +172,7 @@ $growmodo_method_icons = array(
 		<input type="text" id="<?php echo esc_attr( $growmodo_id ); ?>-website" name="growmodo_website" tabindex="-1" autocomplete="off" />
 	</p>
 
-	<div class="form__grid <?php echo $growmodo_is_inquiry ? 'form__grid--4' : 'form__grid--3'; ?>">
+	<div class="form__grid <?php echo esc_attr( $growmodo_columns[ $growmodo_type ] ); ?>">
 		<?php foreach ( $growmodo_texts as $growmodo_field ) : ?>
 			<?php $growmodo_field_id = $growmodo_id . '-' . str_replace( 'growmodo_', '', $growmodo_field['name'] ); ?>
 			<p class="form__field">
@@ -230,7 +252,7 @@ $growmodo_method_icons = array(
 		<?php endif; ?>
 
 		<?php if ( '' !== $growmodo_property ) : ?>
-			<p class="form__field form__field--half">
+			<p class="form__field form__field--wide">
 				<label class="form__label" for="<?php echo esc_attr( $growmodo_id ); ?>-property">
 					<?php esc_html_e( 'Selected property', 'growmodo' ); ?>
 				</label>

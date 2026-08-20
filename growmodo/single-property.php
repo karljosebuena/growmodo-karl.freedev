@@ -1,11 +1,7 @@
 <?php
 /**
- * Single property: header, imagery, description, spec panel, enquiry form.
- *
- * The Figma's pricing-breakdown tables (transfer tax, legal fees, monthly
- * costs) are deliberately omitted: there is no data model behind them, and
- * inventing figures would ship fabricated content. Noted in the write-up
- * as a scoped decision.
+ * Single property: title row, gallery, description and features, enquiry form,
+ * estimated costs, FAQs.
  *
  * @since 1.0.0
  *
@@ -21,126 +17,161 @@ while ( have_posts() ) :
 
 	$growmodo_beds     = (int) get_post_meta( get_the_ID(), 'growmodo_beds', true );
 	$growmodo_baths    = (int) get_post_meta( get_the_ID(), 'growmodo_baths', true );
-	$growmodo_type     = get_post_meta( get_the_ID(), 'growmodo_type', true );
 	$growmodo_price    = (int) get_post_meta( get_the_ID(), 'growmodo_price', true );
 	$growmodo_size     = (int) get_post_meta( get_the_ID(), 'growmodo_size', true );
 	$growmodo_year     = (int) get_post_meta( get_the_ID(), 'growmodo_year', true );
+	$growmodo_type     = get_post_meta( get_the_ID(), 'growmodo_type', true );
 	$growmodo_location = get_post_meta( get_the_ID(), 'growmodo_location', true );
+	$growmodo_features = growmodo_lines( get_post_meta( get_the_ID(), 'growmodo_features', true ) );
+	$growmodo_images   = growmodo_property_images( get_the_ID() );
+
+	// The design pairs the title with the location; the price sits opposite it.
+	$growmodo_where = '' === $growmodo_location
+		? get_the_title()
+		: sprintf(
+			/* translators: 1: property title, 2: location. */
+			_x( '%1$s, %2$s', 'property and its location', 'growmodo' ),
+			get_the_title(),
+			$growmodo_location
+		);
 	?>
 
 	<article <?php post_class(); ?>>
-		<section class="page-hero">
-			<div class="container">
-				<h1 class="page-hero__title"><?php echo esc_html( get_the_title() ); ?></h1>
+		<section class="property-head">
+			<div class="container property-head__inner">
+				<div class="property-head__title">
+					<h1 class="page-hero__title"><?php echo esc_html( get_the_title() ); ?></h1>
 
-				<ul class="property__tags">
 					<?php if ( '' !== $growmodo_location ) : ?>
-						<li class="tag">
+						<p class="tag">
 							<?php echo growmodo_icon( 'pin' ); ?>
 							<?php echo esc_html( $growmodo_location ); ?>
-						</li>
+						</p>
 					<?php endif; ?>
-					<?php if ( $growmodo_price > 0 ) : ?>
-						<li class="tag">
-							<?php echo esc_html( growmodo_format_price( $growmodo_price ) ); ?>
-						</li>
-					<?php endif; ?>
-				</ul>
+				</div>
+
+				<?php if ( $growmodo_price > 0 ) : ?>
+					<p class="property-head__price">
+						<span class="property__price-label"><?php esc_html_e( 'Price', 'growmodo' ); ?></span>
+						<span class="property__price"><?php echo esc_html( growmodo_format_price( $growmodo_price ) ); ?></span>
+					</p>
+				<?php endif; ?>
 			</div>
 		</section>
 
-		<section class="section">
-			<div class="container">
-				<?php if ( has_post_thumbnail() ) : ?>
-					<div class="property-single__media">
-						<?php the_post_thumbnail( 'large', array( 'fetchpriority' => 'high' ) ); ?>
-					</div>
-				<?php endif; ?>
-
-				<div class="property-single__layout">
-					<div>
+		<?php if ( ! empty( $growmodo_images ) ) : ?>
+			<section class="section section--tight">
+				<div class="container">
+					<div class="gallery">
 						<?php
-						// Fall back to the excerpt so the heading is never orphaned.
-						$growmodo_body = trim( get_the_content() );
-
-						if ( '' === $growmodo_body ) {
-							$growmodo_body = trim( get_the_excerpt() );
-						}
-
-						if ( '' !== $growmodo_body ) :
-							?>
-							<h2><?php esc_html_e( 'Description', 'growmodo' ); ?></h2>
-							<div class="property-single__body entry-content">
-								<?php
-								if ( '' !== trim( get_the_content() ) ) {
-									the_content();
-								} else {
-									echo '<p>' . esc_html( $growmodo_body ) . '</p>';
-								}
-								?>
-							</div>
-						<?php endif; ?>
+						get_template_part(
+							'template-parts/carousel',
+							null,
+							array(
+								'items'    => $growmodo_images,
+								'thumbs'   => $growmodo_images,
+								'card'     => 'card-image',
+								'label'    => __( 'Property images', 'growmodo' ),
+								'per_view' => 2,
+							)
+						);
+						?>
 					</div>
+				</div>
+			</section>
+		<?php endif; ?>
 
-					<aside class="property-single__aside" aria-label="<?php esc_attr_e( 'Property details', 'growmodo' ); ?>">
-						<h2 class="card__title"><?php esc_html_e( 'At a glance', 'growmodo' ); ?></h2>
+		<section class="section section--tight">
+			<div class="container">
+				<div class="grid grid--pair">
+					<div class="card">
+						<h2 class="card__title"><?php esc_html_e( 'Description', 'growmodo' ); ?></h2>
 
-						<div class="spec-list">
-							<?php if ( $growmodo_beds > 0 ) : ?>
-								<div class="spec-list__row">
-									<span class="spec-list__key"><?php esc_html_e( 'Bedrooms', 'growmodo' ); ?></span>
-									<span><?php echo esc_html( number_format_i18n( $growmodo_beds ) ); ?></span>
-								</div>
-							<?php endif; ?>
-							<?php if ( $growmodo_baths > 0 ) : ?>
-								<div class="spec-list__row">
-									<span class="spec-list__key"><?php esc_html_e( 'Bathrooms', 'growmodo' ); ?></span>
-									<span><?php echo esc_html( number_format_i18n( $growmodo_baths ) ); ?></span>
-								</div>
-							<?php endif; ?>
-							<?php if ( $growmodo_size > 0 ) : ?>
-								<div class="spec-list__row">
-									<span class="spec-list__key"><?php esc_html_e( 'Size', 'growmodo' ); ?></span>
-									<span><?php echo esc_html( growmodo_format_size( $growmodo_size ) ); ?></span>
-								</div>
-							<?php endif; ?>
-							<?php if ( $growmodo_year > 0 ) : ?>
-								<div class="spec-list__row">
-									<span class="spec-list__key"><?php esc_html_e( 'Year built', 'growmodo' ); ?></span>
-									<?php // No number_format_i18n: a year is not a quantity and must not gain a thousands separator. ?>
-									<span><?php echo absint( $growmodo_year ); ?></span>
-								</div>
-							<?php endif; ?>
-							<?php if ( '' !== $growmodo_type ) : ?>
-								<div class="spec-list__row">
-									<span class="spec-list__key"><?php esc_html_e( 'Type', 'growmodo' ); ?></span>
-									<span><?php echo esc_html( $growmodo_type ); ?></span>
-								</div>
-							<?php endif; ?>
-							<?php if ( '' !== $growmodo_location ) : ?>
-								<div class="spec-list__row">
-									<span class="spec-list__key"><?php esc_html_e( 'Location', 'growmodo' ); ?></span>
-									<span><?php echo esc_html( $growmodo_location ); ?></span>
-								</div>
-							<?php endif; ?>
-							<?php if ( $growmodo_price > 0 ) : ?>
-								<div class="spec-list__row">
-									<span class="spec-list__key"><?php esc_html_e( 'Price', 'growmodo' ); ?></span>
-									<span><?php echo esc_html( growmodo_format_price( $growmodo_price ) ); ?></span>
-								</div>
-							<?php endif; ?>
+						<div class="card__text entry-content">
+							<?php
+							if ( '' !== trim( get_the_content() ) ) {
+								the_content();
+							} else {
+								echo '<p>' . esc_html( get_the_excerpt() ) . '</p>';
+							}
+							?>
 						</div>
 
-						<a class="btn btn--primary btn--block" href="#property-inquiry">
-							<?php esc_html_e( 'Enquire About This Property', 'growmodo' ); ?>
-						</a>
-					</aside>
+						<ul class="property-stats">
+							<?php if ( $growmodo_beds > 0 ) : ?>
+								<li class="property-stats__item">
+									<span class="property-stats__label">
+										<?php echo growmodo_icon( 'bed' ); ?>
+										<?php esc_html_e( 'Bedrooms', 'growmodo' ); ?>
+									</span>
+									<?php // Zero-padded, as the design sets these figures. ?>
+									<span class="property-stats__value"><?php echo esc_html( sprintf( '%02d', $growmodo_beds ) ); ?></span>
+								</li>
+							<?php endif; ?>
+
+							<?php if ( $growmodo_baths > 0 ) : ?>
+								<li class="property-stats__item">
+									<span class="property-stats__label">
+										<?php echo growmodo_icon( 'bath' ); ?>
+										<?php esc_html_e( 'Bathrooms', 'growmodo' ); ?>
+									</span>
+									<span class="property-stats__value"><?php echo esc_html( sprintf( '%02d', $growmodo_baths ) ); ?></span>
+								</li>
+							<?php endif; ?>
+
+							<?php if ( $growmodo_size > 0 ) : ?>
+								<li class="property-stats__item">
+									<span class="property-stats__label">
+										<?php echo growmodo_icon( 'cube' ); ?>
+										<?php esc_html_e( 'Area', 'growmodo' ); ?>
+									</span>
+									<span class="property-stats__value"><?php echo esc_html( growmodo_format_size( $growmodo_size ) ); ?></span>
+								</li>
+							<?php endif; ?>
+
+							<?php if ( $growmodo_year > 0 ) : ?>
+								<li class="property-stats__item">
+									<span class="property-stats__label">
+										<?php echo growmodo_icon( 'calendar' ); ?>
+										<?php esc_html_e( 'Built', 'growmodo' ); ?>
+									</span>
+									<?php // No number_format_i18n: a year is not a quantity and must not gain a thousands separator. ?>
+									<span class="property-stats__value"><?php echo absint( $growmodo_year ); ?></span>
+								</li>
+							<?php endif; ?>
+
+							<?php if ( '' !== $growmodo_type ) : ?>
+								<li class="property-stats__item">
+									<span class="property-stats__label">
+										<?php echo growmodo_icon( 'house' ); ?>
+										<?php esc_html_e( 'Type', 'growmodo' ); ?>
+									</span>
+									<span class="property-stats__value"><?php echo esc_html( $growmodo_type ); ?></span>
+								</li>
+							<?php endif; ?>
+						</ul>
+					</div>
+
+					<?php if ( ! empty( $growmodo_features ) ) : ?>
+						<div class="card">
+							<h2 class="card__title"><?php esc_html_e( 'Key Features and Amenities', 'growmodo' ); ?></h2>
+
+							<ul class="feature-list">
+								<?php foreach ( $growmodo_features as $growmodo_feature ) : ?>
+									<li class="feature-list__item">
+										<?php echo growmodo_icon( 'sparkle' ); ?>
+										<?php echo esc_html( $growmodo_feature ); ?>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+						</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</section>
 
-		<section class="section section--bordered">
-			<div class="container">
+		<section class="section section--bordered" id="property-inquiry">
+			<div class="container property-inquiry">
 				<?php
 				get_template_part(
 					'template-parts/section-head',
@@ -159,14 +190,24 @@ while ( have_posts() ) :
 					'template-parts/form-inquiry',
 					null,
 					array(
-						'id'       => 'property-inquiry',
-						'type'     => 'inquiry',
-						'property' => get_the_title(),
+						'id'       => 'property-inquiry-form',
+						'type'     => 'property',
+						'property' => $growmodo_where,
 					)
 				);
 				?>
 			</div>
 		</section>
+
+		<?php
+		get_template_part(
+			'template-parts/property-pricing',
+			null,
+			array( 'price' => $growmodo_price )
+		);
+
+		get_template_part( 'template-parts/faq-section' );
+		?>
 	</article>
 
 	<?php

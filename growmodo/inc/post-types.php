@@ -104,6 +104,7 @@ function growmodo_register_post_meta() {
 			'growmodo_year'     => array( 'integer', 'absint' ),
 			'growmodo_type'     => array( 'string', 'sanitize_text_field' ),
 			'growmodo_location' => array( 'string', 'sanitize_text_field' ),
+			'growmodo_features' => array( 'string', 'sanitize_textarea_field' ),
 		),
 		'testimonial' => array(
 			'growmodo_rating'          => array( 'integer', 'absint' ),

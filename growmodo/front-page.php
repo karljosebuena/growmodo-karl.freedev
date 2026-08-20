@@ -18,6 +18,6 @@ get_template_part( 'template-parts/home/hero' );
 get_template_part( 'template-parts/home/features' );
 get_template_part( 'template-parts/home/properties' );
 get_template_part( 'template-parts/home/testimonials' );
-get_template_part( 'template-parts/home/faq' );
+get_template_part( 'template-parts/faq-section' );
 
 get_footer();

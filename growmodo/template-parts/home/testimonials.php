@@ -13,10 +13,7 @@ $growmodo_testimonials = new WP_Query(
 	array(
 		'post_type'      => 'testimonial',
 		'posts_per_page' => growmodo_carousel_count(),
-		'orderby'        => array(
-			'menu_order' => 'ASC',
-			'date'       => 'ASC',
-		),
+		'orderby'        => growmodo_curated_order(),
 	)
 );
 

@@ -44,18 +44,19 @@ function growmodo_property_types() {
 }
 
 /**
- * The order property listings are shown in, everywhere.
+ * The order curated content is shown in, everywhere.
  *
  * The editor's Order field first, publication date second — a curated sequence
  * rather than whatever happened to be published last. It lives in one function
- * because the home carousel and the archive have to agree; when they did not,
- * the same six listings appeared in opposite orders on the two pages.
+ * because the sections showing the same content have to agree: when the home
+ * carousel and the property archive did not, the same six listings appeared in
+ * opposite orders on the two pages.
  *
  * @since 1.0.0
  *
  * @return array<string,string> WP_Query `orderby` clauses.
  */
-function growmodo_property_order() {
+function growmodo_curated_order() {
 	return array(
 		'menu_order' => 'ASC',
 		'date'       => 'ASC',
@@ -93,7 +94,7 @@ function growmodo_property_locations() {
 			'posts_per_page'         => 100,
 			'no_found_rows'          => true,
 			'update_post_term_cache' => false,
-			'orderby'                => growmodo_property_order(),
+			'orderby'                => growmodo_curated_order(),
 		)
 	);
 
@@ -270,6 +271,6 @@ function growmodo_property_archive_query( $query ) {
 	$query->set( 'posts_per_page', 24 );
 
 	// The same curated order the home carousel uses, search or no search.
-	$query->set( 'orderby', growmodo_property_order() );
+	$query->set( 'orderby', growmodo_curated_order() );
 }
 add_action( 'pre_get_posts', 'growmodo_property_archive_query' );

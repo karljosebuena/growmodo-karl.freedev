@@ -23,6 +23,10 @@
  *     @type string   $track_id Optional id for the track, so other behaviour —
  *                              the property filters, for one — can address the
  *                              cards without reaching in through a class name.
+ *     @type int[]    $thumbs   Optional attachment IDs rendered as a jump-to
+ *                              strip above the track. Another control on the
+ *                              same track, so it lives inside the carousel
+ *                              where the script already looks.
  * }
  */
 
@@ -35,8 +39,45 @@ if ( empty( $args['card'] ) || ( empty( $args['query'] ) && empty( $args['items'
 $growmodo_label    = isset( $args['label'] ) ? $args['label'] : __( 'Items', 'growmodo' );
 $growmodo_per_view = isset( $args['per_view'] ) && 2 === (int) $args['per_view'] ? 2 : 3;
 $growmodo_track_id = isset( $args['track_id'] ) ? $args['track_id'] : '';
+$growmodo_thumbs   = isset( $args['thumbs'] ) ? (array) $args['thumbs'] : array();
 ?>
 <div class="carousel" data-carousel aria-roledescription="carousel" aria-label="<?php echo esc_attr( $growmodo_label ); ?>">
+	<?php if ( count( $growmodo_thumbs ) > 1 ) : ?>
+		<ul class="carousel__thumbs">
+			<?php foreach ( $growmodo_thumbs as $growmodo_index => $growmodo_thumb ) : ?>
+				<li>
+					<button class="carousel__thumb" type="button" data-carousel-goto="<?php echo absint( $growmodo_index ); ?>">
+						<?php
+						/*
+						 * alt="" on purpose: the thumbnail duplicates an image
+						 * already on the page, so describing it twice is noise.
+						 * The button's own name says what it does.
+						 */
+						echo wp_get_attachment_image(
+							$growmodo_thumb,
+							'growmodo-card',
+							false,
+							array(
+								'alt'     => '',
+								'loading' => 'lazy',
+							)
+						);
+						?>
+						<span class="screen-reader-text">
+							<?php
+							printf(
+								/* translators: %s: image number within the gallery. */
+								esc_html__( 'Show image %s', 'growmodo' ),
+								esc_html( number_format_i18n( $growmodo_index + 1 ) )
+							);
+							?>
+						</span>
+					</button>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	<?php endif; ?>
+
 	<div
 		class="carousel__track <?php echo 2 === $growmodo_per_view ? 'carousel__track--two' : ''; ?>"
 		<?php echo '' === $growmodo_track_id ? '' : 'id="' . esc_attr( $growmodo_track_id ) . '"'; ?>

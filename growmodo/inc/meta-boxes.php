@@ -37,6 +37,7 @@ function growmodo_meta_fields() {
 			'growmodo_year'     => array( __( 'Year built', 'growmodo' ), 'number' ),
 			'growmodo_type'     => array( __( 'Property type', 'growmodo' ), 'select', 'growmodo_property_types' ),
 			'growmodo_location' => array( __( 'Location', 'growmodo' ), 'text' ),
+			'growmodo_features' => array( __( 'Key features and amenities (one per line)', 'growmodo' ), 'textarea' ),
 		),
 		'testimonial' => array(
 			'growmodo_rating'          => array( __( 'Rating (1–5)', 'growmodo' ), 'number' ),
@@ -136,6 +137,12 @@ function growmodo_render_meta_box( $post ) {
 			}
 
 			echo '</select>';
+		} elseif ( 'textarea' === $field[1] ) {
+			printf(
+				'<textarea id="%1$s" name="%1$s" rows="6" class="widefat">%2$s</textarea>',
+				esc_attr( $key ),
+				esc_textarea( $value )
+			);
 		} else {
 			printf(
 				'<input type="%1$s" id="%2$s" name="%2$s" value="%3$s" class="widefat" />',
@@ -184,6 +191,8 @@ function growmodo_save_meta( $post_id ) {
 
 		if ( 'number' === $field[1] ) {
 			$value = absint( wp_unslash( $_POST[ $key ] ) );
+		} elseif ( 'textarea' === $field[1] ) {
+			$value = sanitize_textarea_field( wp_unslash( $_POST[ $key ] ) );
 		} else {
 			$value = sanitize_text_field( wp_unslash( $_POST[ $key ] ) );
 

@@ -16,7 +16,7 @@ $growmodo_properties = new WP_Query(
 	array(
 		'post_type'      => 'property',
 		'posts_per_page' => growmodo_carousel_count(),
-		'orderby'        => growmodo_property_order(),
+		'orderby'        => growmodo_curated_order(),
 	)
 );
 

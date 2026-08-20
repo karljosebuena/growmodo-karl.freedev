@@ -26,7 +26,7 @@ if ( empty( $args['item'] ) ) {
 
 $growmodo_client = $args['item'];
 ?>
-<li class="card client">
+<article class="card client">
 	<div class="client__head">
 		<div>
 			<p class="client__since"><?php echo esc_html( $growmodo_client['since'] ); ?></p>
@@ -84,4 +84,4 @@ $growmodo_client = $args['item'];
 		</p>
 		<p class="card__text"><?php echo esc_html( $growmodo_client['quote'] ); ?></p>
 	</div>
-</li>
+</article>
