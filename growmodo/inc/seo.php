@@ -14,6 +14,46 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * The site's own description: its tagline, or the theme's default sentence.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+function growmodo_site_description() {
+	$description = get_bloginfo( 'description' );
+
+	if ( '' !== $description ) {
+		return $description;
+	}
+
+	return __( 'Discover your dream property with Estatein. Browse curated homes and investments, and speak to advisers who know the market.', 'growmodo' );
+}
+
+/**
+ * Descriptions for the pages whose copy lives in a template, not the editor.
+ *
+ * About Us, Services and Contact render fixed structural content, so there is
+ * no excerpt or post content for a description to come from and they would
+ * otherwise ship with none at all. Each line below is that page's own opening
+ * copy, trimmed — keyed by slug, because the slug is what selects the template.
+ *
+ * @since 1.0.0
+ *
+ * @return array<string, string> Slug => description.
+ */
+function growmodo_page_descriptions() {
+	return apply_filters(
+		'growmodo_page_descriptions',
+		array(
+			'about-us' => __( 'Our story is one of continuous growth: a small team with big dreams that became a platform trusted by countless clients. Meet the people behind Estatein.', 'growmodo' ),
+			'services' => __( 'Property valuation, marketing and negotiation, hands-off property management, and investment analysis — each service designed around your plans.', 'growmodo' ),
+			'contact'  => __( 'Talk to Estatein about buying, selling, renting or managing a property. Send us a message, or visit one of our offices.', 'growmodo' ),
+		)
+	);
+}
+
+/**
  * Build a plain-text description for the current request.
  *
  * @since 1.0.0
@@ -22,27 +62,35 @@ defined( 'ABSPATH' ) || exit;
  */
 function growmodo_meta_description() {
 	if ( is_front_page() ) {
-		$description = get_bloginfo( 'description' );
+		return growmodo_site_description();
+	}
 
-		if ( '' === $description ) {
-			$description = __( 'Discover your dream property with Estatein. Browse curated homes and investments, and speak to advisers who know the market.', 'growmodo' );
-		}
-
-		return $description;
+	if ( is_home() ) {
+		return __( 'Guides, market notes and buying advice from the Estatein team.', 'growmodo' );
 	}
 
 	if ( is_singular() ) {
 		$post = get_post();
 
-		$description = has_excerpt( $post )
-			? get_the_excerpt( $post )
-			: wp_strip_all_tags( strip_shortcodes( $post->post_content ) );
+		if ( has_excerpt( $post ) ) {
+			return wp_trim_words( get_the_excerpt( $post ), 30, '' );
+		}
 
-		return wp_trim_words( $description, 30, '' );
+		$content = trim( wp_strip_all_tags( strip_shortcodes( $post->post_content ) ) );
+
+		if ( '' !== $content ) {
+			return wp_trim_words( $content, 30, '' );
+		}
+
+		$descriptions = growmodo_page_descriptions();
+
+		return isset( $descriptions[ $post->post_name ] )
+			? $descriptions[ $post->post_name ]
+			: growmodo_site_description();
 	}
 
 	if ( is_post_type_archive( 'property' ) ) {
-		return __( 'Browse every Estatein listing. Filter by property type, bedrooms, bathrooms, and budget to find the home that matches your plans.', 'growmodo' );
+		return __( 'Browse every Estatein listing. Filter by location, property type, price, floor area and build year to find the home that matches your plans.', 'growmodo' );
 	}
 
 	if ( is_search() ) {
