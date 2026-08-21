@@ -17,13 +17,13 @@
  7. WordPress will then import each of the posts, pages, comments, categories, etc.
     contained in this file into your site.
 -->
-<!-- generator="WordPress/7.0.4" created="2026-08-20 21:04" -->
+<!-- generator="WordPress/7.0.4" created="2026-08-21 08:30" -->
 <rss version="2.0" xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/">
   <channel>
 <title>Estatein</title>
 <link>http://localhost:8080</link>
 <description/>
-<pubDate>Thu, 20 Aug 2026 21:04:55 +0000</pubDate>
+<pubDate>Fri, 21 Aug 2026 08:30:29 +0000</pubDate>
 <language>en-US</language>
 <wp:wxr_version>1.2</wp:wxr_version>
 <wp:base_site_url>http://localhost:8080</wp:base_site_url>
@@ -419,10 +419,6 @@ The lower level holds a media room, a study and direct garage access. Landscaped
     <wp:meta_value><![CDATA[Malibu, California]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>_thumbnail_id</wp:meta_key>
-    <wp:meta_value><![CDATA[23]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
     <wp:meta_key>growmodo_size</wp:meta_key>
     <wp:meta_value><![CDATA[4200]]></wp:meta_value>
   </wp:postmeta>
@@ -437,6 +433,10 @@ Gourmet kitchen with top-of-the-line appliances
 Private beach access for morning strolls and sunset views
 Master suite with a spa-inspired bathroom and ocean-facing balcony
 Private garage and ample storage space]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[68]]></wp:meta_value>
   </wp:postmeta>
 </item>
 <item>
@@ -485,10 +485,6 @@ Building amenities include a residents gym, a roof terrace and twenty-four-hour 
     <wp:meta_value><![CDATA[New York City]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>_thumbnail_id</wp:meta_key>
-    <wp:meta_value><![CDATA[24]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
     <wp:meta_key>growmodo_size</wp:meta_key>
     <wp:meta_value><![CDATA[1150]]></wp:meta_value>
   </wp:postmeta>
@@ -503,6 +499,10 @@ Concierge desk and secure parcel room
 Residents' gym and roof terrace
 Underfloor heating throughout
 Secure basement parking space]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[69]]></wp:meta_value>
   </wp:postmeta>
 </item>
 <item>
@@ -551,10 +551,6 @@ The top floor is a self-contained suite suitable for guests or a home office. Re
     <wp:meta_value><![CDATA[Aspen, Colorado]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>_thumbnail_id</wp:meta_key>
-    <wp:meta_value><![CDATA[25]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
     <wp:meta_key>_edit_last</wp:meta_key>
     <wp:meta_value><![CDATA[1]]></wp:meta_value>
   </wp:postmeta>
@@ -573,6 +569,10 @@ Reclaimed oak floors and exposed beams
 Walled kitchen garden with a greenhouse
 Detached studio suitable for working from home
 Off-street parking for three cars]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[70]]></wp:meta_value>
   </wp:postmeta>
 </item>
 <item>
@@ -612,7 +612,7 @@ Off-street parking for three cars]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_thumbnail_id</wp:meta_key>
-    <wp:meta_value><![CDATA[26]]></wp:meta_value>
+    <wp:meta_value><![CDATA[71]]></wp:meta_value>
   </wp:postmeta>
 </item>
 <item>
@@ -652,7 +652,7 @@ Off-street parking for three cars]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_thumbnail_id</wp:meta_key>
-    <wp:meta_value><![CDATA[27]]></wp:meta_value>
+    <wp:meta_value><![CDATA[72]]></wp:meta_value>
   </wp:postmeta>
 </item>
 <item>
@@ -702,171 +702,6 @@ Off-street parking for three cars]]></wp:meta_value>
   <wp:post_type>faq</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
-</item>
-<item>
-  <title><![CDATA[seaside-serenity-villa]]></title>
-  <link>http://localhost:8080/properties/seaside-serenity-villa/seaside-serenity-villa-2/</link>
-  <pubDate>Thu, 20 Aug 2026 08:59:38 +0000</pubDate>
-  <dc:creator/>
-  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/property-1.webp</guid>
-  <description/>
-  <content:encoded><![CDATA[]]></content:encoded>
-  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-  <wp:post_id>23</wp:post_id>
-  <wp:post_date>2026-08-20 08:59:38</wp:post_date>
-  <wp:post_date_gmt>2026-08-20 08:59:38</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:59:38</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:59:38</wp:post_modified_gmt>
-  <wp:comment_status>open</wp:comment_status>
-  <wp:ping_status>closed</wp:ping_status>
-  <wp:post_name>seaside-serenity-villa-2</wp:post_name>
-  <wp:status>inherit</wp:status>
-  <wp:post_parent>16</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
-  <wp:post_type>attachment</wp:post_type>
-  <wp:post_password/>
-  <wp:is_sticky>0</wp:is_sticky>
-  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/property-1.webp</wp:attachment_url>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attached_file</wp:meta_key>
-    <wp:meta_value><![CDATA[2026/08/property-1.webp]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
-    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:434;s:6:"height";i:319;s:4:"file";s:23:"2026/08/property-1.webp";s:8:"filesize";i:24372;s:5:"sizes";a:3:{s:6:"medium";a:5:{s:4:"file";s:23:"property-1-300x221.webp";s:5:"width";i:300;s:6:"height";i:221;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:13826;}s:9:"thumbnail";a:5:{s:4:"file";s:23:"property-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5532;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:21:"property-1-88x88.webp";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2448;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
-  </wp:postmeta>
-</item>
-<item>
-  <title><![CDATA[metropolitan-haven]]></title>
-  <link>http://localhost:8080/properties/metropolitan-haven/metropolitan-haven-2/</link>
-  <pubDate>Thu, 20 Aug 2026 08:59:38 +0000</pubDate>
-  <dc:creator/>
-  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/property-2.webp</guid>
-  <description/>
-  <content:encoded><![CDATA[]]></content:encoded>
-  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-  <wp:post_id>24</wp:post_id>
-  <wp:post_date>2026-08-20 08:59:38</wp:post_date>
-  <wp:post_date_gmt>2026-08-20 08:59:38</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:59:38</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:59:38</wp:post_modified_gmt>
-  <wp:comment_status>open</wp:comment_status>
-  <wp:ping_status>closed</wp:ping_status>
-  <wp:post_name>metropolitan-haven-2</wp:post_name>
-  <wp:status>inherit</wp:status>
-  <wp:post_parent>17</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
-  <wp:post_type>attachment</wp:post_type>
-  <wp:post_password/>
-  <wp:is_sticky>0</wp:is_sticky>
-  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/property-2.webp</wp:attachment_url>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attached_file</wp:meta_key>
-    <wp:meta_value><![CDATA[2026/08/property-2.webp]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
-    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:434;s:6:"height";i:319;s:4:"file";s:23:"2026/08/property-2.webp";s:8:"filesize";i:20648;s:5:"sizes";a:3:{s:6:"medium";a:5:{s:4:"file";s:23:"property-2-300x221.webp";s:5:"width";i:300;s:6:"height";i:221;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:12290;}s:9:"thumbnail";a:5:{s:4:"file";s:23:"property-2-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5466;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:21:"property-2-88x88.webp";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2300;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
-  </wp:postmeta>
-</item>
-<item>
-  <title><![CDATA[rustic-retreat-cottage]]></title>
-  <link>http://localhost:8080/properties/rustic-retreat-cottage/rustic-retreat-cottage-2/</link>
-  <pubDate>Thu, 20 Aug 2026 08:59:39 +0000</pubDate>
-  <dc:creator/>
-  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/property-3.webp</guid>
-  <description/>
-  <content:encoded><![CDATA[]]></content:encoded>
-  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-  <wp:post_id>25</wp:post_id>
-  <wp:post_date>2026-08-20 08:59:39</wp:post_date>
-  <wp:post_date_gmt>2026-08-20 08:59:39</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:59:39</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:59:39</wp:post_modified_gmt>
-  <wp:comment_status>open</wp:comment_status>
-  <wp:ping_status>closed</wp:ping_status>
-  <wp:post_name>rustic-retreat-cottage-2</wp:post_name>
-  <wp:status>inherit</wp:status>
-  <wp:post_parent>18</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
-  <wp:post_type>attachment</wp:post_type>
-  <wp:post_password/>
-  <wp:is_sticky>0</wp:is_sticky>
-  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/property-3.webp</wp:attachment_url>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attached_file</wp:meta_key>
-    <wp:meta_value><![CDATA[2026/08/property-3.webp]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
-    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:434;s:6:"height";i:319;s:4:"file";s:23:"2026/08/property-3.webp";s:8:"filesize";i:21052;s:5:"sizes";a:3:{s:6:"medium";a:5:{s:4:"file";s:23:"property-3-300x221.webp";s:5:"width";i:300;s:6:"height";i:221;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:12344;}s:9:"thumbnail";a:5:{s:4:"file";s:23:"property-3-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:6224;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:21:"property-3-88x88.webp";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2808;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
-  </wp:postmeta>
-</item>
-<item>
-  <title><![CDATA[exceptional-service avatar]]></title>
-  <link>http://localhost:8080/?attachment_id=26</link>
-  <pubDate>Thu, 20 Aug 2026 08:59:39 +0000</pubDate>
-  <dc:creator/>
-  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/avatar-1.webp</guid>
-  <description/>
-  <content:encoded><![CDATA[]]></content:encoded>
-  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-  <wp:post_id>26</wp:post_id>
-  <wp:post_date>2026-08-20 08:59:39</wp:post_date>
-  <wp:post_date_gmt>2026-08-20 08:59:39</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:59:39</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:59:39</wp:post_modified_gmt>
-  <wp:comment_status>open</wp:comment_status>
-  <wp:ping_status>closed</wp:ping_status>
-  <wp:post_name>exceptional-service-avatar</wp:post_name>
-  <wp:status>inherit</wp:status>
-  <wp:post_parent>19</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
-  <wp:post_type>attachment</wp:post_type>
-  <wp:post_password/>
-  <wp:is_sticky>0</wp:is_sticky>
-  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/avatar-1.webp</wp:attachment_url>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attached_file</wp:meta_key>
-    <wp:meta_value><![CDATA[2026/08/avatar-1.webp]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
-    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:50;s:6:"height";i:50;s:4:"file";s:21:"2026/08/avatar-1.webp";s:8:"filesize";i:832;s:5:"sizes";a:0:{}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
-  </wp:postmeta>
-</item>
-<item>
-  <title><![CDATA[efficient-and-reliable avatar]]></title>
-  <link>http://localhost:8080/?attachment_id=27</link>
-  <pubDate>Thu, 20 Aug 2026 08:59:40 +0000</pubDate>
-  <dc:creator/>
-  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/avatar-2.webp</guid>
-  <description/>
-  <content:encoded><![CDATA[]]></content:encoded>
-  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-  <wp:post_id>27</wp:post_id>
-  <wp:post_date>2026-08-20 08:59:40</wp:post_date>
-  <wp:post_date_gmt>2026-08-20 08:59:40</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 08:59:40</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 08:59:40</wp:post_modified_gmt>
-  <wp:comment_status>open</wp:comment_status>
-  <wp:ping_status>closed</wp:ping_status>
-  <wp:post_name>efficient-and-reliable-avatar</wp:post_name>
-  <wp:status>inherit</wp:status>
-  <wp:post_parent>20</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
-  <wp:post_type>attachment</wp:post_type>
-  <wp:post_password/>
-  <wp:is_sticky>0</wp:is_sticky>
-  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/avatar-2.webp</wp:attachment_url>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attached_file</wp:meta_key>
-    <wp:meta_value><![CDATA[2026/08/avatar-2.webp]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
-    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:50;s:6:"height";i:50;s:4:"file";s:21:"2026/08/avatar-2.webp";s:8:"filesize";i:860;s:5:"sizes";a:0:{}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
-  </wp:postmeta>
 </item>
 <item>
   <title><![CDATA[Terms & Conditions]]></title>
@@ -1076,40 +911,7 @@ Off-street parking for three cars]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_thumbnail_id</wp:meta_key>
-    <wp:meta_value><![CDATA[43]]></wp:meta_value>
-  </wp:postmeta>
-</item>
-<item>
-  <title><![CDATA[John Mans]]></title>
-  <link>http://localhost:8080/?attachment_id=43</link>
-  <pubDate>Thu, 20 Aug 2026 12:44:53 +0000</pubDate>
-  <dc:creator/>
-  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/avatar-3.webp</guid>
-  <description/>
-  <content:encoded><![CDATA[]]></content:encoded>
-  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-  <wp:post_id>43</wp:post_id>
-  <wp:post_date>2026-08-20 12:44:53</wp:post_date>
-  <wp:post_date_gmt>2026-08-20 12:44:53</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 12:44:53</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 12:44:53</wp:post_modified_gmt>
-  <wp:comment_status>open</wp:comment_status>
-  <wp:ping_status>closed</wp:ping_status>
-  <wp:post_name>john-mans</wp:post_name>
-  <wp:status>inherit</wp:status>
-  <wp:post_parent>42</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
-  <wp:post_type>attachment</wp:post_type>
-  <wp:post_password/>
-  <wp:is_sticky>0</wp:is_sticky>
-  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/avatar-3.webp</wp:attachment_url>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attached_file</wp:meta_key>
-    <wp:meta_value><![CDATA[2026/08/avatar-3.webp]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
-    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:50;s:6:"height";i:50;s:4:"file";s:21:"2026/08/avatar-3.webp";s:8:"filesize";i:534;s:5:"sizes";a:0:{}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+    <wp:meta_value><![CDATA[73]]></wp:meta_value>
   </wp:postmeta>
 </item>
 <item>
@@ -1156,10 +958,6 @@ Off-street parking for three cars]]></wp:meta_value>
     <wp:meta_value><![CDATA[Chicago, Illinois]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>_thumbnail_id</wp:meta_key>
-    <wp:meta_value><![CDATA[]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
     <wp:meta_key>_edit_last</wp:meta_key>
     <wp:meta_value><![CDATA[1]]></wp:meta_value>
   </wp:postmeta>
@@ -1178,6 +976,10 @@ Private lift access direct to the apartment
 Chef's kitchen with integrated appliances
 Climate control zoned per room
 Two secure parking bays and a storage cage]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[69]]></wp:meta_value>
   </wp:postmeta>
 </item>
 <item>
@@ -1224,10 +1026,6 @@ Two secure parking bays and a storage cage]]></wp:meta_value>
     <wp:meta_value><![CDATA[Portland, Oregon]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>_thumbnail_id</wp:meta_key>
-    <wp:meta_value><![CDATA[]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
     <wp:meta_key>_edit_last</wp:meta_key>
     <wp:meta_value><![CDATA[1]]></wp:meta_value>
   </wp:postmeta>
@@ -1246,6 +1044,10 @@ Open-plan kitchen and dining room across the rear
 Utility room and downstairs cloakroom
 Loft converted to a fourth bedroom with an en suite
 Resident permit parking]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[68]]></wp:meta_value>
   </wp:postmeta>
 </item>
 <item>
@@ -1292,10 +1094,6 @@ Resident permit parking]]></wp:meta_value>
     <wp:meta_value><![CDATA[Burlington, Vermont]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>_thumbnail_id</wp:meta_key>
-    <wp:meta_value><![CDATA[]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
     <wp:meta_key>_edit_last</wp:meta_key>
     <wp:meta_value><![CDATA[1]]></wp:meta_value>
   </wp:postmeta>
@@ -1314,6 +1112,10 @@ Veranda overlooking the lake
 Wood-clad interior with a vaulted living room
 Boat mooring included
 Detached garage and workshop]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_thumbnail_id</wp:meta_key>
+    <wp:meta_value><![CDATA[70]]></wp:meta_value>
   </wp:postmeta>
 </item>
 <item>
@@ -1353,7 +1155,7 @@ Detached garage and workshop]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_thumbnail_id</wp:meta_key>
-    <wp:meta_value><![CDATA[]]></wp:meta_value>
+    <wp:meta_value><![CDATA[72]]></wp:meta_value>
   </wp:postmeta>
 </item>
 <item>
@@ -1393,7 +1195,7 @@ Detached garage and workshop]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_thumbnail_id</wp:meta_key>
-    <wp:meta_value><![CDATA[]]></wp:meta_value>
+    <wp:meta_value><![CDATA[71]]></wp:meta_value>
   </wp:postmeta>
 </item>
 <item>
@@ -1433,7 +1235,7 @@ Detached garage and workshop]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_thumbnail_id</wp:meta_key>
-    <wp:meta_value><![CDATA[]]></wp:meta_value>
+    <wp:meta_value><![CDATA[73]]></wp:meta_value>
   </wp:postmeta>
 </item>
 <item>
@@ -1533,80 +1335,6 @@ Detached garage and workshop]]></wp:meta_value>
   <wp:is_sticky>0</wp:is_sticky>
 </item>
 <item>
-  <title><![CDATA[Seaside Serenity Villa pool terrace]]></title>
-  <link>http://localhost:8080/properties/seaside-serenity-villa/seaside-serenity-villa-pool-terrace/</link>
-  <pubDate>Thu, 20 Aug 2026 17:21:22 +0000</pubDate>
-  <dc:creator/>
-  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/villa-pool.webp</guid>
-  <description/>
-  <content:encoded><![CDATA[]]></content:encoded>
-  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-  <wp:post_id>62</wp:post_id>
-  <wp:post_date>2026-08-20 17:21:22</wp:post_date>
-  <wp:post_date_gmt>2026-08-20 17:21:22</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 17:21:22</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 17:21:22</wp:post_modified_gmt>
-  <wp:comment_status>open</wp:comment_status>
-  <wp:ping_status>closed</wp:ping_status>
-  <wp:post_name>seaside-serenity-villa-pool-terrace</wp:post_name>
-  <wp:status>inherit</wp:status>
-  <wp:post_parent>16</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
-  <wp:post_type>attachment</wp:post_type>
-  <wp:post_password/>
-  <wp:is_sticky>0</wp:is_sticky>
-  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/villa-pool.webp</wp:attachment_url>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attached_file</wp:meta_key>
-    <wp:meta_value><![CDATA[2026/08/villa-pool.webp]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
-    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:733;s:6:"height";i:583;s:4:"file";s:23:"2026/08/villa-pool.webp";s:8:"filesize";i:53286;s:5:"sizes";a:4:{s:6:"medium";a:5:{s:4:"file";s:23:"villa-pool-300x239.webp";s:5:"width";i:300;s:6:"height";i:239;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:15800;}s:9:"thumbnail";a:5:{s:4:"file";s:23:"villa-pool-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5980;}s:13:"growmodo-card";a:5:{s:4:"file";s:23:"villa-pool-640x480.webp";s:5:"width";i:640;s:6:"height";i:480;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:43722;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:21:"villa-pool-88x88.webp";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2884;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attachment_image_alt</wp:meta_key>
-    <wp:meta_value><![CDATA[Pool terrace and rear elevation of the villa]]></wp:meta_value>
-  </wp:postmeta>
-</item>
-<item>
-  <title><![CDATA[Seaside Serenity Villa living room]]></title>
-  <link>http://localhost:8080/properties/seaside-serenity-villa/seaside-serenity-villa-living-room/</link>
-  <pubDate>Thu, 20 Aug 2026 17:21:23 +0000</pubDate>
-  <dc:creator/>
-  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/villa-living.webp</guid>
-  <description/>
-  <content:encoded><![CDATA[]]></content:encoded>
-  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-  <wp:post_id>63</wp:post_id>
-  <wp:post_date>2026-08-20 17:21:23</wp:post_date>
-  <wp:post_date_gmt>2026-08-20 17:21:23</wp:post_date_gmt>
-  <wp:post_modified>2026-08-20 17:21:23</wp:post_modified>
-  <wp:post_modified_gmt>2026-08-20 17:21:23</wp:post_modified_gmt>
-  <wp:comment_status>open</wp:comment_status>
-  <wp:ping_status>closed</wp:ping_status>
-  <wp:post_name>seaside-serenity-villa-living-room</wp:post_name>
-  <wp:status>inherit</wp:status>
-  <wp:post_parent>16</wp:post_parent>
-  <wp:menu_order>0</wp:menu_order>
-  <wp:post_type>attachment</wp:post_type>
-  <wp:post_password/>
-  <wp:is_sticky>0</wp:is_sticky>
-  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/villa-living.webp</wp:attachment_url>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attached_file</wp:meta_key>
-    <wp:meta_value><![CDATA[2026/08/villa-living.webp]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
-    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:733;s:6:"height";i:583;s:4:"file";s:25:"2026/08/villa-living.webp";s:8:"filesize";i:37018;s:5:"sizes";a:4:{s:6:"medium";a:5:{s:4:"file";s:25:"villa-living-300x239.webp";s:5:"width";i:300;s:6:"height";i:239;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:11594;}s:9:"thumbnail";a:5:{s:4:"file";s:25:"villa-living-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:4636;}s:13:"growmodo-card";a:5:{s:4:"file";s:25:"villa-living-640x480.webp";s:5:"width";i:640;s:6:"height";i:480;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:29618;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:23:"villa-living-88x88.webp";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2140;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
-  </wp:postmeta>
-  <wp:postmeta>
-    <wp:meta_key>_wp_attachment_image_alt</wp:meta_key>
-    <wp:meta_value><![CDATA[Open-plan living and dining room with floor-to-ceiling windows]]></wp:meta_value>
-  </wp:postmeta>
-</item>
-<item>
   <title><![CDATA[]]></title>
   <link>http://localhost:8080/66/</link>
   <pubDate>Thu, 20 Aug 2026 17:52:23 +0000</pubDate>
@@ -1661,6 +1389,270 @@ Detached garage and workshop]]></wp:meta_value>
   <wp:postmeta>
     <wp:meta_key>_menu_item_url</wp:meta_key>
     <wp:meta_value><![CDATA[]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[property-1]]></title>
+  <link>http://localhost:8080/properties/seaside-serenity-villa/property-1/</link>
+  <pubDate>Fri, 21 Aug 2026 08:29:36 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/property-1.jpg</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>68</wp:post_id>
+  <wp:post_date>2026-08-21 08:29:36</wp:post_date>
+  <wp:post_date_gmt>2026-08-21 08:29:36</wp:post_date_gmt>
+  <wp:post_modified>2026-08-21 08:29:36</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-21 08:29:36</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>property-1</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>16</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/property-1.jpg</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/property-1.jpg]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:434;s:6:"height";i:319;s:4:"file";s:22:"2026/08/property-1.jpg";s:8:"filesize";i:37408;s:5:"sizes";a:3:{s:6:"medium";a:5:{s:4:"file";s:22:"property-1-300x221.jpg";s:5:"width";i:300;s:6:"height";i:221;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:16271;}s:9:"thumbnail";a:5:{s:4:"file";s:22:"property-1-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:6648;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:20:"property-1-88x88.jpg";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:3118;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[property-2]]></title>
+  <link>http://localhost:8080/properties/metropolitan-haven/property-2/</link>
+  <pubDate>Fri, 21 Aug 2026 08:29:36 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/property-2.jpg</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>69</wp:post_id>
+  <wp:post_date>2026-08-21 08:29:36</wp:post_date>
+  <wp:post_date_gmt>2026-08-21 08:29:36</wp:post_date_gmt>
+  <wp:post_modified>2026-08-21 08:29:36</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-21 08:29:36</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>property-2</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>17</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/property-2.jpg</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/property-2.jpg]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:434;s:6:"height";i:319;s:4:"file";s:22:"2026/08/property-2.jpg";s:8:"filesize";i:33087;s:5:"sizes";a:3:{s:6:"medium";a:5:{s:4:"file";s:22:"property-2-300x221.jpg";s:5:"width";i:300;s:6:"height";i:221;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:14555;}s:9:"thumbnail";a:5:{s:4:"file";s:22:"property-2-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:6215;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:20:"property-2-88x88.jpg";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:2856;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[property-3]]></title>
+  <link>http://localhost:8080/properties/rustic-retreat-cottage/property-3/</link>
+  <pubDate>Fri, 21 Aug 2026 08:29:37 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/property-3.jpg</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>70</wp:post_id>
+  <wp:post_date>2026-08-21 08:29:37</wp:post_date>
+  <wp:post_date_gmt>2026-08-21 08:29:37</wp:post_date_gmt>
+  <wp:post_modified>2026-08-21 08:29:37</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-21 08:29:37</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>property-3</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>18</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/property-3.jpg</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/property-3.jpg]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:434;s:6:"height";i:319;s:4:"file";s:22:"2026/08/property-3.jpg";s:8:"filesize";i:33100;s:5:"sizes";a:3:{s:6:"medium";a:5:{s:4:"file";s:22:"property-3-300x221.jpg";s:5:"width";i:300;s:6:"height";i:221;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:15173;}s:9:"thumbnail";a:5:{s:4:"file";s:22:"property-3-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:6873;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:20:"property-3-88x88.jpg";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:3239;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[avatar-1]]></title>
+  <link>http://localhost:8080/?attachment_id=71</link>
+  <pubDate>Fri, 21 Aug 2026 08:29:38 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/avatar-1.jpg</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>71</wp:post_id>
+  <wp:post_date>2026-08-21 08:29:38</wp:post_date>
+  <wp:post_date_gmt>2026-08-21 08:29:38</wp:post_date_gmt>
+  <wp:post_modified>2026-08-21 08:29:38</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-21 08:29:38</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>avatar-1</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>19</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/avatar-1.jpg</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/avatar-1.jpg]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:50;s:6:"height";i:50;s:4:"file";s:20:"2026/08/avatar-1.jpg";s:8:"filesize";i:1624;s:5:"sizes";a:0:{}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[avatar-2]]></title>
+  <link>http://localhost:8080/?attachment_id=72</link>
+  <pubDate>Fri, 21 Aug 2026 08:29:39 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/avatar-2.jpg</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>72</wp:post_id>
+  <wp:post_date>2026-08-21 08:29:39</wp:post_date>
+  <wp:post_date_gmt>2026-08-21 08:29:39</wp:post_date_gmt>
+  <wp:post_modified>2026-08-21 08:29:39</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-21 08:29:39</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>avatar-2</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>20</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/avatar-2.jpg</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/avatar-2.jpg]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:50;s:6:"height";i:50;s:4:"file";s:20:"2026/08/avatar-2.jpg";s:8:"filesize";i:1700;s:5:"sizes";a:0:{}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[avatar-3]]></title>
+  <link>http://localhost:8080/?attachment_id=73</link>
+  <pubDate>Fri, 21 Aug 2026 08:29:39 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/avatar-3.jpg</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>73</wp:post_id>
+  <wp:post_date>2026-08-21 08:29:39</wp:post_date>
+  <wp:post_date_gmt>2026-08-21 08:29:39</wp:post_date_gmt>
+  <wp:post_modified>2026-08-21 08:29:39</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-21 08:29:39</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>avatar-3</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>42</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/avatar-3.jpg</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/avatar-3.jpg]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:50;s:6:"height";i:50;s:4:"file";s:20:"2026/08/avatar-3.jpg";s:8:"filesize";i:1287;s:5:"sizes";a:0:{}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[villa-living]]></title>
+  <link>http://localhost:8080/properties/seaside-serenity-villa/villa-living/</link>
+  <pubDate>Fri, 21 Aug 2026 08:29:40 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/villa-living.jpg</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>74</wp:post_id>
+  <wp:post_date>2026-08-21 08:29:40</wp:post_date>
+  <wp:post_date_gmt>2026-08-21 08:29:40</wp:post_date_gmt>
+  <wp:post_modified>2026-08-21 08:29:40</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-21 08:29:40</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>villa-living</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>16</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/villa-living.jpg</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/villa-living.jpg]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:733;s:6:"height";i:583;s:4:"file";s:24:"2026/08/villa-living.jpg";s:8:"filesize";i:70861;s:5:"sizes";a:4:{s:6:"medium";a:5:{s:4:"file";s:24:"villa-living-300x239.jpg";s:5:"width";i:300;s:6:"height";i:239;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:14424;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"villa-living-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:5822;}s:13:"growmodo-card";a:5:{s:4:"file";s:24:"villa-living-640x480.jpg";s:5:"width";i:640;s:6:"height";i:480;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:43630;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:22:"villa-living-88x88.jpg";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:2778;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+  </wp:postmeta>
+</item>
+<item>
+  <title><![CDATA[villa-pool]]></title>
+  <link>http://localhost:8080/properties/seaside-serenity-villa/villa-pool/</link>
+  <pubDate>Fri, 21 Aug 2026 08:29:41 +0000</pubDate>
+  <dc:creator/>
+  <guid isPermaLink="false">http://localhost:8080/wp-content/uploads/2026/08/villa-pool.jpg</guid>
+  <description/>
+  <content:encoded><![CDATA[]]></content:encoded>
+  <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+  <wp:post_id>75</wp:post_id>
+  <wp:post_date>2026-08-21 08:29:41</wp:post_date>
+  <wp:post_date_gmt>2026-08-21 08:29:41</wp:post_date_gmt>
+  <wp:post_modified>2026-08-21 08:29:41</wp:post_modified>
+  <wp:post_modified_gmt>2026-08-21 08:29:41</wp:post_modified_gmt>
+  <wp:comment_status>open</wp:comment_status>
+  <wp:ping_status>closed</wp:ping_status>
+  <wp:post_name>villa-pool</wp:post_name>
+  <wp:status>inherit</wp:status>
+  <wp:post_parent>16</wp:post_parent>
+  <wp:menu_order>0</wp:menu_order>
+  <wp:post_type>attachment</wp:post_type>
+  <wp:post_password/>
+  <wp:is_sticky>0</wp:is_sticky>
+  <wp:attachment_url>http://localhost:8080/wp-content/uploads/2026/08/villa-pool.jpg</wp:attachment_url>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attached_file</wp:meta_key>
+    <wp:meta_value><![CDATA[2026/08/villa-pool.jpg]]></wp:meta_value>
+  </wp:postmeta>
+  <wp:postmeta>
+    <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
+    <wp:meta_value><![CDATA[a:6:{s:5:"width";i:733;s:6:"height";i:583;s:4:"file";s:22:"2026/08/villa-pool.jpg";s:8:"filesize";i:90005;s:5:"sizes";a:4:{s:6:"medium";a:5:{s:4:"file";s:22:"villa-pool-300x239.jpg";s:5:"width";i:300;s:6:"height";i:239;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:18632;}s:9:"thumbnail";a:5:{s:4:"file";s:22:"villa-pool-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:7261;}s:13:"growmodo-card";a:5:{s:4:"file";s:22:"villa-pool-640x480.jpg";s:5:"width";i:640;s:6:"height";i:480;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:55387;}s:15:"growmodo-avatar";a:5:{s:4:"file";s:20:"villa-pool-88x88.jpg";s:5:"width";i:88;s:6:"height";i:88;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:3391;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
   </wp:postmeta>
 </item>
   </channel>

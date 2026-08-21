@@ -8,7 +8,7 @@ bottom, it takes about 15 minutes.
 You need, from the repo root:
 
 - `growmodo-theme.zip` — build it from the repo root with `zip -r growmodo-theme.zip growmodo`
-  (380KB). The `growmodo/` folder has to be *inside* the zip, not zipped from within, or
+  (590KB). The `growmodo/` folder has to be *inside* the zip, not zipped from within, or
   WordPress installs the theme under the zip's name instead of its own. It is not committed,
   since a zip in Git is a binary that changes on every build
 - `deploy/growmodo-content.xml` — the demo content export: 6 properties, 6 testimonials,
@@ -16,9 +16,12 @@ You need, from the repo root:
 
 ## 1. Host and WordPress
 
-1. InfinityFree → create a site on a free subdomain → **enable free SSL**.
-2. Control panel → Softaculous → **install WordPress**. Note the wp-admin credentials.
-3. Control panel → **set PHP to 8.3** (the theme requires 8.1+).
+1. InfinityFree → create a site on a free subdomain. Free subdomains carry SSL by default,
+   so there is no certificate to order.
+2. Script Installer (Softaculous) → **install WordPress** with protocol `https://`, an
+   empty *In Directory* field, and no bundled plugins. Note the wp-admin credentials.
+3. PHP version is **not selectable** on the free plan, and does not need to be — the theme
+   uses no version-specific syntax.
 
 ## 2. Theme
 
@@ -62,7 +65,7 @@ Two options.
 Create these, matching the fields exactly:
 
 **Properties** (Properties → Add New; fill the *Details* box in the sidebar, set a featured
-image from `growmodo/assets/img/property-N.webp`, and write a one-line excerpt):
+image from `growmodo/assets/img/property-N.jpg`, and write a one-line excerpt):
 
 | Title | Beds | Baths | Price | Type | Location | Size | Year |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -74,10 +77,10 @@ image from `growmodo/assets/img/property-N.webp`, and write a one-line excerpt):
 | Lakeside Bungalow | 2 | 1 | 415000 | Bungalow | Burlington, Vermont | 1250 | 1998 |
 
 Key features go one per line in the *Key features* textarea. Uploading more images to a
-listing gives it a gallery carousel — `villa-living.webp` and `villa-pool.webp` are the two
+listing gives it a gallery carousel — `villa-living.jpg` and `villa-pool.jpg` are the two
 spare interiors.
 
-**Testimonials** — rating 5, a client name and location, avatar from `avatar-N.webp`.
+**Testimonials** — rating 5, a client name and location, avatar from `avatar-N.jpg`.
 
 **FAQs** — question as the title, answer as the content.
 
