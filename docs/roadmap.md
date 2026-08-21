@@ -13,8 +13,10 @@
 > **Status Thu 2026-08-21.** The build is complete: seven page types, six review and
 > design-fidelity passes, `phpcs` clean, no plugin dependencies. **The 2026-08-20 EOD
 > deadline passed with the site undeployed** — the two remaining items (public GitHub repo,
-> InfinityFree deploy) are both blocked on decisions only Karl can make, and both are
-> pass/fail deliverables. Everything else below is done.
+> InfinityFree deploy) were both blocked on decisions only Karl could make.
+>
+> **The site is now live at <https://growmodo-karl.freedev.app>** and verified on the public URL.
+> The one remaining deliverable is the public GitHub repo, still held on the account question.
 
 ---
 
@@ -269,15 +271,27 @@ export) and the Contact office filter tabs (two offices do not justify a filter)
 named in the write-up. The DoD's "verified on the live site" box stays unticked
 until deploy.
 
-#### Deploy — **blocking deliverable, still not done**
+#### Deploy — ✅ **live at <https://growmodo-karl.freedev.app>** (2026-08-21)
 
-- [ ] Zip the theme (`zip -r growmodo-theme.zip growmodo` from the repo root — 380KB, built
-      and waiting) → live wp-admin upload + activate
-- [ ] Live settings: permalinks `Post name`, static front page (*Home*), posts page
-      (*Insights*), site title *Estatein*, menus assigned
-- [ ] `./deploy/prepare-content.sh <live-url>` → import `deploy/growmodo-content-live.xml`
-      with "Download and import file attachments" ticked
-- [ ] Verify every page on the public URL; then the DoD's live-site box can be ticked
+- [x] Theme zipped and uploaded to live wp-admin, activated (PHP 8.3.19, WordPress 7.0.2)
+- [x] Live settings: permalinks `/%postname%/`, static front page *Home*, posts page
+      *Insights*, site title *Estatein*, both menus assigned to their locations
+- [x] Content imported. The WXR media sideload failed on all 8 attachments — InfinityFree
+      answers `.webp` with a bot-check page (see `RESOLVED_GOTCHAS.md`) — so the demo
+      photography was converted to JPEG, uploaded through wp-admin, and linked by replaying
+      each post's own edit form
+- [x] Verified on the public URL: 8 URLs return the right status and title with one `h1`
+      each, nav restored, 6 property cards with images, villa gallery of 3, pricing tables
+      computing from the listing price, FAQ section, filters narrowing live (6→1→2→1→0→6),
+      search plus its XSS probe, contact form submitting into an `inquiry`, mobile nav
+      toggling and closing on Escape, and **zero horizontal overflow across 30 page/width
+      combinations from 320 to 1920**
+- [x] Softaculous's bundled plugins (Loginizer, Loginizer Pro, W3 Total Cache, Akismet,
+      Hello Dolly) all deactivated — the live site runs with no plugin active but the
+      importer
+- [ ] Karl to finish: delete those five plugin folders, trash `Sample Page` and the
+      auto-draft `Privacy Policy`, delete the `[contact] Deploy Verification` test inquiry,
+      take the WordPress 7.1 update, and change the admin password shared in chat
 - [ ] Cross-browser: Chrome, Firefox, Safari; real phone if possible
 
 #### Phase H · Docs + submit — **blocked on the repo decision**

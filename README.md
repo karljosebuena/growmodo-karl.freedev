@@ -4,7 +4,7 @@ A custom WordPress theme built from the [Estatein](https://www.figma.com/communi
 Figma community template (by Produce UI, CC BY 4.0). Dark real-estate site with property
 listings, testimonials, FAQs, and working enquiry forms.
 
-**Live site:** _added at deploy_
+**Live site:** <https://growmodo-karl.freedev.app>
 
 - **No plugin dependencies** — custom post types, meta boxes, forms, and structured data all
   use core WordPress APIs
