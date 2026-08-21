@@ -296,7 +296,7 @@ until deploy.
 
 #### Phase H · Docs + submit — **blocked on the repo decision**
 
-- [x] The 1–2 page write-up, decisions-focused per the write-up
+- [x] [`development-notes.md`](./development-notes.md) — the 1–2 page write-up, decisions-focused per the write-up
       decision, kept current as decisions landed rather than reconstructed at the end
 - [x] Repo README: what it is, install instructions, content model, structure
 - [ ] Push the public GitHub repo — **held: `gh` is authenticated as `karl-bv`, a work

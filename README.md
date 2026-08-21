@@ -12,6 +12,9 @@ listings, testimonials, FAQs, and working enquiry forms.
 - **Responsive** at the design's three breakpoints (390 / 1440 / 1920)
 - **`phpcs` clean** against WordPress Coding Standards — zero errors, zero warnings
 
+Write-up of the process and decisions:
+[`docs/development-notes.md`](docs/development-notes.md).
+
 ## Installing the theme
 
 1. Zip the `growmodo/` directory (or download it from this repo).

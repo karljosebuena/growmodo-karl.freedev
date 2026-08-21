@@ -173,7 +173,7 @@ structure and bootstrap sections need converting to `style.css` / `functions.php
 1. Live, publicly accessible WordPress site on free hosting
 2. Theme source in a Git repo — all PHP, CSS, JS, images, plus `functions.php`
 3. **1–2 page write-up**: development process, theme decisions, plugins/tools used
-   → keep it as a separate document and update it as decisions are made, rather than
+   → keep it as `docs/development-notes.md` and update it as decisions are made, rather than
    reconstructing it at the end
 
 ### Evaluated on
