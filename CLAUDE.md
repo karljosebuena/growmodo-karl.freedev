@@ -184,9 +184,10 @@ the named sections are complete).
 
 ### Resolved 2026-08-17 (plan + timeline: [`docs/roadmap.md`](./docs/roadmap.md))
 
-- **Host: InfinityFree** → PHP 8.3 selectable, so 8.x syntax is allowed — *verify the version
-  on the actual account in roadmap Phase 0 before using 8.x-only features*. No SSH/WP-CLI;
-  deploy via wp-admin zip upload or FTP
+- **Host: InfinityFree** → *verified 2026-08-21: the free plan does **not** let you choose a PHP
+  version (premium only), and free subdomains have SSL by default.* The theme therefore uses no
+  version-specific syntax and runs on anything from 7.4 up. No SSH/WP-CLI; deploy via wp-admin
+  zip upload or FTP
 - **Figma template identified: "Estatein"** (dark-theme real estate, by Praha/Produce UI,
   CC BY 4.0, 3 breakpoints). Expected pages: Home, About Us, Properties, Services, Contact —
   *verify inventory from the exported screenshots*; per-page section checklists live in the

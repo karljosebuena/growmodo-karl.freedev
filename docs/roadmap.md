@@ -78,7 +78,8 @@ platforms have no PHP/MySQL; headless would fail the "custom WordPress theme" re
 
 | InfinityFree gives us | Constraints to design around |
 | --- | --- |
-| PHP 8.3 selectable, MySQL, free subdomain + SSL | No SSH / no WP-CLI — wp-admin + FTP only |
+| PHP 8.x, MySQL, free subdomain, SSL by default | No SSH / no WP-CLI — wp-admin + FTP only |
+| | **PHP version is not selectable on the free plan** (premium only), so the theme must run on whatever the host provides — verified 2026-08-21 |
 | Softaculous one-click WordPress install | Subdomain/SSL provisioning lag — **signup started first, in parallel** |
 | Full wp-admin | 30,000 requests/day and inode caps |
 | | PHP `mail()` unreliable — nothing may depend on email delivery |
