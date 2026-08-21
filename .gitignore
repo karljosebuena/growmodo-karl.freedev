@@ -8,3 +8,6 @@ deploy/growmodo-content-live.xml
 .playwright-mcp/
 shots/
 Figma Design/
+
+# Stray verification captures at the repo root
+/*.png
