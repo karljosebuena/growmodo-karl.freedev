@@ -16,7 +16,29 @@ by reading the code. Style rules belong in `docs/best-practices/`, patterns in `
 
 ---
 
-_No entries yet — this repo has no implementation code._
+## "Failed to import Media" for every attachment on InfinityFree
+
+**Symptom:** the WordPress importer reported `Failed to import Media "..."` for all 8
+attachments, while every post, page and menu item imported cleanly. The image URLs were
+correct and returned HTTP 200 when opened in a browser.
+
+**Cause:** InfinityFree answers requests for some file extensions with its JavaScript
+bot-check page instead of the file. Measured on the live host: `.css`, `.jpg`, `.png` and
+`.svg` are served normally; **`.webp` and `.js` return a ~900-byte HTML challenge** to any
+client without the challenge cookie. A browser loads the HTML first, solves the check, and
+carries the cookie on every later request — so the front end is unaffected. The importer
+fetches server-side with `wp_remote_get()`, has no cookie and runs no JavaScript, so it
+received HTML where it expected WebP and rejected all 8 files.
+
+**Fix:** upload the 8 images through wp-admin (a browser POST, which carries the cookie) and
+attach them by hand — featured image per listing, plus the two extra villa photographs. Do
+not re-run the WXR import to fix thumbnails: the importer skips posts whose GUID already
+exists, so `_thumbnail_id` is never remapped, and you get eight orphaned attachments instead
+of linked ones.
+
+**Also worth knowing:** any non-JavaScript client sees the same challenge, so a `.webp`
+`og:image` is unreadable to social-preview scrapers on this host. Browsers and JS-executing
+crawlers are fine.
 
 <!--
 Candidates to watch for on a WordPress project (delete this comment as real entries land):
